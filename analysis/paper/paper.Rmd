@@ -44,7 +44,7 @@ library(ggplot2)
 ggplot(iris,aes(Sepal.Width,Sepal.Length))+geom_point()
 ```
 
-We can make a plot of `r nrow(iris)` flower measurements (Fig \@ref(fig:flowers))
+We can make a plot of `r nrow(iris)` flower measurements (Fig \@ref(fig:flowers)). Reference [@haggisIntensiveSurveyTraditional1993].
 
 
 ```{r a-table}
