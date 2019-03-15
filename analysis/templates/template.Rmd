@@ -36,7 +36,7 @@ Now knit this doc, and edit the styles in the resulting docx file. Then rename a
 ```
 output:
   word_document:
-    reference_docx: templates/template1.docx
+    reference_docx: templates/articletemplate.docx
 ```
 
 Don't forget line numbers for JAS! Headings are bold, underline, nothing. And Arial Narrow 10pt for tables.

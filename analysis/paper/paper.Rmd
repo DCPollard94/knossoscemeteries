@@ -6,8 +6,8 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     bookdown::word_document2:
       fig_caption: yes
-      reference_docx: "../templates/template.docx" # Insert path for the DOCX file
-bibliography: references.bib
+      reference_docx: "../templates/articletemplate.docx" # Insert path for the DOCX file
+bibliography: Phd.bib
 csl: "../templates/world-archaeology.csl" # Insert path for the bib-style
 abstract: |
   Text of abstract
@@ -34,6 +34,15 @@ knitr::opts_chunk$set(
 ```
 
 # Introduction
+It may be felt that, of all ancient sites on Crete, Knossos is the last in need of further archaeological attention. The city and ‘palace’ of Knossos, first excavated well over a century ago [@Evans1921; -@Evans1928; -@Evans1930], retain a pre-eminent position in popular and academic accounts the island’s Bronze Age, and few, if any, other Cretan sites have been so thoroughly dug, reconstructed, and contested. However, there are reasons why the present study – a quantitative comparison of the two largest Early Iron Age cemeteries at Knossos – is not only justified, but also timely.
+
+For one, this is not the Knossos of that illustrous, palatial period, but rather the town as it persisted and evolved during the subsequent Early Iron Age (EIA). Research into this once maligned period on which research has grown apace in the last few decades. The reframing of the the twelth-seventh centuries as the gestational period of the later classical Greek world [first seen in the works of @Coldstream1977; @Desborough1972; @Snodgrass1971] came first, while more recently scholars have refuted the image of a society bereft of its former palatial glory. Certainly, few would any longer defend the appelation or interpretive bagguage of the ‘Dark Ages’ [on the origins of which, see @Kotsonas2016; @Morris1997].Nonetheless, our knowledge of many EIA settlements (both new foundations, and those with BA ancestry like Knossos) remains often underdeveloped in comparison with those of the second millennium BC. 
+
+Secondly, and welcome though they are, a number of recent publications on the socio-economic [@Wallace2010a] and settlement [@Nowicki2000] changes which accompanied the BA-EIA transition have directed scholarly attention toward a number of elevated, defensible settlements supposedly founded in response to the turbulent contemporary political climate. This has, unfortunately, engendered a certain disregard for continuing occupation at several lowland centres, including Knossos and Phaistos. There remains, therefore, a need for studies addressing the social dynamics at these sites, with a long-term view to comparative appraisal of the divergent trajectories of communities across the island in the EIA [@Whitley2011, 667–8].
+
+Finally, a number of authors, drawing on datasets from Crete and the wider Aegean, have in recent years demonstrated the great potential of quantitative, statistical, spatial, and network analyses to elucidate social dynamics, settlement patterning, and systems of inter-regional communication and exchange. Such work encourages the use of large (and often pre-existing) datasets, and the sharing of both data and methods to facilitate reproducible, collaborative, and innovative research. The cemeteries of Knossos offer an opportunity to introduce such approaches into EIA research, where they have yet to make much of an impact. The Fortesta and North Cemetery complexes are both well-published (Brock 1957; Coldstream and Catling 1996) and have been considered variously in relation to their oriental imports (Antoniadis 2012), antiques (Crowe 2016), and religious context (Coldstream 1984a). But a lack of quantitative analyses, or systematic comparisons between different cemeteries, has left us with many intuited trends, some clearly exceptional tombs, and a general impression of un-patterned multiplicity in mortuary rituals. I suggest that the application of a range of quantitative and statistical methods may provide new insight into the social behaviours underlying the mortuary assemblages. 
+
+A recent paper by Kotsonas (2011)  has stressed the importance of quantification in analyses of mortuary material. Drawing on data from the EIA Knossian and Eleuthernian cemeteries, he illustrates the clear potential of quantitative methods for elucidating social behaviours. Taking the lead from the Kotsonas, I here adopt a broader, more comparative, and more quantitative approach to the Knossian material than has previously been employed. With a dataset including information on every find and tomb recorded in the Fortetsa and Knossos North Cemetery publications (Brock 1957; Coldstream and Catling 1996), the following analysis examines both the synchronic and diachronic variations among the tombs of both cemeteries. In doing so, I aim to demonstrate the potential for quantitative methods, firstly, to permit more reliable identification, and more nuanced characterisation, of significant patterning in the archaeological material; secondly, to facilitate a more systematic appraisal of the cemeteries’ largest tombs, and set their development in a richer socio-economic context; and, finally, to offer not just generalities, but evidence by which to consider, in tangible and context-specific ways, the motivations and identities of the burial groups themselves. 
 
 
 
@@ -44,7 +53,7 @@ library(ggplot2)
 ggplot(iris,aes(Sepal.Width,Sepal.Length))+geom_point()
 ```
 
-The end
+The end [@Marwick2017].
 
 
 ```{r a-table}
