@@ -1,13 +1,14 @@
 Package: domproject
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R:
     person(given = "Dominic",
            family = "Pollard",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
+           email = "d.c.pollard94@gmail.com")
 Description: What the package does (one paragraph)
 License: MIT + file LICENSE
 ByteCompile: true
 Encoding: UTF-8
 LazyData: true
+Imports: bookdown
