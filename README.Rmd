@@ -4,25 +4,25 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, echo = FALSE}
+```{r Title, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "README-"
 )
 # Please put your title here to include it in the file below. 
-Domproject <- "Title of your paper goes here"
+Title <- "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos"
 ```
 
-# domproject
+# knossoscemeteries
 
-This repository contains the data and code for our paper:
+This repository contains the data and code for my paper:
 
-> Authors, (YYYY). _`r Title`_. Name of journal/book <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2019). _`r Title`_. Name of journal/book <https://doi.org/xxx/xxx>
 
-Our pre-print is online here:
+The pre-print available is online here:
 
-> Authors, (YYYY). _`r Title`_. Name of journal/book, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2019). _`r Title`_. Name of journal/book, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/xxx/xxx>
 
 
 ### How to cite
@@ -38,7 +38,7 @@ You can download the compendium as a zip from from this URL: </archive/master.zi
 Or you can install this compendium as an R package, domproject, from GitHub with:
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("DCPollard94/domproject")
+devtools::install_github("DCPollard94/knossoscemeteries")
 ```
 ### Licenses
 
