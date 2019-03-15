@@ -1,15 +1,14 @@
 ---
-title: "Title Goes Here"
+title: "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries at Knossos, Crete"
 author:
-  - Author One
-  - Author Two
+  - Dominic Pollard
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     bookdown::word_document2:
       fig_caption: yes
       reference_docx: "../templates/template.docx" # Insert path for the DOCX file
 bibliography: references.bib
-csl: "../templates/journal-of-archaeological-science.csl" # Insert path for the bib-style
+csl: "../templates/world-archaeology.csl" # Insert path for the bib-style
 abstract: |
   Text of abstract
 keywords: |
