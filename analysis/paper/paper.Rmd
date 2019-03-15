@@ -35,7 +35,7 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-Here is a citation [@Marwick2017]
+
 
 # Background
 
@@ -44,7 +44,7 @@ library(ggplot2)
 ggplot(iris,aes(Sepal.Width,Sepal.Length))+geom_point()
 ```
 
-We can make a plot of `r nrow(iris)` flower measurements (Fig \@ref(fig:flowers)). Reference [@haggisIntensiveSurveyTraditional1993].
+The end
 
 
 ```{r a-table}
