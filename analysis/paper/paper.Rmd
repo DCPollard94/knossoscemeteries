@@ -101,9 +101,16 @@ Cluster analyses have been employed by both Cavanagh [-@Coldstream1996, 653-7] a
 
 library(ggplot2)
 
-pots<-read.csv("../data/raw_data/KnossosPots.csv",header=T)
+allpots<-read.csv("../data/raw_data/KnossosPots.csv",header=T)
+pots<-subset(allpots,cemetery=="NC"|cemetery=="FOR"|cemetery=="TK")
+potsnop<-subset(allpots,tomb!="P")
+str(pots)
 
-ggplot(pots,aes(pots$ave_date))+geom_histogram()+xlim(1100,600)
+allpots$tomb_period<- factor(allpots$tomb_period, levels = c("SM", "EPG", "MPG", "PG","LPG","PGB","EG","MG","G","LG",
+                                                       "EO","O","LO",""))
+
+ggplot(pots,aes(pots$ave_date,fill=tomb_period,color=tomb_period))+geom_histogram()+xlim(1100,600)
+ggplot(tombp,aes(tombp$ave_date,fill=period,color=period))+geom_histogram()+xlim(1100,600)
 ```
 
 The end
