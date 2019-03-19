@@ -20,17 +20,16 @@ keywords: |
 
 <!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
 
-```{r setup}
-knitr::opts_knit$set(
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
   collapse = TRUE,
   warning = FALSE,
   message = FALSE,
-  echo = TRUE,
+  echo = FALSE,
+  fig.retina = 2,
   comment = "#>",
   fig.path = "../figures/"
 )
-
-# Or use devtools::load_all('.', quiet = T) if your code is in script files, rather than as functions in the `/R` diretory
 ```
 
 # Introduction
@@ -95,35 +94,59 @@ Generally speaking, the above analyses have tended to rely more on particular fi
 Cluster analyses have been employed by both Cavanagh [-@Coldstream1996, 653-7] and Antoniadis [-@Antoniadis2012, 193-7], the most sophisticated statistical techniques so far applied to the present material. Cavanagh’s analysis of tomb architecture has been mentioned, while Antoniadis’ more holistic approach corroborates quantitatively some of the intuitive correspondences noted between specific tombs in previous studies. Antoniadis does not interrogate his findings as much as he might have, but his highlighting of the relationship between tomb foundation dates, associated finds, and geographical location points towards social processes of self-definition and exclusion among the burial groups that would reward further investigation, something offered by the present study.
 
 
+# Methods
+
+## Databases
+
+The cornerstone of the present study is a database (or, rather, three linked databases) based on the excavation reports for the Fortetsa and Knossos North cemeteries [@Brock1957; @Coldstream1996a]. The first database includes an entry for each individual ceramic vessel, by far the largest portion of all known finds. Each entry includes: the tomb from which the vessel came; the vessel shape; whether it was an open or closed vessel; its main dimensions; its ceramic period and corresponding absolute dating measures (see below). In addition, all imports, Oriental imitations, and antique (that is, Bronze Age) artefacts were accordingly categorised, using the studies of Antoniadis (2012), Jones (2000), and Crowe (2016) to supplement omissions in the original excavation reports. In total, this database comprised just over 4540 individual artefacts. 
+
+The second database is similar, but with each entry corresponding to a find other than a ceramic vessel. The categories remained the same as in the pottery database, but with the addition of a ‘material’ variable, as of course these finds were not all made of the same substance. This database included some 1620 individual artefacts. 
+The final database concerns the tombs themselves. Each of the 134 tombs was accorded its own entry, with variables including dating (both in relative and absolute terms), surviving dimensions, and the known and estimated number of interments. Each entry also included a tally of the objects recorded in the other two databases. These tallies were arranged by shape for the pottery, and by material and category (e.g. weapon, adornment, seal, funerary paraphernalia) for the other objects. Finally, the total number of imports, imitations and antiques in each tomb was calculated.
+
+Taken together, these databases constitute a detailed record of all the finds from the Fortetsa and KNC excavations, and offer the opportunity for carrying out a range of robust quantitative analyses. It must be conceded that, with many of the tombs evidently looted, dug into or destroyed over the centuries, this cannot be a complete picture of the tombs’ original contents. If we assume, though, that natural or accidental destruction was relatively indiscriminate, and that, even in cases of looting, certain object classes (particularly cinerary urns) were seldom robbed, then the data are by no means rendered useless. As Snodgrass (1996) notes, the situation means we should be extremely cautious about making negative arguments – that is, conclusions drawn about the lack of features in certain tombs – but may be somewhat more hopeful in the forming of positive ones.
+
+## Estimating interments
+
+A first important step in preparing the data for analysis was the estimation of the number of individuals buried in each tomb. The method chosen for this estimation broadly follows that of Cavanagh [-@Cavanagh1996, 659-660], who took the number of pithoi (the most common urn type) and the number of pithoi, amphorae and kraters (which were in some cases used as urns) as middle and upper estimates of the number of interments, with all securely identified interments (in the form of ashes or osteological material) being the lower limit. In the present study, the mean of these three estimates was taken, to provide a single aggregate measure for the purposes of analysis (where no interments were known, this variable was still assigned a value of "1", for all tombs must have contained at least one burial). For analysis at the level of individual finds, however, pithoi alone were taken as the best proxy (Figure \@ref(fig:burialestimate)). For the bulk of the analyses, any tombs lacking identified remains or a single vessel suitable for use as an urn were not considered, thus excluding the most heavily damaged and looted tombs.
 
 
-```{r flowers, fig.cap="Here are some flower measurements"}
+
+```{r burialestimate, fig.cap="Relationship between known interments, counts of pithoi, and counts of pithoi, amphorae and kraters. The straight line represents the mean estimate based on these three values."}
 
 library(ggplot2)
+library(RColorBrewer)
 
-allpots<-read.csv("../data/raw_data/KnossosPots.csv",header=T)
-pots<-subset(allpots,cemetery=="NC"|cemetery=="FOR"|cemetery=="TK")
-potsnop<-subset(allpots,tomb!="P")
-str(pots)
+tombs<-read.csv("../data/raw_data/KnossosTombs.csv",header=T)
+attach(tombs)
 
-allpots$tomb_period<- factor(allpots$tomb_period, levels = c("SM", "EPG", "MPG", "PG","LPG","PGB","EG","MG","G","LG",
-                                                       "EO","O","LO",""))
+p<-ggplot(tombs)+geom_point(aes(est_burials,all_urns,color="All urns"))+
+  geom_point(aes(est_burials,total_burials,color="Known interments"))+
+    geom_point(aes(est_burials,pithoi,colour="Pithoi"))+
+      geom_line(aes(est_burials,est_burials),alpha=0.4)+
+       xlim(0,60)+ylim(0,60)+theme_minimal()+theme(legend.title=element_blank())+
+        labs(x="Mean Burial Estimate", y="Interment/Vessel Count")+
+          scale_color_brewer(palette = "Set2")
+          
 
-ggplot(pots,aes(pots$ave_date,fill=tomb_period,color=tomb_period))+geom_histogram()+xlim(1100,600)
-ggplot(tombp,aes(tombp$ave_date,fill=period,color=period))+geom_histogram()+xlim(1100,600)
+p<-p+coord_fixed()
+plot(p)
+
+cor.test(all_urns,est_burials, method = "pearson")
+
 ```
 
 The end
 
 
 ```{r a-table}
+
 knitr::kable(head(iris),
              caption="A table of flowers")
 ```
 
 We can also make a table (Table \@ref(tab:a-table))
 
-# Methods
+
 
 # Results
 
