@@ -119,7 +119,7 @@ Though not visible in the present paper, every figure and table herein was produ
 
 ## Estimating interments
 
-A first important step in preparing the data for analysis was the estimation of the number of individuals buried in each tomb. The method chosen for this estimation broadly follows that of Cavanagh [-@Cavanagh1996, 659-660], who took the number of pithoi (the most common urn type) and the number of pithoi, amphorae and kraters (which were in some cases used as urns) as middle and upper estimates of the number of interments, with all securely identified interments (in the form of ashes or osteological material) being the lower limit. In the present study, the mean of these three estimates was taken, to provide a single aggregate measure for the purposes of analysis (where no interments were known, this variable was still assigned a value of "1", for all tombs must have contained at least one burial). For analysis at the level of individual finds, however, pithoi alone were taken as the best proxy (Figure \@ref(fig:burialestimate)). For the bulk of the analyses, any tombs lacking identified remains or a single vessel suitable for use as an urn were not considered, thus excluding the most heavily damaged and looted tombs.
+A first important step in preparing the data for analysis was the estimation of the number of individuals buried in each tomb. The method chosen for this estimation broadly follows that of Cavanagh [-@Cavanagh1996, 659-660], who took the number of pithoi (the most common urn type) and the number of pithoi, amphorae and kraters (which were in some cases used as urns) as middle and upper estimates of the number of interments, with all securely identified interments (in the form of ashes or osteological material) being the lower limit. In the present study, the mean of these three estimates was taken, to provide a single aggregate measure for the purposes of analysis (where no interments were known, this variable was still assigned a value of "1", for all tombs must have contained at least one burial). 
 
 
 
@@ -127,16 +127,20 @@ A first important step in preparing the data for analysis was the estimation of 
 
 #The appropriate packages are installed. Extrafont allows the use of non-standard fonts in R plots, ggplot2 is a powerful figure and graph plotting tool, and RColorBrewer includes a number of colour pallettes which can be applied to plots. The colour scheme in this paper is chosen from those that are suitable for colour-blind readers. The font Garmond is installed and stored.
 
+library(reshape)
+library(data.table)
 library(extrafont)
 library(ggplot2)
 library(RColorBrewer)
+library(grid)
+library(dplyr)
 font_import(paths="../paper/font",pattern="GARA")
 loadfonts(device="win")
 
 #The data from the tomb database are added, and 'attached' so that the variables therein need no longer be referred to in their long format (i.e. 'tombs$total_pottery' becomes simply 'total_pottery')
 
 tombs<-read.csv("../data/raw_data/KnossosTombs.csv",header=T)
-attach(tombs)
+tombs<-subset(tombs,tombs$cem_condensed=="NC"|tombs$cem_condensed=="FOR")
 
 #Figure 1 is plotted, with axis limits set (excluding tomb P, resulting in the warning message delivered) and the style of the plot adjusted (including font and text size, the appearance of the gridlines etc.)
 
@@ -144,31 +148,311 @@ p<-ggplot(tombs)+geom_point(aes(est_burials,all_urns,color="All urns"))+
   geom_point(aes(est_burials,total_burials,color="Known interments"))+
     geom_point(aes(est_burials,pithoi,colour="Pithoi"))+
       geom_line(aes(est_burials,est_burials),alpha=0.4)+
-       xlim(0,60)+ylim(0,60)+theme_minimal()+theme(legend.title=element_blank(),
-        text=element_text(family="Garamond", size=12))+
-        labs(x="Mean Burial Estimate", y="Interment/Vessel Count")+
-          scale_color_brewer(palette = "Set2")
+       xlim(0,60)+ylim(0,60)+theme_minimal()+
+        theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Mean Burial Estimate", y="Interment/Vessel Count")+
+                 scale_color_brewer(palette = "Set2")
           
 #The coordinates of the plot are adjusted to render the axis as equal, and the corresponding gridlines as squares, and then the figure is plotted.
 
 p<-p+coord_fixed()
 plot(p)
 
-cor_burial_proxy<-cor.test(all_urns,est_burials, method = "pearson")
+cor_burial_proxy<-cor(tombs$all_urns,tombs$est_burials, method = "pearson")
+
 
 ```
 
-The end
+For analysis at the level of individual finds, however, pithoi alone were taken as the best proxy, as they correlated most closely with the mean estimate, producing a pearson correlation coefficient of `r cor_burial_proxy` (Figure \@ref(fig:burialestimate)). For the bulk of the analyses, any tombs lacking identified remains or a single vessel suitable for use as an urn were not considered, thus excluding the most heavily damaged and looted tombs.
 
 
-```{r a-table}
+```{r aorist_all_cems}
 
-knitr::kable(head(iris),
-             caption="A table of flowers")
+aorist_all_tombs <- colSums(main_tombs[157:206])
+aorist_all_tombs<-data.frame(aorist_all_tombs)
+
+colnames(aorist_all_tombs)<-c("aoristic_density")
+dates<-seq(from = 610, to = 1100, by = 10)
+dates<-rev(dates)
+row.names(aorist_all_tombs)<-dates
+aorist_all_tombs<-data.frame(aorist_all_tombs)
+setDT(aorist_all_tombs, keep.rownames = "decade")
+aorist_all_tombs$decade<-as.numeric(aorist_all_tombs$decade)
+
+
+ggplot(aorist_all_tombs,aes(decade,aoristic_density))+
+  geom_col()+xlim(1100,630)+theme_minimal()+
+        theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Date (Years BC)", y="Aoristic Density")+
+                 scale_fill_brewer(palette = "Set2")
+
+
+
 ```
+
+```{r aorist_uncertainty}
+
+pots<-read.csv("../data/raw_data/KnossosPots.csv",header=T)
+pots<-subset(pots,pots$cemetery=="FOR"|pots$cemetery=="TK"|pots$cemetery=="NC")
+
+aorist_pot_values<-pots[24:73]
+aorist_pot_matrix<-data.matrix(aorist_pot_values)
+aorist_pot_matrix[aorist_pot_matrix == 0] <- NA
+aorist_pot_medians<-apply(aorist_pot_matrix,2,median,na.rm=TRUE)
+
+aorist_pot_medians<-data.frame(aorist_pot_medians)
+colnames(aorist_pot_medians)<-c("aoristic_median")
+row.names(aorist_pot_medians)<-dates
+aorist_pot_medians<-data.frame(aorist_pot_medians)
+setDT(aorist_pot_medians, keep.rownames = "decade")
+aorist_pot_medians$decade<-as.numeric(aorist_pot_medians$decade)
+
+View(aorist_pot_medians)
+
+ggplot(NULL)+geom_col(data=aorist_pot_medians,aes(decade,aoristic_median))+
+    xlim(1100,630)+theme_minimal()+
+      theme(legend.title=element_blank(),
+        text=element_text(family="Garamond", size=12))+
+            labs(x="Date (Years BC)", y="Aoristic Median")+
+               scale_fill_brewer(palette = "Set2")
+
+ggplot(main_tombs,aes(total_finds))+geom_histogram()+xlim(0,200)
+
+aorist_tomb_values<-tombs[c(1,157:206)]
+aorist_tomb_values[aorist_tomb_values == 0] <- NA
+
+aorist_tomb_values<-data.frame(aorist_tomb_values)
+colnames(aorist_tomb_values)[2:51]<-dates
+
+aorist_melt<-melt(aorist_tomb_values)
+aorist_melt$variable<-as.numeric(as.character(aorist_melt$variable))
+
+aorist_melt$period<-ifelse(aorist_melt$variable<=1100 & aorist_melt$variable>=980,"SM",
+		ifelse(aorist_melt$variable<=970 & aorist_melt$variable>=930,"EPG",
+		ifelse(aorist_melt$variable<=920 & aorist_melt$variable>=880,"MPG",
+		ifelse(aorist_melt$variable<=870 & aorist_melt$variable>=850,"LPG",
+		ifelse(aorist_melt$variable<=840 & aorist_melt$variable>=820,"PGB",
+	  ifelse(aorist_melt$variable<=810 & aorist_melt$variable>=800,"EG",
+	  ifelse(aorist_melt$variable<=790 & aorist_melt$variable>=750,"MG",
+	  ifelse(aorist_melt$variable<=740 & aorist_melt$variable>=720,"LG",
+	  ifelse(aorist_melt$variable<=710 & aorist_melt$variable>=680,"EO",
+	  ifelse(aorist_melt$variable<=670 & aorist_melt$variable>=640,"LO",
+	  ifelse(aorist_melt$variable<=630 & aorist_melt$variable>=600,"A",""
+		)))))))))))
+
+decade_ranges<-seq(from = 600, to = 1100, by = 10)
+decade_ranges<-rev(decade_ranges)
+decade_ranges<-as.factor(decade_ranges)
+aorist_melt$variable<-as.factor(aorist_melt$variable)
+aorist_melt$variable<-factor(aorist_melt$variable, levels=(decade_ranges))
+aorist_melt$period<-factor(aorist_melt$period,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO","A"))
+
+
+ggplot(aorist_melt,aes(variable,value, fill=period))+geom_boxplot(varwidth=TRUE)+theme_bw()+
+      theme(legend.title=element_blank(),
+        text=element_text(family="Garamond", size=12),
+        axis.text.x = element_text(angle = 70, hjust = 1),
+        panel.grid.major.x = element_blank())+
+            labs(x="Date (Years BC)", y="Aoristic Sums per Tomb")+
+               scale_fill_brewer(palette = "Set3")+
+                scale_y_continuous(expand = c(0, 0),limits=c(0,20))
+
+```
+
 
 We can also make a table (Table \@ref(tab:a-table))
 
+
+```{r aoristknc}
+KNC<-subset(tombs,tombs$cem_condensed=="NC")
+
+aorist_KNC <- colSums(KNC[157:206])
+aorist_KNC<-data.frame(aorist_KNC)
+
+colnames(aorist_KNC)<-c("aoristic_density")
+row.names(aorist_KNC)<-dates
+aorist_KNC<-data.frame(aorist_KNC)
+setDT(aorist_KNC, keep.rownames = "decade")
+aorist_KNC$decade<-as.numeric(aorist_KNC$decade)
+
+
+FOR<-subset(tombs,tombs$cem_condensed=="FOR")
+
+aorist_FOR <-colSums(FOR[157:206])
+aorist_FOR<-data.frame(aorist_FOR)
+
+colnames(aorist_FOR)<-c("aoristic_density")
+row.names(aorist_FOR)<-dates
+aorist_FOR<-data.frame(aorist_FOR)
+setDT(aorist_FOR, keep.rownames = "decade")
+aorist_FOR$decade<-as.numeric(aorist_FOR$decade)
+
+ggplot(NULL)+geom_col(data=aorist_all_tombs,aes(decade,aoristic_density,fill="All tombs"))+
+  geom_col(data=aorist_KNC,aes(decade,aoristic_density,fill="KNC"))+
+  geom_col(data=aorist_FOR,aes(decade,aoristic_density, fill="Fortetsa"))+
+      xlim(1100,630)+theme_minimal()+
+        theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Date (Years BC)", y="Aoristic Density")+
+                 scale_fill_brewer(palette = "Set2")
+
+```
+
+```{r aorist_burials}
+
+
+pithoi<-subset(pots,pots$shape=="Pithos")
+all_urns<-subset(pots,pots$shape=="Pithos"|pots$shape=="Amphora"|pots$shape=="Krater")
+
+aorist_pithoi<-colSums(pithoi[24:73])
+aorist_pithoi<-data.frame(aorist_pithoi)
+
+colnames(aorist_pithoi)<-c("aoristic_density")
+row.names(aorist_pithoi)<-dates
+aorist_pithoi<-data.frame(aorist_pithoi)
+setDT(aorist_pithoi, keep.rownames = "decade")
+aorist_pithoi$decade<-as.numeric(aorist_pithoi$decade)
+
+aorist_all_urns<-colSums(all_urns[24:73])
+aorist_all_urns<-data.frame(aorist_all_urns)
+
+colnames(aorist_all_urns)<-c("aoristic_density")
+row.names(aorist_all_urns)<-dates
+aorist_all_urns<-data.frame(aorist_all_urns)
+setDT(aorist_all_urns, keep.rownames = "decade")
+aorist_all_urns$decade<-as.numeric(aorist_all_urns$decade)
+
+ggplot(NULL)+geom_col(data=aorist_all_urns,aes(decade,aoristic_density,fill="All urns"))+
+  geom_col(data=aorist_pithoi,aes(decade,aoristic_density,fill="Pithoi"))+
+      xlim(1100,630)+theme_minimal()+
+        theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Date (Years BC)", y="Aoristic Density")+
+                 scale_fill_brewer(palette = "Set2")
+
+
+```
+
+```{r aorist_tomb_adjust}
+
+no_tombs<-colSums(main_tombs[157:206]!=0)
+no_tombs<-data.frame(no_tombs)
+colnames(no_tombs)<-c("no_tombs")
+row.names(no_tombs)<-dates
+no_tombs<-data.frame(no_tombs)
+setDT(no_tombs, keep.rownames = "decade")
+no_tombs$decade<-as.numeric(no_tombs$decade)
+
+aorist_all_tombs1<-aorist_all_tombs
+aorist_by_tomb<-merge(aorist_all_tombs1,no_tombs)
+
+aorist_by_tomb$aorist_by_tomb<-aorist_by_tomb$aoristic_density/aorist_by_tomb$no_tombs
+
+ggplot(aorist_by_tomb,aes(decade,aorist_by_tomb))+geom_col()+xlim(1100,600)
+
+#Now for the 9th century tombs
+
+tombs_9th<-subset(tombs,tombs$century_built=="9th")
+no_tombs_9th<-colSums(tombs_9th[157:206]!=0)
+
+no_tombs_9th<-data.frame(no_tombs_9th)
+colnames(no_tombs_9th)<-c("no_tombs")
+row.names(no_tombs_9th)<-dates
+no_tombs_9th<-data.frame(no_tombs_9th)
+setDT(no_tombs_9th, keep.rownames = "decade")
+no_tombs_9th$decade<-as.numeric(no_tombs_9th$decade)
+
+aorist_tombs_9th<-colSums(tombs_9th[157:206])
+aorist_tombs_9th<-data.frame(aorist_tombs_9th)
+colnames(aorist_tombs_9th)<-c("aoristic_density")
+row.names(aorist_tombs_9th)<-dates
+aorist_tombs_9th<-data.frame(aorist_tombs_9th)
+setDT(aorist_tombs_9th, keep.rownames = "decade")
+aorist_tombs_9th$decade<-as.numeric(aorist_tombs_9th$decade)
+
+aorist_by_tomb_9th<-merge(aorist_tombs_9th,no_tombs_9th)
+aorist_by_tomb_9th$aorist_by_tomb<-aorist_by_tomb_9th$aoristic_density/aorist_by_tomb_9th$no_tombs
+
+ggplot()+geom_col(data=aorist_by_tomb_9th,aes(decade,aorist_by_tomb,fill="9th Century Tombs"))+
+  geom_col(data=aorist_by_tomb,aes(decade,aorist_by_tomb, fill="All Tombs"),alpha=0.7)+
+    xlim(1100,600)+theme_minimal()+
+        theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Date (Years BC)", y="Aoristic Density/Number of Tombs Represented")+
+                 scale_fill_brewer(palette = "Set2")
+
+names(main_tombs)
+tombs_in_use<-colSums(main_tombs[5:14]!="")
+tombs_in_use<-data.frame(tombs_in_use)
+colnames(tombs_in_use)<-c("no_tombs")
+tombs_in_use<-data.frame(tombs_in_use)
+setDT(tombs_in_use, keep.rownames = "period")
+tombs_in_use$period<-factor(tombs_in_use$period,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO"))
+
+ggplot(no_tombs,aes(decade,no_tombs, fill="Tombs in Use"))+geom_col()+theme_classic()+
+     theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+            xlim(1100,600)+
+              labs(x="Date (Years BC)", y="Number of Tombs in Use")+
+                 scale_fill_brewer(palette = "Set2")
+
+ggplot(tombs_in_use,aes(period,no_tombs, fill="Tombs in Use"))+geom_col()+theme_classic()+
+        theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Period", y="Number of Tombs in Use")+
+                 scale_fill_brewer(palette = "Set2")
+
+ggplot(tombs,aes(start_period, fill="New Tombs"))+geom_bar()+theme_classic()+
+        theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Period", y="Number of New Tombs")+
+                 scale_fill_brewer(palette = "Set2")
+
+tombs$start_period<-factor(tombs$start_period,levels=c("SM", "EPG", "MPG","PG", "LPG", "PGB", "EG", "MG","G", "LG", "EO","O", "LO"))
+
+```
+
+
+```{r rates of burials}
+
+tombs_ranked<-main_tombs[with(main_tombs, order(-main_tombs$total_pottery)), ]
+tombs_top_12<-head(tombs_ranked,12)
+
+
+no_tombs_top<-colSums(tombs_top_12[157:206]!=0)
+
+no_tombs_top<-data.frame(no_tombs_top)
+colnames(no_tombs_top)<-c("no_tombs")
+row.names(no_tombs_top)<-dates
+no_tombs_top<-data.frame(no_tombs_top)
+setDT(no_tombs_top, keep.rownames = "decade")
+no_tombs_top$decade<-as.numeric(no_tombs_top$decade)
+
+
+aorist_tombs_top<-colSums(tombs_top_12[157:206])
+aorist_tombs_top<-data.frame(aorist_tombs_top)
+colnames(aorist_tombs_top)<-c("aoristic_density")
+row.names(aorist_tombs_top)<-dates
+aorist_tombs_top<-data.frame(aorist_tombs_top)
+setDT(aorist_tombs_top, keep.rownames = "decade")
+aorist_tombs_top$decade<-as.numeric(aorist_tombs_top$decade)
+
+
+aorist_by_tomb_top<-merge(aorist_tombs_top,no_tombs_top)
+aorist_by_tomb_top$aorist_by_tomb<-aorist_by_tomb_top$aoristic_density/aorist_by_tomb_top$no_tombs
+
+
+ggplot()+geom_col(data=aorist_by_tomb_top,aes(decade,aorist_by_tomb,fill="12 Largest Tombs"))+
+  geom_col(data=aorist_by_tomb,aes(decade,aorist_by_tomb, fill="All Tombs"),alpha=0.7)+
+    xlim(1100,600)+theme_minimal()+
+        theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Date (Years BC)", y="Aoristic Density/Number of Tombs Represented")+
+                 scale_fill_brewer(palette = "Set2")
+
+```
 
 
 # Results
@@ -176,6 +460,9 @@ We can also make a table (Table \@ref(tab:a-table))
 ```{r get-data, eval = FALSE}
 # Note the path that we need to use to access our data files when rendering this document
 my_data <- readr::read_csv(here::here('analysis', 'data', 'raw_data', 'my_csv_file.csv'))
+
+knitr::kable(head(iris),
+             caption="A table of flowers")
 ```
 
 
