@@ -127,6 +127,8 @@ A first important step in preparing the data for analysis was the estimation of 
 
 #The appropriate packages are installed. Extrafont allows the use of non-standard fonts in R plots, ggplot2 is a powerful figure and graph plotting tool, and RColorBrewer includes a number of colour pallettes which can be applied to plots. The colour scheme in this paper is chosen from those that are suitable for colour-blind readers. The font Garmond is installed and stored.
 
+library(ineq)
+library(ggrepel)
 library(reshape)
 library(data.table)
 library(extrafont)
@@ -258,6 +260,50 @@ ggplot(aorist_melt,aes(variable,value, fill=period))+geom_boxplot(varwidth=TRUE)
             labs(x="Date (Years BC)", y="Aoristic Sums per Tomb")+
                scale_fill_brewer(palette = "Set3")+
                 scale_y_continuous(expand = c(0, 0),limits=c(0,20))
+
+                   #geom_label_repel(data=subset(aorist_melt,aorist_melt$value>8 & aorist_melt$variable=="710"),
+                      #aes(label=tomb), show.legend = FALSE,ylim=c(0,40))
+
+
+tombs_gini<-matrix(0, ncol = 0, nrow = 1)
+tombs_gini<-data.frame(tombs_gini)
+for(i in colnames(aorist_tomb_values[2:51])) {
+  tombs_gini[[paste0(i)]] <- ineq(aorist_tomb_vals_only[[i]],type="Gini")
+}
+
+View(tombs_gini)
+
+tombs_gini<-t(tombs_gini)
+tombs_gini<-data.frame(tombs_gini)
+
+colnames(tombs_gini)<-c("gini_coefficient")
+row.names(tombs_gini)<-dates
+tombs_gini<-data.frame(tombs_gini)
+setDT(tombs_gini, keep.rownames = "decade")
+tombs_gini$decade<-as.numeric(tombs_gini$decade)
+
+ggplot(tombs_gini,aes(decade,gini_coefficient))+geom_line()+
+      xlim(1100,600)+ylim(0.3,0.8)+theme_minimal()+
+        theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Date (Years BC)", y="Gini Coefficient")+
+                 scale_fill_brewer(palette = "Set2")
+
+rects <- data.frame(xstart = c(1100,970,920,875,840,810,790,745,70,670,630), 
+                    xend = c(970,920,875,840,810,790,745,710,670,630,600), 
+                    col = c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO","A"))
+rects$col<-factor(rects$col,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO","A"))
+
+ggplot() + 
+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf, fill = col), alpha = 0.4) +
+     geom_line(data = tombs_gini, aes(decade,gini_coefficient))+xlim(1100,600)+ylim(0.5,0.8)+
+      theme_bw()+theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+              labs(x="Date (Years BC)", y="Gini Coefficient")+
+                 scale_fill_brewer(palette = "Set3")+ scale_x_reverse(expand = c(0, 0),limits=c(1100,600))+
+                    scale_y_continuous(expand = c(0, 0),limits=c(0.5,0.8))
+
+plot(Lc(aorist_tomb_values$`800`))
 
 ```
 
