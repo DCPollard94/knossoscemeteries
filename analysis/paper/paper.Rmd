@@ -171,7 +171,7 @@ For analysis at the level of individual finds, however, pithoi alone were taken 
 
 ```{r aorist_all_cems}
 
-aorist_all_tombs <- colSums(main_tombs[157:206])
+aorist_all_tombs <- colSums(tombs[157:206])
 aorist_all_tombs<-data.frame(aorist_all_tombs)
 
 colnames(aorist_all_tombs)<-c("aoristic_density")
@@ -194,7 +194,8 @@ ggplot(aorist_all_tombs,aes(decade,aoristic_density))+
 
 ```
 
-```{r aorist_uncertainty}
+```{r aorist_uncertainty, fig.dim = c(7, 4)}
+
 
 pots<-read.csv("../data/raw_data/KnossosPots.csv",header=T)
 pots<-subset(pots,pots$cemetery=="FOR"|pots$cemetery=="TK"|pots$cemetery=="NC")
@@ -220,7 +221,7 @@ ggplot(NULL)+geom_col(data=aorist_pot_medians,aes(decade,aoristic_median))+
             labs(x="Date (Years BC)", y="Aoristic Median")+
                scale_fill_brewer(palette = "Set2")
 
-ggplot(main_tombs,aes(total_finds))+geom_histogram()+xlim(0,200)
+ggplot(tombs,aes(total_finds))+geom_histogram()+xlim(0,200)
 
 aorist_tomb_values<-tombs[c(1,157:206)]
 aorist_tomb_values[aorist_tomb_values == 0] <- NA
@@ -268,7 +269,7 @@ ggplot(aorist_melt,aes(variable,value, fill=period))+geom_boxplot(varwidth=TRUE)
 tombs_gini<-matrix(0, ncol = 0, nrow = 1)
 tombs_gini<-data.frame(tombs_gini)
 for(i in colnames(aorist_tomb_values[2:51])) {
-  tombs_gini[[paste0(i)]] <- ineq(aorist_tomb_vals_only[[i]],type="Gini")
+  tombs_gini[[paste0(i)]] <- ineq(aorist_tomb_values[[i]],type="Gini")
 }
 
 View(tombs_gini)
@@ -296,12 +297,12 @@ rects$col<-factor(rects$col,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG
 
 ggplot() + 
   geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf, fill = col), alpha = 0.4) +
-     geom_line(data = tombs_gini, aes(decade,gini_coefficient))+xlim(1100,600)+ylim(0.5,0.8)+
+     geom_line(data = tombs_gini, aes(decade,gini_coefficient))+
       theme_bw()+theme(legend.title=element_blank(),
           text=element_text(family="Garamond", size=12))+
               labs(x="Date (Years BC)", y="Gini Coefficient")+
-                 scale_fill_brewer(palette = "Set3")+ scale_x_reverse(expand = c(0, 0),limits=c(1100,600))+
-                    scale_y_continuous(expand = c(0, 0),limits=c(0.5,0.8))
+                 scale_fill_brewer(palette = "Set3")+ coord_cartesian(
+                    xlim = c(1100, 600), ylim = c(0.4,0.8))+ scale_x_reverse(expand = c(0, 0),limits=c(1100,600))
 
 plot(Lc(aorist_tomb_values$`800`))
 
@@ -383,7 +384,7 @@ ggplot(NULL)+geom_col(data=aorist_all_urns,aes(decade,aoristic_density,fill="All
 
 ```{r aorist_tomb_adjust}
 
-no_tombs<-colSums(main_tombs[157:206]!=0)
+no_tombs<-colSums(tombs[157:206]!=0)
 no_tombs<-data.frame(no_tombs)
 colnames(no_tombs)<-c("no_tombs")
 row.names(no_tombs)<-dates
@@ -429,8 +430,8 @@ ggplot()+geom_col(data=aorist_by_tomb_9th,aes(decade,aorist_by_tomb,fill="9th Ce
               labs(x="Date (Years BC)", y="Aoristic Density/Number of Tombs Represented")+
                  scale_fill_brewer(palette = "Set2")
 
-names(main_tombs)
-tombs_in_use<-colSums(main_tombs[5:14]!="")
+names(tombs)
+tombs_in_use<-colSums(tombs[5:14]!="")
 tombs_in_use<-data.frame(tombs_in_use)
 colnames(tombs_in_use)<-c("no_tombs")
 tombs_in_use<-data.frame(tombs_in_use)
@@ -463,7 +464,7 @@ tombs$start_period<-factor(tombs$start_period,levels=c("SM", "EPG", "MPG","PG", 
 
 ```{r rates of burials}
 
-tombs_ranked<-main_tombs[with(main_tombs, order(-main_tombs$total_pottery)), ]
+tombs_ranked<-tombs[with(tombs, order(-tombs$total_pottery)), ]
 tombs_top_12<-head(tombs_ranked,12)
 
 
