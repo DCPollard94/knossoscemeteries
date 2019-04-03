@@ -204,7 +204,7 @@ A alternative way of dealing with temporal uncertainty, and the method employed 
 aorist_all_tombs <- colSums(tombs[157:206])
 aorist_all_tombs<-data.frame(aorist_all_tombs)
 
-colnames(aorist_all_tombs)<-c("aoristic_density")
+colnames(aorist_all_tombs)<-c("aoristic_sum")
 dates<-seq(from = 610, to = 1100, by = 10)
 dates<-rev(dates)
 row.names(aorist_all_tombs)<-dates
@@ -213,7 +213,7 @@ setDT(aorist_all_tombs, keep.rownames = "decade")
 aorist_all_tombs$decade<-as.numeric(aorist_all_tombs$decade)
 
 
-ggplot(aorist_all_tombs,aes(decade,aoristic_density, fill="Aoristic Sum"))+
+ggplot(aorist_all_tombs,aes(decade,aoristic_sum, fill="Aoristic Sum"))+
   geom_col()+theme_bw()+theme(legend.title=element_blank(),
       text=element_text(family="Garamond", size=12))+
           labs(x="Date (Years BC)", y="Aoristic Sum")+
@@ -248,7 +248,7 @@ KNC<-subset(tombs,tombs$cem_condensed=="NC")
 aorist_KNC_pithoi <- colSums(KNC[207:256])
 aorist_KNC_pithoi<-data.frame(aorist_KNC_pithoi)
 
-colnames(aorist_KNC_pithoi)<-c("aoristic_density")
+colnames(aorist_KNC_pithoi)<-c("aoristic_sum")
 row.names(aorist_KNC_pithoi)<-dates
 aorist_KNC_pithoi<-data.frame(aorist_KNC_pithoi)
 setDT(aorist_KNC_pithoi, keep.rownames = "decade")
@@ -260,7 +260,7 @@ FOR<-subset(tombs,tombs$cem_condensed=="FOR")
 aorist_FOR_pithoi <-colSums(FOR[207:256])
 aorist_FOR_pithoi<-data.frame(aorist_FOR_pithoi)
 
-colnames(aorist_FOR_pithoi)<-c("aoristic_density")
+colnames(aorist_FOR_pithoi)<-c("aoristic_sum")
 row.names(aorist_FOR_pithoi)<-dates
 aorist_FOR_pithoi<-data.frame(aorist_FOR_pithoi)
 setDT(aorist_FOR_pithoi, keep.rownames = "decade")
@@ -270,7 +270,7 @@ aorist_FOR_pithoi$decade<-as.numeric(aorist_FOR_pithoi$decade)
 aorist_all_pithoi <- colSums(tombs[207:256])
 aorist_all_pithoi<-data.frame(aorist_all_pithoi)
 
-colnames(aorist_all_pithoi)<-c("aoristic_density")
+colnames(aorist_all_pithoi)<-c("aoristic_sum")
 
 row.names(aorist_all_pithoi)<-dates
 aorist_all_pithoi<-data.frame(aorist_all_pithoi)
@@ -278,9 +278,9 @@ setDT(aorist_all_pithoi, keep.rownames = "decade")
 aorist_all_pithoi$decade<-as.numeric(aorist_all_pithoi$decade)
 
 aorist_pithoi_plot<-ggplot(NULL)+
-  geom_col(data=aorist_all_pithoi,aes(decade,aoristic_density,fill=" All tombs  "))+
-    geom_col(data=aorist_KNC_pithoi,aes(decade,aoristic_density,fill=" KNC  "))+
-      geom_col(data=aorist_FOR_pithoi,aes(decade,aoristic_density, fill=" Fortetsa  "))+
+  geom_col(data=aorist_all_pithoi,aes(decade,aoristic_sum,fill=" All tombs  "))+
+    geom_col(data=aorist_KNC_pithoi,aes(decade,aoristic_sum,fill=" KNC  "))+
+      geom_col(data=aorist_FOR_pithoi,aes(decade,aoristic_sum, fill=" Fortetsa  "))+
         theme_bw()+theme(legend.title=element_blank(),
           text=element_text(family="Garamond", size=12))+
             labs(x="Date (Years BC)", y="Aoristic Sum (Pithoi)")+
@@ -292,7 +292,7 @@ aorist_pithoi_plot<-ggplot(NULL)+
 aorist_KNC <- colSums(KNC[157:206])
 aorist_KNC<-data.frame(aorist_KNC)
 
-colnames(aorist_KNC)<-c("aoristic_density")
+colnames(aorist_KNC)<-c("aoristic_sum")
 row.names(aorist_KNC)<-dates
 aorist_KNC<-data.frame(aorist_KNC)
 setDT(aorist_KNC, keep.rownames = "decade")
@@ -304,16 +304,16 @@ FOR<-subset(tombs,tombs$cem_condensed=="FOR")
 aorist_FOR <-colSums(FOR[157:206])
 aorist_FOR<-data.frame(aorist_FOR)
 
-colnames(aorist_FOR)<-c("aoristic_density")
+colnames(aorist_FOR)<-c("aoristic_sum")
 row.names(aorist_FOR)<-dates
 aorist_FOR<-data.frame(aorist_FOR)
 setDT(aorist_FOR, keep.rownames = "decade")
 aorist_FOR$decade<-as.numeric(aorist_FOR$decade)
 
 aorist_pots_plot<-ggplot(NULL)+
-  geom_col(data=aorist_all_tombs,aes(decade,aoristic_density,fill=" All tombs  "))+
-    geom_col(data=aorist_KNC,aes(decade,aoristic_density,fill=" KNC  "))+
-      geom_col(data=aorist_FOR,aes(decade,aoristic_density, fill=" Fortetsa  "))+
+  geom_col(data=aorist_all_tombs,aes(decade,aoristic_sum,fill=" All tombs  "))+
+    geom_col(data=aorist_KNC,aes(decade,aoristic_sum,fill=" KNC  "))+
+      geom_col(data=aorist_FOR,aes(decade,aoristic_sum, fill=" Fortetsa  "))+
         theme_bw()+theme(legend.title=element_blank(),
           text=element_text(family="Garamond", size=12))+
             labs(x="Date (Years BC)", y="Aoristic Sum (All Vessels)")+
@@ -328,42 +328,56 @@ ggarrange(aorist_pithoi_plot,aorist_pots_plot,ncol=2,common.legend=TRUE, legend=
 
 Figure \@ref(fig:aoristbycem) depicts the aoristic sums of pithoi (as a proxy for burials) and of all vessels, colour-coded by cemetery. Immediately apparent are the broad correspondences between both cemeteries. Despite differences in scale and timing, we can see the Fortetsa and Knossos North Cemeteries underwent similar chronological developments in the volume of burials and, to a lesser degree, grave goods. In both cemeteries, the rate of burial began rising around the end of the 9th century, plateaued slightly in the early 8th, and then rose again to a peak in the late 8th and early 7th centuries. For associated vessels, the developments are more volatile, but again there is clear growth beginning in the later 10th century - reaching an especially marked peak in the KNC by the end of the 9th - then a slight decline and levelling into the 8th century, before a final early 7th century apogee. 
 
-The near total absence of pithoi from the 11th and early 10th centuries reflects the delayed onset of cremation burial, with inhumations representing a significant proportion of earlier interments. Nonetheless, the clear inference would appear to be that, at both cemeteries, the late 8th and early 7th centuries witnessed an unprecedented level of burial activity, something which makes the sudden and total drop of chamber-tomb burials around 630 BC even more remarkable.
+The near total absence of pithoi from the 11th and early 10th centuries reflects the delayed onset of cremation burial, with inhumations representing a significant proportion of earlier interments. Nonetheless, the clear inference would appear to be that, at both cemeteries, the late 8th and early 7th centuries witnessed an unprecedented level of burial activity, something which makes the sudden and total decline of chamber-tomb burials around 630 BC even more notable.
 
+```{r tombconstruction}
 
+tomb_dates_aorist<-read.csv("../data/derived_data/tomb_dates_aorist.csv",header=T)
+tomb_dates_aorist<-subset(tomb_dates_aorist,tomb_dates_aorist$cem_condensed=="NC"|
+                            tomb_dates_aorist$cem_condensed=="FOR")
 
-```{r aoristknc}
-KNC<-subset(tombs,tombs$cem_condensed=="NC")
+aorist_tomb_dates<-colSums(tomb_dates_aorist[16:65])
+aorist_tomb_dates<-data.frame(aorist_tomb_dates)
 
-aorist_KNC <- colSums(KNC[157:206])
-aorist_KNC<-data.frame(aorist_KNC)
+colnames(aorist_tomb_dates)<-c("aoristic_sum")
+row.names(aorist_tomb_dates)<-dates
+aorist_tomb_dates<-data.frame(aorist_tomb_dates)
+setDT(aorist_tomb_dates, keep.rownames = "decade")
+aorist_tomb_dates$decade<-as.numeric(aorist_tomb_dates$decade)
 
-colnames(aorist_KNC)<-c("aoristic_density")
-row.names(aorist_KNC)<-dates
-aorist_KNC<-data.frame(aorist_KNC)
-setDT(aorist_KNC, keep.rownames = "decade")
-aorist_KNC$decade<-as.numeric(aorist_KNC$decade)
+aorist_tomb_values<-tomb_dates_aorist[16:65]
+aorist_tomb_matrix<-data.matrix(aorist_tomb_values)
+aorist_tomb_matrix[aorist_tomb_matrix == 0] <- NA
+aorist_tomb_dates$medians<-apply(aorist_pot_matrix,2,median,na.rm=TRUE)
 
+aorist_tomb_dates$median_adjust<-aorist_tomb_dates$aoristic_sum/aorist_tomb_dates$medians
 
-FOR<-subset(tombs,tombs$cem_condensed=="FOR")
-
-aorist_FOR <-colSums(FOR[157:206])
-aorist_FOR<-data.frame(aorist_FOR)
-
-colnames(aorist_FOR)<-c("aoristic_density")
-row.names(aorist_FOR)<-dates
-aorist_FOR<-data.frame(aorist_FOR)
-setDT(aorist_FOR, keep.rownames = "decade")
-aorist_FOR$decade<-as.numeric(aorist_FOR$decade)
-
-ggplot(NULL)+geom_col(data=aorist_all_tombs,aes(decade,aoristic_density,fill="All tombs"))+
-  geom_col(data=aorist_KNC,aes(decade,aoristic_density,fill="KNC"))+
-  geom_col(data=aorist_FOR,aes(decade,aoristic_density, fill="Fortetsa"))+
-      xlim(1100,630)+theme_minimal()+
-        theme(legend.title=element_blank(),
+ggplot(aorist_tomb_dates,aes(decade,median_adjust))+geom_col()+
+  theme_bw()+theme(legend.title=element_blank(),
           text=element_text(family="Garamond", size=12))+
-              labs(x="Date (Years BC)", y="Aoristic Density")+
-                 scale_fill_brewer(palette = "Set2")
+            labs(x="Date (Years BC)", y="Aoristic Sum (All Vessels)")+
+              scale_fill_brewer(palette = "Set2")+ 
+                  scale_y_continuous(expand=c(0,0),limits=c(0,65))+
+                    scale_x_reverse(expand = c(0, 0),limits=c(1100,600))+
+                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+
+aorist_tomb_periods <-colSums(tomb_dates_aorist[5:14])
+aorist_tomb_periods<-data.frame(aorist_tomb_periods)
+
+colnames(aorist_tomb_periods)<-c("aoristic_sum")
+row.names(aorist_tomb_periods)<-c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO")
+aorist_tomb_periods<-data.frame(aorist_tomb_periods)
+setDT(aorist_tomb_periods, keep.rownames = "period")
+aorist_tomb_periods$period<-factor(aorist_tomb_periods$period,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO"))
+
+ggplot(aorist_tomb_periods,aes(period,aoristic_sum, fill="Period"))+geom_col()+
+  theme_bw()+theme(legend.title=element_blank(),
+          text=element_text(family="Garamond", size=12))+
+            labs(x="Period", y="Aoristic Sum")+
+              scale_fill_brewer(palette = "Set2")+ 
+                 scale_y_continuous(expand=c(0,0),limits=c(0,30))+
+                    theme(legend.position="none")
+
 
 ```
 
@@ -393,9 +407,9 @@ ggplot(NULL)+geom_col(data=aorist_pot_medians,aes(decade,aoristic_median))+
 
 ```{r aoristmedianadjust}
 
-aorist_pot_medians$aorist_sums<-aorist_all_tombs$aoristic_density
-aorist_pot_medians$aorist_median_adjust<-aorist_pot_medians$aorist_sums/aorist_pot_medians$aoristic_median
-View(aorist_pot_medians)
+aorist_pot_medians$aoristic_sums<-aorist_all_tombs$aoristic_sum
+aorist_pot_medians$aorist_median_adjust<-aorist_pot_medians$aoristic_sums/aorist_pot_medians$aoristic_median
+
 
 ggplot(NULL)+geom_col(data=aorist_pot_medians,aes(decade,aorist_median_adjust))+
     xlim(1100,630)+theme_minimal()+
@@ -509,7 +523,7 @@ We can also make a table (Table \@ref(tab:a-table))
 aorist_pithoi<-colSums(pithoi[24:73])
 aorist_pithoi<-data.frame(aorist_pithoi)
 
-colnames(aorist_pithoi)<-c("aoristic_density")
+colnames(aorist_pithoi)<-c("aoristic_sum")
 row.names(aorist_pithoi)<-dates
 aorist_pithoi<-data.frame(aorist_pithoi)
 setDT(aorist_pithoi, keep.rownames = "decade")
@@ -518,14 +532,14 @@ aorist_pithoi$decade<-as.numeric(aorist_pithoi$decade)
 aorist_all_urns<-colSums(all_urns[24:73])
 aorist_all_urns<-data.frame(aorist_all_urns)
 
-colnames(aorist_all_urns)<-c("aoristic_density")
+colnames(aorist_all_urns)<-c("aoristic_sum")
 row.names(aorist_all_urns)<-dates
 aorist_all_urns<-data.frame(aorist_all_urns)
 setDT(aorist_all_urns, keep.rownames = "decade")
 aorist_all_urns$decade<-as.numeric(aorist_all_urns$decade)
 
-ggplot(NULL)+geom_col(data=aorist_all_urns,aes(decade,aoristic_density,fill="All urns"))+
-  geom_col(data=aorist_pithoi,aes(decade,aoristic_density,fill="Pithoi"))+
+ggplot(NULL)+geom_col(data=aorist_all_urns,aes(decade,aoristic_sum,fill="All urns"))+
+  geom_col(data=aorist_pithoi,aes(decade,aoristic_sum,fill="Pithoi"))+
       xlim(1100,630)+theme_minimal()+
         theme(legend.title=element_blank(),
           text=element_text(family="Garamond", size=12))+
@@ -548,7 +562,7 @@ no_tombs$decade<-as.numeric(no_tombs$decade)
 aorist_all_tombs1<-aorist_all_tombs
 aorist_by_tomb<-merge(aorist_all_tombs1,no_tombs)
 
-aorist_by_tomb$aorist_by_tomb<-aorist_by_tomb$aoristic_density/aorist_by_tomb$no_tombs
+aorist_by_tomb$aorist_by_tomb<-aorist_by_tomb$aoristic_sum/aorist_by_tomb$no_tombs
 
 ggplot(aorist_by_tomb,aes(decade,aorist_by_tomb))+geom_col()+xlim(1100,600)
 
@@ -566,14 +580,14 @@ no_tombs_9th$decade<-as.numeric(no_tombs_9th$decade)
 
 aorist_tombs_9th<-colSums(tombs_9th[157:206])
 aorist_tombs_9th<-data.frame(aorist_tombs_9th)
-colnames(aorist_tombs_9th)<-c("aoristic_density")
+colnames(aorist_tombs_9th)<-c("aoristic_sum")
 row.names(aorist_tombs_9th)<-dates
 aorist_tombs_9th<-data.frame(aorist_tombs_9th)
 setDT(aorist_tombs_9th, keep.rownames = "decade")
 aorist_tombs_9th$decade<-as.numeric(aorist_tombs_9th$decade)
 
 aorist_by_tomb_9th<-merge(aorist_tombs_9th,no_tombs_9th)
-aorist_by_tomb_9th$aorist_by_tomb<-aorist_by_tomb_9th$aoristic_density/aorist_by_tomb_9th$no_tombs
+aorist_by_tomb_9th$aorist_by_tomb<-aorist_by_tomb_9th$aoristic_sum/aorist_by_tomb_9th$no_tombs
 
 ggplot()+geom_col(data=aorist_by_tomb_9th,aes(decade,aorist_by_tomb,fill="9th Century Tombs"))+
   geom_col(data=aorist_by_tomb,aes(decade,aorist_by_tomb, fill="All Tombs"),alpha=0.7)+
@@ -610,7 +624,7 @@ ggplot(tombs,aes(start_period, fill="New Tombs"))+geom_bar()+theme_classic()+
               labs(x="Period", y="Number of New Tombs")+
                  scale_fill_brewer(palette = "Set2")
 
-tombs$start_period<-factor(tombs$start_period,levels=c("SM", "EPG", "MPG","PG", "LPG", "PGB", "EG", "MG","G", "LG", "EO","O", "LO"))
+
 
 ```
 
@@ -633,7 +647,7 @@ no_tombs_top$decade<-as.numeric(no_tombs_top$decade)
 
 aorist_tombs_top<-colSums(tombs_top_12[157:206])
 aorist_tombs_top<-data.frame(aorist_tombs_top)
-colnames(aorist_tombs_top)<-c("aoristic_density")
+colnames(aorist_tombs_top)<-c("aoristic_sum")
 row.names(aorist_tombs_top)<-dates
 aorist_tombs_top<-data.frame(aorist_tombs_top)
 setDT(aorist_tombs_top, keep.rownames = "decade")
@@ -641,7 +655,7 @@ aorist_tombs_top$decade<-as.numeric(aorist_tombs_top$decade)
 
 
 aorist_by_tomb_top<-merge(aorist_tombs_top,no_tombs_top)
-aorist_by_tomb_top$aorist_by_tomb<-aorist_by_tomb_top$aoristic_density/aorist_by_tomb_top$no_tombs
+aorist_by_tomb_top$aorist_by_tomb<-aorist_by_tomb_top$aoristic_sum/aorist_by_tomb_top$no_tombs
 
 
 ggplot()+geom_col(data=aorist_by_tomb_top,aes(decade,aorist_by_tomb,fill="12 Largest Tombs"))+
