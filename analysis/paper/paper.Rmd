@@ -31,6 +31,21 @@ knitr::opts_chunk$set(
   fig.path = "../figures/",
   dev="png"
 )
+library(ggpubr)
+library(cowplot)
+library(gridExtra)
+library(ineq)
+library(ggrepel)
+library(reshape)
+library(data.table)
+library(extrafont)
+library(ggplot2)
+library(RColorBrewer)
+library(grid)
+library(dplyr)
+font_import(paths="../paper/font",pattern="GARA")
+loadfonts(device="win")
+
 ```
 
 # Introduction
@@ -124,26 +139,9 @@ A first important step in preparing the data for analysis was the estimation of 
 
 
 
-```{r burialestimate, fig.cap="Relationship between known interments, counts of pithoi, and counts of pithoi, amphorae and kraters. The straight line represents the mean estimate based on these three values."}
+```{r burialestimate, fig.dim = c(7, 4), dpi=300, fig.align='center', fig.cap="Relationship between known interments, counts of pithoi, and counts of pithoi, amphorae and kraters. The straight line represents the mean estimate based on these three values."}
 
 #The appropriate packages are installed. Extrafont allows the use of non-standard fonts in R plots, ggplot2 is a powerful figure and graph plotting tool, and RColorBrewer includes a number of colour pallettes which can be applied to plots. The colour scheme in this paper is chosen from those that are suitable for colour-blind readers. The font Garmond is installed and stored.
-
-library(ggpubr)
-library(cowplot)
-library(gridExtra)
-library(ineq)
-library(ggrepel)
-library(reshape)
-library(data.table)
-library(extrafont)
-library(ggplot2)
-library(RColorBrewer)
-library(grid)
-library(dplyr)
-font_import(paths="../paper/font",pattern="GARA")
-loadfonts(device="win")
-
-#The data from the tomb database are added, and 'attached' so that the variables therein need no longer be referred to in their long format (i.e. 'tombs$total_pottery' becomes simply 'total_pottery')
 
 tombs<-read.csv("../data/raw_data/KnossosTombs.csv",header=T)
 tombs<-subset(tombs,tombs$cem_condensed=="NC"|tombs$cem_condensed=="FOR")
@@ -205,8 +203,7 @@ aorist_all_tombs <- colSums(tombs[157:206])
 aorist_all_tombs<-data.frame(aorist_all_tombs)
 
 colnames(aorist_all_tombs)<-c("aoristic_sum")
-dates<-seq(from = 610, to = 1100, by = 10)
-dates<-rev(dates)
+dates<-seq(from = 1100, to = 610, by = -10)
 row.names(aorist_all_tombs)<-dates
 aorist_all_tombs<-data.frame(aorist_all_tombs)
 setDT(aorist_all_tombs, keep.rownames = "decade")
@@ -348,7 +345,7 @@ aorist_tomb_dates$decade<-as.numeric(aorist_tomb_dates$decade)
 aorist_tomb_values<-tomb_dates_aorist[16:65]
 aorist_tomb_matrix<-data.matrix(aorist_tomb_values)
 aorist_tomb_matrix[aorist_tomb_matrix == 0] <- NA
-aorist_tomb_dates$medians<-apply(aorist_pot_matrix,2,median,na.rm=TRUE)
+aorist_tomb_dates$medians<-apply(aorist_tomb_matrix,2,median,na.rm=TRUE)
 
 aorist_tomb_dates$median_adjust<-aorist_tomb_dates$aoristic_sum/aorist_tomb_dates$medians
 
