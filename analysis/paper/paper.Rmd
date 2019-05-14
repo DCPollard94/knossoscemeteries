@@ -46,6 +46,7 @@ library(RColorBrewer)
 library(grid)
 library(dplyr)
 library(plyr)
+library(ggforce)
 font_import(paths="../paper/font",pattern="GARA")
 loadfonts(device="win")
 
@@ -179,7 +180,7 @@ A central concern of the present study was how to deal with the temporal uncerta
 #The database of all vessels is imported and, again only those tombs from the KNC and Fortetsa cemetery are selected. A new object "pithoi" is made by subsetting only those vessels labelled "Pithos", and a similar object "all_urns" by subsetting all pithoi, amphorae and kraters.
 
 pots<-read.csv("../data/raw_data/KnossosPots.csv",header=TRUE)
-pots<-subset(pots,pots$cemetery=="FOR"|pots$cemetery=="TK"|pots$cemetery=="NC")
+pots<-subset(pots,pots$cem_condensed=="FOR"|pots$cem_condensed=="NC")
 pithoi<-subset(pots,pots$shape=="Pithos")
 all_urns<-subset(pots,pots$shape=="Pithos"|pots$shape=="Amphora"|pots$shape=="Krater")
 
@@ -373,7 +374,7 @@ ggarrange(new_tomb_counts_plot,new_tomb_aorist_plot,ncol=2,common.legend=TRUE, l
 
 ```
 
-Figure \@ref(fig:tombconstruction) presents two ways of dating the construction of the tombs. On the left, counts are presented, based on the ceramic phase considered most likely to correspond to the tomb's first use, including the general assignations of "PG", "G" and "O" when no greater specificity is possible. On the right, aoristic sums are presented, and essentially represent the spreading of the uncertainty associated with those general assignations across the sub-periods they encompass. In both cases, the trend appears clear. The North Cemetery began with a rash of building during the, admittedly prolongued, SM period, followed by a protracted decline in rates of consruction, offset by small resurgences in the late 9th and 8th centuries. It should also be noted, too, that many of the later tombs are not chamber tombs, but a mix of pit, larnax, and pithos burials. The Fortetsa, meanwhile, saw next to no new chamber tomb construction from the 8th century onwards. In both cases, then, the rates of tomb building run counter the late 8th-early 7th century spate of burial activity. These countervalent trends present a number of interpretive problems. The abatement of chamber tomb construction has been noted before (Brock 1957, 4; Cavanagh 1996, 652–3) and has been somewhat implicitly read as evidence of restructuring of the funerary rite, if not a decline in the fortunes of the wider community. But this image of a waigning investment in chamber burials sits uneasily with the apparent growth in mortuary activity suggested by both counts of artefacts, and estimates of the number of tombs in use in each period.
+Figure \@ref(fig:tombconstruction) presents two ways of dating the construction of the tombs. On the left, counts are presented, based on the ceramic phase considered most likely to correspond to the tomb's first use, including the broad labels "PG", "G" and "O" where no greater specificity is possible. On the right, aoristic sums are presented, and essentially represent the spreading of the uncertainty associated with those general assignations across the sub-periods they encompass. In both cases, the trend appears clear. The North Cemetery began with a rash of building during the, admittedly prolongued, SM period, followed by a protracted decline in rates of consruction, offset by small resurgences in the late 9th and 8th centuries. It should be noted, too, that many of the later "tombs" are not chamber tombs, but a mix of pit, larnax, and pithos burials. The Fortetsa, meanwhile, saw next to no new chamber tomb construction from the 8th century onwards. In both cases, then, the rates of tomb building run counter the late 8th-early 7th century spate of burial activity. These countervalent trends present a number of interpretive problems. The abatement of chamber tomb construction has been noted before (Brock 1957, 4; Cavanagh 1996, 652–3) and has been somewhat implicitly read as evidence of restructuring of the funerary rite, if not a decline in the fortunes of the wider community. But this image of a waigning investment in chamber burials sits uneasily with the apparent growth in mortuary activity suggested by both counts of artefacts, and estimates of the number of tombs in use in each period.
 
 ```{r tombsinuse, fig.dim=c(7,4), dpi=300, fig.cap="Estimates of the number of tombs in use during each of the ceramic phases attested in both cemetaries."}
 
@@ -396,17 +397,17 @@ tombs_in_use_cem<-rbind(KNC_tombs_in_use,FOR_tombs_in_use)
 tombs_in_use_cem$cemetery<-factor(tombs_in_use_cem$cemetery,levels=c("KNC","FOR"))
 
 
-ggplot(tombs_in_use_cem,aes(period,no_tombs, fill=cemetery))+geom_col(position="identity")+theme_classic()+
+ggplot(tombs_in_use_cem,aes(period,no_tombs, fill=cemetery))+geom_col(position="dodge")+theme_classic()+
        theme_bw()+theme(legend.title=element_blank(),
           text=element_text(family="Garamond", size=12))+
             labs(x="Period", y="Tombs in Use")+
               scale_fill_brewer(palette = "Set2",labels=c(" KNC  "," Fortetsa"))+ 
-                 scale_y_continuous(expand=c(0,0),limits=c(0,50))
+                 scale_y_continuous(expand=c(0,0),limits=c(0,45))
 ```
 
+Figure \@ref(fig:tombsinuse) presents the estimated number of tombs in use throughout the EIA at both cemeteries, that is, the number of tombs which yielded pottery of each period. At the Forteta, this number remained rlatively stable from the MPG to LG periods before declining (and bear in mind, there are only around 20 tombs belonging to this cemetery throughout the period), while at the KNC, the numbers of tombs in use rose to a preak in the late 8th century before declining. The cessation of burials there certainly appears more sudden and marked than at Fortetsa, though, again, it was always a larger cemetery. But with the data available, we can interrogate these trends further.
 
-
-```{r }
+```{r tombsinusebybuilddate, fig.dim=c(7,4), dpi=300, fig.cap="Estimates of the number of tombs in use through time across both cemeteries. The grey background represents the total number of tombs in use in each period, while the smaller coloured bars correspond to tombs built in each of the five centuries of EIA activity at the cemeteries."}
 tombs_11th<-subset(tombs,tombs$century_built=="11th")
 tombs_10th<-subset(tombs,tombs$century_built=="10th")
 tombs_9th<-subset(tombs,tombs$century_built=="9th")
@@ -462,8 +463,92 @@ ggplot(data=tomb_use,aes(period,no_tombs))+geom_col(alpha=0.2)+
 
 ```
 
+Figure \@ref(fig:tombsinusebybuilddate) presents the number of tombs in use in each period, divided by the centuries in which those tombs were constructed, all overlaid on the total number of tombs in use across both cemeteries. Perhaps unsurprisingly, a wave-like pattern can be observed with each century marked by the construction of new tombs which then steadily go out of use, as new ones are built. This would seem to accord with Cavanagh's suggestion that "[t]he length of time the tombs last seems [...] to reflect the duration of the social group which had access to the sepulchre", and perhaps even that this access was lineally inehrited, leading to frequent fission and, thus, limited trans-generational use. However, something else is going here, which can only be appreciated by considering which tombs became the focus of the intense period of depositional activity in the late 8th and erly 7th centuries.  
+
+```{r potsbydateandtombdate,  fig.dim=c(8,4), dpi=300, fig.cap="Counts of vessels from across all tombs in both cemeteries, arranged, on the left, by the century to which they are assigned based on their ceramic period and, on the right, by the centuries in which the tombs they come from were built."}
+
+pots$century<-factor(pots$century,levels=c("11th","10th","9th","8th","7th"))
+pots$tomb_century<-factor(pots$tomb_century,levels=c("11th","10th","9th","8th","7th"))
+
+date_by_vessel<-ggplot(data=subset(pots,pots$century!=""),aes(century,fill="Date"))+geom_bar()+
+  theme_bw()+theme(legend.position="none",
+               text=element_text(family="Garamond", size=12))+
+                 labs(x="Century (Date of Vessel)", y="Vessel Count")+
+                  scale_fill_brewer(palette = "Set2")+ 
+                    scale_y_continuous(expand=c(0,0),limits=c(0,2800))
+  
+date_by_tomb<-ggplot(pots,aes(tomb_century,fill="Date"))+geom_bar()+
+  theme_bw()+theme(legend.position="none",
+               text=element_text(family="Garamond", size=12))+
+                 labs(x="Century (Date of Tomb)", y="")+
+                  scale_fill_brewer(palette = "Set2")+ 
+                    scale_y_continuous(expand=c(0,0),limits=c(0,2800))
+
+ggarrange(date_by_vessel,date_by_tomb,ncol=2)
+
+
+```
+
+Figure \@ref(fig:potsbydateandtombdate) shows, firstly, the number of vessels dating to each century across both cemeteries, based on their assigned ceramic period, essentially a simplified version of the trend illustrated in Figure \@ref(fig:aoristallcems). But, on the right, Figure \@ref(fig:potsbydateandtombdate) shows those pots divided into the centuries to which the tombs they were found in date. So as can be seen, though the late 8th and early 7th centuries represented the apex of burial activity in across both cemeteries, it was not the tombs built in those centuries, but rather those built in the centuries prior, which received the lion's share of the burials and associated ceramics. This is all the more notable when, returning to Figure \@ref(fig:tombsinusebybuilddate), we see that the number of 9th and 10th century tombs in use by the late 8th and early 7th centuries were declining.
 
 ```{r }
+
+pots10th10th<-sum(pithoi$tomb_century=="10th" & pithoi$century=="10th",na.rm=TRUE)
+pots10th9th<-sum(pithoi$tomb_century=="10th" & pithoi$century=="9th",na.rm=TRUE)
+pots10th8th<-sum(pithoi$tomb_century=="10th" & pithoi$century=="8th",na.rm=TRUE)
+pots10th7th<-sum(pithoi$tomb_century=="10th" & pithoi$century=="7th",na.rm=TRUE)
+
+notombs10th10th<-nrow(unique(subset(pithoi,tomb_century=="10th" & century=="10th",select=tomb)))
+notombs10th9th<-nrow(unique(subset(pithoi,tomb_century=="10th" & century=="9th",select=tomb)))
+notombs10th8th<-nrow(unique(subset(pithoi,tomb_century=="10th" & century=="8th",select=tomb)))
+notombs10th7th<-nrow(unique(subset(pithoi,tomb_century=="10th" & century=="7th",select=tomb)))
+
+pots9th9th<-sum(pithoi$tomb_century=="9th" & pithoi$century=="9th",na.rm=TRUE)
+pots9th8th<-sum(pithoi$tomb_century=="9th" & pithoi$century=="8th",na.rm=TRUE)
+pots9th7th<-sum(pithoi$tomb_century=="9th" & pithoi$century=="7th",na.rm=TRUE)
+
+notombs9th9th<-nrow(unique(subset(pithoi,tomb_century=="9th" & century=="9th",select=tomb)))
+notombs9th8th<-nrow(unique(subset(pithoi,tomb_century=="9th" & century=="8th",select=tomb)))
+notombs9th7th<-nrow(unique(subset(pithoi,tomb_century=="9th" & century=="7th",select=tomb)))
+
+
+pots8th8th<-sum(pithoi$tomb_century=="8th" & pithoi$century=="8th",na.rm=TRUE)
+pots8th7th<-sum(pithoi$tomb_century=="8th" & pithoi$century=="7th",na.rm=TRUE)
+
+notombs8th8th<-nrow(unique(subset(pithoi,tomb_century=="8th" & century=="8th",select=tomb)))
+notombs8th7th<-nrow(unique(subset(pithoi,tomb_century=="8th" & century=="7th",select=tomb)))
+
+
+pots7th7th<-sum(pithoi$tomb_century=="7th" & pithoi$century=="7th",na.rm=TRUE)
+
+notombs7th7th<-nrow(unique(subset(pithoi,tomb_century=="7th" & century=="7th",select=tomb)))
+
+```
+
+
+|**Tombs**          | **Date of pithoi (burials)**| **No. of pithoi (burials)**| **Number of tombs represented** | **Burials per tomb**                   |
+|-------------------|--------------------------|-------------------------|-----------------------------|--------------------------------------------------|
+|*10th century tombs*|                         |                         |                             |                                                  |
+|                   |10th century              | `r pots10th10th`        | `r notombs10th10th`         | `r round(pots10th10th/notombs10th10th,digits=2)` |
+|                   |9th century               | `r pots10th9th`         | `r notombs10th9th`          | `r round(pots10th9th/notombs10th9th,digits=2)`   |
+|                   |8th century               | `r pots10th8th`         | `r notombs10th8th`          | `r round(pots10th8th/notombs10th8th,digits=2)`   |
+|                   |7th century               | `r pots10th7th`         | `r notombs10th7th`          | `r round(pots10th7th/notombs10th7th,digits=2)`   |
+|*9th century tombs*|                          |                         |                             |                                                  |
+|                   |9th century               | `r pots9th9th`          | `r notombs9th9th`           | `r round(pots9th9th/notombs9th9th,digits=2)`     |
+|                   |8th century               | `r pots9th8th`          | `r notombs9th8th`           | `r round(pots9th8th/notombs9th8th,digits=2)`     |
+|                   |7th century               | `r pots9th7th`          | `r notombs9th7th`           | `r round(pots9th7th/notombs9th7th,digits=2)`     |
+|*8th century tombs*|                          |                         |                             |                                                  |
+|                   |8th century               | `r pots8th8th`          | `r notombs8th8th`           | `r round(pots8th8th/notombs8th8th,digits=2)`     |
+|                   |7th century               | `r pots8th7th`          | `r notombs8th7th`           | `r round(pots8th7th/notombs8th7th,digits=2)`     |
+|*7th century tombs*|                          |                         |                             |                                                  |
+|                   |7th century               | `r pots7th7th`          | `r notombs7th7th`           | `r round(pots7th7th/notombs7th7th,digits=2)`     |
+
+Table: Table 1 The number of pithoi (as a proxy for burials) deposited in tombs dating to the 10th, 9th, 8th and 7th centuries, through each of the centuries they were in use, as well as the number of tombs from which these burials came, allowing calculation of the changing rate of burial through time.
+
+The significance of these findings can be seen in Table 1. Taking the number of pithoi present in each tomb as a proxy for burials, we can estimate the changing rates of burial through the centuries. And while for most of the cemeteries' lives the burial rate remained around three per tomb per century, in the 8th and 7th centuries tombs founded in the 9th century saw a rapid rise in the rate of burial, peaking at around 12 per tomb per century. Though these estimates are no doubt very rough, the marked nature of this divergence between the 9th century tombs and the rest suggests it is not simply an artefact of imperfect data.
+
+
+```{r boxplot,  fig.dim=c(9,5), dpi=300,}
 
 ggplot(tombs,aes(total_finds))+geom_histogram()+xlim(0,200)
 
@@ -495,30 +580,43 @@ decade_ranges<-as.factor(decade_ranges)
 aorist_melt$variable<-as.factor(aorist_melt$variable)
 aorist_melt$variable<-factor(aorist_melt$variable, levels=(decade_ranges))
 aorist_melt$period<-factor(aorist_melt$period,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO","A"))
+aorist_melt$variable<-as.numeric(as.character(aorist_melt$variable))
 
 
-ggplot(aorist_melt,aes(variable,value, fill=period))+geom_boxplot()+theme_bw()+
+ggplot(aorist_melt,aes(variable,value,fill=period))+geom_boxplot(aes(group = cut_width(variable, 10)))+theme_bw()+
       theme(legend.title=element_blank(),
         text=element_text(family="Garamond", size=12),
         axis.text.x = element_text(angle = 70, hjust = 1),
         panel.grid.major.x = element_blank())+
             labs(x="Date (Years BC)", y="Aoristic Sums per Tomb")+
                scale_fill_brewer(palette = "Set3")+
-                scale_y_continuous(expand = c(0, 0),limits=c(0,20))
+                scale_x_reverse()+
+                  scale_y_continuous()+
+                  facet_zoom(x=variable<900& variable>640,y=value<20)
+                    
 
-                   #geom_label_repel(data=subset(aorist_melt,aorist_melt$value>8 & aorist_melt$variable=="710"),
-                      #aes(label=tomb), show.legend = FALSE,ylim=c(0,40))
+
+ggplot(aorist_melt,aes(variable,value,fill=period))+geom_boxplot(aes(group = cut_width(variable, 10)))+theme_bw()+
+      theme(legend.title=element_blank(),
+        text=element_text(family="Garamond", size=12),
+        axis.text.x = element_text(angle = 70, hjust = 1),
+        panel.grid.major.x = element_blank())+
+            labs(x="Date (Years BC)", y="Aoristic Sums per Tomb")+
+               scale_fill_brewer(palette = "Set3")+
+                scale_x_reverse()+
+                  scale_y_continuous(limits=c(0,20))+geom_label(data=subset(aorist_melt,value>19),aes(label=tomb))
 
 ```
 
-```{r }
+
+
+```{r dpi=300}
 tombs_gini<-matrix(0, ncol = 0, nrow = 1)
 tombs_gini<-data.frame(tombs_gini)
 for(i in colnames(aorist_tomb_values[2:51])) {
   tombs_gini[[paste0(i)]] <- ineq(aorist_tomb_values[[i]],type="Gini")
 }
 
-View(tombs_gini)
 
 tombs_gini<-t(tombs_gini)
 tombs_gini<-data.frame(tombs_gini)
@@ -543,7 +641,7 @@ rects$col<-factor(rects$col,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG
 
 ggplot() + 
   geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf, fill = col), alpha = 0.4) +
-     geom_line(data = tombs_gini, aes(decade,gini_coefficient),size=1)+
+     geom_line(data = tombs_gini, aes(decade,gini_coefficient),size=0.5)+
       theme_bw()+theme(legend.title=element_blank(),
           text=element_text(family="Garamond", size=12))+
               labs(x="Date (Years BC)", y="Gini Coefficient")+
@@ -555,7 +653,7 @@ plot(Lc(aorist_tomb_values$`800`))
 ```
 
 
-We can also make a table (Table \@ref(tab:a-table))
+
 
 
 
@@ -563,7 +661,7 @@ We can also make a table (Table \@ref(tab:a-table))
 ```{r aorist_burials}
 
 
-aorist_pithoi<-colSums(pithoi[24:73])
+aorist_pithoi<-colSums(pithoi[25:74])
 aorist_pithoi<-data.frame(aorist_pithoi)
 
 colnames(aorist_pithoi)<-c("aoristic_sum")
@@ -572,7 +670,7 @@ aorist_pithoi<-data.frame(aorist_pithoi)
 setDT(aorist_pithoi, keep.rownames = "decade")
 aorist_pithoi$decade<-as.numeric(aorist_pithoi$decade)
 
-aorist_all_urns<-colSums(all_urns[24:73])
+aorist_all_urns<-colSums(all_urns[25:74])
 aorist_all_urns<-data.frame(aorist_all_urns)
 
 colnames(aorist_all_urns)<-c("aoristic_sum")
