@@ -547,10 +547,53 @@ Table: Table 1 The number of pithoi (as a proxy for burials) deposited in tombs 
 
 The significance of these findings can be seen in Table 1. Taking the number of pithoi present in each tomb as a proxy for burials, we can estimate the changing rates of burial through the centuries. And while for most of the cemeteries' lives the burial rate remained around three per tomb per century, in the 8th and 7th centuries tombs founded in the 9th century saw a rapid rise in the rate of burial, peaking at around 12 per tomb per century. Though these estimates are no doubt very rough, the marked nature of this divergence between the 9th century tombs and the rest suggests it is not simply an artefact of imperfect data.
 
+Also apparent from Table 1, though, are the markedly low rates of burial which edominated at both cemeteries. Two to four burials per tomb per century amounts to a very selective burial rite, even considering the restricted portion of the population probably represented by these cemeteries [@Cavanagh1996, 664]. It seems unlikely, then, that the rising rates of burial noted above are, for instance, the direct result of population growth; the increase seems too rapid, and is concentrated only in certain (odler) tombs, not to mention that, based on KULP’s survey data, the major population increase at EIA Knossos should be dated a century or more before the late 8th century peak in burial, in the Protogeometric period (Whitelaw, per comm.).
 
-```{r boxplot,  fig.dim=c(9,5), dpi=300,}
+We might assume that the tombs which became the focus of intense burial activity in the late 8th and early 7th centuries would be those which yielded the most burials and grave goods when excavated. Certainly, the largest 12 tombs are all chamber tombs, with 10 dating to the 9th century, and two to the 10th. But looking more closely at the aoristic sums of their assemblages through time, not all of them appear to have exhibited the noted intensification of burial activity into the Orientalising period.
 
-ggplot(tombs,aes(total_finds))+geom_histogram()+xlim(0,200)
+```{r top_tombs, fig.dim = c(7, 5), dpi=300, fig.align='center',fig.cap="Aoristic sums for the 12 largest tombs (in terms of grave goods), arranged in decreasing order of total recovered artefacts. Note, for the sake of better illustrating the relative patterns, rather than absolute values, the scales on each plot are distinct."}
+
+cols<-c(1,158:207)
+aorist_all_tomb_names<-tombs_top_20[,cols]
+aorist_all_tomb_names<-data.frame(aorist_all_tomb_names)
+colnames(aorist_all_tomb_names)<-c("tomb",dates)
+
+aorist_all_tomb_melt<-melt(aorist_all_tomb_names)
+aorist_all_tomb_melt$variable<-as.numeric(as.character(aorist_all_tomb_melt$variable))
+
+top_20<-tombs_top_20$tomb
+aorist_all_tomb_melt$tomb<-factor(aorist_all_tomb_melt$tomb,levels=top_20)
+
+
+ggplot(aorist_all_tomb_melt,aes(variable, value))+geom_col()+theme(legend.position = "none")+facet_wrap(~tomb,scales="free_y")+
+  geom_col()+theme_bw()+theme(legend.title=element_blank(),
+      text=element_text(family="Garamond", size=12))+
+          labs(x="Date (Years BC)", y="Aoristic Sums")+
+              scale_fill_brewer(palette = "Set3")+ 
+                theme(legend.position="none")+
+                  coord_cartesian(xlim=c(1100,610))+scale_y_continuous()+
+                    scale_x_reverse(expand = c(0, 0),limits=c(1100,610))+
+                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+                  
+```
+
+From Figure \@ref(fig:top_tombs), we can see that, though seven of the 12 did exhibit late, intense episodes of deposition, tombs X, G, Q, 104 and 283 evince a different pattern, with their respective peaks coming in the PGB and EG periods, around a century earlier. We have seen already in Figure \@ref(fig:aoristbycem) that, particularly in the KNC, the end of the 9th century was another period of increased burial activity
+
+```{r boxplot,  fig.dim=c(7,4), dpi=300,}
+
+
+tombs_top_20<-head(tombs_ranked,20)
+top20<-as.vector(tombs_top_20$tomb)
+pots_top_20$tomb<-factor(pots_top_20$tomb,levels=top20)
+
+pots_top_20<-pots[is.element(pots$tomb, top20),]
+pots_top_20_9th_7th<-subset(pots_top_20,century=="9th"|century=="8th"|century=="7th")
+ggplot(pots_top_20_9th_7th,aes(tomb,fill=tomb_century))+geom_bar()+facet_wrap(~century)
+
+tombs$group<-ifelse(tombs$tomb=="X"|tombs$tomb=="G"|tombs$tomb=="Q"|tombs$tomb=="104"|tombs$tomb=="283","A",
+                   ifelse(tombs$tomb=="P"|tombs$tomb=="292"|tombs$tomb=="75"|tombs$tomb=="107"|tombs$tomb=="285"|tombs$tomb=="II"|tombs$tomb=="218","B","OTHER"))
+names(tombs)
+ggplot(tombs,aes(antique,fill=group))+geom_histogram()
 
 aorist_tomb_values<-tombs[c(1,158:207)]
 aorist_tomb_values[aorist_tomb_values == 0] <- NA
@@ -583,34 +626,31 @@ aorist_melt$period<-factor(aorist_melt$period,levels=c("SM", "EPG", "MPG", "LPG"
 aorist_melt$variable<-as.numeric(as.character(aorist_melt$variable))
 
 
-ggplot(aorist_melt,aes(variable,value,fill=period))+geom_boxplot(aes(group = cut_width(variable, 10)))+theme_bw()+
+
+ggplot(aorist_melt,aes(variable,value,fill=period,outlier.size=0.3))+geom_boxplot(aes(group = cut_width(variable, 10)))+theme_bw()+
       theme(legend.title=element_blank(),
         text=element_text(family="Garamond", size=12),
         axis.text.x = element_text(angle = 70, hjust = 1),
         panel.grid.major.x = element_blank())+
             labs(x="Date (Years BC)", y="Aoristic Sums per Tomb")+
                scale_fill_brewer(palette = "Set3")+
-                scale_x_reverse()+
-                  scale_y_continuous()+
-                  facet_zoom(x=variable<900& variable>640,y=value<20)
-                    
-
-
-ggplot(aorist_melt,aes(variable,value,fill=period))+geom_boxplot(aes(group = cut_width(variable, 10)))+theme_bw()+
-      theme(legend.title=element_blank(),
-        text=element_text(family="Garamond", size=12),
-        axis.text.x = element_text(angle = 70, hjust = 1),
-        panel.grid.major.x = element_blank())+
-            labs(x="Date (Years BC)", y="Aoristic Sums per Tomb")+
-               scale_fill_brewer(palette = "Set3")+
-                scale_x_reverse()+
-                  scale_y_continuous(limits=c(0,20))+geom_label(data=subset(aorist_melt,value>19),aes(label=tomb))
-
+                scale_x_reverse(expand=c(0,0))+
+                  scale_y_continuous(expand=c(0,0),limits=c(0,20))
+names(tombs)
+tombs$century_built<-factor(tombs$century_built,levels=c("11th","10th","9th","8th","7th"))
+ggplot(tombs,aes(start_period,dromos_length))+geom_boxplot()
+ggplot(data=subset(pots,pots$import=="Y"),aes(period))+geom_histogram()+xlim(1100,630)
 ```
 
 
 
 ```{r dpi=300}
+aorist_tomb_values<-tombs[c(1,158:207)]
+aorist_tomb_values[aorist_tomb_values == 0] <- NA
+
+aorist_tomb_values<-data.frame(aorist_tomb_values)
+colnames(aorist_tomb_values)[2:51]<-dates
+
 tombs_gini<-matrix(0, ncol = 0, nrow = 1)
 tombs_gini<-data.frame(tombs_gini)
 for(i in colnames(aorist_tomb_values[2:51])) {
@@ -627,12 +667,6 @@ tombs_gini<-data.frame(tombs_gini)
 setDT(tombs_gini, keep.rownames = "decade")
 tombs_gini$decade<-as.numeric(tombs_gini$decade)
 
-ggplot(tombs_gini,aes(decade,gini_coefficient))+geom_line()+
-      xlim(1100,600)+ylim(0.3,0.8)+theme_minimal()+
-        theme(legend.title=element_blank(),
-          text=element_text(family="Garamond", size=12))+
-              labs(x="Date (Years BC)", y="Gini Coefficient")+
-                 scale_fill_brewer(palette = "Set2")
 
 rects <- data.frame(xstart = c(1100,970,920,875,840,810,790,745,70,670,630), 
                     xend = c(970,920,875,840,810,790,745,710,670,630,600), 
@@ -648,7 +682,6 @@ ggplot() +
                  scale_fill_brewer(palette = "Set3")+ coord_cartesian(
                     xlim = c(1100, 600), ylim = c(0.5,0.8))+ scale_x_reverse(expand = c(0, 0),limits=c(1100,600))
 
-plot(Lc(aorist_tomb_values$`800`))
 
 ```
 
@@ -658,186 +691,13 @@ plot(Lc(aorist_tomb_values$`800`))
 
 
 
-```{r aorist_burials}
-
-
-aorist_pithoi<-colSums(pithoi[25:74])
-aorist_pithoi<-data.frame(aorist_pithoi)
-
-colnames(aorist_pithoi)<-c("aoristic_sum")
-row.names(aorist_pithoi)<-dates
-aorist_pithoi<-data.frame(aorist_pithoi)
-setDT(aorist_pithoi, keep.rownames = "decade")
-aorist_pithoi$decade<-as.numeric(aorist_pithoi$decade)
-
-aorist_all_urns<-colSums(all_urns[25:74])
-aorist_all_urns<-data.frame(aorist_all_urns)
-
-colnames(aorist_all_urns)<-c("aoristic_sum")
-row.names(aorist_all_urns)<-dates
-aorist_all_urns<-data.frame(aorist_all_urns)
-setDT(aorist_all_urns, keep.rownames = "decade")
-aorist_all_urns$decade<-as.numeric(aorist_all_urns$decade)
-
-ggplot(NULL)+geom_col(data=aorist_all_urns,aes(decade,aoristic_sum,fill="All urns"))+
-  geom_col(data=aorist_pithoi,aes(decade,aoristic_sum,fill="Pithoi"))+
-      xlim(1100,630)+theme_minimal()+
-        theme(legend.title=element_blank(),
-          text=element_text(family="Garamond", size=12))+
-              labs(x="Date (Years BC)", y="Aoristic Density")+
-                 scale_fill_brewer(palette = "Set2")
-
-
-```
-
-```{r aorist_tomb_adjust}
-
-no_tombs<-colSums(tombs[158:207]!=0)
-no_tombs<-data.frame(no_tombs)
-colnames(no_tombs)<-c("no_tombs")
-row.names(no_tombs)<-dates
-no_tombs<-data.frame(no_tombs)
-setDT(no_tombs, keep.rownames = "decade")
-no_tombs$decade<-as.numeric(no_tombs$decade)
-
-aorist_all_tombs1<-aorist_all_tombs
-aorist_by_tomb<-merge(aorist_all_tombs1,no_tombs)
-
-aorist_by_tomb$aorist_by_tomb<-aorist_by_tomb$aoristic_sum/aorist_by_tomb$no_tombs
-
-ggplot(aorist_by_tomb,aes(decade,aorist_by_tomb))+geom_col()+xlim(1100,600)
-
-#Now for the 9th century tombs
-
-tombs_9th<-subset(tombs,tombs$century_built=="9th")
-no_tombs_9th<-colSums(tombs_9th[158:207]!=0)
-
-View(tombs_9th)
-no_tombs_9th<-data.frame(no_tombs_9th)
-colnames(no_tombs_9th)<-c("no_tombs")
-row.names(no_tombs_9th)<-dates
-no_tombs_9th<-data.frame(no_tombs_9th)
-setDT(no_tombs_9th, keep.rownames = "decade")
-no_tombs_9th$decade<-as.numeric(no_tombs_9th$decade)
-
-aorist_tombs_9th<-colSums(tombs_9th[158:207])
-aorist_tombs_9th<-data.frame(aorist_tombs_9th)
-colnames(aorist_tombs_9th)<-c("aoristic_sum")
-row.names(aorist_tombs_9th)<-dates
-aorist_tombs_9th<-data.frame(aorist_tombs_9th)
-setDT(aorist_tombs_9th, keep.rownames = "decade")
-aorist_tombs_9th$decade<-as.numeric(aorist_tombs_9th$decade)
-
-aorist_by_tomb_9th<-merge(aorist_tombs_9th,no_tombs_9th)
-aorist_by_tomb_9th$aorist_by_tomb<-aorist_by_tomb_9th$aoristic_sum/aorist_by_tomb_9th$no_tombs
-
-ggplot()+geom_col(data=aorist_by_tomb_9th,aes(decade,aorist_by_tomb,fill="9th Century Tombs"))+
-  geom_col(data=aorist_by_tomb,aes(decade,aorist_by_tomb, fill="All Tombs"),alpha=0.7)+
-    xlim(1100,600)+theme_minimal()+
-        theme(legend.title=element_blank(),
-          text=element_text(family="Garamond", size=12))+
-              labs(x="Date (Years BC)", y="Aoristic Density/Number of Tombs Represented")+
-                 scale_fill_brewer(palette = "Set2")
-
-names(tombs)
-tombs_in_use<-colSums(tombs[6:15]!="")
-tombs_in_use<-data.frame(tombs_in_use)
-colnames(tombs_in_use)<-c("no_tombs")
-tombs_in_use<-data.frame(tombs_in_use)
-setDT(tombs_in_use, keep.rownames = "period")
-tombs_in_use$period<-factor(tombs_in_use$period,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO"))
-
-
-ggplot(no_tombs_9th,aes(decade,no_tombs, fill="Tombs in Use"))+geom_col()+theme_classic()+
-     theme(legend.title=element_blank(),
-          text=element_text(family="Garamond", size=12))+
-            xlim(1100,600)+
-              labs(x="Date (Years BC)", y="Number of Tombs in Use")+
-                 scale_fill_brewer(palette = "Set2")
-
-ggplot(tombs_in_use,aes(period,no_tombs, fill="Tombs in Use"))+geom_col()+theme_classic()+
-        theme(legend.title=element_blank(),
-          text=element_text(family="Garamond", size=12))+
-              labs(x="Period", y="Number of Tombs in Use")+
-                 scale_fill_brewer(palette = "Set2")
-
-ggplot(tombs,aes(start_period, fill=tomb_type_condensed))+geom_bar()+theme_classic()+
-        theme(legend.title=element_blank(),
-          text=element_text(family="Garamond", size=12))+
-              labs(x="Period", y="Number of New Tombs")+
-                 scale_fill_brewer(palette = "Set2")
 
 
 
-```
 
 
-```{r rates of burials}
-
-tombs_ranked<-tombs[with(tombs, order(-tombs$total_pottery)), ]
-tombs_top_12<-head(tombs_ranked,12)
-
-View(tombs_top_12)
-
-no_tombs_top<-colSums(tombs_top_12[158:207]!=0)
-
-no_tombs_top<-data.frame(no_tombs_top)
-colnames(no_tombs_top)<-c("no_tombs")
-row.names(no_tombs_top)<-dates
-no_tombs_top<-data.frame(no_tombs_top)
-setDT(no_tombs_top, keep.rownames = "decade")
-no_tombs_top$decade<-as.numeric(no_tombs_top$decade)
 
 
-aorist_tombs_top<-colSums(tombs_top_12[158:207])
-aorist_tombs_top<-data.frame(aorist_tombs_top)
-colnames(aorist_tombs_top)<-c("aoristic_sum")
-row.names(aorist_tombs_top)<-dates
-aorist_tombs_top<-data.frame(aorist_tombs_top)
-setDT(aorist_tombs_top, keep.rownames = "decade")
-aorist_tombs_top$decade<-as.numeric(aorist_tombs_top$decade)
-
-
-aorist_by_tomb_top<-merge(aorist_tombs_top,no_tombs_top)
-aorist_by_tomb_top$aorist_by_tomb<-aorist_by_tomb_top$aoristic_sum/aorist_by_tomb_top$no_tombs
-
-
-ggplot()+geom_col(data=aorist_by_tomb_top,aes(decade,aorist_by_tomb,fill="12 Largest Tombs"))+
-  geom_col(data=aorist_by_tomb,aes(decade,aorist_by_tomb, fill="All Tombs"),alpha=0.7)+
-    xlim(1100,600)+theme_minimal()+
-        theme(legend.title=element_blank(),
-          text=element_text(family="Garamond", size=12))+
-              labs(x="Date (Years BC)", y="Aoristic Density/Number of Tombs Represented")+
-                 scale_fill_brewer(palette = "Set2")
-
-```
-
-```{r top_tombs, fig.dim = c(7, 5), dpi=300, fig.align='center',}
-
-cols<-c(1,158:207)
-aorist_all_tomb_names<-tombs_top_12[,cols]
-aorist_all_tomb_names<-data.frame(aorist_all_tomb_names)
-colnames(aorist_all_tomb_names)<-c("tomb",dates)
-
-aorist_all_tomb_melt<-melt(aorist_all_tomb_names)
-str(aorist_all_tomb_melt)
-aorist_all_tomb_melt$variable<-as.numeric(as.character(aorist_all_tomb_melt$variable))
-
-top_12<-tombs_top_12$tomb
-aorist_all_tomb_melt$tomb<-factor(aorist_all_tomb_melt$tomb,levels=top_12)
-
-
-ggplot(aorist_all_tomb_melt,aes(variable, value))+geom_col()+theme(legend.position = "none")+facet_wrap(~tomb)+
-  geom_col()+theme_bw()+theme(legend.title=element_blank(),
-      text=element_text(family="Garamond", size=12))+
-          labs(x="Date (Years BC)", y="Aoristic Sum")+
-              scale_fill_brewer(palette = "Set3")+ 
-                theme(legend.position="none")+
-                  coord_cartesian(ylim=c(0,30),xlim=c(1100,610))+scale_y_continuous(expand=c(0,0))+
-                    scale_x_reverse(expand = c(0, 0),limits=c(1100,610))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
-                  
-```
 
 ```{r cumfreq}
 
