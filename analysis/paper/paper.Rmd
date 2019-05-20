@@ -622,7 +622,7 @@ ggarrange(tombareas,dromoslengths,ncol=2,common.legend = TRUE,legend="bottom")
 
 Looking at , however, it seems that no clear relationship existed between the physical size of a tomb and its buried population at EIA Knossos. It is true that over half of all tombs do not exceed 2.6m2 in area, while nine of the ten tombs with the most burials do surpass this value. But many of the very largest tombs are decidedly middling when it comes to burial numbers. Things are even less clear for the dromos, the most visible part of the tomb, and a plausible arena for demonstrations of scale and grandeur during the burial itself. Admittedly, the very largest two tombs by burial numbers also had exceptionally long dromoi, but the next eight tombs with the largest dromoi do not rank highly when it comes to number of interments. There are difficulties here in that the dromoi especially were common victims of encroachment by later tombs, and our estimates of their original length are tentative in many cases. 
 
-```{r dimensions boxplots}
+```{r dimensions boxplots, fig.dim=c(8,4),dpi=300}
 
 tombs$century_built<-factor(tombs$century_built,levels=c("11th","10th","9th","8th","7th"))
 dromwidth<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,dromos_width,fill=century_built))+geom_boxplot()+
@@ -660,7 +660,7 @@ What these figures do suggest, though, is that if tomb size carried a social mea
 
 Though it may not be immediately apparent from the dimensions of the tombs, however, the late 9th and early 8th centuries are consistently interpreted as periods of artistic development, increased overseas trade, and renewed vigour in the construction of tombs and the visibility of the burial rite. The PGB style, first identified by Brock, purportedly reflects a uniquely Cretan (perhaps even Knossian) melding of Attic and Near Eastern forms and motifs, while the appearance of Bronze Age 'antiques' in the tombs from this period onwards is felt to reflect renewed, even competitive interest in the Minoan past, as a tool for mortuary display or even lineage affirmation. We can 
 
-```{r}
+```{r imports, fig.dim=c(6,4),dpi=300}
 
 imports<-subset(pots,pots$import!="")
 greekimports<-subset(imports,imports$import_region=="Greece")
@@ -786,7 +786,7 @@ ggplot()+ geom_col(data=subset(all_import_aorist,century!="7th" & century!="8th"
 
 Leaving aside the later tombs for a moment, we can see in Figure ... that the tombs already built by the end of the PGB period, particularly those built in the 9th and, to a lesser extent, 10th centuries, were major beneficiaries of the influx of imported items during this time, but that, in the following centuries, in line with the rest of the cemetery, the number of imported items deposited within them declined. Imported ceramics are used here as something of a proxy for items of status value, a shorthand that would ideally be bolstered by other artefacts (such as precious vessels, weapons, jewellery etc.) which, owing to their less developed chronologies, must unfortunately be left out of such diachronic analyses. But the beginnings of my final argument are seen here in Figure ..., namely that the late surge in burial activity seen across both cemeteries in the late 8th and early 7th centuries would appear to be of a different kind to that of a century earlier.
 
-```{r}
+```{r bigbox, fig.dim=c(8,4),dpi=300}
 
 aorist_tomb_values<-tombs[c(1,158:207)]
 aorist_tomb_values[aorist_tomb_values == 0] <- NA
@@ -836,7 +836,7 @@ tombP$X650
 
 Figure ... is a boxplot for the aoristic sums of each decade across both cemeteries, colour-coded by ceramic phase. Note that, for clarity, tomb G in the EG period, and tomb P in the late EO-LO period are excluded, with values ranging from 29-34, and 36-44 respectively. The important observation is that the PGB and EG exhibit the largest interquartile ranges (IQRs) of any period, and each possess only a single outlier (beyond 1.5 times the IQR). The Orientalising period, on the other hand, exhibit much reduced IQRs, and a proliferation of outliers far and above the range of the other tombs. In other words, while both the PGB-EG and EO-LO periods witnessed an expanding volume and range of burial activity, in the earlier period this was shared somewhat more equally among the total burying population. One speaks of increasing plurality, the other of divergence.
 
-```{r gini}
+```{r gini, fig.dim=c(7,4),dpi=300}
 
 aorist_tomb_values<-tombs[c(1,158:207)]
 aorist_tomb_values[aorist_tomb_values == 0] <- NA
@@ -879,7 +879,7 @@ ggplot() +
 
 This possibility is furthered somewhat by considering the gini coefficient of the distribution of pottery between the tombs. Using the aoristic sums as a probablistically-weighted estimate of the volume of material deposited in each tomb in each decade, use of the gini coefficient can give an (albeit rough) estimate of how unevenly distributed that material was. And what we see is that, though values were always relatively high (i.e. unequal) within the cemeteries, the major spike in the gini coefficient seen in the Orientalising period contrasts markedly with the modest rise and plateau of the PGB-EG. The gini coefficient is most commonly used in the assessment of income inequality, but I want to stress here that it is not "wealth" in any meaningful sense that we are talking about here. Indeed, if anything, the late flourit of burial activity here discussed may be a case of quantity, and not quality.
 
-```{r}
+```{r comps, fig.dim=c(8,4),dpi=300}
 pots$group<-ifelse(pots$tomb=="P"|pots$tomb=="292"|pots$tomb=="75"|pots$tomb=="107"|pots$tomb=="285"|pots$tomb=="II"|pots$tomb=="218","A","B")
 
 potcompKNC<-ggplot(subset(pots,century!="" & cem_condensed=="NC"),aes(century,fill=type))+geom_bar(position="fill")+
@@ -904,6 +904,8 @@ potcomptop7<-ggplot(subset(pots,century!="" & century!="11th"& group=="A"),aes(c
                       theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
 
 ggarrange(potcompKNC,potcompFOR,potcomptop7,ncol=3,common.legend =TRUE,legend="bottom")
+
+spearmanobjectspots<-cor(tombs$total_object,tombs$total_pottery,method="spearman")
 ```
 
 Figure ... shows the composition of the total pottery assemblage from each cemetery, and from the seven tombs drawn out earlier, through the centuries. In all cases, there appears to be the steady crystallisation of a basic 'burial kit', comprising a pithos and lid, an oil vessel, a jug, and a drinking vessel. The proportion of grave goods comprising 'other' vessels - pyxides, askoi, trays, stands, dinoi, kernoi, kraters, lekanai and more - declines to become only a minor part of the standardised repertoire of the 7th century. The seven tombs that underpinned the dramatic increase in burial activity in the later 8th century did not break with this mould, and their assemblages seem as conventional as any other during the last century of use in the cemeteries.
@@ -911,7 +913,7 @@ Figure ... shows the composition of the total pottery assemblage from each cemet
 It has no doubt been apparent that the main focus of this article has been on pottery and not other artefacts of metal, stone, glass, and organic materials. This is largely because the chronologies for these artefacts are insufficiently developed to allow for the kind of diachronic analysis made thus far. But I do want to briefly comment on one aspect of the distribution of non-ceramic artefacts that may make more sense in the light of the foregoing discussion. There is, perhaps unsurprisingly, a relatively strong (Spearman's rank correlation of `r spearmanobjectspots`) correlation between the number of ceramic and non-ceramic finds across the tombs, and, certainly, many of the most unique and precious objects were recovered from among the larger tombs. But, the monopoly those tombs would appear to have over such objects, perhaps tempting one initially to speak of 'elite' or 'high-status' tombs, evaporates when the number of those objects is divided by the number of burials represented.
 
 
-```{r }
+```{r hists, fig.dim=c(8,4),dpi=300}
 tombs$group<-factor(tombs$group,levels=c("A","B"))
 total_object<-ggplot(subset(tombs,est_burials>1),aes(total_object, fill=group))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
@@ -952,7 +954,7 @@ importsbyburial<-ggplot(subset(tombs,est_burials>1),aes(total_import/est_burials
                   scale_fill_brewer(palette = "Set2",labels=c(" 7 Tombs  ", " Other Tombs"))+
                     scale_y_continuous(expand=c(0,0))+scale_x_continuous(expand=c(0,0))
 
-ggarrange(total_import,total_weapon,total_object,importsbyburial,weaponbyburial,objectsbyburial,ncol=3,nrow=2,common.legend = TRUE,legend="bottom")
+ggarrange(total_import,total_metal,total_object,importsbyburial,metalbyburial,objectsbyburial,ncol=3,nrow=2,common.legend = TRUE,legend="bottom")
 ```
 
 Figure ... thus supports the view which has emerged from the preceeding analysis, that the major increase in burial activity at both Fortetsa and the KNC was not a phenomenon linked in any straightforward way to simple principles of 'elite' or 'wealthy' burial. To summarise, towards the end of 8th century BC, a select group of tombs, all of which had been constructed back in the 9th or 10th, became the foci of a major increase in burials, something which did not occur among the tombs built around the same time. We have seen how this surge in acivity occurred against the backdrop of a declining number of tombs dating back to the 10th and 9th centuries, and I have suggested that the rates of change are too rapid, and unevenly distributed, to be explicable through population growth alone. We have seen how little about the physical dimensions of these tombs presaged their later popularity, and that, while a similar, if smaller, increase in burial activity occurred around a century earlier, in the PGB-EG periods, this contrasts in the comparative diversity of its associated assemblages, and their distribution across the cemetries. The later burials were marked by great uniformity in the associated grave goods, and this apparently limited and consistent repertoire may explain why many of the most used tombs prove exceptional only in the absolute quantity of artefacts, and not the accoutrements of each individual burial.
