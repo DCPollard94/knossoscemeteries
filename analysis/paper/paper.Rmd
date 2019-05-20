@@ -1,5 +1,6 @@
 ---
 title: "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries at Knossos, Crete"
+subtitle: "Early Iron Age Cemeteries at Knossos"
 author:
   - Dominic Pollard, Institute of Archaeology, University College London
   - dominic.pollard.16@ucl.ac.uk
@@ -10,15 +11,14 @@ output:
       reference_docx: "../templates/articletemplate.docx" # Insert path for the DOCX file
 bibliography: Lib.bib
 csl: "../templates/world-archaeology.csl" # Insert path for the bib-style
+
 abstract: |
-  Three principal interests converge in this paper: reorienting the focus of Early Iron Age Cretan archaeology; the application of computational, and quantitative methods to supplement traditional modes of inference; and open-access data and reproducible research. The Early Iron Age cemeteries of Knossos, Crete, represent the richest source of archaeological material at the site for the whole period between the end of the Bronze Age and the emergence of the Archaic *polis*. However, despite well-published excavation reports on the two largest burial grounds, the Fortetsa and Knossos North cemeteries, and a number of studies dealing with various artefact classes and individual tombs therein, no substantial comparative, quantitative analysis of these two cemeteries has yet been undertaken. This paper provides such an analysis, examining both the synchronic and diachronic variation among the tombs in these two cemeteries. Through the application of a range of quantitative techniques, this study isolates a pattern of increased rates of burial among a few select tombs, and further considers their characteristics. This paper demonstrates the potential for quantitative analyses to contribute to nuanced, context-specific theories of social practice, and advocates their wider application to the archaeological record of the Cretan Early Iron Age. It also serves as a demonstration of maximal research reproducibility, with the full datasets and code underpinning the analysis made freely available to download and use.
+  The Early Iron Age cemeteries of Knossos, Crete, represent the richest source of archaeological material at the site between the end of the Bronze Age and the emergence of the Archaic *polis*. However, despite well-published excavation reports on the two largest burial grounds and a number of studies dealing with various artefacts and individual tombs therein, no substantial comparative, quantitative analysis has yet been undertaken. This paper does just that, and in so doing identifies, and attempts to explain, a pattern of increased burial rates among a few select tombs. This paper demonstrates the potential for quantitative analyses to contribute towards nuanced, context-specific theories of social practice, and advocates their wider application to the archaeological record of the Cretan Early Iron Age. It also serves as a demonstration of maximal research reproducibility, with the full datasets and code underpinning the analysis made freely available to download and use.
 keywords: |
   Early Iron Age; Knossos; Burial; Quantitative; Open-Access; Reproducibility
 
 ---
 
-
-<!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
@@ -34,10 +34,7 @@ knitr::opts_chunk$set(
 
 #The appropriate packages are installed. Extrafont allows the use of non-standard fonts in R plots, ggplot2 is a powerful figure and graph plotting tool, and RColorBrewer includes a number of colour pallettes which can be applied to plots. The colour scheme in this paper is chosen from those that are suitable for colour-blind readers. The font Garmond is installed and stored.
 library(ggpubr)
-library(cowplot)
-library(gridExtra)
 library(ineq)
-library(ggrepel)
 library(reshape)
 library(data.table)
 library(extrafont)
@@ -53,7 +50,7 @@ loadfonts(device="win")
 ```
 
 # Introduction
-It may be felt that, of all ancient sites on Crete, Knossos is the last in need of further archaeological attention. The city and ‘palace’ of Knossos, first excavated well over a century ago [@Evans1921; -@Evans1928; -@Evans1930], retain a pre-eminent position in popular and academic accounts the island’s Bronze Age, and few, if any, other Cretan sites have been so thoroughly dug, reconstructed, and contested. However, there are reasons why the present study – a quantitative comparison of the two largest Early Iron Age cemeteries at Knossos – is not only justified, but also timely.
+Three principal interests converge in this paper: reorienting the focus of Early Iron Age Cretan archaeology; the application of computational, and quantitative methods to supplement traditional modes of inference; and open-access data and reproducible research.It may be felt that, of all ancient sites on Crete, Knossos is the last in need of further archaeological attention. The city and ‘palace’ of Knossos, first excavated well over a century ago [@Evans1921; -@Evans1928; -@Evans1930], retain a pre-eminent position in popular and academic accounts the island’s Bronze Age, and few, if any, other Cretan sites have been so thoroughly dug, reconstructed, and contested. However, there are reasons why the present study – a quantitative comparison of the two largest Early Iron Age cemeteries at Knossos – is not only justified, but also timely.
 
 For one, this is not the Knossos of that illustrous, palatial period, but rather the town as it persisted and evolved during the subsequent Early Iron Age (EIA), about which much less is known. Research into this once maligned period has grown apace in the last few decades. What began as a reframing of the the twelth-seventh centuries as the gestational period of the later classical Greek world [first seen in the works of @Coldstream1977; @Desborough1972; @Snodgrass1971] has culimated in the complete rejection by many scholars of the image of a society bereft of its former palatial glory. Certainly, few would any longer defend the appelation or interpretive bagguage of the ‘Dark Ages’ [on the origins of which, see @Kotsonas2016; @Morris1997].Nonetheless, our knowledge of many EIA settlements (both new foundations, and those with BA ancestry like Knossos) remains often underdeveloped in comparison with those of the second millennium BC. 
 
@@ -156,8 +153,9 @@ p<-ggplot(tombs)+geom_point(aes(est_burials,all_urns,color="All urns"))+
   geom_point(aes(est_burials,total_burials,color="Known interments"))+
     geom_point(aes(est_burials,pithoi,colour="Pithoi"))+
       geom_line(aes(est_burials,est_burials),alpha=0.4)+
-       xlim(0,60)+ylim(0,60)+theme_minimal()+
-        theme(legend.title=element_blank(),
+       scale_x_continuous(expand=c(0,0),limits=c(0,55))+
+        scale_y_continuous(expand=c(0,0),limits=c(0,55))+theme_bw()+
+         theme(legend.title=element_blank(),
           text=element_text(family="Garamond", size=12))+
               labs(x="Mean Burial Estimate", y="Interment/Vessel Count")+
                  scale_color_brewer(palette = "Set2")
@@ -189,7 +187,7 @@ all_urns<-subset(pots,pots$shape=="Pithos"|pots$shape=="Amphora"|pots$shape=="Kr
 ggplot(pots, aes(ave_date,fill="Pots"))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
       text=element_text(family="Garamond", size=12))+
-          labs(x="Date (Years BC)", y="Total Vessel Counts")+
+          labs(x="Date (Years BC)", y="Vessel Count")+
               scale_fill_brewer(palette = "Set3")+ 
                 theme(legend.position="none")+
                   scale_y_continuous(expand=c(0,0),limits=c(0,600))+
@@ -336,7 +334,7 @@ Figure \@ref(fig:aoristbycem) presents the aoristic sums of pithoi (as a proxy f
 
 The near total absence of pithoi from the 11th and early 10th centuries reflects the delayed onset of cremation burial, with inhumations representing a significant proportion of earlier interments. Nonetheless, the clear inference would appear to be that, at both cemeteries, the late 8th and early 7th centuries witnessed an unprecedented level of burial activity, something which makes the sudden and total decline of chamber-tomb burials around 630 BC even more notable. We might assume that these developments would be mirrored in the construction of new tombs, but this proves not to be the case.
 
-```{r tombconstruction, fig.dim=c(8,4), dpi=300, fig.cap="Visulations of tomb construction through time at both cemeteries. On the left are counts based on the earliest dated pottery in each tomb, while on the left are aoristic sums likewise based on the earliest ceramic-based assignations. In both cases, tombs lacking any securely dateable pottery (i.e. N/As) are excluded."}
+```{r tombconstruction, fig.dim=c(7.5,4), dpi=300, fig.cap="Visulations of tomb construction through time at both cemeteries. On the left are counts based on the earliest dated pottery in each tomb, while on the left are aoristic sums likewise based on the earliest ceramic-based assignations. In both cases, tombs lacking any securely dateable pottery (i.e. N/As) are excluded."}
 
 tomb_dates_aorist<-read.csv("../data/derived_data/tomb_dates_aorist.csv",header=TRUE)
 tomb_dates_aorist_KNC<-subset(tomb_dates_aorist,tomb_dates_aorist$cem_condensed=="NC")
@@ -454,10 +452,10 @@ tomb_use$tomb_century<-factor(tomb_use$tomb_century,levels=c("11th","10th","9th"
 
 ggplot(data=tomb_use,aes(period,no_tombs))+geom_col(alpha=0.2)+
             geom_col(data=tomb_use,aes(period,no_tombs,fill=tomb_century),position="dodge")+
-              theme_bw()+theme(legend.title=element_blank(),
-               text=element_text(family="Garamond", size=12))+
+              theme_bw()+theme(text=element_text(family="Garamond", size=12))+
                  labs(x="Period", y="Estimated No. of Tombs in Use")+
-                  scale_fill_brewer(palette = "Set2")+ 
+                  scale_fill_brewer(name="Century 
+Built",palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0),limits=c(0,60))
 
 
@@ -465,7 +463,7 @@ ggplot(data=tomb_use,aes(period,no_tombs))+geom_col(alpha=0.2)+
 
 Figure \@ref(fig:tombsinusebybuilddate) presents the number of tombs in use in each period, divided by the centuries in which those tombs were constructed, all overlaid on the total number of tombs in use across both cemeteries. Perhaps unsurprisingly, a wave-like pattern can be observed with each century marked by the construction of new tombs which then steadily go out of use, as new ones are built. This would seem to accord with Cavanagh's suggestion that "[t]he length of time the tombs last seems [...] to reflect the duration of the social group which had access to the sepulchre", and perhaps even that this access was lineally inehrited, leading to frequent fission and, thus, limited trans-generational use. However, something else is going here, which can only be appreciated by considering which tombs became the focus of the intense period of depositional activity in the late 8th and erly 7th centuries.  
 
-```{r potsbydateandtombdate,  fig.dim=c(8,4), dpi=300, fig.cap="Counts of vessels from across all tombs in both cemeteries, arranged, on the left, by the century to which they are assigned based on their ceramic period and, on the right, by the centuries in which the tombs they come from were built."}
+```{r potsbydateandtombdate,  fig.dim=c(7,4), dpi=300, fig.cap="Counts of vessels from across all tombs in both cemeteries, arranged, on the left, by the century to which they are assigned based on their ceramic period and, on the right, by the centuries in which the tombs they come from were built."}
 
 pots$century<-factor(pots$century,levels=c("11th","10th","9th","8th","7th"))
 pots$tomb_century<-factor(pots$tomb_century,levels=c("11th","10th","9th","8th","7th"))
@@ -473,14 +471,14 @@ pots$tomb_century<-factor(pots$tomb_century,levels=c("11th","10th","9th","8th","
 date_by_vessel<-ggplot(data=subset(pots,pots$century!=""),aes(century,fill="Date"))+geom_bar()+
   theme_bw()+theme(legend.position="none",
                text=element_text(family="Garamond", size=12))+
-                 labs(x="Century (Date of Vessel)", y="Vessel Count")+
+                 labs(x="Century BC (Date of Vessel)", y="Vessel Count")+
                   scale_fill_brewer(palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0),limits=c(0,2800))
   
-date_by_tomb<-ggplot(pots,aes(tomb_century,fill="Date"))+geom_bar()+
+date_by_tomb<-ggplot(data=subset(pots,pots$century!=""),aes(tomb_century,fill="Date"))+geom_bar()+
   theme_bw()+theme(legend.position="none",
                text=element_text(family="Garamond", size=12))+
-                 labs(x="Century (Date of Tomb)", y="")+
+                 labs(x="Century BC (Date of Tomb)", y="Vessel Count")+
                   scale_fill_brewer(palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0),limits=c(0,2800))
 
@@ -525,6 +523,7 @@ notombs7th7th<-nrow(unique(subset(pithoi,tomb_century=="7th" & century=="7th",se
 
 ```
 
+##### pagebreak
 
 |**Tombs**          | **Date of pithoi (burials)**| **No. of pithoi (burials)**| **Number of tombs represented** | **Burials per tomb**                   |
 |-------------------|--------------------------|-------------------------|-----------------------------|--------------------------------------------------|
@@ -594,13 +593,13 @@ In Figure \@ref(fig:toptombs), we see that, seven of the 12 did exhibit late, in
 
 The indices discussed so far – the distribution of of artefacts between the tombs, and the construction and use of the tombs through time – only inform us of the temporal or aggregate features of the cemeteries; they tell us little of the tombs as they were built or first used. Synchronic comparisons are harder to make with the available data, but the dimensions of the tombs offer some scope for doing so.
 
-```{r tombdimensions, fig.dim = c(7.5, 4), dpi=300, fig.align='center', fig.cap="Scatterplots "}
+```{r tombdimensions, fig.dim = c(7.5, 4), dpi=300, fig.align='center', fig.cap="Scatterplots comparing tomb dimensions (chamber area and *dromos* length) to estimated total burials by tomb."}
 
 tombareas<-ggplot(subset(tombs,tombs$est_burials>1),aes(chamber_area,est_burials,color=cem_condensed))+geom_point()+
   theme_bw()+theme(legend.title=element_blank(),
         text=element_text(family="Garamond", size=12))+
-            labs(x="Chamber Area (m2)", y="Estimated Total Burials")+
-               scale_color_brewer(palette = "Set2")+
+            labs(x=bquote('Chamber Area ('*m^2*')'), y="Estimated Total Burials")+
+               scale_color_brewer(palette = "Set2",labels=c(" KNC  "," Fortetsa"))+
                 scale_x_continuous(expand=c(0,0),limits=c(0,10))+
                   scale_y_continuous(expand=c(0,0),limits=c(0,50))+
                       theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
@@ -608,8 +607,8 @@ tombareas<-ggplot(subset(tombs,tombs$est_burials>1),aes(chamber_area,est_burials
 dromoslengths<-ggplot(subset(tombs,tombs$est_burials>1),aes(dromos_length,est_burials,color=cem_condensed))+geom_point()+
   theme_bw()+theme(legend.title=element_blank(),
         text=element_text(family="Garamond", size=12))+
-            labs(x="Dromos Length (m)", y="")+
-               scale_color_brewer(palette = "Set2")+
+            labs(x="Dromos Length (m)", y="Estimated Total Burials")+
+               scale_color_brewer(palette = "Set2",labels=c(" KNC  "," Fortetsa"))+
                 scale_x_continuous(expand=c(0,0),limits=c(0,10))+
                   scale_y_continuous(expand=c(0,0),limits=c(0,50))+
                       theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
@@ -622,31 +621,31 @@ ggarrange(tombareas,dromoslengths,ncol=2,common.legend = TRUE,legend="bottom")
 
 Looking at , however, it seems that no clear relationship existed between the physical size of a tomb and its buried population at EIA Knossos. It is true that over half of all tombs do not exceed 2.6m2 in area, while nine of the ten tombs with the most burials do surpass this value. But many of the very largest tombs are decidedly middling when it comes to burial numbers. Things are even less clear for the dromos, the most visible part of the tomb, and a plausible arena for demonstrations of scale and grandeur during the burial itself. Admittedly, the very largest two tombs by burial numbers also had exceptionally long dromoi, but the next eight tombs with the largest dromoi do not rank highly when it comes to number of interments. There are difficulties here in that the dromoi especially were common victims of encroachment by later tombs, and our estimates of their original length are tentative in many cases. 
 
-```{r dimensions boxplots, fig.dim=c(8,4),dpi=300}
+```{r dimensionsboxplots, fig.dim=c(6,5),dpi=300, fig.align='center',fig.cap="Boxplots comparing various tomb dimensions as they vary by the century of tomb construction."}
 
 tombs$century_built<-factor(tombs$century_built,levels=c("11th","10th","9th","8th","7th"))
 dromwidth<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,dromos_width,fill=century_built))+geom_boxplot()+
   theme_bw()+theme(legend.position="none",
                text=element_text(family="Garamond", size=12))+
-                 labs(x="Century of Tomb Construction", y="Dromos Width")+
+                 labs(x="Century of Tomb Construction", y="Dromos Width (m)")+
                   scale_fill_brewer(palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0.1))
 dromlength<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,dromos_length,fill=century_built))+geom_boxplot()+
   theme_bw()+theme(legend.position="none",
                text=element_text(family="Garamond", size=12))+
-                 labs(x="Century of Tomb Construction", y="Dromos Length")+
+                 labs(x="Century of Tomb Construction", y="Dromos Length (m)")+
                   scale_fill_brewer(palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0.5))
 stomwidth<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,stomion_width,fill=century_built))+geom_boxplot()+
   theme_bw()+theme(legend.position="none",
                text=element_text(family="Garamond", size=12))+
-                 labs(x="Century of Tomb Construction", y="Stomion Width")+
+                 labs(x="Century of Tomb Construction", y="Stomion Width (m)")+
                   scale_fill_brewer(palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0.1))
 chamarea<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,chamber_area,fill=century_built))+geom_boxplot()+
   theme_bw()+theme(legend.position="none",
                text=element_text(family="Garamond", size=12))+
-                 labs(x="Century of Tomb Construction", y="Chamber Area")+
+                 labs(x="Century of Tomb Construction", y=bquote('Chamber Area ('*m^2*')'))+
                   scale_fill_brewer(palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0.5))
 
@@ -658,9 +657,32 @@ Looking at ... we can see that, through the centuries, the dimensions of the tom
 
 What these figures do suggest, though, is that if tomb size carried a social meaning at the time of construction, this proved irrelevant in the selection of certain tombs for extensive later reuse. That is, the tomb’s later popularity seems not have been foreseen. Many large tombs had niches cut in their dromoi, or the stomion extended, to fit in later burial urns. Sometimes, urns from within the tomb itself were placed in such niches to make space for new interments in the chamber itself. There is an impression of individuals vying to be included in the chamber itself. That extra space had to be made, and competition was fierce for inclusion into the sepulchral group, supports the idea that the tombs’ original builders little anticipated their eventual popularity and so did not scale their tombs accordingly. 
 
+```{r tombscompthroughtime, fig.dim=c(7,4),dpi=300,fig.align='center',fig.cap="Counts of vessels belonging to the 9th, 8th and 7th centuries, found in tombs dating to the 10th or 9th century which yielded upwards of 50 vessels when excavated. The seven large tombs with late peaks in burial activity identified earlier are shown in green."}
+
+
+pots$group<-ifelse(pots$tomb=="P"|pots$tomb=="292"|pots$tomb=="75"|pots$tomb=="107"|pots$tomb=="285"|pots$tomb=="II"|pots$tomb=="218","A","B")
+tombs9th10th<-subset(tombs,century_built=="9th" & total_pottery>50|century_built=="10th" & total_pottery>50)
+pots9th10th<-subset(pots,tomb_century=="9th"|tomb_century=="10th")
+
+tombs9th10th_ranked<-tombs9th10th[with(tombs9th10th, order(-tombs9th10th$total_pottery)), ]
+tombs9th10th_ranked<-as.vector(tombs9th10th_ranked$tomb)
+pots9th10th$tomb<-factor(pots9th10th$tomb,levels=tombs9th10th_ranked)
+pots9th10th<-subset(pots9th10th,century=="9th" & tomb!="NA"|century=="8th" & tomb!="NA"|century=="7th" & tomb!="NA")
+pots9th10th$century<-mapvalues(pots9th10th$century, from = c("9th","8th","7th"), to = c("9th Century", "8th Century","7th Century"))
+
+
+ggplot(pots9th10th,aes(tomb,fill=group))+geom_bar()+
+  theme_bw()+theme(legend.position="none",
+               text=element_text(family="Garamond", size=12),
+               axis.text.x = element_text(angle = 90,hjust=1,vjust=0.4))+
+                 labs(x="Tomb", y="Vessel Count")+
+                  scale_fill_brewer(palette = "Set2")+ 
+                    scale_y_continuous(expand=c(0,0))+facet_grid(~century,scales="free_x",space="free")
+```
+
 Though it may not be immediately apparent from the dimensions of the tombs, however, the late 9th and early 8th centuries are consistently interpreted as periods of artistic development, increased overseas trade, and renewed vigour in the construction of tombs and the visibility of the burial rite. The PGB style, first identified by Brock, purportedly reflects a uniquely Cretan (perhaps even Knossian) melding of Attic and Near Eastern forms and motifs, while the appearance of Bronze Age 'antiques' in the tombs from this period onwards is felt to reflect renewed, even competitive interest in the Minoan past, as a tool for mortuary display or even lineage affirmation. We can 
 
-```{r imports, fig.dim=c(6,4),dpi=300}
+```{r imports, fig.dim=c(7,4),dpi=300, fig.align='center',fig.cap="Aoristic sums of imported ceramics through time across both cemeteries, colour-coded by the broad regional origin of the vessels."}
 
 imports<-subset(pots,pots$import!="")
 greekimports<-subset(imports,imports$import_region=="Greece")
@@ -690,23 +712,20 @@ NEimport_aorist$decade<-as.numeric(NEimport_aorist$decade)
 greekimport_aorist$origin<-"Greece"
 NEimport_aorist$origin<-"Near East"
 allimport_aorist<-rbind(greekimport_aorist,NEimport_aorist)
-View(allimport_aorist)
 
 ggplot()+geom_col(data=import_aorist,aes(decade,aoristic_sum),alpha=0.2)+
           geom_col(data=allimport_aorist,aes(decade,aoristic_sum, fill=origin),position="dodge")+
-            theme_bw()+theme(legend.title=element_blank(),
-               text=element_text(family="Garamond", size=12))+
+            theme_bw()+theme(text=element_text(family="Garamond", size=12))+
                 labs(x="Date (Years BC)", y="Aoristic Sum")+
-                  scale_fill_brewer(palette = "Set2")+
+                  scale_fill_brewer(name="Origin",palette = "Set2")+
                    scale_y_continuous(expand=c(0,0),limits=c(0,20))+
-                    scale_x_reverse(expand = c(0, 0),limits=c(1000,600))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+                    scale_x_reverse(expand = c(0, 0),limits=c(1000,600))
 
 ```
 
 The rise in imported items is clearly reflected in the tomb assemblages, with a succession of increased Greek and Near Eastern imports respectively in the late 9th and early 8th centuries. Yet whilst confirming some of the prior inferences about the LPG-EG periods, the deposition of these imported wares can also cast light on the original pattern drawn out in the present analysis: the late surge in burial activity among some select 9th and 10th century tombs.
 
-```{r importstombcenturies, fig.dim=c(8,4),dpi=300}
+```{r importstombcenturies, fig.dim=c(8,4),dpi=300, fig.align='center',fig.cap="Aoristic sums of imported vessels through time, from tombs built in the 11th through 9th centuries."}
 
 imports<-subset(pots,import!="")
 
@@ -775,7 +794,7 @@ ggplot()+ geom_col(data=subset(all_import_aorist,century!="7th" & century!="8th"
   scale_x_reverse(limits=c(1000,630))+scale_fill_brewer(palette="Set2")+
   theme_bw()+theme(legend.position="bottom",text=element_text(family="Garamond", size=12))+
             labs(x="Date (Years BC)", y="Aoristic Sum")+
-  guides(fill=guide_legend(title="Tomb Century"))+
+  guides(fill=guide_legend(title="Century of Tomb Construction"))+
               scale_fill_brewer(palette = "Set2")+ 
                   scale_y_continuous(expand=c(0,0),limits=c(0,12))+
                     scale_x_reverse(expand = c(0, 0),limits=c(1000,600))+
@@ -786,7 +805,7 @@ ggplot()+ geom_col(data=subset(all_import_aorist,century!="7th" & century!="8th"
 
 Leaving aside the later tombs for a moment, we can see in Figure ... that the tombs already built by the end of the PGB period, particularly those built in the 9th and, to a lesser extent, 10th centuries, were major beneficiaries of the influx of imported items during this time, but that, in the following centuries, in line with the rest of the cemetery, the number of imported items deposited within them declined. Imported ceramics are used here as something of a proxy for items of status value, a shorthand that would ideally be bolstered by other artefacts (such as precious vessels, weapons, jewellery etc.) which, owing to their less developed chronologies, must unfortunately be left out of such diachronic analyses. But the beginnings of my final argument are seen here in Figure ..., namely that the late surge in burial activity seen across both cemeteries in the late 8th and early 7th centuries would appear to be of a different kind to that of a century earlier.
 
-```{r bigbox, fig.dim=c(8,4),dpi=300}
+```{r bigbox, fig.dim=c(7,4),dpi=300, fig.align='center',fig.cap="Boxplot for the aoristic sums of all vessels across both cemeteries through time, colour-coded by ceramic period. Boxes represent the interquartile range, horizontal lines the median value, whiskers values within 1.5 times the interquartile range, and points outliers beyond this."}
 
 aorist_tomb_values<-tombs[c(1,158:207)]
 aorist_tomb_values[aorist_tomb_values == 0] <- NA
@@ -820,23 +839,19 @@ aorist_melt$variable<-as.numeric(as.character(aorist_melt$variable))
 
 
 
-ggplot(aorist_melt,aes(variable,value,fill=period,outlier.size=0.3))+geom_boxplot(aes(group = cut_width(variable, 10)))+theme_bw()+
-      theme(legend.title=element_blank(),
-        text=element_text(family="Garamond", size=12),
-        axis.text.x = element_text(angle = 70, hjust = 1),
-        panel.grid.major.x = element_blank())+
+ggplot(aorist_melt,aes(variable,value,fill=period))+geom_boxplot(aes(group = cut_width(variable, 10)),outlier.size=0.8)+theme_bw()+
+      theme(text=element_text(family="Garamond", size=12))+
             labs(x="Date (Years BC)", y="Aoristic Sums per Tomb")+
-               scale_fill_brewer(palette = "Set3")+
+               scale_fill_brewer(name="Period",palette = "Set3")+
                 scale_x_reverse(expand=c(0,0))+
                   scale_y_continuous(expand=c(0,0),limits=c(0,20))
 
-tombP<-subset(tombs,tombs$tomb=="P")
-tombP$X650
+
 ```
 
 Figure ... is a boxplot for the aoristic sums of each decade across both cemeteries, colour-coded by ceramic phase. Note that, for clarity, tomb G in the EG period, and tomb P in the late EO-LO period are excluded, with values ranging from 29-34, and 36-44 respectively. The important observation is that the PGB and EG exhibit the largest interquartile ranges (IQRs) of any period, and each possess only a single outlier (beyond 1.5 times the IQR). The Orientalising period, on the other hand, exhibit much reduced IQRs, and a proliferation of outliers far and above the range of the other tombs. In other words, while both the PGB-EG and EO-LO periods witnessed an expanding volume and range of burial activity, in the earlier period this was shared somewhat more equally among the total burying population. One speaks of increasing plurality, the other of divergence.
 
-```{r gini, fig.dim=c(7,4),dpi=300}
+```{r gini, fig.dim=c(7,4),dpi=300, fig.align='center',fig.cap="Gini coefficient values through time based on the aoristic sums for all vessels across both cemeteries. Background colours correspond to ceramic periods."}
 
 aorist_tomb_values<-tombs[c(1,158:207)]
 aorist_tomb_values[aorist_tomb_values == 0] <- NA
@@ -869,17 +884,16 @@ rects$col<-factor(rects$col,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG
 ggplot() + 
   geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf, fill = col), alpha = 0.4) +
      geom_line(data = tombs_gini, aes(decade,gini_coefficient),size=0.5)+
-      theme_bw()+theme(legend.title=element_blank(),
-          text=element_text(family="Garamond", size=12))+
+      theme_bw()+theme(text=element_text(family="Garamond", size=12))+
               labs(x="Date (Years BC)", y="Gini Coefficient")+
-                 scale_fill_brewer(palette = "Set3")+ coord_cartesian(
+                 scale_fill_brewer(name="Period",palette = "Set3")+ coord_cartesian(
                     xlim = c(1100, 600), ylim = c(0.5,0.8))+ scale_x_reverse(expand = c(0, 0),limits=c(1100,600))+
                        scale_y_continuous(expand=c(0,0))
 ```
 
 This possibility is furthered somewhat by considering the gini coefficient of the distribution of pottery between the tombs. Using the aoristic sums as a probablistically-weighted estimate of the volume of material deposited in each tomb in each decade, use of the gini coefficient can give an (albeit rough) estimate of how unevenly distributed that material was. And what we see is that, though values were always relatively high (i.e. unequal) within the cemeteries, the major spike in the gini coefficient seen in the Orientalising period contrasts markedly with the modest rise and plateau of the PGB-EG. The gini coefficient is most commonly used in the assessment of income inequality, but I want to stress here that it is not "wealth" in any meaningful sense that we are talking about here. Indeed, if anything, the late flourit of burial activity here discussed may be a case of quantity, and not quality.
 
-```{r comps, fig.dim=c(8,4),dpi=300}
+```{r comps, fig.dim=c(7,4),dpi=300, fig.align='center',fig.cap="Plots showing the composition of the total pottery assemblage for each century across both cemeteries, and among the 7 notable tombs drawn out earlier in the analysis."}
 pots$group<-ifelse(pots$tomb=="P"|pots$tomb=="292"|pots$tomb=="75"|pots$tomb=="107"|pots$tomb=="285"|pots$tomb=="II"|pots$tomb=="218","A","B")
 
 potcompKNC<-ggplot(subset(pots,century!="" & cem_condensed=="NC"),aes(century,fill=type))+geom_bar(position="fill")+
@@ -898,10 +912,9 @@ potcompFOR<-ggplot(subset(pots,century!="" & cem_condensed=="FOR"),aes(century,f
 potcomptop7<-ggplot(subset(pots,century!="" & century!="11th"& group=="A"),aes(century,fill=type))+geom_bar(position="fill")+
   theme_bw()+theme(plot.title = element_text(hjust=0.5),legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
-                 labs(title="P, 292, 75, 107, 285, II & 218",x="", y="")+
+                 labs(title="7 Tombs",x="", y="")+
                   scale_fill_brewer(palette = "Set2",labels=c(" Amphora  "," Jug  "," Oil vessel  ", " Pithos"," Drinking vessel  "," Lid  "," Other"))+ 
-                    scale_y_continuous(expand=c(0,0.0))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+                    scale_y_continuous(expand=c(0,0.0))
 
 ggarrange(potcompKNC,potcompFOR,potcomptop7,ncol=3,common.legend =TRUE,legend="bottom")
 
@@ -913,41 +926,41 @@ Figure ... shows the composition of the total pottery assemblage from each cemet
 It has no doubt been apparent that the main focus of this article has been on pottery and not other artefacts of metal, stone, glass, and organic materials. This is largely because the chronologies for these artefacts are insufficiently developed to allow for the kind of diachronic analysis made thus far. But I do want to briefly comment on one aspect of the distribution of non-ceramic artefacts that may make more sense in the light of the foregoing discussion. There is, perhaps unsurprisingly, a relatively strong (Spearman's rank correlation of `r spearmanobjectspots`) correlation between the number of ceramic and non-ceramic finds across the tombs, and, certainly, many of the most unique and precious objects were recovered from among the larger tombs. But, the monopoly those tombs would appear to have over such objects, perhaps tempting one initially to speak of 'elite' or 'high-status' tombs, evaporates when the number of those objects is divided by the number of burials represented.
 
 
-```{r hists, fig.dim=c(8,4),dpi=300}
+```{r hists, fig.dim=c(6,4),dpi=300, fig.align='center',fig.cap="Histograms relating, first, to counts of non-ceramic artefacts, metal objects, and imported items across all tombs in both cemeteries and, secondly, to those counts divided by the estimated number of burials in each tomb."}
 tombs$group<-factor(tombs$group,levels=c("A","B"))
-total_object<-ggplot(subset(tombs,est_burials>1),aes(total_object, fill=group))+geom_histogram()+
+total_object<-ggplot(subset(tombs,est_burials>1 & total_object>0),aes(total_object, fill=group))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(x="Total Non-Ceramic Finds", y="Number of Tombs")+
                   scale_fill_brewer(palette = "Set2",labels=c(" 7 Tombs  ", " Other Tombs"))+
                     scale_y_continuous(expand=c(0,0))+scale_x_continuous(expand=c(0,0))
-total_metal<-ggplot(subset(tombs,est_burials>1),aes(weapon, fill=group))+geom_histogram()+
+total_metal<-ggplot(subset(tombs,est_burials>1 & weapon>0),aes(weapon, fill=group))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(x="Total Metal Artefacts", y="Number of Tombs")+
                   scale_fill_brewer(palette = "Set2",labels=c(" 7 Tombs  ", " Other Tombs"))+
                     scale_y_continuous(expand=c(0,0))+scale_x_continuous(expand=c(0,0))
-total_import<-ggplot(subset(tombs,est_burials>1),aes(total_import, fill=group))+geom_histogram()+
+total_import<-ggplot(subset(tombs,est_burials>1 & total_import>0),aes(total_import, fill=group))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(x="Total Imports", y="Number of Tombs")+
                   scale_fill_brewer(palette = "Set2",labels=c(" 7 Tombs  ", " Other Tombs"))+
                     scale_y_continuous(expand=c(0,0))+scale_x_continuous(expand=c(0,0))
 
-objectsbyburial<-ggplot(subset(tombs,est_burials>1),aes(total_object/est_burials, fill=group))+geom_histogram()+
+objectsbyburial<-ggplot(subset(tombs,est_burials>1 & total_object>0),aes(total_object/est_burials, fill=group))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(x="Total Non-Ceramics/Burials", y="Number of Tombs")+
                   scale_fill_brewer(palette = "Set2",labels=c(" 7 Tombs  ", " Other Tombs"))+
                     scale_y_continuous(expand=c(0,0))+scale_x_continuous(expand=c(0,0))
-metalbyburial<-ggplot(subset(tombs,est_burials>1),aes(weapon/est_burials, fill=group))+geom_histogram()+
+metalbyburial<-ggplot(subset(tombs,est_burials>1 & weapon>0),aes(weapon/est_burials, fill=group))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(x="Total Metal Artefacts/Burials", y="Number of Tombs")+
                   scale_fill_brewer(palette = "Set2",labels=c(" 7 Tombs  ", " Other Tombs"))+
                     scale_y_continuous(expand=c(0,0))+scale_x_continuous(expand=c(0,0))
 
-importsbyburial<-ggplot(subset(tombs,est_burials>1),aes(total_import/est_burials, fill=group))+geom_histogram()+
+importsbyburial<-ggplot(subset(tombs,est_burials>1 & total_import>0),aes(total_import/est_burials, fill=group))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(x="Total Imports/Burials", y="Number of Tombs")+

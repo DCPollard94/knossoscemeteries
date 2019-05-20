@@ -11,4 +11,21 @@ License: MIT + file LICENSE
 ByteCompile: true
 Encoding: UTF-8
 LazyData: true
-Imports: bookdown
+Imports: bookdown,
+    cowplot (>= 0.9.4),
+    data.table (>= 1.12.0),
+    devtools (>= 2.0.1),
+    dplyr (>= 0.8.0.1),
+    extrafont (>= 0.17),
+    ggforce (>= 0.2.2),
+    ggplot2 (>= 3.1.0),
+    ggpubr (>= 0.2),
+    ggrepel (>= 0.8.0),
+    git2r (>= 0.24.0),
+    gridExtra (>= 2.3),
+    here (>= 0.1),
+    ineq (>= 0.2-13),
+    knitr (>= 1.21),
+    plyr (>= 1.8.4),
+    RColorBrewer (>= 1.1-2),
+    reshape (>= 0.8.8)
