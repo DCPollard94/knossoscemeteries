@@ -379,3 +379,74 @@ pots$polychrome <- ifelse(grepl("olychrome",pots$additional), "Polychrome", "Oth
 count(groupB$polychrome)
 122/811*100
 66/561*100
+
+pots$group<-ifelse(pots$tomb=="P"|pots$tomb=="292"|pots$tomb=="75"|pots$tomb=="107"|pots$tomb=="285"|pots$tomb=="II"|pots$tomb=="218","A",
+                   ifelse(pots$tomb=="X"|pots$tomb=="G"|pots$tomb=="104"|pots$tomb=="Q"|pots$tomb=="283","B","C"))
+
+imports<-subset(pots,import!="")
+imports_A<-subset(imports,group=="A")
+imports_B<-subset(imports,group=="B")
+imports_C<-subset(imports,group=="C")
+
+import_A_aorist<-colSums(imports_A[27:76])
+import_A_aorist<-data.frame(import_A_aorist)
+colnames(import_A_aorist)<-c("aoristic_sum")
+row.names(import_A_aorist)<-dates
+setDT(import_A_aorist, keep.rownames = "decade")
+import_A_aorist$decade<-as.numeric(import_A_aorist$decade)
+
+import_A_aorist$group<-"A"
+import_A_aorist$aoristic_sum<-import_A_aorist$aoristic_sum/7
+
+import_B_aorist<-colSums(imports_B[27:76])
+import_B_aorist<-data.frame(import_B_aorist)
+colnames(import_B_aorist)<-c("aoristic_sum")
+row.names(import_B_aorist)<-dates
+setDT(import_B_aorist, keep.rownames = "decade")
+import_B_aorist$decade<-as.numeric(import_B_aorist$decade)
+
+import_B_aorist$group<-"B"
+import_B_aorist$aoristic_sum<-import_B_aorist$aoristic_sum/5
+
+import_C_aorist<-colSums(imports_C[27:76])
+import_C_aorist<-data.frame(import_C_aorist)
+colnames(import_C_aorist)<-c("aoristic_sum")
+row.names(import_C_aorist)<-dates
+setDT(import_C_aorist, keep.rownames = "decade")
+import_C_aorist$decade<-as.numeric(import_C_aorist$decade)
+
+import_C_aorist$group<-"C"
+import_C_aorist$aoristic_sum<-import_C_aorist$aoristic_sum/35
+
+imports_C$tomb
+
+aorist_import_groups<-rbind(import_A_aorist,import_B_aorist,import_C_aorist)
+
+ggplot(aorist_import_groups,aes(decade,aoristic_sum,fill=group))+ geom_col(position="dodge")+
+  theme_bw()+theme(legend.position="bottom",text=element_text(family="Garamond", size=12))+
+  labs(x="Date (Years BC)", y="Aoristic Sum")+
+  guides(fill=guide_legend(title="Group"))+
+  scale_fill_brewer(palette = "Set2")+
+  scale_y_continuous(expand=c(0,0),limits=c(0,1.5))+
+  scale_x_reverse(expand = c(0, 0),limits=c(1000,600))+
+  theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+
+ggplot(data=subset(imports,import_region!=""),aes(import_region))+geom_bar()+facet_grid(~group)
+
+names(imports)
+
+imitations<-subset(pots,pots$imitation!="")
+imitation_aorist<-colSums(imitations[27:76])
+imitation_aorist<-data.frame(imitation_aorist)
+colnames(imitation_aorist)<-c("aoristic_sum")
+row.names(imitation_aorist)<-dates
+setDT(imitation_aorist, keep.rownames = "decade")
+imitation_aorist$decade<-as.numeric(imitation_aorist$decade)
+
+ggplot(imitations,aes(group))+geom_bar()
+
+tombs$group<-ifelse(tombs$tomb=="P"|tombs$tomb=="292"|tombs$tomb=="75"|tombs$tomb=="107"|tombs$tomb=="285"|tombs$tomb=="II"|tombs$tomb=="218","A",
+                   ifelse(tombs$tomb=="X"|tombs$tomb=="G"|tombs$tomb=="104"|tombs$tomb=="Q"|tombs$tomb=="283","B","C"))
+TombsB<-subset(tombs,tombs$group=="B")
+ggplot(subset(pots),aes(group, fill=imitation))+geom_bar(position="fill")+facet_wrap(~century)
+ggplot(subset(imports,tomb=="G"),aes(import_region))+geom_bar()+facet_wrap(~century)
