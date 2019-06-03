@@ -52,22 +52,22 @@ loadfonts(device="win")
 ##### pagebreak
 
 # Introduction
-Three principal interests converge in this paper: a reorientation of the focus of Early Iron Age Cretan archaeology; the application of computational, and quantitative methods to supplement traditional modes of archaeological inference; and open-access data and reproducible research. To begin with the first of these, it may be felt that, of all ancient sites on Crete, Knossos is the last in need of further archaeological attention. The city and palace of Knossos, first excavated well over a century ago [@Evans1921; -@Evans1928; -@Evans1930], retain a pre-eminent position in popular and academic accounts the island’s Bronze Age (BA), and few, if any, other Cretan sites have been so thoroughly dug, reconstructed, and contested. 
+Three principal interests converge in this paper: a reorientation of the focus of Early Iron Age Cretan archaeology; the application of computational, and quantitative methods to supplement traditional modes of archaeological inference; and open-access, reproducible research. To begin with the first, it may be felt that, of all ancient sites on Crete, Knossos is the last in need of further archaeological attention. The city and palace of Knossos, first excavated well over a century ago [@Evans1921; -@Evans1928; -@Evans1930], retain a pre-eminent position in popular and academic accounts the island’s Bronze Age (BA), and few, if any, other Cretan sites have been so thoroughly dug, reconstructed, and contested. 
 
-For one, though, this is not the Knossos of that illustrous, palatial period, but rather the town as it persisted and evolved during the subsequent Early Iron Age (EIA). Research into this once maligned period has grown apace in the last few decades, beginning with the pioneering works of Coldstream [-@Coldstream1977], Desborough [-@Desborough1972], and Snodgrass [-@Snodgrass1971a] and culminating in the rejection by most scholars of the appelation and interpretive bagguage of the so-called ‘Dark Ages’ [on the origins of which, see @Kotsonas2016; @Morris1997]. Nonetheless, our knowledge of many EIA settlements remains often underdeveloped in comparison with those of the second millennium BC. 
+For one, though, this is not the Knossos of that illustrous, palatial period, but rather the town as it persisted and evolved during the subsequent Early Iron Age (EIA). Research into this once maligned period has grown apace in recent decades, beginning with the pioneering works of Coldstream [-@Coldstream1977], Desborough [-@Desborough1972], and Snodgrass [-@Snodgrass1971a] and culminating in the rejection by most scholars of the appelation and interpretive bagguage of the so-called ‘Dark Ages’ [see @Kotsonas2016; @Morris1997]. Nonetheless, our knowledge of many EIA settlements remains often underdeveloped in comparison with those of the second millennium BC. 
 
-Secondly, and welcome though they are, a number of recent publications on the socio-economic [@Wallace2010a] and settlement [@Nowicki2000] changes which accompanied the BA-EIA transition have directed scholarly attention toward a number of elevated, defensible settlements supposedly founded in response to the dangers of this turbulent period. This is reflected in survey work, which has focussed extensively around the Bay of Mirabello, where such sites are numerous [@Haggis2005; @Hayden2005; @Watrous2012]. This has, unfortunately, engendered a certain disregard for settlement characterised by different topographies, especially in the centre of the island. There remains, therefore, a need for studies addressing the social dynamics at such sites (Knossos, Phaistos, Grivila, Eleutherna etc.), with a long-term view to comparative appraisal of the divergent trajectories of communities across Crete in the EIA [@Kotsonas2011b; @Whitley2011, 667–8].
+Secondly, and welcome though they are, a number of recent publications on the socio-economic [@Wallace2010a] and settlement [@Nowicki2000] changes which accompanied the BA-EIA transition have directed scholarly attention toward a pattern of elevated, defensible settlements supposedly founded in response to the dangers of this turbulent period. This is reflected in survey work, which has focussed extensively around the Bay of Mirabello, where such sites are numerous [@Haggis2005; @Hayden2005; @Watrous2012]. This has, unfortunately, engendered a certain disregard for settlement characterised by different topographies, especially in the centre of the island. There remains, therefore, a need for studies addressing the social dynamics at such sites (Knossos, Phaistos, Grivila, Eleutherna etc.), with a long-term view to comparative appraisal of the divergent trajectories of communities across Crete in the EIA [@Kotsonas2011b; @Whitley2011, 667–68].
 
-As to the second and third of my stated interests, several authors have recently demonstrated the great potential of quantitative, statistical, spatial, and network analyses to elucidate social dynamics, settlement patterning, and systems of inter-regional communication across Crete and the wider Aegean. Such work encourages the use of large (often pre-existing) datasets, and the sharing of both data and methods to facilitate reproducible, collaborative research [@Bevan2013; @Knappett2011a; @Knappett2011]. The cemeteries of Knossos offer an opportunity to introduce such approaches into EIA research on Crete, where they have yet to make much of an impact [see @Kotsonas2011]. The Fortesta and North Cemetery complexes are both well-published [@Brock1957; @Coldstream1996a] and have been studied with regard to their 'oriental' imports [@Antoniadis2012], antique artefacts [@Crowe2016], and religious context [@Coldstream1984b]. But a lack of quantitative analyses, or systematic comparisons between the cemeteries, has left us with many intuited trends, some exceptional tombs, but a general impression of un-patterned multiplicity. 
+As to the second and third of my stated interests, several authors have recently demonstrated the great potential of quantitative, statistical, spatial, and network analyses to elucidate social dynamics, settlement patterning, and systems of inter-regional communication across Crete and the wider Aegean. Such work encourages the use of large (often pre-existing) datasets, and the sharing of both data and methods to facilitate reproducible, collaborative research [@Bevan2013; @Knappett2011a; @Knappett2011]. The cemeteries of Knossos offer an opportunity to introduce such approaches into EIA research on Crete, where they have yet to make much of an impact [see @Kotsonas2011]. The Fortesta and North Cemetery complexes are both well-published [@Brock1957; @Coldstream1996a] and studied, but a lack of systematic, quantitative comparisons between the cemeteries has left us with many intuited trends, some exceptional tombs, yet a general impression of un-patterned multiplicity. 
 
-With a dataset including information on every find and tomb recorded in the Fortetsa and Knossos North Cemetery publications [@Brock1957; @Coldstream1996a], the following analysis seeks to address this present lack. In doing so, I aim to demonstrate the potential for quantitative methods, firstly, to permit identification, and nuanced characterisation, of significant patterning in the archaeological material; secondly, to facilitate a more systematic appraisal of the cemeteries’ largest tombs and their distinctive histories; and, finally, to offer not just generalities, but tangible and context-specific considerations of the motivations and identities behind the burial groups themselves, with a view to eventually comparing such results with mortuary assemblages across the island. 
+With a dataset including information on every find and tomb recorded in the Fortetsa and Knossos North Cemetery publications [@Brock1957; @Coldstream1996a], the following analysis addresses this present lack. In doing so, I aim to demonstrate the potential for quantitative methods, firstly, to permit identification, and nuanced characterisation, of significant patterning in the archaeological material; secondly, to facilitate a more systematic appraisal of the cemeteries’ largest tombs and their distinctive histories; and, finally, to offer tangible and context-specific evidence as to the behaviours and identities of the burying groups, with a view to eventually comparing such results with mortuary assemblages across Crete. 
 
 # Early Iron Age Knossos
 ## Settlement Evidence: 'A meagre filling in a very thick sandwich'
 
-Settlement evidence at EIA Knossos is, in a word, insubstantial. Speaking of the town’s stratigraphic sequence, Coldstream lamented that “the remains of [this] period are like a meagre filling in a very thick sandwich” between Bronze Age and later Greek and Roman levels [@Coldstream1991, 287]. Most individual finds of Protogeometric or Geometric date take the form of flimsy foundations, patches of earth floor, wells or simple scatters of pottery, and for a time it was argued that the area in the EIA comprised several dispersed villages, which later coalesced into a single city, as per Aristotle’s model of synoecism [@1950]. 
+Settlement evidence at EIA Knossos is, in a word, insubstantial. Speaking of the town’s stratigraphic sequence, Coldstream lamented that “the remains of [this] period are like a meagre filling in a very thick sandwich” between Bronze Age and later Greek and Roman levels [@Coldstream1991: 287]. Most individual finds of Protogeometric (PG) or Geometric date take the form of flimsy foundations, patches of earth floor, wells or pottery scatters, and for a time it was argued that the area in the EIA comprised several dispersed villages, which later coalesced into a single city, as per Aristotle’s model of synoecism [@1950]. 
 
-However, a concentration of activity slightly to the west of the old palace presented a good case for continuing, nucleated settlement [@Hood1981], something strongly advocated by Coldstream [-@Coldstream1984a; -@Coldstream2000], while, more recently, findings of the Knossos Urban Landscape Project suggest a PG settlement of up to 40ha [@Kotsonas2011a, 5-8]. This estimate remains our best guess in the absence of substantial excavated deposits but, if it is accurate, then EIA Knossos was one of the largest sites of the contemporary Aegean. 
+However, a concentration of activity slightly to the west of the palace presented a good case for continuing, nucleated settlement [@Hood1981], something strongly advocated by Coldstream [-@Coldstream1984a; -@Coldstream2000], and, more recently, findings of the Knossos Urban Landscape Project suggest a PG settlement of up to 40ha [@Kotsonas2011a: 5-8]. This estimate remains our best guess in the absence of substantial excavated deposits but, if accurate, suggests that EIA Knossos was one of the largest sites of the contemporary Aegean. 
 
 ## The Early Iron Age Cemeteries
 
@@ -75,65 +75,65 @@ However, a concentration of activity slightly to the west of the old palace pres
 knitr::include_graphics("../figures/Knossos Tombs Map.jpg")
 ```
 
-Survey aside, our most abundant evidence for EIA Knossos comes from the mortuary record (see Figure \@ref(fig:map). The transitional period between the Late Bronze Age (LBA) and EIA yields few if any securely datable interments, but later evidence is more plentiful, with multiple burials known from the Kephala ridge [@Coldstream1963, 38; @Hogarth1899, 82-5], the modern suburbs of Ayios Ioannis and Atsalenio [@Boardman1960a; @Davaras1968, 133–46], the cave of Mavro Spelio [@Antoniadis2012, 58-9], and the Khaniale Teke site with its well-known tholos [@Boardman1967;@Hutchinson1954; cf. @Hoffman1997 @Kotsonas2006]. Taken together, these scattered tombs point to a richly variegated set of funerary practices but, despite their reasonable number, are so dispersed and often isolated that they provide little scope for systematic quantitative analysis. 
+Survey aside, our most abundant evidence comes from the mortuary record (see Figure \@ref(fig:map)). The transitional period between the Late Bronze Age (LBA) and EIA yields few if any securely datable interments, but later evidence is more plentiful, with burials known from the Kephala ridge [@Coldstream1963: 38; @Hogarth1899: 82-5], the modern suburbs of Ayios Ioannis and Atsalenio [@Boardman1960a; @Davaras1968: 133–46], the cave of Mavro Spelio [@Antoniadis2012: 58-9], and the Khaniale Teke site with its well-known tholos [@Boardman1967;@Hutchinson1954; cf. @Hoffman1997 @Kotsonas2006]. Taken together, these scattered tombs point to a richly variegated set of funerary practices but, despite their reasonable number, are so dispersed that they provide little scope for systematic quantitative analysis. 
 
-Fortunately, far larger burial accumulations are to be found in the Fortetsa and the Knossos North cemeteries, which together comprise some 134 tombs, ranging in date from the Subminoan (SM) to Late Orienatalising (LO) periods. Though many were robbed in antiquity, and others destroyed by the digging of later burials, building work, or just the ravages of time, they still represent the most abundant source of evidence for not just mortuary practices, but for social life of any kind at EIA Knossos.
+Fortunately, far larger burial accumulations are to be found in the Fortetsa and the Knossos North cemeteries, which together comprise some 134 tombs, ranging in date from the Subminoan (SM) to Late Orienatalising (LO) periods. Though many were robbed in antiquity, and others destroyed by the digging of later burials, building work, or just the ravages of time, they still represent the most abundant source of evidence for not just mortuary, but social practice of any kind at EIA Knossos.
 
 ## The Fortetsa and Knossos North Cemeteries
 
-The cemetery on the slope facing the eponymous village of Fortetsa is composed of twelve tombs excavated in 1933, and another eight uncovered in 1935 (Brock 1957: xi). These tombs cluster in three main groups. The largest of these, comprising nine tombs, is arranged on a north-south axis, with the *dromos* of each tomb extending downslope to the west. To the north lies a cluster of five tombs and, to the south, another of three. Finally, three tombs excavated in 1933 – L, TFT and Π – which lie close to the main road north of the Acropolis hill [@Brock1957: 1-2], are now considered to belong the Knossos North Cemetery (KNC).
+The cemetery on the slope facing the eponymous village of Fortetsa comprises twelve tombs excavated in 1933, and another eight uncovered in 1935 (Brock 1957: xi). These cluster in three main groups. The largest of these contains nine tombs, arranged on a north-south axis, with the *dromos* of each extending downslope to the west. To the north lies a cluster of five tombs and, to the south, another of three. Finally, three tombs excavated in 1933 – L, TFT and Π – which lie close to the main road north of the Acropolis hill [@Brock1957: 1-2], are now considered to belong the Knossos North Cemetery (KNC).
 
-To the northeast of the Fortetsa cemetery, a collection of ten badly damaged tombs known, after the year of their excavation, as the Fortetsa 1967 tombs, were probably the southernmost burials of the KNC. Unfortunately, all had been looted at the time of excavation, and no *in situ* deposit was found in any tomb. They are thus excluded from present analysis. Northwest of these, and just south of the Teke Tholos, the Teke tombs represent the northern reaches of the KNC. The central section of the KNC comprises the ‘Medical Faculty’ site, named for the extension of the University of Crete that prompted major rescue excavations here in 1978 [@Coldstream1996a: 53-55]. 
+To the northeast of the Fortetsa cemetery, a collection of ten badly damaged tombs known as the Fortetsa 1967 tombs were probably the southernmost burials of the KNC. Unfortunately, all had been thoroughly looted at the time of excavation, and are thus excluded from present analysis. Northwest of these, and just south of the Teke Tholos, the Teke tombs represent the northern reaches of the KNC. The central section of the KNC comprises the ‘Medical Faculty’ site, named for the extension of the University of Crete that prompted major rescue excavations there in 1978 [@Coldstream1996a: 53-55]. 
 
-The tombs themselves fall into three main types, the chamber tomb, shaft grave, and pit cave or tomb; the latter two are largely Subminoam phenomena, with the former by far the most abundant. It comprises a descending ramp or passage, the *dromos*, leading to the chamber itself, cut into the *kouskouras* bedrock. The *dromos* and chamber are separated by the *stomion*, an opening often set a step or two lower than the *dromos*, which is covered by a large stone slab, smaller stacked stones, or combination of both [@Antoniadis2012: 47-8]. The majority of burials are cremations, a rite that appears at Knossos in the Subminoan period, in the Tomb 200+ complex in the KNC [@Coldstream1994: 109]. Inhumation does not completely disappear in the EIA, but by the Orientalising period it appears restricted to child burials and [@Antoniadis2012: 69]. 
+The tombs themselves fall into three main types, the chamber tomb, shaft grave, and pit cave or tomb; the latter two are largely Subminoam phenomena, with the former by far the most abundant. It comprises a descending ramp or passage, the *dromos*, leading to the chamber itself, cut into the *kouskouras* bedrock. The *dromos* and chamber are separated by the *stomion*, an opening often set a step or two lower than the *dromos*, which is covered by a large stone slab, smaller stacked stones, or combination of both [@Antoniadis2012: 47-48]. The majority of burials are cremations, a rite that appears at Knossos in the Subminoan period, in the Tomb 200+ complex in the KNC [@Coldstream1994: 109]. Inhumation does not completely disappear in the EIA, but by the Orientalising period it appears restricted solely to child burials [@Antoniadis2012: 69]. 
 
 ## Chronological Developments in the Cemeteries
 
-The initial foundation of the cemeteries has received much attention. It has been claimed that no tomb crosses the Late Minoan (LM) IIIC-SM divide [@Coldstream1998, 58; @Coldstream2006, 582], though there is a possibility that this is a classificatory artefact [@Hallager2010]. Instances of BA tombs reused in the EIA are known (e.g. the Khaniale Teke tholos), and Cavanagh [-@Cavanagh1996], based on a cluster analysis of tomb dimensions, could not reject the possibility of some KNC tombs being of BA date, though other evidence would suggest this is unlikely (Whitelaw, pers. comm.).
+The foundation of the cemeteries has received much attention. It has been claimed that no tomb crosses the Late Minoan IIIC-SM divide [@Coldstream1998: 58; @Coldstream2006: 582], though there is a possibility that this is a classificatory artefact [@Hallager2010]. Instances of BA tombs reused in the EIA are known (e.g. the Khaniale Teke tholos), and Cavanagh [-@Cavanagh1996], based on a cluster analysis of tomb dimensions, could not reject the possibility of some KNC tombs being of BA date, though other evidence would suggest this is unlikely (Whitelaw, pers. comm.).
 
-During the use of the cemeteries, correspondences have been highlighted between changing pottery styles and episodes of tomb construction and abandonment. The Protogeometric B (PGB) style, first defined by Brock [-@Brock1957, 143], who hailed it as “the most remarkable phase in Cretan vase-painting”, is apparently a Cretan anomaly, evincing a melding of Attic geometric motifs, patterns possibly deriving from Near Eastern metalwork, and iconography drawn from the Minoan repertoire [@Coldstream1984b, 93-94]. Coldstream has argued that the concurrence of this style with a rash of newly founded tombs points to a reformulation of elite mortuary display, noting how, in this period also, redeposited Minoan larnakes began appearing in and around some tombs, in one case even inspiring the decoration of a PGB vessel [in T. 107; see @Coldstream1984b; -@Coldstream1994, 112–13]. Whether simply nostalgia [@Coldstream1998, 60], or a more tactical strategy by newly emerging elite groups [@Coldstream1994, 114-15], it seems that the Bronze Age past possessed a significant cultural cachet mobilised by various EIA burying groups. 
+During the use of the cemeteries, correspondences have been highlighted between changing pottery styles and episodes of tomb construction and abandonment. The Protogeometric B (PGB) style, first defined by Brock [-@Brock1957: 143], who hailed it as “the most remarkable phase in Cretan vase-painting”, is apparently a Cretan anomaly, evincing a melding of Attic geometric motifs, patterns possibly deriving from Near Eastern metalwork, and iconography drawn from the Minoan repertoire [@Coldstream1984b: 93-94]. Coldstream has argued that the concurrence of this style with a rash of newly founded tombs points to a reformulation of elite mortuary display, noting how, in this period also, redeposited Minoan larnakes began appearing in and around some tombs, in one case even inspiring the decoration of a PGB vessel [in T. 107; see @Coldstream1984b; -@Coldstream1994: 112–13]. Whether simply nostalgia [@Coldstream1998: 60], or a more tactical strategy by newly emerging elite groups [@Coldstream1994: 114-15], the Bronze Age past clearly possessed a significant and enduring cultural cachet for the EIA Knossians. 
 
-The final mystery of the chronological sequence at the KNC and Fortetsa is the quite abrupt cessation of burials around 630 BC. There had been changes in tomb use in both cemeteries in the preceding century, with few new tombs built, though interments in old tombs continued [@Brock1957, 4; @Cavanagh1996; 651-3]. This curiosity has, along with the equally scanty evidence for the subsequent period in the wider settlement, become known as the ‘Archaic Gap'. The causes of this lacuna, which persists until the recrudescence of archaeological evidence in the Late Archaic period, remain unknown. Although various explanations have been forwarded, [@Coldstream1999, 301-2; @Huxley1994, 126; @Kotsonas2002, 41-4], there are now strong reasons to doubt the settlement was abandoned (Whitelaw, pers comm.).
+As contentious as their founding is the abrupt abandonment of both cemeteries around 630 BC. Admittedly, few new tombs had been built in the preceding century, though interments in old tombs had certainly continued [@Brock1957: 4; @Cavanagh1996: 651-53]. The ensuing period, accompanied by equally scanty settlement evidence, has become known as the ‘Archaic Gap'. The causes of this lacuna, which persists until the recrudescence of archaeological evidence in the Late Archaic period, remain unknown. Although various explanations have been forwarded, [@Coldstream1999: 301-302; @Huxley1994: 126; @Kotsonas2002: 41-44], there are now strong reasons to doubt the settlement was abandoned (Whitelaw, pers comm.).
 
 ## Heroes and Heirlooms: Object Biographies and Exceptional Burials
 
-A popular approach to the study of Knossos’ EIA tombs has been the investigation of ‘object biography’, a term derived from Appadurai [-@Appadurai1986] and Kopytoff [-@Kopytoff1986]. Influenced by Mauss’ [-@Mauss1954] formulation of ‘the gift’, they stressed the mutuable nature of an object’s value, and its capacity for acquiring a ‘biography’ through the transformations of its social existence. These ideas, fertilised by the Homeric motif of gift-giving [@Whitley2002, 220-1], and the remarkable archaeological parallels for such objects – such as the boar’s tusk helmet from Tomb 200+ and that given to Odysseus by Meriones (*Iliad* 10.260-271) - have been brought to bear on certain elaborate burials of the EIA. 
+A popular approach to the study of Knossos’ EIA tombs has been the investigation of ‘object biography’ [@Appadurai1986; @Kopytoff1986l; @Mauss1954], an anthropological lens emphasising the mutuable nature of an object’s value, the transformations latent within its social existence. Fertilised by the Homeric motif of gift-giving [@Whitley2002: 220-21], and the remarkable archaeological parallels for such items – such as the boar’s tusk helmet from Tomb 200+ and that given to Odysseus by Meriones (*Iliad* 10.260-271) - such approaches have been brought to bear on certain elaborate burials of the EIA. 
 
-Catling’s discussion of the Tomb 200+ complex is a notable example. Tomb 201 contained the remains of at least two adults, and possibly a child, a bronze sword, spearhead, and arrowhead, an iron dirk or knife, fragments of an antique bronze stand, probably of Cypriot origin, and pieces of the aforementioned helmet [@Catling1995, 123]. Catling identifies similarities between this tomb and burials at Tiryns, Kaloriziki, and the famous *hērōön* of Lefkandi. All contained imported items, were of ‘warrior grave’ type, and formed loci for later burials. Catling argues that those individuals who dared to travel abroad in this time of more limited seafaring, accruing exotica and stories from distant lands, would have been accorded exceptional treatment in death [@Catling1995, 127–8]. 
+For instance, Tomb 201 in the KNC contained a bronze sword, spearhead, and arrowhead, an iron dirk or knife, fragments of an antique bronze stand, probably of Cypriot origin, and pieces of the aforementioned helmet [@Catling1995: 123]. Catling identifies similarities between this tomb and burials at Tiryns, Kaloriziki, and the famous *hērōön* of Lefkandi; all contained imported items, were of ‘warrior grave’ type, and formed loci for later burials. He has argued that individuals who dared to travel abroad in this time of more limited seafaring, accruing exotica and stories from distant lands, would have been accorded exceptional treatment, including the deposition of such items, in death [@Catling1995: 127–8]. 
 
-Complementing the theme of heroes abroad has been a similar interest in foreigners at home. Two caches of gold jewellery, found in pits flanking the entrance to the Teke Tholos, were argued by Boardman [-@Boardman1967] to be foundation deposits – a Near Eastern custom – for the tomb of an immigrant Phoenician craftsman. Kotsonas has revisited this attribution, deeming the tholos more probably that of an elite individual or family with a monopoly over a metal workshop’s output [-@Kotsonas2006, 155–9]. While certainty in such individual cases may be moot, it seems unlikely that foreign traders or craftsmen never visited or resided at Knossos during the EIA [@Hoffman1997, 176–85; @Schreiber2003, 293-306].
+Complementing the theme of heroes abroad has been a similar interest in foreigners at home. Two caches of gold jewellery, found in pits flanking the entrance to the Teke Tholos, were argued by Boardman [-@Boardman1967] to be foundation deposits – a Near Eastern custom – for the tomb of an immigrant Phoenician craftsman. Kotsonas has revisited this attribution, deeming the tholos more probably that of an elite individual or family with a monopoly over a metal workshop’s output [-@Kotsonas2006: 155–9]. While certainty in such individual cases may be moot, it seems unlikely that foreign traders or craftsmen never visited or resided at Knossos during the EIA [@Hoffman1997: 176–85; @Schreiber2003: 293-306].
 
 
 ## Number Crunching: Quantitative Analyses of the Cemeteries
 
-Generally speaking, the above analyses have tended to rely more on particular finds, tombs, or observable, but limited, patterns in the data; only a few authors have pursued more quantative approaches. Cluster analyses have been employed by both Cavanagh [-@Coldstream1996, 653-7] and Antoniadis [-@Antoniadis2012, 193-7], the most sophisticated statistical techniques so far applied to the material. Antoniadis [-@Antoniadis2012, 172-6] also divided the EIA tombs of Knossos into three groups, those with fewer than 10 pots, fewer than 50, and more than 50, and found that, in each successive case, the proportions of tombs containing 'oriental' imports and imitations increased, suggesting unequal access to such prestigious goods. Yet even here the available data could be further interrogated, such as with the number of imported items *per burial*, something Antoniadis does not explore. The present paper thus seeks to extend and nuance a number of observations that have been made in previous studies, as well as revealing patterns thus far unacknowledged, through use of a more systematic approach to quantitative analysis.
+Generally speaking, the above analyses have tended to rely more on particular finds, tombs, or observable, but limited, patterns in the data; only a few authors have pursued more quantative approaches. Cluster analyses have been employed by both Cavanagh [-@Coldstream1996: 653-57] and Antoniadis [-@Antoniadis2012: 193-97], the most sophisticated statistical techniques so far applied to the material. Antoniadis [-@Antoniadis2012: 172-6] also divided the EIA tombs of Knossos into three groups, those with fewer than 10 pots, fewer than 50, and more than 50, and found that, in each successive case, the proportions of tombs containing 'oriental' imports and imitations increased, suggesting unequal access to such prestigious goods. Yet even here the available data could be further interrogated (with, for instance, the number of imported items *per burial*). The present paper thus seeks to extend and nuance a number of observations that have been made in previous studies, as well as revealing patterns thus far unacknowledged, through use of a more systematic approach to quantitative analysis.
 
 
 # Methods
 
 ## Databases
 
-The cornerstone of the present study is a database (or, rather, three linked databases) based on the excavation reports for the Fortetsa and Knossos North cemeteries [@Brock1957; @Coldstream1996a]. The first includes an entry for each individual ceramic vessel. Each entry includes, among other things, the tomb, the vessel shape, its surviving dimensions, its ceramic period and corresponding absolute dating measures. In addition, all imports, 'oriental' imitations, and antique (that is, Bronze Age) artefacts were accordingly categorised, using the studies of Antoniadis (2012), Jones [-@Jones2000], and Crowe (2016). In total, this database comprises just over 4540 individual artefacts. 
+The cornerstone of the present study is a database (or, rather, three linked databases) based on the excavation reports for the Fortetsa and Knossos North cemeteries [@Brock1957; @Coldstream1996a]. The first includes an entry for each individual ceramic vessel. Variables includes the tomb, the vessel shape, its surviving dimensions, its ceramic period and corresponding absolute dating measures. In addition, all imports, 'oriental' imitations, and antique (that is, Bronze Age) artefacts were categorised, using the studies of Antoniadis (2012), Jones [-@Jones2000], and Crowe [-@Crowe2016]. In total, this database comprises just over 4540 individual artefacts. 
 
 The second database is similar, but with each entry corresponding to a find other than a ceramic vessel. A ‘material’ variable was added, as of course these finds were not all made of the same substance. This database included some 1620 individual artefacts. 
 
 The final database concerns the tombs themselves. Each tomb was accorded its own entry, with variables including dating (both in relative and absolute terms), surviving dimensions, and the known and estimated number of interments, as well as a tally of the objects recorded in the other two databases. Finally, the total number of imports, imitations and antiques in each tomb was calculated.
 
-Taken together, these databases constitute a detailed record of all the finds from the Fortetsa and KNC publications, and offer the opportunity for carrying out a range of quantitative analyses. It must be conceded that, with many of the tombs evidently looted or damaged over the centuries, this cannot be a complete picture of the tombs’ original contents. If we assume, though, that natural or accidental destruction was relatively indiscriminate, and that, even in cases of looting, certain object classes (particularly cinerary urns) were seldom robbed, then the data are by no means rendered useless. As Snodgrass [-@Snodgrass1996] notes, the situation means we should be extremely cautious about making negative arguments – that is, conclusions drawn about the lack of features in certain tombs – but may be somewhat more hopeful in the forming of positive ones.
+Taken together, these databases make possible a diverse range of quantitative analyses. It must be conceded that, with many of the tombs evidently looted or damaged, this cannot be a complete picture of their original contents. If we assume, though, that natural or accidental destruction was relatively indiscriminate, and that, even in cases of looting, certain object classes (particularly cinerary urns) were seldom robbed, then the data are by no means rendered useless. As Snodgrass [-@Snodgrass1996] cautions, we should be extremely cautious about making negative arguments – that is, conclusions drawn about the *lack* of features in certain tombs – but may be somewhat more hopeful in the forming of positive ones.
 
 ## Reproducibility and Data-sharing
 
-Evermore archaeologists have begun to advocate the utility, indeed the necessity, of making available not just the data underpinning our academic output, but the full methodologies by which our analyses are conducted, in formats facilitating reproducibilty. It is felt that, with the opportunities afforded by current technologies (digital databases, statistical software packages, online repositories etc.), there remain ever fewer obstacles to the full and free sharing of both data and workflows [see @article]. In Marwick's words [-@Marwick2017, 445], "[t]he technical problems are largely solved; the challenge now is to change the norms of the discipline to make high reproducibility a canonical attribute of high-quality scholarly work".
+Ever more archaeologists have begun to advocate the utility, indeed the necessity, of making available not just the data, but the full methodologies underpinning our academic output. With the opportunities afforded by current technologies (digital databases, statistical software packages, online repositories etc.), there remain ever fewer obstacles to the full and free sharing of both data and workflows [see @article]. In Marwick's words [-@Marwick2017: 445], "[t]he technical problems are largely solved; the challenge now is to change the norms of the discipline to make high reproducibility a canonical attribute of high-quality scholarly work".
 
 This article is, among other things, an attempt to bring these principles of maximal reproducibility to the archaeology of EIA Crete. Within this field, catalogues and excavation reports abound and, though many of these may be forgiven based on their dates of publication, the lack of readily utilisable digital data from a number of recent articles and monographs, indeed, the failure to even present data such that they could be manually digitsed, is less pardonable.
 
-There are, of course, complications to the sharing of data and methods. There are valid reservations around issues of copyright, the protection of sites from looting, the possibility of being scooped with one's own data, or simply the significant time investment of preparing open-access research. But I would argue that the potential gains outweigh these concerns, and that research on the EIA would benefit greatly from the greater accessability of datasets and workflows. 
+There are, of course, valid reservations regarding issues of copyright, the protection of sites from looting, the possibility of being scooped with one's own data, or simply the significant time investment of preparing open-access research. But I would argue that the potential gains outweigh these concerns, and that research on the EIA would benefit hugely from the greater accessability of datasets and workflows. 
 
-In this vein, the present article has been composed making use of Ben Marwick's "rrtools" [see @Marwick2017; @inbook], an open-source package for the statistical software R Studio, which provides the author with the tools to create a self-contained "compendium", which can be freely downloaded, and from which anyone can accurately reproduce the entire workflow of the present analysis. Though not visible in the present paper, every chart and table herein was produced directly, through written code, from the raw data using R. This code, as well as the raw and derived datasets, complete bibliography (in BibTex format, for export to any major reference manager), figures, and article as originally written are included in the compendium. It can be downloaded as a repository from GitHub, at the following address: https://github.com/DCPollard94/knossoscemeteries, and the raw datasets have been stored with the online repository Figshare, here: (**NB a URL will be included pending acceptance of the article**). The data are made available through an MIT license, which permits unlimited use, ammendation, and dissemination thereof, yet frees the present author from any responsibilty for that use, or perceived errors or inaccuracies in the data. It is sincerely hoped that others may further explore and expand upon the research presented here by downloading this compendium.
+In this vein, the present article has been composed making use of Ben Marwick's 'rrtools' [see @Marwick2017; @inbook], an open-source package for the statistical software R Studio. This provides the author with the tools to create a self-contained 'compendium', which can be freely downloaded, and from which anyone can reproduce the entire workflow of the following analysis. Though not visible in the present paper, every chart and table herein was produced directly, through written code, from the raw data using R (and note also that, wherever possible, these are presented in colour-blind friendly palettes). This code, as well as the raw and derived datasets, complete bibliography (in BibTex format, for export to any major reference manager), figures, and original article are included in the compendium. It can be downloaded as a repository from GitHub, at the following address: https://github.com/DCPollard94/knossoscemeteries, and the raw datasets have been stored with the online repository Figshare, here: (**NB a URL will be included pending acceptance of the article**). The data are made available through an MIT license, which permits unlimited use, ammendation, and dissemination thereof, yet frees the present author from any responsibilty for that use, or perceived errors or inaccuracies in the data. It is sincerely hoped that others may further explore and expand upon the research presented here by downloading this compendium.
 
 ## Estimating Interments
 
-A first important step in preparing the data for analysis was the estimation of the number of individuals buried in each tomb. The method chosen broadly follows that of Cavanagh [-@Cavanagh1996, 659-660], who took the number of pithoi (the most common urn type) and the number of pithoi, amphorae and kraters (which were sometimes used as urns) as middle and upper estimates of the number of interments, with all securely identified interments (in the form of ashes or osteological material) being the lower limit (Figure \@ref(fig:burialestimate)). In the present study, the mean of these three estimates was taken, to provide a single aggregate measure for the purposes of analysis.
+A first important step in preparing the data for analysis was the estimation of the number of individuals buried in each tomb. The method chosen broadly follows that of Cavanagh [-@Cavanagh1996: 659-60], who took the number of pithoi (the most common urn) and the number of pithoi, amphorae and kraters (which were sometimes used as such) as middle and upper estimates of the number of burials, with all securely identified interments being the lower limit (Figure \@ref(fig:burialestimate)). Here, the mean of these three estimates was taken, to provide a single aggregate measure for the purposes of analysis.
 
 ```{r burialestimate, fig.dim = c(7, 4), dpi=300, fig.align='center', fig.cap="goes around here"}
 
@@ -166,7 +166,7 @@ For most diachronic analyses, however, pithoi alone were taken as the best proxy
 
 ##Aoristic Approaches to Dating
 
-A central concern of the present study was how to deal with the temporal uncertainty implicit in the assigning of individual vessels to stylistically-defined periods. A vessel dated to the PGB period could, on our best estimates, date anywhere between 840 and 810 BC. This situation results in major challenges to the visualisation and analysis of such data through means which normally require values and not ranges. A simple, if coarse, solution is to use the midpoint of the range assigned to each vessel (i.e. 825 for our PGB example). This is used in a couple of instances in the present paper when the division of vessels into centuries renders the inaccuracies of such a method less significant.
+Another major concern was the temporal uncertainty implicit in the assigning of individual vessels to ceramic periods. A Protogeometric B vessel could, on our best estimates, date anywhere between 840 and 810 BC. This situation results in major challenges to the visualisation and analysis of such data. A simple, if coarse, solution is to use the midpoint of the range assigned to each vessel (i.e. 825 for our PGB example). This is used in a couple of instances in the present paper, for assigning vessels to broad, century-long windows.
 
 ```{r allpithoi,fig.dim = c(7, 4), dpi=300, fig.align='center', fig.cap="goes around here"}
 
@@ -191,9 +191,9 @@ ggplot(pots, aes(ave_date,fill="Pots"))+geom_histogram()+
 
 ```
 
-But the artificial clustering this technique engenders around select absolute dates can prove misleading, as in Figure \@ref(fig:allpithoi), a simple plot of vessel counts based on these average dates; the apparent cessation of depositions for 30 years in the 8th century is simply a fiction generated by the processing of the data.
+But the artificial clustering this technique engenders around select absolute dates can prove misleading, as in Figure \@ref(fig:allpithoi); the apparent cessation of depositions for 30 years in the 8th century is simply a fiction generated by the processing of the data.
 
-A alternative way of dealing with temporal uncertainty, and the method employed extensively in this paper, is the use of so-called "aoristic analysis" [for original use in criminology, see @Ratcliffe2000; for archaeological applications, see @Crema2010; @Crema2012; @Johnson2004a]. Here, rather than assign a pot a single date, the entire time span under investigation is divided into equal chunks (in this case, decades), and probability values summing to 1 are then assigned for each vessel, per chunk of time, based on its accordant date range. So, our PGB vessel, datable between 840 and 810 BC, would register a value of 0.33 for each of those three decades. These values for individual vessels can then simply be summed to produce tomb- or cemetery-level signatures. The major contribution of this method is that it incorporates temporal uncertainty into the size of the resulting values, that is, "events with tight temporal definition contribute more to the total probability over their range than do loosely defined events" [@Johnson2004a, 450].
+A alternative approach, and the method employed extensively in this paper, is the use of so-called 'aoristic analysis' [for original use in criminology, see @Ratcliffe2000; for archaeological applications, see @Crema2010; @Crema2012; @Johnson2004a]. Here, rather than give a pot a single date, the entire time span under investigation is divided into equal chunks (in this case, decades), and probability values summing to one are then assigned for each vessel, per chunk of time, based on its accordant date range. So, our PGB vessel, datable between 840 and 810 BC, would register a value of 0.33 for each of those three decades. These values for individual vessels can then simply be summed to produce tomb- or cemetery-level signatures. A particular attraction of this method is that it incorporates temporal uncertainty into the size of the resulting values, that is, "events with tight temporal definition contribute more to the total probability over their range than do loosely defined events" [@Johnson2004a, 450].
 
 
 ```{r aoristallcems, fig.dim = c(7, 4), dpi=300, fig.align='center', fig.cap="goes around here"}
@@ -225,13 +225,13 @@ ggplot(aorist_all_tombs,aes(decade,aoristic_sum, fill="Aoristic Sum"))+
 
 ```
 
-As seen in Figure \@ref(fig:aoristallcems), the artificial peaks and troughs of the simple averaging method are avoided, and different patterns become visible. Though these methods present their own limitations (see @Crema2010, 1123-1124), they are considered a more robust and productive approach to the temporal uncertainty of ceramic dating and, as such, are used for much of the present analysis.
+As seen in Figure \@ref(fig:aoristallcems), the artificial peaks and troughs of the simple averaging method are avoided, and different patterns become visible. Though these methods present their own limitations (see @Crema2010, 1123-24), they are considered a more robust and productive approach to the temporal uncertainty of ceramic dating and, as such, are used for much of the present analysis.
 
 
 #Analysis
 
 ##Introduction
-The great advantage of the large, quantitative data set employed here is that it permits investigation of several nested levels of potentially significant patterning. From individual burials, to collective tombs, to the cemeteries as a whole, and between cemeteries in the landscape, we have the opportunity to study and compare both the synchronic and diachronic variation across these various levels. In so doing, I first investigate the broad temporal trends in tomb construction, burial, and pottery deposition across both cemeteries, isolating a notable trend among a select group of tombs. I then examine these more closely, in an attempt to understand what sets them apart from the rest. Tomb dimensions, rates of burial, and changes in the composition of assemblages through time are all considered, to produce an account which speaks to the changing social landscape of EIA Knossos, drawing together issues of group identity, external relations, and the communication of wealth and status through funerary practice. 
+The great advantage of the large, quantitative dataset employed here is that it permits investigation of several nested levels of potentially significant patterning. From individual burials, to collective tombs, to whole cemeteries, we have the opportunity to study and compare both the synchronic and diachronic variation across these various levels. In so doing, I first investigate the broad temporal trends in tomb construction, burial, and pottery deposition across both cemeteries, isolating a notable trend among a select group of tombs. I then examine these more closely, in an attempt to understand what sets them apart from the rest. Tomb dimensions, rates of burial, and changes in the composition of assemblages through time are all considered, to produce an account which speaks to the changing social landscape of EIA Knossos, drawing together issues of group identity, external relations, and the communication of wealth and status through funerary practice. 
 
 ##Temporal Developments in the Knossian Cemeteries
 
@@ -321,7 +321,7 @@ ggarrange(aorist_pithoi_plot,aorist_pots_plot,ncol=2,common.legend=TRUE, legend=
 ```
 
 
-Figure \@ref(fig:aoristbycem) presents the aoristic sums of pithoi (as a proxy for burials) and of all vessels, respectively. Despite differences in scale and timing, it is immediately apparent that Fortetsa and the KNC experieced similar chronological developments in the volume of burials and, to a slightly lesser degree, grave goods. In both cemeteries, the rate of cremation burial began rising around the end of the 9th century, plateaued slightly in the early 8th, and then rose again to a peak in the late 8th and early 7th centuries. Across all vessels, the developments are more volatile, but largely similar, especially regarding the late spike in burial activity. We might assume that these developments would be mirrored in the construction of new tombs, but this proves not to be the case.
+Figure \@ref(fig:aoristbycem) presents the aoristic sums of pithoi (as a proxy for burials) and of all vessels, respectively. Despite differences in scale and timing, it is immediately apparent that Fortetsa and the KNC experieced similar chronological developments in burials and, to a slightly lesser degree, grave goods. In both cemeteries, the rate of cremation burial began rising around the end of the 9th century, plateaued slightly in the early 8th, and then rose again to a peak in the late 8th and early 7th. Across all vessels, the developments are more volatile, but largely similar, especially regarding the late spike in burial activity. We might assume that these trends would be mirrored in the construction of new tombs, but this proves not to be the case.
 
 ```{r tombconstruction, fig.dim=c(7.5,4), dpi=300, fig.cap="goes around here"}
 
@@ -361,7 +361,7 @@ ggarrange(new_tomb_counts_plot,new_tomb_aorist_plot,ncol=2,common.legend=TRUE, l
 
 ```
 
-Figure \@ref(fig:tombconstruction) presents two ways of dating the construction of the tombs. On the left, counts are based on the ceramic phase considered most likely to correspond to the tomb's first use, including "PG", "G" and "O" where no greater specificity was possible. On the right, aoristic sums are presented, spreading the uncertainty associated with those general assignations. In both cases, the trend appears clear. The KNC began with a large number of new tombs built during the, admittedly prolongued, SM period, followed by a protracted decline in rates of consruction, offset by small resurgences in the late 9th and 8th centuries. It should be noted, too, that many of the later "tombs" are not chamber tombs, but a mix of pit, larnax, and pithos burials. The Fortetsa, meanwhile, saw next to no new chamber tomb construction from the 8th century onwards. The abatement of chamber tomb construction has been noted before (Brock 1957, 4; Cavanagh 1996, 652–3) and somewhat implicitly read as evidence of restructuring of the funerary rite, if not a decline in the fortunes of the wider community. But this image of a waigning investment in chamber tombs sits uneasily with the observable growth in mortuary activity in the late 8th century.
+Figure \@ref(fig:tombconstruction) presents two ways of dating the construction of the tombs. In both cases, the trend appears clear. The KNC began with a large number of new tombs built during the, admittedly prolongued, SM period, followed by a protracted decline in rates of consruction, offset by small resurgences in the late 9th and 8th centuries. It should be noted, too, that many of the later "tombs" are not chamber tombs, but a mix of pit, larnax, and pithos burials. The Fortetsa, meanwhile, saw next to no new chamber tomb construction from the 8th century onwards. This abatement has been noted before (Brock 1957: 4; Cavanagh 1996: 652–53) and somewhat implicitly read as evidence of restructuring of the funerary rite, if not a decline in the fortunes of the wider community. But this image of a waigning investment in chamber tombs sits uneasily with the observable growth in mortuary activity.
 
 ```{r tombsinuse, fig.dim=c(7,4), dpi=300, fig.cap="goes around here"}
 
@@ -392,7 +392,7 @@ ggplot(tombs_in_use_cem,aes(period,no_tombs, fill=cemetery))+geom_col(position="
                  scale_y_continuous(expand=c(0,0),limits=c(0,45))
 ```
 
-These countervalent trends are observable too in the number of tombs receiving depositions in each period (Figure \@ref(fig:tombsinuse)). At Forteta, this number remained relatively stable from the MPG to LG periods before declining (and bear in mind, there were only around 20 tombs belonging to this cemetery throughout the period), while at the KNC, the number of tombs in use rose to a preak in the late 8th century before declining. But this is not the whole story.
+These countervalent trends are observable too in the number of tombs receiving depositions in each period (Figure \@ref(fig:tombsinuse)). At Fortetsa, this number remained relatively stable from the MPG to LG periods before declining (and bear in mind, there were only ever around 20 tombs belonging to this cemetery), while at the KNC, the number of tombs in use rose to a preak in the late 8th century before declining. But this is not the whole story.
 
 ```{r tombsinusebybuilddate, fig.dim=c(7,4), dpi=300, fig.cap="goes around here"}
 tombs_11th<-subset(tombs,tombs$century_built=="11th")
@@ -450,7 +450,7 @@ Built",palette = "Set2")+
 
 ```
 
-Figure \@ref(fig:tombsinusebybuilddate) shows the number of tombs in use in each period, divided into the centuries in which those tombs were constructed, all overlaid on the total number of tombs in use across both cemeteries. A wave-like pattern can be observed, with each cohort of tombs steadily going out of use as new ones were built. This would seem to accord with Cavanagh's suggestion that "[t]he length of time the tombs last seems [...] to reflect the duration of the social group which had access to the sepulchre", and that, if such access was lineally inehrited, frequent fission would result in limited trans-generational use. We might expect, then, that it was the 8th century tombs coming into use that spurred the dramatic rise in burial rates previoulsy noted. But this is not the case. 
+By dividing the tombs in use into the centuries during which they were built (Figure \@ref(fig:tombsinusebybuilddate)), we see a wave-like pattern with each cohort steadily going out of use as new ones were constructed. This would seem to accord with Cavanagh's (1996) suggestion that "[t]he length of time the tombs last seems [...] to reflect the duration of the social group which had access to the sepulchre", and that, if such access was lineally inehrited, frequent fission would result in limited trans-generational use. We might expect, then, that it was the 8th century tombs coming into use that spurred the dramatic rise in burial rates previoulsy noted.
 
 ```{r potsbydateandtombdate,  fig.dim=c(7,4), dpi=300, fig.cap="goes around here"}
 
@@ -476,7 +476,7 @@ ggarrange(date_by_vessel,date_by_tomb,ncol=2)
 
 ```
 
-In Figure \@ref(fig:potsbydateandtombdate), all vessels are assigned, firstly, to the century in which they were produced and, secondly, to the century in which the tomb they were found in was built. So, though the late 8th and early 7th centuries represented the apex of burial activity across both cemeteries, it was not the tombs built in those centuries which received the lion's share of the burials and associated ceramics. This is all the more notable when, returning to Figure \@ref(fig:tombsinusebybuilddate), we see that the number of 9th and 10th century tombs in use by this time was declining.
+However, we see from Figure \@ref(fig:potsbydateandtombdate) that, although the late 8th and early 7th centuries represented the apex of burial activity across both cemeteries, it was tombs built back in the 9th and 10th which received the lion's share of the burials and associated ceramics. This is all the more notable when, returning to Figure \@ref(fig:tombsinusebybuilddate), we see that the number of 9th and 10th century tombs in use by this time was, in fact, declining.
 
 ```{r table1}
 
@@ -514,17 +514,17 @@ notombs7th7th<-nrow(unique(subset(pithoi,tomb_century=="7th" & century=="7th",se
 
 *Table 1 goes around here*
 
-The significance of these findings can be seen in Table 1. Using pithoi as a proxy for burials, we can estimate the changing rates of burial through time. And while for the most these remained around three per tomb per century, in the 8th and 7th centuries, tombs founded in the 9th century saw a rapid rise in the rate of burial, peaking at over 11 per tomb per century. Though these estimates are no doubt very rough, the marked nature of this divergence suggests it is not simply an artefact of imperfect data.
+The significance of these findings can be seen in Table 1. Using pithoi as a proxy for burials, we can estimate the changing rates of burial through time. And while these mostly remained around three per tomb per century, in the 8th and 7th centuries, tombs founded in the 9th century saw a rapid rise in the rate of burial, peaking at over 11 per tomb per century. Though these estimates are no doubt very rough, the marked nature of this divergence suggests it is not simply an artefact of imperfect data.
 
 But Table 1 also demonstrates the markedly low rates of burial which predominated at both cemeteries; two to four burials per tomb per century amounts to a very selective burial rite. It seems unlikely, then, that the rising rates of burial noted above are, for instance, the direct result of population growth; the increase is too rapid, and appears concentrated only in certain (older) tombs, not to mention that, based on KULP’s survey data, the major population increase at EIA Knossos probably occurred back in the Protogeometric period (Whitelaw, per comm.).
 
 ##Isolating the Phenomenon
 
-We are yet to draw out which older tombs precisely are responsible for the observible patterning so far discussed. We might assume the tombs which became the focus of intense later burial activity would be those which yielded the most burials and grave goods when excavated and, happily, this supposition proves true. 
+We are yet to draw out which older tombs precisely are responsible for the trend so far discussed. We might assume the tombs which became the focus of intense later burial activity would be those which yielded the most burials and grave goods when excavated and, happily, this supposition proves true. 
 
 ```{r toptombs, fig.dim = c(7, 5), dpi=300, fig.align='center',fig.cap="goes around here"}
 
-tombs_ranked<-tombs[with(tombs, order(-tombs$total_pottery)), ]
+tombs_ranked<-tombs[with(tombs, order(-tombs$total_finds)), ]
 tombs_top_12<-head(tombs_ranked,12)
 top12<-as.vector(tombs_top_12$tomb)
 pots_top_12<-pots[is.element(pots$tomb, top12),]
@@ -535,35 +535,35 @@ aorist_all_tomb_names<-tombs_top_12[,cols]
 aorist_all_tomb_names<-data.frame(aorist_all_tomb_names)
 colnames(aorist_all_tomb_names)<-c("tomb",dates)
 
+aorist_all_tomb_names$cemetery<-tombs_top_12$cem_condensed
+
 aorist_all_tomb_melt<-melt(aorist_all_tomb_names)
 aorist_all_tomb_melt$variable<-as.numeric(as.character(aorist_all_tomb_melt$variable))
-
 
 top_12<-tombs_top_12$tomb
 aorist_all_tomb_melt$tomb<-factor(aorist_all_tomb_melt$tomb,levels=top_12)
 
-
-ggplot(aorist_all_tomb_melt,aes(variable, value))+geom_col()+theme(legend.position = "none")+facet_wrap(~tomb,scales="free_y")+
-  geom_col()+theme_bw()+theme(legend.title=element_blank(),
+ggplot(aorist_all_tomb_melt,aes(variable, value,fill=cemetery))+geom_col()+theme(legend.position = "none")+facet_wrap(~tomb,scales="free_y")+
+  geom_col()+theme_bw()+theme(legend.title=element_blank(),legend.position="bottom",
       text=element_text(family="Garamond", size=12))+
           labs(x="Date (Years BC)", y="Aoristic Sums")+
-              scale_fill_brewer(palette = "Set3")+ 
-                theme(legend.position="none")+
+              scale_fill_brewer(palette = "Set2",labels=c(" KNC  "," Fortetsa"))+ 
                   coord_cartesian(xlim=c(1100,610))+scale_y_continuous()+
                     scale_x_reverse(expand = c(0, 0),limits=c(1100,610))+
                       theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
-                  
+
+
 tombs$group<-ifelse(tombs$tomb=="P"|tombs$tomb=="292"|tombs$tomb=="75"|tombs$tomb=="107"|tombs$tomb=="285"|tombs$tomb=="II"|tombs$tomb=="218","A","B")
 total_pottery_by_groups<-aggregate(tombs$total_pottery, by=list(tombs$group), FUN=sum)
 calc1<-(total_pottery_by_groups[1,2]/sum(total_pottery_by_groups$x))*100
 
 ```
 
-The 12 tombs with the most associated vessels are all chamber tombs, 10 dating to the 9th century and two to the 10th, and seven of which did exhibit late, intense episodes of deposition (Figure \@ref(fig:toptombs)). In fact, Tombs P, 292, 75, 107, 285, II and 218 (henceforth 'Group A') between them account for `r round(calc1,digits=2)`% of the entire ceramic assemblage from both cemeteries. All but Tomb 285 date to the 9th century, and together they underpinned the discussed late spate of burials. Interestingly, Tombs X, G, Q, 104 and 283 ('Group B'), however, evince a different pattern, with their respective peaks coming around a century earlier, which, as seen in Figure \@ref(fig:aoristbycem) was another period of increased burial activity. So despite receiving the greatest quantities of burials and grave goods, these tombs nonetheless seem to have achieved that distinction via different routes. By looking more closely at the periods in which they were built, and in which they were most popular, I believe the differences between these tombs go a long way to explaining the late rise in burial activity here discussed.
+The 12 tombs with the most associated vessels are all chamber tombs, 10 dating to the 9th century and two to the 10th, and seven of them did exhibit late, intense episodes of deposition (Figure \@ref(fig:toptombs)). In fact, Tombs P, 292, 75, 107, 285, II and 218 (henceforth 'Group A') between them account for `r round(calc1,digits=2)`% of the entire ceramic assemblage from both cemeteries. All but Tomb 285 date to the 9th century, and together they underpinned the discussed late spate of burials. Interestingly, Tombs X, G, Q, 219 and 283 ('Group B'), however, evince a different pattern, with their respective peaks coming around a century earlier, which, as seen in Figure \@ref(fig:aoristbycem), was another period of increased burial activity. So despite receiving the greatest quantities of burials and grave goods, these tombs nonetheless seem to have achieved that distinction via different routes. And, indeed, the differences between them may shed light on the late surge in burial activity here discussed.
 
 ##Not All Tombs are Created Equal
 
-The indices employed so far – the distribution of artefacts between tombs, and the construction and use of the tombs through time – inform us of the temporal or aggregate features of the cemeterie, but they tell us little of the tombs as they were built or first used. In attempting more synchronic comparisons, we shall first consider the physical dimensions of the tombs as built - a potentially rich context for the negotiation of broader issues of social power, status and group membership.
+The indices employed so far – the distribution of artefacts between tombs, and the construction and use of the tombs through time – inform us of the temporal or aggregate features of the cemeteries, but tell us little of the tombs as they were built or first used. In attempting more synchronic comparisons, we shall first consider the physical dimensions of the tombs as built - a potentially rich context for the negotiation of social power, status and group membership.
 
 ```{r dimensionsboxplots, fig.dim=c(6,5),dpi=300, fig.align='center',fig.cap="goes around here"}
 
@@ -625,9 +625,9 @@ ggarrange(tombareas,dromoslengths,ncol=2,common.legend = TRUE,legend="bottom")
 
 ```
 
-Furthermore, it seems that no clear relationship existed between the physical size of a tomb and its buried population at EIA Knossos (see Figure \@ref(fig:tombdimensions)). True, over half of all tombs do not exceed 2.6 sq m in area, while nine of the ten tombs with the most burials do surpass this value. But many of the very largest tombs are decidedly middling when it comes to burial numbers. Things are even less clear for the *dromos*; the largest two tombs by burial numbers also had exceptionally long *dromoi*, but the next eight tombs with the longest *dromoi* do not rank highly on interments.
+Furthermore, it seems that no clear relationship existed between the physical size of a tomb and its eventual buried population (see Figure \@ref(fig:tombdimensions)). True, over half of all tombs do not exceed 2.6 sq m in area, while nine of the ten tombs with the most burials do. But many of the very largest tombs are decidedly middling when it comes to burial numbers. Things are even less clear for the *dromos*; the largest two tombs by burial numbers also had exceptionally long *dromoi*, but the next eight tombs with the longest *dromoi* do not rank highly on interments.
 
-It seems dubious, then, whether the scale of the tombs when built carried overt social meanings but, even if it did, this didn't prove a determining factor in their later reuse. Several tombs had niches cut into their *dromoi*, or the *stomion* extended, to fit in later burial urns. Sometimes, urns from within the chamber were relocated to such niches to make space for new interments. There is an impression of competition for inclusion into the sepulchral group, further implying the tombs’ original builders little anticipated their eventual popularity. 
+It seems dubious, then, whether the scale of the tombs when built carried overt social meanings but, even if it did, this proved irrelevant to their later reuse. Several tombs had niches cut into their *dromoi*, or the *stomion* extended, to fit in later burial urns. Sometimes, urns from within the chamber were relocated to such niches to make space for new interments (e.g. T. TFT; Brock 1957: 3–4). The impression is of competition for inclusion into the sepulchral group, further implying the tombs’ original builders little anticipated their eventual popularity. 
 
 ##Imports, Interments, and Indices of Wealth
 
@@ -637,7 +637,7 @@ Dimensions aside, we can still consider the early use of these tombs through com
 
 
 pots$group<-ifelse(pots$tomb=="P"|pots$tomb=="292"|pots$tomb=="75"|pots$tomb=="107"|pots$tomb=="285"|pots$tomb=="II"|pots$tomb=="218","A",
-       ifelse(pots$tomb=="X"|pots$tomb=="G"|pots$tomb=="104"|pots$tomb=="Q"|pots$tomb=="283","B","C"))
+       ifelse(pots$tomb=="X"|pots$tomb=="G"|pots$tomb=="219"|pots$tomb=="Q"|pots$tomb=="283","B","C"))
 tombs9th10th<-subset(tombs,century_built=="9th" & total_pottery>50|century_built=="10th" & total_pottery>50)
 pots9th10th<-subset(pots,tomb_century=="9th"|tomb_century=="10th")
 
@@ -656,105 +656,7 @@ ggplot(pots9th10th,aes(tomb,fill=group))+geom_bar()+
                     scale_y_continuous(expand=c(0,0))+facet_grid(~century,scales="free_x",space="free")
 ```
 
-And in Figure \@ref(fig:tombscompthroughtime) we see that the tombs of Group A were relatively unremarkable in the scale of their depositions during the 9th century, only diverging significantly from the rest in the subsequent two hundred years. Group B, meanwhile, had their respective peaks in the 9th or 8th centuries, with a near total decline afterwards. As a working hypothesis, let us suppose that these two distinct trajectories correspond to changing socio-politcal and economic contexts, made manifest by the burying groups in their mortuary depositions. How far might this hypothesis take us in explicating these patterns, and how visible might it be?
-
-The late 9th and early 8th centuries are consistently interpreted as periods of artistic development, increased overseas trade, and renewed vigour in the construction of tombs and the visibility of the burial rite. The PGB style reflects a uniquely Cretan blend of Attic and Near Eastern forms, while the appearance of BA 'antiques' in the tombs from this period onwards is felt to reflect rejuvinated, even competitive interest in the Minoan past.
-
-```{r imports, fig.dim=c(7,4),dpi=300, fig.align='center',fig.cap="goes around here"}
-
-imports<-subset(pots,pots$import!="")
-greekimports<-subset(imports,imports$import_region=="Greece")
-NEimports<-subset(imports,imports$import_region=="Near East")
-
-import_aorist<-colSums(imports[27:76])
-import_aorist<-data.frame(import_aorist)
-colnames(import_aorist)<-c("aoristic_sum")
-row.names(import_aorist)<-dates
-setDT(import_aorist, keep.rownames = "decade")
-import_aorist$decade<-as.numeric(import_aorist$decade)
-
-greekimport_aorist<-colSums(greekimports[27:76])
-greekimport_aorist<-data.frame(greekimport_aorist)
-colnames(greekimport_aorist)<-c("aoristic_sum")
-row.names(greekimport_aorist)<-dates
-setDT(greekimport_aorist, keep.rownames = "decade")
-greekimport_aorist$decade<-as.numeric(greekimport_aorist$decade)
-
-NEimport_aorist<-colSums(NEimports[27:76])
-NEimport_aorist<-data.frame(NEimport_aorist)
-colnames(NEimport_aorist)<-c("aoristic_sum")
-row.names(NEimport_aorist)<-dates
-setDT(NEimport_aorist, keep.rownames = "decade")
-NEimport_aorist$decade<-as.numeric(NEimport_aorist$decade)
-
-greekimport_aorist$origin<-"Greece"
-NEimport_aorist$origin<-"Near East"
-allimport_aorist<-rbind(greekimport_aorist,NEimport_aorist)
-
-
-ggplot()+geom_col(data=import_aorist,aes(decade,aoristic_sum),alpha=0.2)+
-          geom_col(data=allimport_aorist,aes(decade,aoristic_sum, fill=origin),position="dodge")+
-            theme_bw()+theme(text=element_text(family="Garamond", size=12))+
-                labs(x="Date (Years BC)", y="Aoristic Sum")+
-                  scale_fill_brewer(name="Origin",palette = "Set2")+
-                   scale_y_continuous(expand=c(0,0),limits=c(0,20))+
-                    scale_x_reverse(expand = c(0, 0),limits=c(1000,600))
-
-```
-
-The rise in imported items is clearly seen in the tomb assemblages, with a succession of increased Greek and Near Eastern imports respectively in the late 9th and early 8th centuries (Figure \@ref(fig:imports)). This much has been relatively well understood for some time, at least at the KNC, but we can further examine how these imports were distributed among the various groups of tombs.
-
-```{r importsgroups, fig.dim=c(8,4),dpi=300, fig.align='center',fig.cap="Insert Figure 15 here"}
-
-pots$group<-ifelse(pots$tomb=="P"|pots$tomb=="292"|pots$tomb=="75"|pots$tomb=="107"|pots$tomb=="285"|pots$tomb=="II"|pots$tomb=="218","A",
-                   ifelse(pots$tomb=="X"|pots$tomb=="G"|pots$tomb=="104"|pots$tomb=="Q"|pots$tomb=="283","B","C"))
-
-imports<-subset(pots,import!="")
-imports_A<-subset(imports,group=="A")
-imports_B<-subset(imports,group=="B")
-imports_C<-subset(imports,group=="C")
-
-import_A_aorist<-colSums(imports_A[27:76])
-import_A_aorist<-data.frame(import_A_aorist)
-colnames(import_A_aorist)<-c("aoristic_sum")
-row.names(import_A_aorist)<-dates
-setDT(import_A_aorist, keep.rownames = "decade")
-import_A_aorist$decade<-as.numeric(import_A_aorist$decade)
-
-import_A_aorist$group<-"A"
-
-import_B_aorist<-colSums(imports_B[27:76])
-import_B_aorist<-data.frame(import_B_aorist)
-colnames(import_B_aorist)<-c("aoristic_sum")
-row.names(import_B_aorist)<-dates
-setDT(import_B_aorist, keep.rownames = "decade")
-import_B_aorist$decade<-as.numeric(import_B_aorist$decade)
-
-import_B_aorist$group<-"B"
-
-import_C_aorist<-colSums(imports_C[27:76])
-import_C_aorist<-data.frame(import_C_aorist)
-colnames(import_C_aorist)<-c("aoristic_sum")
-row.names(import_C_aorist)<-dates
-setDT(import_C_aorist, keep.rownames = "decade")
-import_C_aorist$decade<-as.numeric(import_C_aorist$decade)
-
-import_C_aorist$group<-"C"
-
-aorist_import_groups<-rbind(import_A_aorist,import_B_aorist,import_C_aorist)
-
-ggplot(aorist_import_groups,aes(decade,aoristic_sum,fill=group))+ geom_col(position="dodge")+
-  theme_bw()+theme(legend.position="bottom",text=element_text(family="Garamond", size=12))+
-  labs(x="Date (Years BC)", y="Aoristic Sum")+
-  guides(fill=guide_legend(title="Group"))+
-  scale_fill_brewer(palette = "Set2")+ 
-  scale_y_continuous(expand=c(0,0),limits=c(0,12))+
-  scale_x_reverse(expand = c(0, 0),limits=c(1000,600))+
-  theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
-
-```
-
-In Figure \@ref(fig:importsgroups), not only is it apparent that a range of tombs were beneficiaries of the increase in imports in the LPG-EG periods, but that there was also potentially significant patterning in where those artefacts ended up. The Group A and B tombs closely trace the trends for Greek and Near Eastern imports respectively (and, indeed, tombs Q and G contained only Greek imports), while across all other tombs ('Group C'), there was also no doubt variegation not observable here. Imported ceramics are used here as something of a proxy for items of status value, a shorthand that would ideally be bolstered by other artefacts (precious vessels, weapons, jewellery etc.) which, owing to their less-developed chronologies, must unfortunately be excluded. But let us suggest, for the time being, that these trends are representative of a larger truth, namely that the late 9th and early 8th centuries witnessed a peak in the variety of depositions, which went unmatched in later periods.
+And in Figure \@ref(fig:tombscompthroughtime), we see that the tombs of Group A were by no means exceptional in the scale of their depositions during the 9th century, only diverging significantly from the rest in the subsequent two hundred years. Group B, meanwhile, had their respective peaks in the 9th or 8th centuries, with a near total decline afterwards. That is, they seem to have followed a more conventional trajectory, going out of use as new tombs were built. As a working hypothesis, let us suppose that these two distinct trajecotire correspond to behaviours born of differing socio-politcal and economic contexts. How far might this hypothesis take us in explicating these patterns, and how visible might it be?
 
 ```{r bigbox, fig.dim=c(7,4),dpi=300, fig.align='center',fig.cap="goes around here"}
 
@@ -800,7 +702,7 @@ ggplot(aorist_melt,aes(variable,value,fill=period))+geom_boxplot(aes(group = cut
 
 ```
 
-To test this, admittedly tentative, proposition, Figure \@ref(fig:bigbox) presents a boxplot of the total aoristic sums across both cemeteries, colour-coded by ceramic phase. Note that, for visual clarity, the outliers tomb G in the EG period, and tomb P in the late EO-LO period are excluded, with values ranging from 29-34, and 36-44 respectively. The important observation is that the PGB and EG exhibit the largest interquartile ranges (IQRs) of any period, and each possess only a single outlier (beyond 1.5 times the IQR). The Orientalising period, on the other hand, exhibits much reduced IQRs, and a proliferation of outliers far and above the range of the other tombs. In other words, whilst both the PGB-EG and EO-LO periods witnessed an expanding volume and range of burial activity, in the earlier period this was distributed more evenly across the total burying population. One speaks of increasing plurality, the other of divergence.
+Figure \@ref(fig:bigbox) presents a boxplot of the total aoristic sums across both cemeteries, colour-coded by ceramic phase. Looking at the PGB and EG periods, we see that they exhibit the largest interquartile ranges (IQRs) of any period, and each possess only a single outlier (beyond 1.5 times the IQR). The Orientalising period, on the other hand, exhibits much reduced IQRs, and a proliferation of outliers far and above the range of the other tombs. In other words, whilst both the PGB-EG and EO-LO periods witnessed an expanding volume and range of burial activity, in the earlier period this was distributed more evenly across the total burying population. One speaks of increasing plurality, the other of divergence.
 
 ```{r gini, fig.dim=c(7,4),dpi=300, fig.align='center',fig.cap="goes around here"}
 
@@ -827,7 +729,7 @@ setDT(tombs_gini, keep.rownames = "decade")
 tombs_gini$decade<-as.numeric(tombs_gini$decade)
 
 
-rects <- data.frame(xstart = c(1100,970,920,875,840,810,790,745,70,670,630), 
+rects <- data.frame(xstart = c(1100,970,920,875,840,810,790,745,700,670,630), 
                     xend = c(970,920,875,840,810,790,745,710,670,630,600), 
                     col = c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO","A"))
 rects$col<-factor(rects$col,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO","A"))
@@ -842,30 +744,89 @@ ggplot() +
                        scale_y_continuous(expand=c(0,0))
 ```
 
-This possibility is supported further by considering the gini coefficient of the distribution of pottery between the tombs (see Figure \@ref(fig:gini). Using the aoristic sums as a probablistically-weighted estimate of the volume of material deposited in each tomb in each decade, use of the gini coefficient can give an (albeit rough) estimate of how unequally distributed that material was. And, though values were always relatively high (i.e. unequal) within the cemeteries, the major spike in the gini coefficient seen in the Orientalising period does contrast markedly with the modest rise and plateau of the PGB-EG. The gini coefficient is most commonly used in the assessment of income inequality, but I want to stress here that it is not "wealth" in any meaningful sense that we are talking about here. Indeed, if anything, the late flourit of burial activity here discussed may be a case of quantity, and not quality.
+This characterisation is supported further by considering the Gini coefficient of the distribution of pottery between the tombs (see Figure \@ref(fig:gini). Using aoristic sums as a probablistically-weighted estimate of the volume of material deposited in each tomb in each decade, the Gini coefficient can give an (albeit rough) estimate of how unequally distributed that material was. And, though values were always relatively high (i.e. unequal) within the cemeteries, the major spike in the Gini coefficient seen in the Orientalising period does contrast markedly with the modest rise and plateau of the PGB-EG. 
+
+This is not to suggest that the late 9th to early 8th century was a time of modest, egalitarian burial practices. The PGB and EG are consistently interpreted as periods of artistic development, increased overseas trade, and renewed vigour in the construction of tombs and the visibility of the burial rite. The PGB style reflects a uniquely Cretan blend of Attic and Near Eastern forms, while the appearance of BA 'antiques' in the tombs from this period onwards is felt to reflect rejuvinated, even competitive interest in the Minoan past.
+
+```{r imports, fig.dim=c(7,4),dpi=300, fig.align='center',fig.cap="goes around here"}
+
+imports<-subset(pots,pots$import!="")
+greekimports<-subset(imports,imports$import_region=="Greece")
+NEimports<-subset(imports,imports$import_region=="Near East")
+imitations<-subset(pots,pots$imitation!="")
+
+import_aorist<-colSums(imports[27:76])
+import_aorist<-data.frame(import_aorist)
+colnames(import_aorist)<-c("aoristic_sum")
+row.names(import_aorist)<-dates
+setDT(import_aorist, keep.rownames = "decade")
+import_aorist$decade<-as.numeric(import_aorist$decade)
+
+greekimport_aorist<-colSums(greekimports[27:76])
+greekimport_aorist<-data.frame(greekimport_aorist)
+colnames(greekimport_aorist)<-c("aoristic_sum")
+row.names(greekimport_aorist)<-dates
+setDT(greekimport_aorist, keep.rownames = "decade")
+greekimport_aorist$decade<-as.numeric(greekimport_aorist$decade)
+
+NEimport_aorist<-colSums(NEimports[27:76])
+NEimport_aorist<-data.frame(NEimport_aorist)
+colnames(NEimport_aorist)<-c("aoristic_sum")
+row.names(NEimport_aorist)<-dates
+setDT(NEimport_aorist, keep.rownames = "decade")
+NEimport_aorist$decade<-as.numeric(NEimport_aorist$decade)
+
+imitation_aorist<-colSums(imitations[27:76])
+imitation_aorist<-data.frame(imitation_aorist)
+colnames(imitation_aorist)<-c("aoristic_sum")
+row.names(imitation_aorist)<-dates
+setDT(imitation_aorist, keep.rownames = "decade")
+imitation_aorist$decade<-as.numeric(imitation_aorist$decade)
+
+
+greekimport_aorist$origin<-"Greek Imports"
+NEimport_aorist$origin<-"Near Eastern Imports"
+imitation_aorist$origin<-"'Oriental' Imitations"
+all_import_imitation<-rbind(greekimport_aorist,NEimport_aorist,imitation_aorist)
+
+
+
+ggplot()+ geom_col(data=all_import_imitation,aes(decade,aoristic_sum, fill=origin),position="dodge")+
+            theme_bw()+theme(text=element_text(family="Garamond", size=12), legend.position="bottom")+
+                labs(x="Date (Years BC)", y="Aoristic Sum")+
+                  scale_fill_brewer(name="Origin",palette = "Set2")+
+                   scale_y_continuous(expand=c(0,0),limits=c(0,20))+
+                    scale_x_reverse(expand = c(0, 0),limits=c(1000,600))
+
+```
+
+The rise in imported items is clearly seen in the tomb assemblages, with a succession of increased Greek and Near Eastern imports respectively in the late 9th and early 8th centuries (Figure \@ref(fig:imports)). Likewise, the concomitant decline in Near Eastern imports and rise in locally-made imitations thereof, is visible at the end of the 8th century. These trends being as a very coarse proxy for its engagement with the wider Mediterranean, the late 9th and early 8th centuries would seem to encompass the most outward-looking phase of the EIA Knossian community. This much has been relatively well understood for some time, at least at the KNC, but we can further examine how these imports were distributed among the various groups of tombs.
+
+We have seen that the Group B tombs all experienced their respective peaks in burial activity around the end of the 9th century, before declining in use, while those of Group A went on to receive ever more burials into the late 8th. It is notable, then, that among the Group B tombs, imported items constituted `r nrow(subset(pots,pots$group=="B" & pots$import =="Y"))/nrow(subset(pots,pots$group=="B"))*100`% of the total assemblage, compared to `r nrow(subset(pots,pots$group=="C" & pots$import =="Y"))/nrow(subset(pots,pots$group=="C"))*100`% of Group C and only `r nrow(subset(pots,pots$group=="A" & pots$import =="Y"))/nrow(subset(pots,pots$group=="A"))*100`% of Group A. This may further endorse the characterisation of the PGB-EG periods, wherein the Group B tombs flourished, and after which they declined, as a time of competitive display between burying parties. The contents of the Group A tombs, though probably once also shaped by such strategies, appear to have been diluted, as it were, by their later use which, as is becoming increasingly apparent, was of a different kind.
 
 ```{r comps, fig.dim=c(7,4),dpi=300, fig.align='center',fig.cap="goes around here"}
 
-pots$group<-ifelse(pots$tomb=="P"|pots$tomb=="292"|pots$tomb=="75"|pots$tomb=="107"|pots$tomb=="285"|pots$tomb=="II"|pots$tomb=="218","A","B")
+pots$group<-ifelse(pots$tomb=="P"|pots$tomb=="292"|pots$tomb=="75"|pots$tomb=="107"|pots$tomb=="285"|pots$tomb=="II"|pots$tomb=="218","A",
+       ifelse(pots$tomb=="X"|pots$tomb=="G"|pots$tomb=="219"|pots$tomb=="Q"|pots$tomb=="283","B","C"))
 
 potcompKNC<-ggplot(subset(pots,century!="" & cem_condensed=="NC"),aes(century,fill=type))+geom_bar(position="fill")+
   theme_bw()+theme(plot.title = element_text(hjust=0.5),legend.title = element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(title="KNC",x="", y="Proportion of Total Assemblage")+
-                  scale_fill_brewer(palette = "Set2",labels=c(" Amphora  "," Jug  "," Oil vessel  ", " Pithos"," Drinking vessel  "," Lid  "," Other"))+ 
+                  scale_fill_brewer(palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0.0))
 potcompFOR<-ggplot(subset(pots,century!="" & cem_condensed=="FOR"),aes(century,fill=type))+geom_bar(position="fill")+
   theme_bw()+theme(plot.title = element_text(hjust=0.5),legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(title="Fortetsa",x="Century BC", y="")+
-                  scale_fill_brewer(palette = "Set2", labels=c(" Amphora  "," Jug  "," Oil vessel  ", " Pithos"," Drinking vessel  "," Lid  "," Other"))+ 
+                  scale_fill_brewer(palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0.0))
 
 potcomptop7<-ggplot(subset(pots,century!="" & century!="11th"& group=="A"),aes(century,fill=type))+geom_bar(position="fill")+
   theme_bw()+theme(plot.title = element_text(hjust=0.5),legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(title="Group A",x="", y="")+
-                  scale_fill_brewer(palette = "Set2",labels=c(" Amphora  "," Jug  "," Oil vessel  ", " Pithos"," Drinking vessel  "," Lid  "," Other"))+ 
+                  scale_fill_brewer(palette = "Set2")+ 
                     scale_y_continuous(expand=c(0,0.0))
 
 ggarrange(potcompKNC,potcompFOR,potcomptop7,ncol=3,common.legend =TRUE,legend="bottom")
@@ -873,9 +834,9 @@ ggarrange(potcompKNC,potcompFOR,potcomptop7,ncol=3,common.legend =TRUE,legend="b
 spearmanobjectspots<-cor(tombs$total_object,tombs$total_pottery,method="spearman")
 ```
 
-Figure \@ref(fig:comps) shows the composition of the total pottery assemblage from each cemetery, and of the Group A tombs, through the centuries. In all cases, there appears to be the steady crystallisation of a basic 'burial kit', comprising a pithos and lid, an oil vessel, a jug, and a drinking vessel. The proportion of grave goods comprising 'other' vessels - pyxides, askoi, trays, stands, dinoi, kernoi, kraters, lekanai and more - declines to become only a minor part of the standardised repertoire of the 7th century. The tombs of Group A did not break with this mould, and their assemblages seem as conventional as any other during the last century of use in the cemeteries.
+This is reflected further in the changing composition of the mortuary assemblage through time (Figure \@ref(fig:comps)). Across both cemeteries, there appears to have been the steady crystallisation of a basic 'burial kit', comprising a pithos and lid, an oil vessel or two, a jug, and a drinking vessel. The proportion of grave goods comprising 'other' vessels - pyxides, askoi, trays, stands, dinoi, kernoi, kraters and more - declines to become only a minor part of the standardised repertoire of the 7th century. The tombs of Group A did not break with this mould, and their assemblages seem as conventional as any other during the last century of use in the cemeteries.
 
-Plainly, the main focus of this article has been on ceramics and not other artefacts of metal, stone, glass, and organic materials, due to their less well-developed chronologies, but even the raw distribution of such artefacts may make more sense in the light of the foregoing discussion. There is, perhaps unsurprisingly, a relatively strong (Spearman's ρ=`r spearmanobjectspots`) correlation between the number of ceramic and non-ceramic finds across the tombs, and, certainly, many of the most unique and precious objects were recovered from among the larger tombs. But the monopoly those tombs would appear to have over such objects, perhaps tempting one initially to speak of 'elite' or 'high-status' tombs, evaporates when the number of those objects is divided by the number of burials represented. This fact has seldom, if ever, been appreciated in prior discussions of the cemeteries. 
+The main focus of this article has been on ceramics and not other artefacts of metal, stone, glass, and organic materials, due to their less well-developed chronologies, but even the raw distribution of such artefacts may make more sense in the light of the foregoing discussion. There is, perhaps unsurprisingly, a relatively strong (Spearman's ρ=`r spearmanobjectspots`) correlation between the number of ceramic and non-ceramic finds across the tombs, and, certainly, many of the most seemingly precious objects were recovered from among the larger tombs. But the monopoly those tombs would appear to have over such objects, perhaps tempting one initially to speak of 'elite' or 'high-status' tombs, evaporates when the number of those objects is divided by the number of burials represented. This fact has seldom, if ever, been appreciated in prior discussions of the cemeteries. 
 
 
 ```{r hists, fig.dim=c(6,4),dpi=300, fig.align='center',fig.cap="goes around here"}
@@ -886,7 +847,7 @@ total_object<-ggplot(subset(tombs,est_burials>1 & total_object>0),aes(total_obje
                  labs(x="Total Non-Ceramic Finds", y="Number of Tombs")+
                   scale_fill_brewer(palette = "Set2",labels=c(" Group A  ", " Other Tombs"))+
                     scale_y_continuous(expand=c(0,0))+scale_x_continuous(expand=c(0,0))
-total_metal<-ggplot(subset(tombs,est_burials>1 & weapon>0),aes(weapon, fill=group))+geom_histogram()+
+total_metal<-ggplot(subset(tombs,est_burials>1 & total_metal>0),aes(total_metal, fill=group))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(x="Total Metal Artefacts", y="Number of Tombs")+
@@ -905,7 +866,7 @@ objectsbyburial<-ggplot(subset(tombs,est_burials>1 & total_object>0),aes(total_o
                  labs(x="Total Non-Ceramics/Burials", y="Number of Tombs")+
                   scale_fill_brewer(palette = "Set2",labels=c(" Group A  ", " Other Tombs"))+
                     scale_y_continuous(expand=c(0,0))+scale_x_continuous(expand=c(0,0))
-metalbyburial<-ggplot(subset(tombs,est_burials>1 & weapon>0),aes(weapon/est_burials, fill=group))+geom_histogram()+
+metalbyburial<-ggplot(subset(tombs,est_burials>1 & total_metal>0),aes(total_metal/est_burials, fill=group))+geom_histogram()+
   theme_bw()+theme(legend.title=element_blank(),
                text=element_text(family="Garamond", size=12))+
                  labs(x="Total Metal Artefacts/Burials", y="Number of Tombs")+
@@ -922,31 +883,31 @@ importsbyburial<-ggplot(subset(tombs,est_burials>1 & total_import>0),aes(total_i
 ggarrange(total_import,total_metal,total_object,importsbyburial,metalbyburial,objectsbyburial,ncol=3,nrow=2,common.legend = TRUE,legend="bottom")
 ```
 
-Figure \@ref(fig:hists) thus supports the view which has emerged from the foregoing analysis, that the major increase in burial activity at both Fortetsa and the KNC was not a phenomenon linked in any straightforward way to simple principles of 'elite' or 'wealthy' burial. To summarise, towards the end of 8th century BC, a select group of tombs, all of which had been constructed back in the 9th or 10th, became the foci of a major increase in burials, something which did not occur among the tombs built around that time. We have seen how this surge in acivity occurred against the backdrop of a declining number of older tombs in use, and I have suggested that the rates of change are too rapid, and unevenly distributed, to be explicable through population growth alone. We have seen how little about the physical dimensions or early use of these tombs presaged their later popularity, and that, while a similar, if smaller, increase in burial activity occurred around a century earlier, in the PGB-EG periods, this contrasted in the comparative diversity of its associated assemblages, and their distribution across the tombs. The later burials were marked by great uniformity in the associated grave goods, and this apparently limited and consistent repertoire may explain why many of the most-used tombs prove exceptional only in their absolute quantities of artefacts, and not the accoutrements of each individual burial.
+Figure \@ref(fig:hists) thus supports the view which has emerged from the foregoing analysis, that the major increase in burial activity at both Fortetsa and the KNC was not a phenomenon linked in any straightforward way to simple principles of 'elite' or 'wealthy' burial. To summarise, towards the end of 8th century BC, a select group of tombs, all of which had been constructed back in the 9th or 10th, became the foci of a major increase in burials, something which did not occur among the tombs built around that time. We have seen how little about the physical dimensions or early use of these tombs presaged their later popularity, and that, while a similar, if smaller, increase in burial activity occurred around a century earlier, in the PGB-EG periods, this contrasted in the comparative diversity of its associated assemblages, and their distribution across the tombs. The later burials were marked by great uniformity in the associated grave goods - set against a backdrop of waining tomb construction and declining imports - and this apparently limited and consistent repertoire may explain why many of the most-used tombs prove exceptional only in their absolute quantities of artefacts, and not the accoutrements of each individual burial.
 
 # Discussion
 
-The preceding analysis has revealed a number of potentially significant patterns in the use of the Fortetsa and Knossos North Cemeteries; it only remains to consider how we might characterise the burying groups responsible behind them. The traditional view is that such groups were immediate families (Brock 1957, 41; @Boardman1967, 63; @Coldstream1996, 291). The relatively short lifespan of many tombs (often only two or three generations) has been taken as evidence for direct, lineal inheritance, with the tomb going out of use as families moved, individuals founded new tombs, or the line came to an end. The idea of lineal groups is supported by the, admittedly circumstantial, evidence of men, women and children being found within single tombs, and one (contentious) instance of an apparently hereditary mandibular deformity in three non-contemporary skulls in the same tomb [@Musgrave1996].
+It remains to consider how we might characterise the burying groups responsible behind these various, intriguing trends. The traditional view is that such groups were immediate families (Brock 1957, 41; @Boardman1967: 63; @Coldstream1996: 291). The relatively short lifespan of many tombs (often only two or three generations) has been taken as evidence for direct, lineal inheritance, with the tomb going out of use as families moved, individuals founded new tombs, or the line came to an end. The idea of lineal groups is supported by the, admittedly circumstantial, evidence of men, women and children being found within single tombs, and one (contentious) instance of an apparently hereditary mandibular deformity in three non-contemporary skulls in the same tomb [@Musgrave1996].
 
-The model of lineal inheritance has been recently challenged by Kotsonas [-@Kotsonas2011, 131], however, who considers it ‘probably the greatest factoid in the archaeology of Crete of the given period’. He argues that the rise in interments during the 8th century is too great to be explained by population growth, as would be necessary for the possibility of direct lineal inheritance to be preserved. Certainly, it seems illogical that population increases would lead to the consolidation of burials within only extant tombs. The trend instead must reflect reconfigurations of the burying groups themselves, which Kotsonas feels may have, also or instead, comprised age- and sex-grades. 
+The model of lineal inheritance has been recently challenged by Kotsonas [-@Kotsonas2011: 131], however, who considers it ‘probably the greatest factoid in the archaeology of Crete of the given period’. He argues that the rise in interments during the 8th century is too great to be explained by population growth, as would be necessary for the possibility of direct lineal inheritance to be preserved. Certainly, it seems illogical that population increases would lead to the consolidation of burials within only extant tombs. The trend instead must reflect reconfigurations of the burying groups themselves, which Kotsonas feels may have, also or instead, comprised age- and sex-grades. 
 
-Yet it is hard to be conclusive, as our current understanding of the social organisation of the early Cretan *poleis* remains patchy. Perlman and Gagarin's [-@Gagarin2016] recent study of the Cretan law codes reminds us, importantly, if lamentably, that there is an often underappreciated degree of diversity apparent from the Archaic inscriptions in the offices, institutions, and social groups of the early city-states. In the traditional view, political authority was concentrated in the hands of the *kosmoi*, aristocratic magistrates selected from the leading, hereditary *startoi*, or ‘clans’, networks of extended lineages controlling the ancestral estates on which worked attendent serfs and/or slaves (Willetts 1982, 240). But despite elements of this account probably being accurate, others remain equivocal, such as the nature of the *pyla*, or 'tribe', and its relation to the *startos* (which may itself be a military grouping), the distinction between an *astos* and a *poliatas*, both clearly formulations of the rights-bearing civic actor, and the ancestry and spread of the *agelai*, seemingly an adolescent age-grade so far only attested at Eltynia [@Gagarin2016, 36; 78-80]. Indeed, many terms which might illuminate social divisions and groupings within the Archaic Cretan populace are only attested at one or two sites, and even then sometimes appear to differ in their form or function.
+Yet it is hard to be conclusive, as our current understanding of the social organisation of the early Cretan *poleis* remains patchy. Perlman and Gagarin's [-@Gagarin2016] recent study of the Cretan law codes reminds us, importantly, if lamentably, that there is an often underappreciated degree of diversity apparent from the Archaic inscriptions in the offices, institutions, and social groups of the early city-states. In the traditional view, political authority was concentrated in the hands of the *kosmoi*, aristocratic magistrates selected from the leading, hereditary *startoi*, or ‘clans’, networks of extended lineages controlling the ancestral estates on which worked attendent serfs and/or slaves (Willetts 1982, 240). But despite elements of this account probably being accurate, others remain equivocal, such as the nature of the *pyla*, or 'tribe', and its relation to the *startos* (which may itself be a military grouping), the distinction between an *astos* and a *poliatas*, both clearly formulations of the rights-bearing civic actor, and the ancestry and spread of the *agelai*, seemingly an adolescent age-grade so far only attested at Eltynia [@Gagarin2016: 36; 78-80]. Indeed, many terms which might illuminate social divisions and groupings within the Archaic Cretan populace are only attested at one or two sites, and even then sometimes appear to differ in their form or function.
 
-It wouldn't be helpful at present, then, to draw any simple parallel between the Knossian burial groups and, say, powerful *startoi*, a term which is not even attested outside of Gortyn in this period (ibid., 1-2). But archaeological and textual evidence suggests that, in general terms, such supra-familial kinship groups were undergoing a transition during this period, suggesting some such attribution for the burying groups at Knossos is not unreasonable, given the noted changes there also. Elsewhere on Crete, we see a shift to unmarked, individual burials, and more austere grave goods, as well as an apparent reorientation of sanctuary deposits away from extra-mural to suburban spaces, and a rise in utilitarian, mass-produced votives (ibid., 34-6). At Knossos, a small number of pithos burials in pits do appear in the KNC and Fortetsa volumes (Brock 1957, 98; Coldstream and Catling 1996, 162), and recent re-excavation of the Teke plot identified numerous small pit burials around three chamber tombs [@Evely2012], raising the possibility that others exist, but have gone unrecognised in prior excavations. At Azoria, major urban remodelling in the 7th century saw the earlier, agglutinative house forms of neighbouring Kavousi Vronda and Kastro give way to larger, more formally planned dwellings with little evidence of renovation or remodelling, while larger, apprently civic, buildings were constructed to accommodate major public gatherings [@Haggis2011; @Haggis2011b; @Haggis2014]. 
+It wouldn't be helpful at present, then, to draw any simple parallel between the Knossian burial groups and, say, powerful *startoi*, a term which is not even attested outside of Gortyn in this period (ibid:, 1-2). But archaeological and textual evidence suggests that, in general terms, such supra-familial kinship groups were undergoing a transition during this period, suggesting some such attribution for the burying groups at Knossos is not unreasonable, given the noted changes there also. Elsewhere on Crete, we see a shift to unmarked, individual burials, and more austere grave goods, as well as an apparent reorientation of sanctuary deposits away from extra-mural to suburban spaces, and a rise in utilitarian, mass-produced votives (ibid.: 34-6). At Knossos, a small number of pithos burials in pits do appear in the KNC and Fortetsa volumes (Brock 1957: 98; Coldstream and Catling 1996: 162), and recent re-excavation of the Teke plot identified numerous small pit burials around three chamber tombs [@Evely2012], raising the possibility that others exist, but have gone unrecognised in prior excavations. At Azoria, major urban remodelling in the 7th century saw the earlier, agglutinative house forms of neighbouring Kavousi Vronda and Kastro give way to larger, more formally planned dwellings with little evidence of renovation or remodelling, while larger, apprently civic, buildings were constructed to accommodate major public gatherings [@Haggis2011; @Haggis2011b; @Haggis2014]. 
 
-Together, these may be indications that with the emergence of the archaic *poleis* on Crete, there was a concomitant restructuring of wider social groups, institutions, and behaviours. Was this transformation linked to an emerging emphasis on the citizen, the state, and ideologies of relative egality, within which communal gatherings, intra-mural ritual, and individual graves replaced ostentatious, kin-centred acts of gathering, dedication, and burial? It is plausible, though as Perlman and Gagarin (32-37) concede, the decline of ostentatious burial could just as well represent a voluntary abandonment by groups assured of their economic and political influence, finding the symbolic expression of kin-relations in death no longer a necessary expense. 
+In the Knossian cemeteries, we have seen a somewhat diverse set of burial practices give way to a more prolific, yet more restricted, enumeration of such rites, focussed on a small number of long-established tombs, in the context of diminishing collective tomb construction, and shortly before a complete cessation of such depositions. Together, these varied threads suggest that with the emergence of the archaic *poleis* on Crete, there was a concomitant restructuring of wider social groups, institutions, and behaviours. It seems not unreasonable to infer an emergent emphasis on the citizen, the state, and ideologies of relative egality, within which communal gatherings, intra-mural ritual, and individual graves replaced ostentatious, kin-centred acts of gathering, dedication, and burial. 
 
-These issues, naturally, recall the conclusions of Morris [-@Morris1987, 171-211], who argued 30 years ago that the emergence of the *polis* across the Aegean led to a tension between elite preferences for conspicuous display, and a downplaying of social difference in death, as promoted by the ‘middling’ ideology that the *polis* engendered and promulgated. In his well-known model of the *agathoi* and *kakoi*, Morris argued that, at various times, the relevant spheres of kinship demonstrated in burial could widen and constrict, with more and less distantly related lineages drawn into association through changing social strategies, until the pre-eminence of kinship relations in the structuring of political power declined, along with its manifestiations in mortuary practice.
+These issues, naturally, recall the conclusions of Morris [-@Morris1987: 171-211], who argued 30 years ago that the emergence of the *polis* across the Aegean led to a tension between elite preferences for conspicuous display, and a downplaying of social difference in death, as promoted by the ‘middling’ ideology that the *polis* engendered and promulgated. In his well-known model of the *agathoi* and *kakoi*, Morris argued that, at various times, the relevant spheres of kinship demonstrated in burial could widen and constrict, with more and less distantly related lineages drawn into association through changing social strategies, until the pre-eminence of kinship relations in the structuring of political power declined, along with its manifestiations in mortuary practice.
 
-At Knossos, while some aspects of the noted expansion in the burying population seem explicable within a model like Morris', others sit more uneasily. Firstly, the burials at issue here are in many ways *not* ostentatious in comparison to the norm. We have seen that the 'richest' tombs in terms of finds are far less so when one accounts for the number of burials represented. Likewise, Morris claims that periods of expansion in the rite of burial correspond to greater variety in the associated assemblages, yet, at Knossos, we have seen that the range of grave goods in fact diminished and crystallised during the late 8th and early 7th centuries. But whether this reflected some standard set of accoutrements intentionally shared by the hypothetical *agathoi* of Knossos, or else nascent, egalitarian strictures over elaborate burial is hard to judge. The PGB period seems a far better candidate for such an expansion, with its greater variety in chamber dimensions, relatively broad distribution of (local and imported) grave goods, not to mention the innovative decoration and reuse of BA artefacts noted elsewhere. One thing is clear; the social context which produced these signatures contrasted markedly with that of a century later, with its ever greater volume of interments in an ever-smaller cohort of tombs, its more uniform assemblages, and its decline of imported items.
+At Knossos, while some aspects of the noted expansion in the burying population seem explicable within a model like Morris', others sit more uneasily. Firstly, the burials at issue here are in many ways *not* ostentatious in comparison to the norm. We have seen that the 'richest' tombs in terms of finds are far less so when one accounts for the number of burials represented. Likewise, Morris claims that periods of expansion in the rite of burial correspond to greater variety in the associated assemblages, yet, at Knossos, we have seen that the range of grave goods in fact diminished and crystallised during the late 8th and early 7th centuries. But whether this reflected some standard set of accoutrements intentionally shared by the hypothetical *agathoi* of Knossos, or else nascent, egalitarian strictures over elaborate burial is hard to judge. The PGB period seems a far better candidate for such an expansion, with its greater variety in chamber dimensions, relatively broad distribution of (local and imported) grave goods, not to mention the innovative ceramic decoration and reuse of BA artefacts noted elsewhere. One thing is clear; the social context which produced these signatures contrasted markedly with that of a century later, with its ever greater volume of interments in an ever-smaller cohort of tombs, its more uniform assemblages, and its decline of imported items.
 
-It is tempting, though potentially perilous, to link the diminishing range of burial goods to Archaic Crete's purported austerity, its (quite literally) spartan lifestyles. But, as a more nuanced picture emerges of the island's relationship with the wider Mediterranean, subtler characterisations are possible. It is telling that the peak for imported items in the tombs came in the 9th century; the 'Orientalising' as a time period feels increasingly misapplied to Crete, when, at Knossos at least, it witnessed far lower rates of 'oriental' imports, and only limited adoption of the figural motifs which characterise its appearance elsewhere. This decline in imports was, however, counterpointed by a rise in imitations of Near Eastern vessels [@Antoniadis2012, 170], something which further accords with our growing awareness of the selective nature of Archaic and Classical Crete's external relations. Erickson [@Erickson2010] has, likewise, argued that *symposia* were practised on Crete, something often disputed, but that their practitioners merely favoured simpler vessel forms than the figurally-decorated wares popular on the mainland. Local, selective adoption of, and responses to, wider social and material trends across the contemporary Aegean is perhaps becoming the hallmark of Archaic Crete, and finds further endorsement in the trends identified in the EIA cemeteries at Knossos. What seems certain is that this was a period of transition wherein, whatever their exact identity, certain actors invested heavily in a final flurry of burials in chamber tombs, with an emphasis on tradition, an established repertoire of items, rites, and venues for one's passage to the afterlife, before changing social forces effected their abandonment. 
+It is tempting, though potentially perilous, to link the diminishing range of burial goods to Archaic Crete's purported austerity, its (quite literally) spartan lifestyles. But, as a more nuanced picture emerges of the island's relationship with the wider Mediterranean, subtler characterisations are possible. It is telling that the peak for imported items in the tombs came in the 9th century; the Orientalising as a time period feels increasingly misapplied to Crete, when, at Knossos at least, it witnessed far lower rates of 'oriental' imports, and only limited adoption of the figural motifs which characterise its appearance elsewhere. This decline in imports was, however, counterpointed by a rise in imitations of Near Eastern vessels [@Antoniadis2012: 170], something which further accords with our growing awareness of the selective nature of Archaic and Classical Crete's external relations. Erickson [@Erickson2010] has, likewise, argued that *symposia* were practised on Crete, something often disputed, but that their practitioners merely favoured simpler vessel forms than the figurally-decorated wares popular on the mainland. Local, selective adoption of, and responses to, wider social and material trends across the contemporary Aegean is perhaps becoming the hallmark of Archaic Crete, and finds further endorsement in the trends identified in the EIA cemeteries at Knossos. What seems certain is that this was a period of transition wherein, whatever their exact identity, certain actors invested heavily in a final flurry of burials in chamber tombs, with an emphasis on tradition, an established repertoire of items, rites, and venues for one's passage to the afterlife, before changing social forces effected their abandonment. 
 
 # Conclusion
 
 It is important that the present study was a comparative investigation of both the Fortetsa and Knossos North cemeteries. It is notable how similar the observed trends are at both locations. That both underwent similar developments during the EIA suggests, not only that they catered to similar sub-sections of the Knossian population, but that some of the socio-economic and political changes inferred and discussed were real, and community-wide. Further work should seek to extend these comparisons, both into trends unexplored in the present study, and out to the wider funerary landscape of Knossos. I hope to produced such a study but, for the time being, the datasets I am making available alongside this article include the other published EIA tombs in the area, so that others may also explore their possible significance.
 
-There were undeniable limitations to the present work. For one, non-ceramic artefacts were underrepresented due to difficulties with dating, and future work could seek to address this. Issues of gender were sadly little considered, though this was largely due to limitations in the data themselves. There have also been a number of tombs discovered in the last 20 years that fill in the spaces between the Teke plot and the Medical Faculty Site, and ideally these unpublished tombs should be included in further analyses as they, along with the unconsidered Teke tholos and associated tombs, are almost surely part of a single contiguous cemetery [@Blackman1999, 113; @Catling1983, 51; @French1991, 68-69]. Finally, a preliminary study was recently taken by the author of select boxes marked as 'unpublished' from the KNC deposits kept at the British School at Athens at Knossos. Despite going unmentioned in the publication, this material was not inconsiderable and so, regretably, future study will be necessary to determine whether it threatens the integrity of quantitative analyses such as this. Suffice to say that, at present, it is another pinch of salt with which to take the present findings.
+There were undeniable limitations to the present work. For one, non-ceramic artefacts were underrepresented due to difficulties with dating, and future work could seek to address this. Issues of gender were sadly little considered, though this was largely due to limitations in the data themselves. There have also been a number of tombs discovered in the last 20 years that fill in the spaces between the Teke plot and the Medical Faculty Site, and ideally these unpublished tombs should be included in further analyses as they, along with the unconsidered Teke tholos and associated tombs, are almost surely part of a single contiguous cemetery [@Blackman1999: 113; @Catling1983: 51; @French1991: 68-69]. Finally, a preliminary study was recently taken by the author of select boxes marked as 'unpublished' from the KNC deposits kept at the British School at Athens at Knossos. Despite going unmentioned in the publication, this material was not inconsiderable and so, regretably, future study will be necessary to determine whether it threatens the integrity of quantitative analyses such as this. Suffice to say that, at present, it is another pinch of salt with which to take the present findings.
 
 These limitations notwithstanding, the foregoing analysis demonstrates the value of quantitative approaches to the archaeological record of the period. With large datasets, we are able to locate and visualise covariance and significant correlations between different variables, plot changes in the data through time and, ultimately, draw on our findings to inform discussions of social processes. Though the construction of databases can be time consuming, once made they offer the opportunity to subdivide, compare, and plot the data in numerous ways quickly and easily, facilitating investigation of the material from multiple angles. By making datasets available for use by others, as with the data and code for the present study, one’s conclusions can also be independently tested, and alternative interpretations can be voiced. The databases produced for the above analysis contain a large of amount of unutilised data that could facilitate a range of future investigations, and all are welcome to it. With more such analyses, we could begin to a construct a fuller account of the regional diversity in mortuary, and wider social, practices that characterised the communities of EIA and archaic Crete.
 
@@ -977,7 +938,11 @@ Dominic Pollard is a PhD candidate at University College London. His research fo
 
 *Figure 5 Aoristic sums of pithoi (left), as a proxy for cremation burials, and of all vessels (right). The sums are colour coded to show the values of the two cemeteries, and the total values*
 
-*Figure 6 Tomb construction through time at both cemeteries. On the left are counts based on the earliest dated pottery in each tomb, while on the left are aoristic sums likewise based on the earliest ceramic-based assignations. In both cases, tombs lacking any securely dateable pottery are excluded.*
+*Figure 6 Tomb construction through time at both cemeteries. On the left, counts are based on the ceramic phase considered most likely to correspond to the tomb's first use (including simply 'PG', 'G' and 'O' where no greater specificity was possible). On the right, aoristic sums are presented, spreading the uncertainty associated with those general assignations. In both cases, tombs lacking any securely dateable pottery are excluded.*
+
+*Abbreviations*
+*SM - Subminoan; (E/M/L)PG - (Early/Middle/Late) Protogeometric; PGB - Protogeometric B; (E/M/L)G - (Early/Middle/Late) Geometric; (E/L)O - (Early/Late) Orientalising*
+
 
 *Figure 7 Estimates of the number of tombs in use during each of the ceramic phases attested in both cemetaries, based on counts of tombs yielding vessels of each period.*
 
@@ -997,7 +962,7 @@ Dominic Pollard is a PhD candidate at University College London. His research fo
 
 *Figure 15 Aoristic sums of imported vessels through time. The sums are colour coded as per Figure 13 (thoug here Group C represents all other tombs, not just those with 50+ vessels).*
 
-*Figure 16 Boxplot showing the aoristic sums of all vessels across both cemeteries through time, colour-coded by ceramic period. Boxes represent the interquartile range, horizontal lines the median value, whiskers values within 1.5 times the interquartile range, and points outliers beyond this. The Y axis has been limited to 20 for ease of interpretation.*
+*Figure 16 Boxplot showing the aoristic sums of all vessels across both cemeteries through time, colour-coded by ceramic period. Boxes represent the interquartile range, horizontal lines the median value, whiskers values within 1.5 times the interquartile range, and points outliers beyond this. Note, the Y axis has been limited to 20 to aid readability, meaning the outliers Tomb G in the EG period, and Tomb P in the late EO-LO period are excluded, with values ranging from 29-34, and 36-44 respectively.*
 
 *Figure 17 Gini coefficient values through time based on the aoristic sums for all vessels across both cemeteries. Background colours correspond to ceramic periods.*
 
