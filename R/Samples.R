@@ -362,11 +362,57 @@ ggplot(top_aorist_imports_melt,aes(variable, value))+geom_col()+theme(legend.pos
   scale_x_reverse(expand = c(0, 0),limits=c(1100,610))+
   theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
 
+import_aorist_tomb<-aggregate(imports[,27:76], by=list(tomb=imports$tomb), FUN=sum)
+
+Opithoi<-subset(pithoi,start_date<711)
+
+tombs$pithoiO<-0
+
+inner_join(Opithoi, tombs, by=c("tomb"="tomb")) %>%
+  group_by(shape,tomb) %>% summarise(pithoiO = sum(shape=="Pithos"))
+
+for(i in colnames(aorist_tomb_values[2:51])) {
+  tombs_gini[[paste0(i)]] <- ineq(aorist_tomb_values[[i]],type="Gini")
+}
+
+ %>%
+  group_by(Col1,Col2) %>%
+  add_count
+
+data1 <- data.frame(table(unlist(Opithoi$tomb))) %>%
+  setNames(c("tomb","total"))
+
+data2 <- data.frame(table(unlist(polychrome$tomb))) %>%
+  setNames(c("tomb","polyrchome"))
+
+pithoicounts<-merge(data1,data2)
+
+pithoicounts<-subset(pithoicounts,total!=0)
+View(pithoicounts)
+pithoicounts$percent_poly<-(pithoicounts$polyrchome/pithoicounts$total)*100
+
+pithoicounts<-pithoicounts[with(pithoicounts, order(-pithoicounts$total)), ]
+pithoitomblevels<-as.vector(pithoicounts$tomb)
+pithoicounts$tomb<-factor(pithoicounts$tomb,levels=pithoitomblevels)
+
+ggplot(pithoicounts,aes(tomb,percent_poly))+geom_col()
+
+pithoi_O<-aggregate(tombs[,126:7], by=list(tomb=tombs$tomb), FUN=sum)
+
+tombs$pithoiO<-count_if(tombs$tomb,Opithoi$tomb)
+
+tombs$pithoi7th<-length(which(pithoi$ave_date == "CA"))
+
+names(pithoi)
 ```
 polychrome<-pithoi[pithoi$additional %like% "Polychrome",]
-View(polychrome)
 
-ggplot(subset(tombs,polychrome_pithoi>0), aes(polychrome_pithoi/est_burials,fill=group))+geom_histogram()
+sum(Opithoi$tomb==tombs$tomb)
+
+View(Opithoi)
+
+View(polychrome)
+ggplot(subset(tombs), aes(polychrome_pithoi/est_burials,fill=group))+geom_histogram()
 polychrome$group<-ifelse(polychrome$tomb=="P"|polychrome$tomb=="292"|polychrome$tomb=="75"|polychrome$tomb=="107"|polychrome$tomb=="285"|polychrome$tomb=="II"|polychrome$tomb=="218","A","B")
 tombs$group<-ifelse(tombs$tomb=="P"|tombs$tomb=="292"|tombs$tomb=="75"|tombs$tomb=="107"|tombs$tomb=="285"|tombs$tomb=="II"|tombs$tomb=="218","A","B")
 
@@ -450,3 +496,6 @@ tombs$group<-ifelse(tombs$tomb=="P"|tombs$tomb=="292"|tombs$tomb=="75"|tombs$tom
 TombsB<-subset(tombs,tombs$group=="B")
 ggplot(subset(pots),aes(group, fill=imitation))+geom_bar(position="fill")+facet_wrap(~century)
 ggplot(subset(imports,tomb=="G"),aes(import_region))+geom_bar()+facet_wrap(~century)
+
+tomb107<-subset(tombs,tombs$tomb=="107")
+View(tomb107)

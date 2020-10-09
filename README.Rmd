@@ -16,7 +16,7 @@ Title <- "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeter
 
 # knossoscemeteries
 
-This repository contains the data and code for my paper:
+This repository contains the data and code for the paper:
 
 > Pollard, Dominic (2019). _`r Title`_. Name of journal/book <https://doi.org/xxx/xxx>
 
@@ -33,9 +33,9 @@ Please cite this compendium as:
 
 ### How to download or install
 
-You can download the compendium as a zip from from this URL: </archive/master.zip>
+You can download the compendium as a zip from from this URL: <https://github.com/DCPollard94/knossoscemeteries/archive/master.zip>
 
-Or you can install this compendium as an R package, domproject, from GitHub with:
+Or you can install this compendium as an R package from GitHub with:
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("DCPollard94/knossoscemeteries")
