@@ -2,7 +2,8 @@
 title: "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries at Knossos, Crete"
 subtitle: "Early Iron Age Cemeteries at Knossos"
 author:
-  - Dominic Pollard, Institute of Archaeology, University College London
+  - Dominic Pollard
+  - Institute of Archaeology, University College London, 31-34 Gordon Square, Bloomsbury, London WC1H 0PY, United Kingdom
   - dominic.pollard.16@ucl.ac.uk
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
@@ -10,7 +11,7 @@ output:
       fig_caption: yes
       reference_docx: "../templates/articletemplate.docx" # Insert path for the DOCX file
 bibliography: references.bib
-csl: "../templates/world-archaeology.csl" # Insert path for the bib-style
+csl: "../templates/journal-of-anthropological-archaeology.csl" # Insert path for the bib-style
 
 abstract: 
    "The Early Iron Age cemeteries of Knossos, Crete, represent the richest source of archaeological material at the site for the whole period between the end of the Bronze Age and the emergence of the Archaic *polis*. However, despite well-published excavation reports on the two largest burial grounds, the Fortetsa and Knossos North cemeteries, and a number of studies dealing with various artefact classes and individual tombs therein, no substantial comparative, quantitative analysis of these two cemeteries has yet been undertaken. This paper provides such an analysis, examining both the synchronic and diachronic variation among the tombs in these two cemeteries. Through the application of a range of quantitative techniques, this study isolates a pattern of increased rates of burial among a few select tombs, and goes on to consider the broader social contexts within which these tombs were built and used, as well as discussing the possible nature of the burying groups. This paper demonstrates the potential for quantitative analyses to contribute to nuanced, context-specific theories of social practice, and advocates their wider application to the archaeological record of the Cretan Early Iron Age. It also serves as a demonstration of maximal research reproducibility, with the full datasets and code underpinning the analysis made freely available to download and use"

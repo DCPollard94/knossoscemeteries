@@ -5,6 +5,7 @@ author:
 - other author
 date: '`r Sys.Date()`'
 output: word_document
+highlights: "My highlights \n"
 abstract: "My abstract \n"
 ---
 
