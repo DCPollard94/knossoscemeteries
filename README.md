@@ -21,7 +21,7 @@ Please cite this compendium as:
 
 You can download the compendium as a zip from from this URL: </archive/master.zip>
 
-Or you can install this compendium as an R package, domproject, from GitHub with:
+Or you can install this compendium as an R package, knossoscemeteries, from GitHub with:
 
 ``` r
 # install.packages("devtools")

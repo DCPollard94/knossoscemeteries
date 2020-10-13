@@ -18,11 +18,11 @@ Title <- "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeter
 
 This repository contains the data and code for the paper:
 
-> Pollard, Dominic (2019). _`r Title`_. Name of journal/book <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2020). _`r Title`_. Name of journal/book <https://doi.org/xxx/xxx>
 
 The pre-print available is online here:
 
-> Pollard, Dominic (2019). _`r Title`_. Name of journal/book, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2020). _`r Title`_. Name of journal/book, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/xxx/xxx>
 
 
 ### How to cite
