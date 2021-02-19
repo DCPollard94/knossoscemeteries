@@ -1,5 +1,5 @@
 ---
-title: "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries at Knossos, Crete"
+title: "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos, Crete"
 author:
   - Dominic Pollard
   - Institute of Archaeology, University College London, 31-34 Gordon Square, Bloomsbury, London WC1H 0PY, United Kingdom
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(
 #The appropriate packages are installed. Extrafont allows the use of non-standard fonts in R plots, ggplot2 is a powerful figure and graph plotting tool, and RColorBrewer includes a number of colour pallettes which can be applied to plots. The colour scheme in this paper is chosen from those that are suitable for colour-blind readers.
 library(ggpubr)
 library(ineq)
-library(reshape)
+library(reshape2)
 library(data.table)
 library(ggplot2)
 library(RColorBrewer)
@@ -44,6 +44,9 @@ library(plyr)
 library(ggforce)
 library(jpeg)
 library(ggrepel)
+library(forcats)
+library(factoextra)
+library(cluster)
 
 ```
 
@@ -63,28 +66,33 @@ With a dataset including information on every find and tomb recorded in the Fort
 # 2. Early Iron Age Knossos
 ## 2.1 Settlement Evidence: 'A meagre filling in a very thick sandwich'
 
-Settlement evidence at EIA Knossos is, in a word, insubstantial. Speaking of the town’s stratigraphic sequence, Coldstream lamented that its “remains [...] are like a meagre filling in a very thick sandwich” between Bronze Age and later Greek and Roman levels [@Coldstream1991: 287]. Most individual finds of Protogeometric (PG) or Geometric date take the form of flimsy foundations, patches of earth floor, wells or pottery scatters, and for a time it was argued that the area in the EIA comprised several dispersed villages, which later coalesced as per Aristotle’s model of synoecism [@Alexiou1950]. 
+Settlement evidence at EIA Knossos is, in a word, insubstantial. Speaking of the town’s stratigraphic sequence, Coldstream lamented that its “remains [...] are like a meagre filling in a very thick sandwich” between Bronze Age and later Greek and Roman levels [@Coldstream1991: 287]. Most individual finds of Protogeometric (PG) or Geometric (G) date take the form of flimsy foundations, patches of earth floor, wells or pottery scatters, and for a time it was argued that the area in the EIA comprised several dispersed villages, which later coalesced as per Aristotle’s model of synoecism [@Alexiou1950]. 
 
 However, a concentration of activity slightly to the west of the palace presented a good case for continuing, nucleated settlement [@Hood1981], something strongly advocated by Coldstream [-@Coldstream1984a; -@Coldstream2000], and, more recently, findings of the Knossos Urban Landscape Project (KULP) suggest a PG settlement of up to 40ha [@Kotsonas2011a: 5-8]. If accurate, this suggests that EIA Knossos was one of the largest sites of the contemporary Aegean. 
 
 ## 2.2 The Early Iron Age Cemeteries
 
-```{r map, fig.align= "centre", fig.cap="Map of the Knossos area, showing the locations of the various EIA tomb clusters and cemeteries, with EIA pottery distributions from the Knossos Urban Landscape Project marked in orange, giving an impression of the contemporary urban extent (underlying image credit: T. Whitelaw)."}
+```{r map, fig.align= "centre", fig.cap="Map of the Knossos area, showing the locations of the various EIA tombs (crosses) and cemeteries, with EIA pottery distributions from the Knossos Urban Landscape Project (circles), giving an impression of the contemporary urban extent (underlying image credit: T. Whitelaw)."}
 
 knitr::include_graphics("../figures/Knossos Tombs Map2.jpg")
 ```
 
-Survey aside, our most abundant evidence comes from the mortuary record (see Figure \@ref(fig:map)). The transitional period between the Late Bronze Age (LBA) and EIA yields few if any securely datable interments, but later evidence is more plentiful, with burials known from the Kephala ridge [@Coldstream1963: 38; @Hogarth1899: 82-5], the modern suburbs of Ayios Ioannis and Atsalenio [@Boardman1960a; @Davaras1968: 133–46], the cave of Mavro Spelio [@Antoniadis2012: 58-9], and the Khaniale Teke site with its well-known tholos [@Boardman1967;@Hutchinson1954; cf. @Hoffman1997 @Kotsonas2006]. Taken together, these scattered tombs point to a richly variegated set of funerary practices but, despite their reasonable number, are so dispersed that they provide little scope for systematic quantitative analysis. 
+Survey aside, our most abundant evidence comes from the mortuary record (see Figure \@ref(fig:map)). The transitional period between the Late Bronze Age (LBA) and EIA yields few if any securely datable interments, but later evidence is more plentiful, with burials known from the Kephala ridge [@Coldstream1963: 38; @Hogarth1899: 82-5], the modern suburbs of Ayios Ioannis and Atsalenio [@Boardman1960a; @Davaras1968: 133–46], the cave of Mavro Spelio [@Antoniadis2012: 58-9], and the Khaniale Teke site with its well-known tholos [@Boardman1967;@Hutchinson1954; cf. @Hoffman1997;@Kotsonas2006]. Taken together, these scattered tombs point to a richly variegated set of funerary practices but, despite their reasonable number, are so dispersed that they provide little scope for systematic quantitative analysis. 
 
-Fortunately, far larger burial accumulations are to be found in the Fortetsa and the Knossos North cemeteries, which together comprise some 134 tombs, ranging in date from the Subminoan (SM) to Late Orienatalising (LO) periods. TAken together, they represent the most abundant source of evidence for not just mortuary, but social practice of any kind at EIA Knossos.
+Fortunately, far larger burial accumulations are to be found in the Fortetsa and the Knossos North cemeteries (Figure \@ref(fig:map2)), which together comprise some 134 tombs, ranging in date from the Subminoan (SM) to Late Orienatalising (LO) periods. Taken together, they represent the most abundant source of evidence for not just mortuary, but social practice of any kind at EIA Knossos.
 
 ## 2.3 The Fortetsa and Knossos North Cemeteries
 
 The cemetery on the slope facing the eponymous village of Fortetsa comprises twelve tombs excavated in 1933, and another eight uncovered in 1935 [@Brock1957: xi, 1-2], grouped into three main clusters running north to south. Three of those excavated in 1933 – L, TFT and Π – which lie close to the main road north of the Acropolis hill , are now considered to belong the Knossos North Cemetery (KNC).
 
-To the northeast of the Fortetsa cemetery, a collection of ten badly damaged tombs known as the Fortetsa 1967 tombs were probably the southernmost burials of the KNC. Unfortunately, all had been thoroughly looted at the time of excavation and are thus excluded from present analysis. Northwest of these, and just south of the Teke Tholos, the Teke tombs represent the northern reaches of the KNC. The central section of the KNC comprises the ‘Medical Faculty’ site, named for the extension of the University of Crete that prompted major rescue excavations there in 1978 [@Coldstream1996a: 53-55]. 
+```{r map2, fig.align= "centre", fig.cap="Closer view of the Knossos North and Fortetsa cemeteries. Tombs were digitised and georeferenced from the original publications, Coldstream and Catling (1996) and Brock (1957)."}
 
-The tombs themselves fall largely into three types, the chamber tomb, shaft grave, and pit cave or tomb; the latter two are largely Subminoam phenomena, with the former by far the most abundant. It comprises a descending ramp or passage, the *dromos*, leading to the chamber itself, cut into the *kouskouras* bedrock. The *dromos* and chamber are separated by the *stomion*, an opening often set a step or two lower than the *dromos*, which is covered by a large stone slab, smaller stacked stones, or combination of both [@Antoniadis2012: 47-48]. The majority of burials are cremations, a rite that appears at Knossos in the Subminoan period, in the Tomb 200+ complex in the KNC [@Coldstream1994: 109]. Inhumation does not completely disappear in the EIA, but by the Orientalising period it appears restricted solely to child burials [@Antoniadis2012: 69]. 
+knitr::include_graphics("../figures/Knossos Tombs.jpg")
+```
+
+To the northeast of the Fortetsa cemetery, a collection of ten badly damaged tombs known as the Fortetsa 1967 tombs were probably the southernmost burials of the KNC. Unfortunately, all had been thoroughly looted at the time of excavation and are thus excluded from present analysis. Northwest of these, and just south of the Teke Tholos, the Teke tombs represent the northern reaches of the KNC. The central section of the KNC comprises the ‘Medical Faculty’ site (KNC Main and NW in Figure \@ref(fig:map2)), named for the extension of the University of Crete that prompted major rescue excavations there in 1978 [@Coldstream1996a: 53-55]. 
+
+The tombs themselves fall largely into three types, the chamber tomb, shaft grave, and pit cave or tomb; the latter two are largely Subminoam phenomena, with the former by far the most abundant. It comprises a descending ramp or passage, the *dromos*, leading to the chamber itself, cut into the *kouskouras* bedrock. The *dromos* and chamber are separated by the *stomion*, an opening often set a step or two lower than the *dromos*, which is covered by a large stone slab, smaller stacked stones, or combination of both [@Antoniadis2012: 47-48]. The vast majority of burials are cremations deposited in pithoi or other urns, a rite that appears at Knossos in the Subminoan period, in the Tomb 200+ complex in the KNC [@Coldstream1994: 109]. Inhumation does not completely disappear in the EIA, but by the Orientalising period it appears restricted solely to child burials [@Antoniadis2012: 69]. 
 
 ## 2.4 Chronological Developments in the Cemeteries
 
@@ -94,12 +102,12 @@ As contentious as their founding is the abrupt abandonment of both cemeteries ar
 
 ## 2.5 Heroes Abroad, Immigrants at Home
 
-A popular approach to the study of Knossos’ EIA tombs has been the investigation of ‘object biography’ [@Appadurai1986; @Kopytoff1986; @Mauss1954], an anthropological lens emphasising the mutuable nature of an object’s value, the transformations latent within its social existence. Fertilised by the Homeric motif of gift-giving [@Whitley2002: 220-21], and the remarkable archaeological parallels for such items – such as the boar’s tusk helmet from KNC Tomb 201 and that given to Odysseus by Meriones (*Iliad* 10.260-271) - such approaches have been brought to bear on certain elaborate burials of the EIA. For instance, Tomb 201 in the KNC contained various weapons, fragments of an antique bronze stand, probably of Cypriot origin, and pieces of the aforementioned helmet [@Catling1995: 123]. Based similarities between this tomb and burials at Tiryns, Kaloriziki, and the famous *hērōön* of Lefkandi, Catling has argued that these burials represent individuals who dared to travel abroad in this time of more limited seafaring, accruing exotica and stories from distant lands, and accorded exceptional treatment in death [@Catling1995: 127–8]. 
+A popular approach to the study of Knossos’ EIA tombs has been the investigation of ‘object biography’ [@Appadurai1986; @Kopytoff1986; @Mauss1954], an anthropological lens emphasising the mutuable nature of an object’s value, the transformations latent within its social existence. Fertilised by the Homeric motif of gift-giving [@Whitley2002: 220-21], and the remarkable archaeological parallels for such items – such as the boar’s tusk helmet from KNC Tomb 201 and that given to Odysseus by Meriones (*Iliad* 10.260-271) - such approaches have been brought to bear on certain elaborate burials of the EIA. For instance, Tomb 201 in the KNC contained various weapons, fragments of an antique bronze stand, probably of Cypriot origin, and pieces of the aforementioned helmet [@Catling1995: 123]. Based similarities between this tomb and burials at Tiryns, Kaloriziki, and the famous *hērōön* of Lefkandi, Catling has argued that these burials represent individuals who dared to travel abroad in this time of more limited seafaring, accruing exotica and stories from distant lands, and so were accorded exceptional treatment in death [@Catling1995: 127–8]. 
 
 Complementing the theme of heroes abroad has been that of foreigners at home. Two caches of gold jewellery, found in pits flanking the entrance to the Teke Tholos, were argued by Boardman [-@Boardman1967] to be foundation deposits – a Near Eastern custom – for the tomb of an immigrant Phoenician craftsman. Kotsonas has revisited this attribution, deeming the tholos more probably that of an elite individual or family with a monopoly over a metal workshop’s output [-@Kotsonas2006: 155–59]. While certainty in such individual cases may be moot, it seems unlikely that foreign traders or craftsmen never visited or resided at Knossos during the EIA [@Hoffman1997: 176–85; @Schreiber2003: 293-306].
 
 
-## 2.6 Number Crunching: Quantitative Analyses of the Cemeteries
+## 2.6 Quantitative Analyses of the Cemeteries
 
 Generally speaking, the above analyses have tended to rely on particular finds, tombs, or observable, but limited, patterns in the data; few authors have pursued more quantative approaches. Cluster analyses have been employed by both Cavanagh [-@Coldstream1996: 653-57] and Antoniadis [-@Antoniadis2012: 193-97], the most sophisticated statistical techniques so far applied to the material. Antoniadis [-@Antoniadis2012: 172-76] also divided the EIA tombs of Knossos into three groups, those with fewer than 10 pots, fewer than 50, and more than 50, and found that, in each successive case, the proportions of tombs containing 'oriental' imports and imitations increased, suggesting unequal access to such prestigious goods. Yet even here the data could be further interrogated (with, for instance, the number of imported items *per burial*). The present paper thus seeks to extend and nuance a number of observations that have been made in previous studies, as well as revealing patterns thus far unacknowledged, through a more systematic quantitative analysis.
 
@@ -134,7 +142,7 @@ For most diachronic analyses, however, pithoi alone were taken as the best proxy
 
 Another major concern was the temporal uncertainty implicit in the assigning of individual vessels to ceramic periods. A Protogeometric B vessel could, on our best estimates, date anywhere between 840 and 810 BC. This situation results in major challenges to the visualisation and analysis of such data. A simple, if coarse, solution is to take the midpoint of the range assigned to each vessel (i.e. 825 for our PGB example). This is used in a couple of instances in the present paper, for assigning vessels to broad, century-long windows.
 
-```{r allpithoi,fig.dim = c(8, 3), dpi=600, fig.align='center', fig.cap="(Left) Counts of pithoi across both cemeteries through time. Vessel dates have here been based on the midpoint (or mean) of the absolute date range accompanying their respective ceramic periods. (Right) Aoristic sums of all vessels across both cemeteries. This represents a probabilistically weighted visualisation of depositional activity through time."}
+```{r allpithoi,fig.dim = c(7, 7), dpi=600, fig.align='center', fig.cap="(A) Counts of all vessels per decade across both cemeteries. Vessel dates have here been based on the mean of the absolute date range corresponding to their respective ceramic periods. (B) The same but with aoristic sums replacing raw counts. This represents a probabilistically weighted visualisation of depositional activity through time."}
 
 #The tombs database is imported and, for the purposes of this article, the entire database is subsetted to include only those tombs from the Knossos North and Fortetsa cemeteries (excluding the Tekke Tombs).
 
@@ -150,18 +158,28 @@ all_urns<-subset(pots,pots$shape=="Pithos"|pots$shape=="Amphora"|pots$shape=="Kr
 
 #The figure is plotted by creating a histogram of all vessels based on their average dates ("ave_date"), which is simply the midpoint of the absolute chronological range associated with their respective ceramic phase. Similar stylistic adjustments are made (font, labels, colour palette, removing a legend, setting the x and y scales, and expanding the borders of the plot slightly to prevent the "600" label being cut off, which would occur without the final line of code.)
 
-non_aorist_fig<-ggplot(pots, aes(ave_date,fill="Pots"))+geom_histogram(fill="gray40")+
+rects <- data.frame(xstart = c(1100,970,920,875,840,810,790,745,710,670,630), 
+                    xend =    c(970,920,875,840,810,790,745,710,670,630,600), 
+                    xmid =   c(1035,945,897.5,857.5,825,800,767.5,727.5,690,650,615),
+                    col = c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO","A"))
+rects$col<-factor(rects$col,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO","A"))
+
+
+non_aorist_fig<-ggplot()+geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf), fill=NA, colour="grey90",alpha = 0.4) +
+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = 590, ymax = 620), fill=NA, colour="black",alpha = 0.4) +
+  geom_histogram(data=pots, aes(ave_date,fill="Pots"),fill="gray40",binwidth = 10)+
+  geom_text(data=rects,aes(xmid, 607,label=col),family="serif",size=3)+
   theme_bw()+theme(legend.title=element_blank(),
       text=element_text(family="serif", size=11))+
           labs(x="Date (Years BC)", y="Vessel Count")+
-                theme(legend.position="none")+
-                  scale_y_continuous(expand=c(0,0),limits=c(0,610))+
+                theme(legend.position="none",panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+                  scale_y_continuous(expand=c(0,0),limits=c(0,620))+
                     scale_x_reverse(expand = c(0, 0),limits=c(1100,600))+
                       theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
 
 #The aoristic values for every tomb are summed by decade, and then this object is converted to a data frame.
 
-aorist_all_tombs<-colSums(tombs[158:207])
+aorist_all_tombs<-colSums(tombs[160:209])
 aorist_all_tombs<-data.frame(aorist_all_tombs)
         
 #The column of values is labelled "aoristic_sum", an vector named "dates" is created with values between 1100 and 610 (in that order) at intervals of 10, and then this used to rename the rows of the data frame. Finally, these "row names" are converted into a functioning row in their own right within the data frame (this makes them plottable as a variable) and then are converted into numeric variables, allowing the plotting of them along a continuous scale.
@@ -174,16 +192,20 @@ aorist_all_tombs$decade<-as.numeric(aorist_all_tombs$decade)
 
 #The plot is produced, following the same stylistic adjustments of the previous plot.
 
-aorist_fig<-ggplot(aorist_all_tombs,aes(decade,aoristic_sum, fill="Aoristic Sum"))+
-  geom_col(fill="gray40")+theme_bw()+theme(legend.title=element_blank(),
+aorist_fig<-ggplot()+
+   geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf), fill=NA, colour="grey90",alpha = 0.4) +
+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = 214, ymax = 225), fill=NA, colour="black",alpha = 0.4) +
+  geom_text(data=rects,aes(xmid, 220,label=col),family="serif",size=3)+
+  geom_col(data=aorist_all_tombs,aes(decade,aoristic_sum, fill="Aoristic
+  Sum"),fill="gray40")+theme_bw()+theme(legend.title=element_blank(),
       text=element_text(family="serif", size=11))+
           labs(x="Date (Years BC)", y="Aoristic Sum")+
-               theme(legend.position="none")+
+              theme(legend.position="none",panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
                   scale_y_continuous(expand=c(0,0),limits=c(0,225))+
                     scale_x_reverse(expand = c(0, 0),limits=c(1100,600))+
                       theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
 
-ggarrange(non_aorist_fig,aorist_fig,ncol=2,common.legend=FALSE)
+ggarrange(non_aorist_fig,aorist_fig,nrow=2,labels=c("A","B"),align="v",common.legend=FALSE)
 
 ```
 
@@ -202,10 +224,10 @@ The great advantage of the large, quantitative dataset employed here is that it 
 
 An obvious place to begin is with the chronology of the burials themselves. The rate and quantity of interments through time provides the background against which to consider all other developments. 
 
-```{r aoristbycem, dpi=600, fig.align="center", fig.cap="Aoristic sums of pithoi (left), as a proxy for cremation burials, and of all vessels (right). The sums are colour coded to show the values of the two cemeteries, and the total values.", fig.dim=c(8,3.5)}
+```{r aoristbycem, dpi=600, fig.align="center", fig.cap="(A) Aoristic sums of pithoi, as a proxy for cremation burials, through time. (B) Aoristic sums of all vessels through time.", fig.dim=c(7,7.5)}
 KNC<-subset(tombs,tombs$cem_condensed=="KNC")
 
-aorist_KNC_pithoi <- colSums(KNC[208:257])
+aorist_KNC_pithoi <- colSums(KNC[210:259])
 aorist_KNC_pithoi<-data.frame(aorist_KNC_pithoi)
 
 colnames(aorist_KNC_pithoi)<-c("aoristic_sum")
@@ -217,7 +239,7 @@ aorist_KNC_pithoi$decade<-as.numeric(aorist_KNC_pithoi$decade)
 
 FOR<-subset(tombs,tombs$cem_condensed=="FOR")
 
-aorist_FOR_pithoi <-colSums(FOR[208:257])
+aorist_FOR_pithoi <-colSums(FOR[210:259])
 aorist_FOR_pithoi<-data.frame(aorist_FOR_pithoi)
 
 colnames(aorist_FOR_pithoi)<-c("aoristic_sum")
@@ -227,7 +249,7 @@ setDT(aorist_FOR_pithoi, keep.rownames = "decade")
 aorist_FOR_pithoi$decade<-as.numeric(aorist_FOR_pithoi$decade)
 
 
-aorist_all_pithoi <- colSums(tombs[208:257])
+aorist_all_pithoi <- colSums(tombs[210:259])
 aorist_all_pithoi<-data.frame(aorist_all_pithoi)
 
 colnames(aorist_all_pithoi)<-c("aoristic_sum")
@@ -237,19 +259,26 @@ aorist_all_pithoi<-data.frame(aorist_all_pithoi)
 setDT(aorist_all_pithoi, keep.rownames = "decade")
 aorist_all_pithoi$decade<-as.numeric(aorist_all_pithoi$decade)
 
-aorist_pithoi_plot<-ggplot(NULL)+
-  geom_col(data=aorist_all_pithoi,aes(decade,aoristic_sum,fill=" All tombs  "))+
-    geom_col(data=aorist_KNC_pithoi,aes(decade,aoristic_sum,fill=" KNC  "))+
-      geom_col(data=aorist_FOR_pithoi,aes(decade,aoristic_sum, fill=" Fortetsa  "))+
-        theme_bw()+theme(legend.title=element_blank(),
-          text=element_text(family="serif", size=12))+
-            labs(x="Date (Years BC)", y="Aoristic Sum (Pithoi)")+
-              scale_fill_manual(values = c("gray50","gray65","gray80"))+ 
-                  scale_y_continuous(expand=c(0,0),limits=c(0,45))+
-                    scale_x_reverse(expand = c(0, 0),limits=c(1100,600))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+aorist_FOR_pithoi$cemetery<-"FC"
+aorist_KNC_pithoi$cemetery<-"KNC"
+aorist_all_pithoi$cemetery<-"All tombs"
+aorist_pithoi<-rbind(aorist_all_pithoi,aorist_KNC_pithoi,aorist_FOR_pithoi)
+aorist_pithoi$cemetery<-factor(aorist_pithoi$cemetery,levels=c("All tombs", "KNC", "FC"))
 
-aorist_KNC <- colSums(KNC[158:207])
+
+aorist_pithoi_plot<-ggplot(NULL)+
+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf), fill=NA, colour="grey90",alpha = 0.4) +
+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = 43, ymax = 45), fill=NA, colour="black",alpha = 0.4) +
+  geom_text(data=rects,aes(xmid, 44,label=col),family="serif",size=3)+
+  geom_line(data=aorist_pithoi,aes(decade,aoristic_sum,linetype=cemetery))+ 
+       theme_bw()+theme(legend.title=element_blank(),
+          text=element_text(family="serif", size=12),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          plot.margin=unit(c(0.1,1,0.5,1),"cm"))+
+            labs(x="Date (Years BC)", y="Aoristic Sum (Pithoi)")+
+                scale_y_continuous(expand=c(0,0),limits=c(0,45))+
+                    scale_x_reverse(expand = c(0, 0),limits=c(1100,600))
+
+aorist_KNC <- colSums(KNC[160:209])
 aorist_KNC<-data.frame(aorist_KNC)
 
 colnames(aorist_KNC)<-c("aoristic_sum")
@@ -258,10 +287,9 @@ aorist_KNC<-data.frame(aorist_KNC)
 setDT(aorist_KNC, keep.rownames = "decade")
 aorist_KNC$decade<-as.numeric(aorist_KNC$decade)
 
-
 FOR<-subset(tombs,tombs$cem_condensed=="FOR")
 
-aorist_FOR <-colSums(FOR[158:207])
+aorist_FOR <-colSums(FOR[160:209])
 aorist_FOR<-data.frame(aorist_FOR)
 
 colnames(aorist_FOR)<-c("aoristic_sum")
@@ -270,25 +298,31 @@ aorist_FOR<-data.frame(aorist_FOR)
 setDT(aorist_FOR, keep.rownames = "decade")
 aorist_FOR$decade<-as.numeric(aorist_FOR$decade)
 
+aorist_FOR$cemetery<-"FC"
+aorist_KNC$cemetery<-"KNC"
+aorist_all_tombs$cemetery<-"All tombs"
+aorist_tombs<-rbind(aorist_all_tombs,aorist_KNC,aorist_FOR)
+aorist_tombs$cemetery<-factor(aorist_pithoi$cemetery,levels=c("All tombs", "KNC", "FC"))
+
 aorist_pots_plot<-ggplot(NULL)+
-  geom_col(data=aorist_all_tombs,aes(decade,aoristic_sum,fill=" All tombs  "))+
-    geom_col(data=aorist_KNC,aes(decade,aoristic_sum,fill=" KNC  "))+
-      geom_col(data=aorist_FOR,aes(decade,aoristic_sum, fill=" Fortetsa  "))+
+   geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf), fill=NA, colour="grey90",alpha = 0.4) +
+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = 220, ymax = 230), fill=NA, colour="black",alpha = 0.4) +
+  geom_text(data=rects,aes(xmid, 225,label=col),family="serif",size=3)+
+  geom_line(data=aorist_tombs,aes(decade,aoristic_sum,linetype=cemetery))+
         theme_bw()+theme(legend.title=element_blank(),
-          text=element_text(family="serif", size=12))+
+          text=element_text(family="serif", size=12),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          plot.margin=unit(c(0.1,1,0.1,1),"cm"))+
             labs(x="Date (Years BC)", y="Aoristic Sum (All Vessels)")+
               scale_fill_manual(values = c("gray50","gray65","gray80"))+  
-                  scale_y_continuous(expand=c(0,0),limits=c(0,225))+
-                    scale_x_reverse(expand = c(0, 0),limits=c(1100,600))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+                  scale_y_continuous(expand=c(0,0),limits=c(0,230))+
+                    scale_x_reverse(expand = c(0, 0),limits=c(1100,600))
 
-ggarrange(aorist_pithoi_plot,aorist_pots_plot,ncol=2,common.legend=TRUE, legend="bottom")
+ggarrange(aorist_pithoi_plot,aorist_pots_plot,nrow=2,labels=c("A","B"),align="v",common.legend=TRUE, legend="bottom")
 ```
 
+And, despite differences in scale and timing, it is immediately apparent from Figure \@ref(fig:aoristbycem) that Fortetsa and the KNC underwent similar chronological developments with regard to burials and, to a slightly lesser degree, grave goods. In both cemeteries, the rate of cremation burial began rising around the end of the 9th century BC, plateaued slightly in the early 8th, and then rose again to a peak in the late 8th and early 7th. Across all vessels, the developments are more volatile, but largely similar, especially regarding the late spike in burial activity. We might assume that these trends would be mirrored in the construction of new tombs, but this proves not to be the case.
 
-And, despite differences in scale and timing, it is immediately apparent from Figure \@ref(fig:aoristbycem) that Fortetsa and the KNC underwent similar chronological developments with regard to burials and, to a slightly lesser degree, grave goods. In both cemeteries, the rate of cremation burial began rising around the end of the 9th century, plateaued slightly in the early 8th, and then rose again to a peak in the late 8th and early 7th. Across all vessels, the developments are more volatile, but largely similar, especially regarding the late spike in burial activity. We might assume that these trends would be mirrored in the construction of new tombs, but this proves not to be the case.
-
-```{r tombconstruction, fig.dim=c(7.5,4), dpi=600, fig.cap="Tomb construction through time at both cemeteries. On the left, counts are based on the ceramic phase considered most likely to correspond to the tomb's first use (including simply 'PG', 'G' and 'O' where no greater specificity was possible). On the right, aoristic sums are presented, spreading the uncertainty associated with those general assignations. In both cases, tombs lacking any securely dateable pottery are excluded. Abbreviations: SM - Subminoan; (E/M/L)PG - (Early/Middle/Late) Protogeometric; PGB - Protogeometric B; (E/M/L)G - (Early/Middle/Late) Geometric; (E/L)O - (Early/Late) Orientalising."}
+```{r tombconstruction, fig.dim=c(7,4), dpi=600, fig.cap="Tomb construction through time at both cemeteries. On the left, counts are based on the ceramic phase considered most likely to correspond to the tomb's first use (including simply 'PG', 'G' and 'O' where no greater specificity was possible). On the right, aoristic sums are presented, spreading the uncertainty associated with those general assignations. In both cases, tombs lacking any securely dateable pottery are excluded."}
 
 tomb_dates_aorist<-read.csv("../data/derived_data/tomb_dates_aorist.csv",header=TRUE)
 tomb_dates_aorist_KNC<-subset(tomb_dates_aorist,tomb_dates_aorist$cem_condensed=="NC")
@@ -307,23 +341,29 @@ tombs$start_period<-factor(tombs$start_period,levels=c("SM", "EPG", "MPG", "PG",
 
 tombs$cem_condensed<-factor(tombs$cem_condensed,levels=c("KNC","FOR"))
 
-new_tomb_counts_plot<-ggplot(data=subset(tombs,!is.na(start_period)),aes(start_period, fill=cem_condensed))+geom_bar(position=position_dodge2(preserve="single"))+theme_classic()+
-        theme_bw()+theme(legend.title=element_blank(),
-          text=element_text(family="serif", size=12),
-          axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+
-            labs(x="Period", y="Count of New Tombs")+
-              scale_fill_manual(values =c("gray50","gray80"),labels=c(" KNC  "," Fortetsa"))+ 
-                 scale_y_continuous(expand=c(0,0),limits=c(0,30))
+cbPalette <- c("#999999","#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
-new_tomb_aorist_plot<-ggplot(aorist_tomb_periods_melt,aes(period,aoristic_sum, fill=cemetery))+geom_col(position=position_dodge2(preserve="single"))+
+new_tomb_counts_plot<-ggplot(data=subset(tombs,!is.na(start_period)),aes(start_period, fill=forcats::fct_rev(tomb_type_condensed)))+geom_bar()+
+        theme_bw()+theme(legend.title=element_blank(),legend.spacing.x = unit(0.1,"cm"), text=element_text(family="serif", size=12),
+          axis.text.x=element_text(angle=90, vjust=0.5, hjust=1),
+          panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+            labs(x="Period", y="Count of New Tombs")+scale_fill_manual(values=cbPalette,
+                                                                                        labels=c("Unknown","Shaft Grave","Pit Cave",
+                                                                                        "Pithos Burial","Pit","Other","Larnax Burial","Chamber Tomb"))+
+             scale_y_continuous(expand=c(0,0),limits=c(0,25))+facet_wrap(~cem_condensed)+
+               theme(strip.background = element_blank(), panel.border = element_rect(colour = "black", fill = NA))
+
+
+new_tomb_aorist_plot<-ggplot()+geom_line(data=aorist_tomb_periods_melt,aes(period,aoristic_sum,group=cemetery,linetype=cemetery))+
   theme_bw()+theme(legend.title=element_blank(),
           text=element_text(family="serif", size=12),
-          axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+
+          axis.text.x=element_text(angle=90, vjust=0.5, hjust=1),
+          panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
             labs(x="Period", y="Aoristic Sum of New Tombs")+
-               scale_fill_manual(values =c("gray50","gray80"),labels=c(" KNC  "," Fortetsa"))+ 
-                 scale_y_continuous(expand=c(0,0),limits=c(0,30))
+               scale_fill_manual(values =c("gray50","gray80"),labels=c(" KNC  "," FC"))+ 
+                 scale_y_continuous(expand=c(0,0),limits=c(0,28))+scale_x_discrete(expand=c(0,0))
 
-ggarrange(new_tomb_counts_plot,new_tomb_aorist_plot,ncol=2,common.legend=TRUE, legend="bottom")
+ggarrange(new_tomb_counts_plot,new_tomb_aorist_plot,ncol=2,align="h",labels=c("A","B"), widths=c(1.6,1),common.legend=FALSE, legend="bottom")
 
 
 ```
@@ -333,15 +373,13 @@ Figure \@ref(fig:tombconstruction) presents two ways of dating the construction 
 ```{r tombsinuse, fig.dim=c(3,3),out.width="25%", dpi=600, fig.cap="Estimates of the number of tombs in use during each of the ceramic phases attested in both cemetaries, based on counts of tombs yielding vessels of each period."}
 
 
-KNC_tombs_in_use<-colSums(KNC[6:15]!="")
-KNC_tombs_in_use<-data.frame(KNC_tombs_in_use)
+KNC_tombs_in_use<-data.frame(colSums(KNC[6:15]!=""))
 colnames(KNC_tombs_in_use)<-c("no_tombs")
 setDT(KNC_tombs_in_use, keep.rownames = "period")
 KNC_tombs_in_use$period<-factor(KNC_tombs_in_use$period,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO"))
 KNC_tombs_in_use$cemetery<-"KNC"
 
-FOR_tombs_in_use<-colSums(FOR[6:15]!="")
-FOR_tombs_in_use<-data.frame(FOR_tombs_in_use)
+FOR_tombs_in_use<-data.frame(colSums(FOR[6:15]!=""))
 colnames(FOR_tombs_in_use)<-c("no_tombs")
 setDT(FOR_tombs_in_use, keep.rownames = "period")
 FOR_tombs_in_use$period<-factor(FOR_tombs_in_use$period,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO"))
@@ -350,18 +388,23 @@ FOR_tombs_in_use$cemetery<-"FOR"
 tombs_in_use_cem<-rbind(KNC_tombs_in_use,FOR_tombs_in_use)
 tombs_in_use_cem$cemetery<-factor(tombs_in_use_cem$cemetery,levels=c("KNC","FOR"))
 
+tombs_in_use<-data.frame(colSums(tombs[6:15]!=""))
+colnames(tombs_in_use)<-c("no_tombs")
+setDT(tombs_in_use, keep.rownames = "period")
+tombs_in_use$period<-factor(tombs_in_use$period,levels=c("SM", "EPG", "MPG", "LPG", "PGB", "EG", "MG", "LG", "EO", "LO"))
 
-ggplot(tombs_in_use_cem,aes(period,no_tombs, fill=cemetery))+geom_col(position="dodge")+theme_classic()+
+ggplot(tombs_in_use_cem,aes(period,no_tombs, linetype=cemetery,group=cemetery))+geom_line()+theme_classic()+
        theme_bw()+theme(legend.title=element_blank(),
-          text=element_text(family="serif", size=10),legend.position = "bottom", legend.margin=margin(0,0,0,0),legend.box.margin=margin(-10,-10,10,-10))+
+          text=element_text(family="serif", size=10),legend.position = "bottom", legend.margin=margin(0,0,0,0),legend.box.margin=margin(-10,-10,10,-10), axis.text.x=element_text(angle=90, vjust=0.5, hjust=1),
+          panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
             labs(x="Period", y="Tombs in Use")+
-              scale_fill_manual(values =c("gray50","gray80"),labels=c(" KNC  "," Fortetsa"))+ 
-                 scale_y_continuous(expand=c(0,0),limits=c(0,45))
+              scale_y_continuous(expand=c(0,0),limits=c(0,45))+
+              scale_x_discrete(expand=c(0,0))
 ```
 
 These countervalent trends are observable too in the number of tombs receiving depositions in each period (Figure \@ref(fig:tombsinuse)). At Fortetsa, this number remained relatively stable from the MPG to LG periods before declining (and bear in mind, there were only ever around 20 tombs belonging to this cemetery), while at the KNC, the number of tombs in use rose to a preak in the late 8th century before declining.
 
-```{r tombsinusebybuilddate, fig.dim=c(7,4), dpi=600, fig.cap="Estimates of the number of tombs in use through time across both cemeteries. The grey background represents the total number of tombs in use, while the smaller coloured bars correspond to tombs built in each of the five centuries of EIA activity at the cemeteries."}
+```{r tombsinusebybuilddate, fig.dim=c(7,5), dpi=600, fig.cap="Estimates of the number of tombs in use through time across both cemeteries. The grey background represents the total number of tombs in use, while the smaller coloured bars correspond to tombs built in each of the five centuries of EIA activity at the cemeteries."}
 tombs_11th<-subset(tombs,tombs$century_built=="11th")
 tombs_10th<-subset(tombs,tombs$century_built=="10th")
 tombs_9th<-subset(tombs,tombs$century_built=="9th")
@@ -406,38 +449,41 @@ tombs_in_use_7th$tomb_century<-"7th"
 tomb_use<-rbind(tombs_in_use_11th,tombs_in_use_10th,tombs_in_use_9th,tombs_in_use_8th,tombs_in_use_7th)
 tomb_use$tomb_century<-factor(tomb_use$tomb_century,levels=c("11th","10th","9th","8th","7th"))
 
-ggplot(data=tomb_use,aes(period,no_tombs))+geom_col(alpha=0.2)+
-            geom_col(data=tomb_use,aes(period,no_tombs,fill=tomb_century),position="dodge")+
-              theme_bw()+theme(text=element_text(family="serif", size=12))+
-                 labs(x="Period", y="Estimated No. of Tombs in Use")+
-                  scale_fill_brewer(name="Century Built",palette = "Set2")+ 
-                    scale_y_continuous(expand=c(0,0),limits=c(0,60))
+ggplot()+geom_area(data=tombs_in_use,aes(period,no_tombs,fill="All tombs",group=1),alpha=0.2)+
+            geom_line(data=tomb_use,aes(period,no_tombs,linetype=tomb_century,group=tomb_century))+
+              theme_bw()+theme(text=element_text(family="serif", size=12),
+          plot.margin=unit(c(0.5,1,0.5,1),"cm"),
+          panel.grid.major = element_blank(), panel.grid.minor = element_blank(),legend.position = "bottom")+
+                 labs(x="Period", y="Tombs in use",linetype="Century of tomb construction",fill="")+
+                  scale_fill_manual(values="#999999")+
+                    scale_y_continuous(expand=c(0,0),limits=c(0,60))+
+                      scale_x_discrete(expand=c(0,0))
 
 
 ```
 
 But the net increase in active tombs in the 8th century belies a more complex pattern (Figure \@ref(fig:tombsinusebybuilddate)). By dividing the tombs in use into the centuries during which they were built, we see a wave-like pattern with each cohort steadily going out of use as new ones were constructed. This would seem to accord with Cavanagh's (1996: 659) suggestion that "[t]he length of time the tombs last seems [...] to reflect the duration of the social group which had access to the sepulchre", and that, if such access was lineally inehrited, frequent fission would result in limited trans-generational use. We might expect, then, that it was the 8th century tombs coming into use that spurred the dramatic rise in burial rates.
 
-```{r potsbydateandtombdate,  fig.dim=c(3,7),out.width="0.5%", dpi=600, fig.cap="Counts of vessels from all tombs in both cemeteries, arranged, above, by the century to which they are assigned based on their ceramic period and, below, by the centuries in which the tombs they come from were built."}
+```{r potsbydateandtombdate,  fig.dim=c(6,4),out.width="0.5%", dpi=600, fig.cap="Counts of vessels from all tombs in both cemeteries, arranged, above, by the century to which they are assigned based on their ceramic period and, below, by the centuries in which the tombs they come from were built."}
 
 pots$century<-factor(pots$century,levels=c("11th","10th","9th","8th","7th"))
 pots$tomb_century<-factor(pots$tomb_century,levels=c("11th","10th","9th","8th","7th"))
 
 date_by_vessel<-ggplot(data=subset(pots,pots$century!=""),aes(century,fill="Date"))+geom_bar()+
-  theme_bw()+theme(legend.position="none",
+  theme_bw()+theme(legend.position="none", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                text=element_text(family="serif", size=10),axis.text.y=element_text(angle=90, vjust=0, hjust=0.5))+
                  labs(x="Date of Vessel (Century BC)", y="Vessel Count")+
                   scale_fill_manual(values = c("gray50"))+ 
                     scale_y_continuous(expand=c(0,0),limits=c(0,2800))
   
 date_by_tomb<-ggplot(data=subset(pots,pots$century!=""),aes(tomb_century,fill="Date"))+geom_bar()+
-  theme_bw()+theme(legend.position="none",
+  theme_bw()+theme(legend.position="none", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                text=element_text(family="serif", size=10),axis.text.y=element_text(angle=90, vjust=0, hjust=0.5))+
                  labs(x="Date of Tomb (Century BC)", y="Vessel Count")+
                   scale_fill_manual(values = c("gray50"))+ 
                     scale_y_continuous(expand=c(0,0),limits=c(0,2800))
 
-ggarrange(date_by_vessel,date_by_tomb,ncol=1)
+ggarrange(date_by_vessel,date_by_tomb,ncol=2,align="h",labels=c("A","B"))
 
 
 ```
@@ -498,44 +544,71 @@ notombs7th7th<-nrow(unique(subset(pithoi,tomb_century=="7th" & century=="7th",se
 
 *Table 1 The number of pithoi (as a proxy for burials) deposited in tombs dating to the 10th, 9th, 8th and 7th centuries respectively. For each of the centuries the tombs were in use (column two), counts of pithoi (column three) are divided by the number of tombs from which these vessels came (column four), allowing calculation of the changing rate of burial through time (column five).*
 
-The significance of these findings can be seen in Table 1. Using pithoi as a proxy for burials, we can estimate the changing rates of burial through time. And while these mostly remained around three per tomb per century, in the 8th and 7th centuries tombs founded in the 9th saw a rapid rise in the rate of burial, peaking at over 11 per tomb per century. Though no doubt rough estimates, the marked nature of this divergence suggests it is not simply an artefact of imperfect data.
+The significance of these findings can be seen in Table 1. Using pithoi as a proxy for burials, we can estimate the changing rates of burial through time. And while these mostly remained around three per tomb per century, in the 8th and 7th centuries tombs founded in the 9th saw a rapid rise in the rate of burial, peaking at over 11 per tomb per century. A given that the cemeteries went out of use around 630 BC, this in reality amounts to a burial every six to seven years, compared to once a generation or so among most other tombs. Though no doubt rough estimates, the marked nature of this divergence suggests it is not simply an artefact of imperfect data.
 
-But Table 1 also demonstrates the markedly low rates of burial which predominated at both cemeteries; two to four burials per tomb per century amounts to a very selective burial rite. It seems unlikely, then, that the rising rates of burial are, for instance, the direct result of population growth; the increase is too rapid, and concentrated only in older tombs, while, based on KULP’s survey data, the major population increase at EIA Knossos probably occurred back in the Protogeometric period (Whitelaw, pers. comm.).
+But Table 1 also demonstrates the markedly low rates of burial which predominated at both cemeteries; two to four burials per tomb per century amounts to a very selective burial rite. It seems unlikely, then, that the rising rates of burial are, for instance, the direct result of population growth; the increase is too rapid, and concentrated only in particular tombs, while, based on KULP’s survey data, the major population increase at EIA Knossos probably occurred back in the Protogeometric period (Whitelaw, pers. comm.).
 
 ## 4.2 Isolating the Phenomenon
 
 We are yet to draw out which older tombs precisely are responsible for the trend so far discussed. We might assume those which became the focus of such intense later burial activity would end up yielding the most burials and grave goods when excavated and, happily, this supposition proves true. 
 
+```{r cluster, fig.dim=c(3.4,3.9),dpi=600,fig.align='center',out.width="0.5%", fig.cap="Results of cluster analysis based on aoristic sums per decade for each tomb. Ward's method was used and tombs that yielded no pots at all were excluded." }
+
+df_prep<-subset(tombs,total_pottery>0)
+df<-df_prep[-c(2:159,208:260)]
+row.names(df)<-df[,1]
+df[,1]<-NULL
+df<-scale(df)
+hc3 <- agnes(df, method = "ward")
+sub_grp <- cutree(hc3, k = 4)
+
+df_prep$cluster<-sub_grp
+df_prep2<-df_prep
+df_prep2 <- within(df_prep2, tomb[cluster<2] <- NA)
+
+cbPalette <- c("#E69F00","#999999", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+fviz_cluster(list(data = df, cluster = sub_grp),ellipse.alpha=0.1,pointsize=1,show.clust.cent=FALSE,main=NULL,xlab="Dimension 1",ylab="Dimension 2",
+             ggtheme=theme_bw()+theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+                                      text=element_text(family="serif", size=9),legend.position = "bottom"),
+             geom="point")+ geom_text_repel(label=df_prep2$tomb,color="Black",family="serif",size=2.5)+
+                scale_fill_manual('Cluster',values = cbPalette)+scale_color_manual('Cluster',values = cbPalette)+
+  scale_shape_manual('Cluster', values=c(15,16,17,18))
+
+```
+
 ```{r toptombs, fig.dim = c(7, 5), dpi=600, fig.align='center',fig.cap="Aoristic sums for the 12 tombs with the largest ceramic assemblages, arranged in decreasing order. Note, for the sake of better illustrating the relative temporal patterns, rather than absolute values, the scales on each plot are distinct."}
 
-tombs_ranked<-tombs[with(tombs, order(-tombs$total_finds)), ]
-tombs_top_12<-head(tombs_ranked,12)
-top12<-as.vector(tombs_top_12$tomb)
-pots_top_12<-pots[is.element(pots$tomb, top12),]
-pots_top_12$tomb<-factor(pots_top_12$tomb,levels=top12)
+tombs_ranked<-tombs[with(tombs, order(-tombs$total_pottery)), ]
+tombs_top_20<-head(tombs_ranked,20)
+top20<-as.vector(tombs_top_20$tomb)
+pots_top_20<-pots[is.element(pots$tomb, top20),]
+pots_top_20$tomb<-factor(pots_top_20$tomb,levels=top20)
 
-cols<-c(1,158:207)
-aorist_all_tomb_names<-tombs_top_12[,cols]
+cols<-c(1,160:209)
+aorist_all_tomb_names<-tombs_top_20[,cols]
 aorist_all_tomb_names<-data.frame(aorist_all_tomb_names)
 colnames(aorist_all_tomb_names)<-c("tomb",dates)
 
-aorist_all_tomb_names$cemetery<-tombs_top_12$cem_condensed
+aorist_all_tomb_names$cemetery<-tombs_top_20$cem_condensed
 
 aorist_all_tomb_melt<-melt(aorist_all_tomb_names)
 aorist_all_tomb_melt$variable<-as.numeric(as.character(aorist_all_tomb_melt$variable))
 
-top_12<-tombs_top_12$tomb
-aorist_all_tomb_melt$tomb<-factor(aorist_all_tomb_melt$tomb,levels=top_12)
+top_20<-tombs_top_20$tomb
+aorist_all_tomb_melt$tomb<-factor(aorist_all_tomb_melt$tomb,levels=top_20)
 
-ggplot(aorist_all_tomb_melt,aes(variable, value,fill=cemetery))+geom_col()+theme(legend.position = "none")+facet_wrap(~tomb,scales="free_y")+
+ggplot(aorist_all_tomb_melt,aes(variable, value,fill=cemetery))+geom_col()+theme(legend.position = "none")+
   geom_col()+theme_bw()+theme(legend.title=element_blank(),legend.position="bottom",
-      text=element_text(family="serif", size=12),
-      axis.text.x=element_text(angle=45, vjust=1.2, hjust=1), legend.margin=margin(0,0,0,0),legend.box.margin=margin(-10,-10,10,-10))+
+      text=element_text(family="serif", size=11), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+      axis.text.x=element_text(angle=45, vjust=1.2, hjust=1), legend.margin=margin(0.5,0,0,0),legend.box.margin=margin(1,-10,1,-10))+
           labs(x="Date (Years BC)", y="Aoristic Sums")+
-              scale_fill_manual(values = c("gray50","gray80"),labels=c(" KNC  "," Fortetsa"))+ 
-                  coord_cartesian(xlim=c(1100,610))+scale_y_continuous()+
+              scale_fill_manual(values = c("gray80","gray50"),labels=c(" KNC  "," Fortetsa"))+ 
+                  coord_cartesian(xlim=c(1100,610))+scale_y_continuous(expand = expansion(mult = c(0, 0.05)))+
                     scale_x_reverse(expand = c(0, 0),limits=c(1100,610))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))+facet_wrap(~tomb,scales="free_y")+
+                       theme(strip.background = element_blank(), panel.border = element_rect(colour = "black", fill = NA),
+                             strip.text.x = element_text(size=8,margin = margin(0.05,0,0.05,0, "cm")))
 
 
 tombs$group<-ifelse(tombs$tomb=="P"|tombs$tomb=="292"|tombs$tomb=="75"|tombs$tomb=="107"|tombs$tomb=="285"|tombs$tomb=="II"|tombs$tomb=="218","A","B")
@@ -546,14 +619,11 @@ calc1<-(total_pottery_by_groups[1,2]/sum(total_pottery_by_groups$x))*100
 
 The 12 tombs with the most associated vessels are all chamber tombs, 10 dating to the 9th century and two to the 10th, and seven of them did exhibit late, intense episodes of deposition (Figure \@ref(fig:toptombs)). In fact, Tombs P, 292, 75, 107, 285, II and 218 (henceforth, 'Group A') between them account for `r round(calc1,digits=2)`% of the entire ceramic assemblage from both cemeteries. All but Tomb 285 date to the 9th century, and together they underpinned the discussed late spate of burials. 
 
-```{r groupsab, fig.dim=c(8,4),dpi=600, fig.align='center',fig.cap="Aoristic sums for the Group A and Group B tombs, as defined above."}
+```{r groupsab, fig.dim=c(6,6.5),dpi=600, fig.align='center', fig.cap="Aoristic sums for the Group A and Group B tombs, as defined above."}
 
-tombs$group<-ifelse(tombs$tomb=="P"|tombs$tomb=="292"|tombs$tomb=="75"|tombs$tomb=="107"|tombs$tomb=="285"|tombs$tomb=="II"|tombs$tomb=="218","A",
-                   ifelse(tombs$tomb=="X"|tombs$tomb=="G"|tombs$tomb=="219"|tombs$tomb=="Q"|tombs$tomb=="283","B","C"))
+GroupA<-subset(df_prep,cluster==3)
 
-GroupA<-subset(tombs,group=="A")
-
-aorist_GroupA <- colSums(GroupA[158:207])
+aorist_GroupA <- colSums(GroupA[160:209])
 aorist_GroupA<-data.frame(aorist_GroupA)
 
 colnames(aorist_GroupA)<-c("aoristic_sum")
@@ -561,12 +631,16 @@ row.names(aorist_GroupA)<-dates
 aorist_GroupA<-data.frame(aorist_GroupA)
 setDT(aorist_GroupA, keep.rownames = "decade")
 aorist_GroupA$decade<-as.numeric(aorist_GroupA$decade)
+aorist_GroupA$no_tombs<-colSums(GroupA[160:209]!=0)
 
-aorist_GroupA$group<-"A"
+aorist_GroupA$sum_over_tombs<-ifelse(is.na(aorist_GroupA$aoristic_sum/aorist_GroupA$no_tombs),0,
+                                     (aorist_GroupA$aoristic_sum/aorist_GroupA$no_tombs))
 
-GroupB<-subset(tombs,tombs$group=="B")
+aorist_GroupA$group<-"Group A"
 
-aorist_GroupB <-colSums(GroupB[158:207])
+GroupB<-subset(df_prep,cluster==4)
+
+aorist_GroupB <-colSums(GroupB[160:209])
 aorist_GroupB<-data.frame(aorist_GroupB)
 
 colnames(aorist_GroupB)<-c("aoristic_sum")
@@ -574,20 +648,126 @@ row.names(aorist_GroupB)<-dates
 aorist_GroupB<-data.frame(aorist_GroupB)
 setDT(aorist_GroupB, keep.rownames = "decade")
 aorist_GroupB$decade<-as.numeric(aorist_GroupB$decade)
+aorist_GroupB$no_tombs<-colSums(GroupB[160:209]!=0)
 
-aorist_GroupB$group<-"B"
+aorist_GroupB$sum_over_tombs<-ifelse(is.na(aorist_GroupB$aoristic_sum/aorist_GroupB$no_tombs),0,
+                                     (aorist_GroupB$aoristic_sum/aorist_GroupB$no_tombs))
 
-aorist_groups<-rbind(aorist_GroupA,aorist_GroupB)
+aorist_GroupB$group<-"Group B"
 
-ggplot(aorist_groups,aes(decade,aoristic_sum,fill=group))+geom_col(position="dodge")+
-  theme_bw()+theme_bw()+theme(text=element_text(family="serif", size=12))+
-                labs(x="Date (Years BC)", y="Aoristic Sum")+
-                  scale_fill_manual(values=c("gray50","gray80"),name="Group")+
-                   scale_y_continuous(expand=c(0,0),limits=c(0,120))+
-                    scale_x_reverse(expand = c(0, 0),limits=c(1000,600))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+Other<-subset(df_prep,cluster==1|cluster==2)
+
+aorist_Other <-colSums(Other[160:209])
+aorist_Other<-data.frame(aorist_Other)
+
+colnames(aorist_Other)<-c("aoristic_sum")
+row.names(aorist_Other)<-dates
+aorist_Other<-data.frame(aorist_Other)
+setDT(aorist_Other, keep.rownames = "decade")
+aorist_Other$decade<-as.numeric(aorist_Other$decade)
+aorist_Other$no_tombs<-colSums(Other[160:209]!=0)
+
+aorist_Other$sum_over_tombs<-ifelse(is.na(aorist_Other$aoristic_sum/aorist_Other$no_tombs),0,
+                                     (aorist_Other$aoristic_sum/aorist_Other$no_tombs))
+
+aorist_Other$group<-"Other"
+
+aorist_groups<-rbind(aorist_GroupA,aorist_GroupB,aorist_Other)
+
+unscaled<-ggplot()+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf), fill=NA, colour="grey90",alpha = 0.4) +
+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = 118, ymax = 126), fill=NA, colour="black",alpha = 0.4) +
+  geom_text(data=rects,aes(xmid, 122,label=col),family="serif",size=2.5)+
+  geom_line(data=aorist_groups,aes(decade,aoristic_sum,linetype=group,group=group))+
+  theme_bw()+theme_bw()+theme(text=element_text(family="serif", size=10),
+                              panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                              plot.margin=unit(c(0.1,1,0.5,1),"cm"),
+                              legend.title = element_blank())+
+    labs(x="Date (Years BC)", y="Aoristic sum/No. of tombs")+
+  scale_y_continuous(expand=c(0,0),limits=c(0,126))+
+  scale_x_reverse(expand = c(0, 0),limits=c(1100,600))
+
+scaled<-ggplot()+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = -Inf, ymax = Inf), fill=NA, colour="grey90",alpha = 0.4) +
+  geom_rect(data = rects, aes(xmin = xstart, xmax = xend, ymin = 13.3, ymax = 14), fill=NA, colour="black",alpha = 0.4) +
+  geom_text(data=rects,aes(xmid, 13.65,label=col),family="serif",size=2.5)+
+  geom_line(data=aorist_groups,aes(decade,sum_over_tombs,linetype=group,group=group))+
+  theme_bw()+theme_bw()+theme(text=element_text(family="serif", size=10),
+                              panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                              plot.margin=unit(c(0.1,1,0.5,1),"cm"),
+                              legend.title = element_blank())+
+    labs(x="Date (Years BC)", y="Aoristic sum/No. of tombs")+
+  scale_y_continuous(expand=c(0,0),limits=c(0,14))+
+  scale_x_reverse(expand = c(0, 0),limits=c(1100,600))
+
+ggarrange(unscaled,scaled,nrow=2,labels=c("A","B"),align="v",common.legend=TRUE, legend="bottom")
+
 
 ```
+
+```{r table2}
+
+pithoi$cluster <- df_prep$cluster[match(pithoi$tomb,df_prep$tomb)]
+pithoi$cluster[is.na(pithoi$cluster)]<- "Other"
+pithoi$cluster[pithoi$cluster<3]<- "Other"
+pithoi$cluster[pithoi$cluster==3]<- "Group A"
+pithoi$cluster[pithoi$cluster==4]<- "Group B"
+
+tombs$cluster <- df_prep$cluster[match(tombs$tomb,df_prep$tomb)]
+tombs$cluster[is.na(tombs$cluster)]<- "Other"
+tombs$cluster[tombs$cluster<3]<- "Other"
+tombs$cluster[tombs$cluster==3]<- "Group A"
+tombs$cluster[tombs$cluster==4]<- "Group B"
+
+potsA10th<-sum(pithoi$cluster=="Group A" & pithoi$century=="10th",na.rm=TRUE)
+potsA9th<-sum(pithoi$cluster=="Group A" & pithoi$century=="9th",na.rm=TRUE)
+potsA8th<-sum(pithoi$cluster=="Group A" & pithoi$century=="8th",na.rm=TRUE)
+potsA7th<-sum(pithoi$cluster=="Group A" & pithoi$century=="7th",na.rm=TRUE)
+
+notombsA10th<-nrow(unique(subset(pithoi,cluster=="Group A" & century=="10th",select=tomb)))
+notombsA9th<-nrow(unique(subset(pithoi,cluster=="Group A" & century=="9th",select=tomb)))
+notombsA8th<-nrow(unique(subset(pithoi,cluster=="Group A" & century=="8th",select=tomb)))
+notombsA7th<-nrow(unique(subset(pithoi,cluster=="Group A" & century=="7th",select=tomb)))
+
+potsB10th<-sum(pithoi$cluster=="Group B" & pithoi$century=="10th",na.rm=TRUE)
+potsB9th<-sum(pithoi$cluster=="Group B" & pithoi$century=="9th",na.rm=TRUE)
+potsB8th<-sum(pithoi$cluster=="Group B" & pithoi$century=="8th",na.rm=TRUE)
+potsB7th<-sum(pithoi$cluster=="Group B" & pithoi$century=="7th",na.rm=TRUE)
+
+notombsB10th<-nrow(unique(subset(pithoi,cluster=="Group B" & century=="10th",select=tomb)))
+notombsB9th<-nrow(unique(subset(pithoi,cluster=="Group B" & century=="9th",select=tomb)))
+notombsB8th<-nrow(unique(subset(pithoi,cluster=="Group B" & century=="8th",select=tomb)))
+notombsB7th<-nrow(unique(subset(pithoi,cluster=="Group B" & century=="7th",select=tomb)))
+
+potsother10th<-sum(pithoi$cluster=="Other" & pithoi$century=="10th",na.rm=TRUE)
+potsother9th<-sum(pithoi$cluster=="Other" & pithoi$century=="9th",na.rm=TRUE)
+potsother8th<-sum(pithoi$cluster=="Other" & pithoi$century=="8th",na.rm=TRUE)
+potsother7th<-sum(pithoi$cluster=="Other" & pithoi$century=="7th",na.rm=TRUE)
+
+notombsother10th<-nrow(unique(subset(pithoi,cluster=="Other" & century=="10th",select=tomb)))
+notombsother9th<-nrow(unique(subset(pithoi,cluster=="Other" & century=="9th",select=tomb)))
+notombsother8th<-nrow(unique(subset(pithoi,cluster=="Other" & century=="8th",select=tomb)))
+notombsother7th<-nrow(unique(subset(pithoi,cluster=="Other" & century=="7th",select=tomb)))
+
+
+```
+
+|**Tombs**          | **Date of pithoi (burials)**| **No. of pithoi (burials)**| **Number of tombs represented** | **Burials per tomb**                   |
+|-------------------|--------------------------|-------------------------|-----------------------------|--------------------------------------------------|
+|*Group A*|                         |                         |                             |                                                  |
+|                   |10th century              | `r potsA10th`        | `r notombsA10th`         | `r 0` |
+|                   |9th century               | `r potsA9th`         | `r notombsA9th`          | `r round(potsA9th/notombsA9th,digits=2)`   |
+|                   |8th century               | `r potsA8th`         | `r notombsA8th`          | `r round(potsA8th/notombsA8th,digits=2)`   |
+|                   |7th century               | `r potsA7th`         | `r notombsA7th`          | `r round(potsA7th/notombsA7th,digits=2)`   |
+|*Group B*|                          |                         |                             |                                                  |
+|                   |10th century              | `r potsB10th`        | `r notombsB10th`         | `r round(potsB10th/notombsB10th,digits=2)` |
+|                   |9th century               | `r potsB9th`          | `r notombsB9th`           | `r round(potsB9th/notombsB9th,digits=2)`     |
+|                   |8th century               | `r potsB8th`          | `r notombsB8th`           | `r round(potsB8th/notombsB8th,digits=2)`     |
+|                   |7th century               | `r potsB7th`          | `r notombsB7th`           | `r round(potsB7th/notombsB7th,digits=2)`     |
+|*Other tombs*|                          |                         |                             |                                                  |
+|                   |10th century              | `r potsother10th`        | `r notombsother10th`         | `r round(potsother10th/notombsother10th,digits=2)` |
+|                   |9th century               | `r potsother9th`          | `r notombsother9th`           | `r round(potsother9th/notombsother9th,digits=2)`     |
+|                   |8th century               | `r potsother8th`          | `r notombsother8th`           | `r round(potsother8th/notombsother8th,digits=2)`     |
+|                   |7th century               | `r potsother7th`          | `r notombsother7th`           | `r round(potsother7th/notombsother7th,digits=2)`     |
+
 
 Interestingly, Tombs X, G, Q, 219 and 283 ('Group B') evince a different pattern, with their respective peaks coming around a century earlier, another period of increased burial activity. So despite receiving the most burials and grave goods across both cemeteries, these 12 tombs nonetheless seem to have achieved that distinction via quite different histories, a divergence made clear in Figure \@ref(fig:groupsab). It is notable that tombs assinged to each group are seen in both cemeteries, suggesting from the outset that the differences between these may speak to social forces operating across the Knossian community.
 
@@ -595,30 +775,30 @@ Interestingly, Tombs X, G, Q, 219 and 283 ('Group B') evince a different pattern
 
 Having addressed some broad diachronic trends, let us now attempt some more synchronic comparisons, beginning with the physical dimensions of the tombs as built - a potentially rich context for the negotiation of social power and group membership. Perhaps the most bountiful tombs were also physically the largest, assertions of status embodied by the man-power invested in their construction.
 
-```{r dimensionsboxplots, fig.dim=c(7,7),dpi=600, fig.align='center',fig.cap="Boxplots comparing various tomb dimensions, divided, in each case, by the century of tomb construction."}
+```{r dimensionsboxplots, fig.dim=c(6,5.9),dpi=600, fig.align='center',fig.cap="Boxplots comparing various tomb dimensions, divided, in each case, by the century of tomb construction."}
 
 tombs$century_built<-factor(tombs$century_built,levels=c("11th","10th","9th","8th","7th"))
-dromwidth<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,dromos_width,fill="gray80"))+geom_boxplot(lwd=0.2,outlier.size=0.8)+
-  theme_bw()+theme(legend.position="none",
-               text=element_text(family="serif", size=10))+
+dromwidth<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,dromos_width_max,fill="gray80"))+geom_boxplot(lwd=0.2,outlier.size=0.8)+
+  theme_bw()+theme(legend.position="none", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+               text=element_text(family="serif", size=9))+
                  scale_fill_manual(values=c("gray80"))+
                    labs(x="Century of Tomb Construction", y="Dromos Width (m)")+
                     scale_y_continuous(expand=c(0,0.1))
 dromlength<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,dromos_length,fill="gray80"))+geom_boxplot(lwd=0.2,outlier.size=0.8)+
-  theme_bw()+theme(legend.position="none",
-               text=element_text(family="serif", size=10))+
+  theme_bw()+theme(legend.position="none", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+               text=element_text(family="serif", size=9))+
   scale_fill_manual(values=c("gray80"))+
                  labs(x="Century of Tomb Construction", y="Dromos Length (m)")+
                     scale_y_continuous(expand=c(0,0.5))
 stomwidth<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,stomion_width,fill="gray80"))+geom_boxplot(lwd=0.2,outlier.size=0.8)+
-  theme_bw()+theme(legend.position="none",
-               text=element_text(family="serif", size=10))+
+  theme_bw()+theme(legend.position="none", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+               text=element_text(family="serif", size=9))+
   scale_fill_manual(values=c("gray80"))+
                  labs(x="Century of Tomb Construction", y="Stomion Width (m)")+
                     scale_y_continuous(expand=c(0,0.1))
 chamarea<-ggplot(data=subset(tombs, !is.na(century_built)),aes(century_built,chamber_area,fill="gray80"))+geom_boxplot(lwd=0.2,outlier.size=0.8)+
-  theme_bw()+theme(legend.position="none",
-               text=element_text(family="serif", size=10))+
+  theme_bw()+theme(legend.position="none", panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+               text=element_text(family="serif", size=9))+
   scale_fill_manual(values=c("gray80"))+
                  labs(x="Century of Tomb Construction", y="Chamber Area (sq. m)")+
                     scale_y_continuous(expand=c(0,0.5))
@@ -629,54 +809,72 @@ ggarrange(dromwidth,dromlength,stomwidth,chamarea,nrow=2,ncol=2)
 
 In Figure \@ref(fig:dimensionsboxplots), we see that, through the centuries, tomb dimensions did vary, and sometimes consistently, as with the trend toward narrower *dromoi*. The 9th-century tombs, though, which include all but two of the 12 discussed above, do not particularly stand out. It does seem their chambers were, on average, larger, as well as exhibiting greater variation than at any other time. But then again, even the largest chambers are not exactly cavernous, and the extra labour expended would have been limited. The *dromos* is a plausible area for conspicuous demonstrations of scale but, with their frequently poor preservation, little confidence is possible. It appears at any rate that they were gradually shrinking, albeit with some notable outliers.
 
-```{r tombgroupdimensions, fig.dim = c(3.5, 3.5),out.width="10%", dpi=600, fig.align='center', fig.cap="Scatterplot comparing the dimensions of *dromos* length and chamber area. Groups A and B, defined earlier, are illustrated and labelled in green and orange respectively, while all remaining tombs ('Group C') are in blue."}
+```{r tombgroupdimensions, fig.dim = c(7, 4),out.width="10%", dpi=600, fig.align='center', fig.cap="Scatterplot comparing the dimensions of *dromos* length and chamber area. Groups A and B, defined earlier, are illustrated and labelled in green and orange respectively, while all remaining tombs ('Group C') are in blue."}
 
-ggplot(subset(tombs,century_built=="9th" | century_built=="10th"),aes(dromos_length,chamber_area,color=group,label=tomb))+geom_point(size=1)+
-  theme_bw()+theme(text=element_text(family="serif", size=10),legend.position = "bottom", legend.margin=margin(0,0,0,0),legend.box.margin=margin(-10,-10,10,-10))+
-  geom_label_repel(data=subset(tombs,group!="C"),aes(fill=group),color="white",show.legend = FALSE,family="serif", size=3)+
-            labs(x="Dromos Length (m)", y="Chamber Area (sq m)")+
-               scale_color_brewer(palette = "Set2",name="Group")+
-               scale_fill_brewer(palette = "Set2")+
-                scale_x_continuous(expand=c(0,0),limits=c(0,8))+
+cbPalette <- c("#56B4E9", "#009E73","#E69F00")
+
+dim_by_cent<-ggplot(subset(tombs,century_built!="7th" & !is.na(tombs$century_built)), aes(dromos_area,chamber_area))+geom_point(size=1)+
+    theme_bw()+theme(text=element_text(family="serif", size=10),legend.position = "bottom",
+                     panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                     legend.margin=margin(0,0,0,0),legend.box.margin=margin(-10,-10,10,-10))+
+            labs(x="Dromos area (sq. m)", y="Chamber Area (sq. m)")+
+                             scale_x_continuous(expand=c(0,0),limits=c(0,12))+
                   scale_y_continuous(expand=c(0,0),limits=c(0,10))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+                      theme(plot.margin=unit(c(0,0.1,0.2,0.5),"cm"))+
+  stat_cor(method="pearson",label.x=6,label.y=8,family="serif",size=3,label.sep="\n")+facet_wrap(~century_built)+
+                       theme(strip.background = element_blank(), panel.border = element_rect(colour = "black", fill = NA),
+                             strip.text.x = element_text(size=8))
 
+dim_all<-ggplot(tombs,aes(dromos_area,chamber_area,color=cluster))+geom_point(size=1)+
+    theme_bw()+theme(text=element_text(family="serif", size=10),legend.position = "bottom",legend.title = element_blank(),
+                     panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                     legend.margin=margin(0.8,0,0,0),legend.box.margin=margin(-10,-10,10,-10))+
+            labs(x="Dromos area (sq. m)", y="Chamber Area (sq. m)")+
+                        scale_color_manual(values=cbPalette)+
+                             scale_x_continuous(expand=c(0,0),limits=c(0,12))+
+                  scale_y_continuous(expand=c(0,0),limits=c(0,10))+
+                      theme(plot.margin=unit(c(0.55,0.3,0.2,0.2),"cm"))
 
+ggarrange(dim_all,dim_by_cent,ncol=2,labels=c("A","B"))
 
 ```
 
 Looking more specifically at the tombs of Groups A and B, against the backdrop of the other 10th and 9th century tombs, there are perhaps hints of differentiation (Figure \@ref(fig:tombgroupdimensions)). All of them fall within the top 50% based on chamber area, and three have exceptionally long *dromoi*. But, later destruction notwithstanding, there appears nothing systematic about the variation visible here. If the size of one's tomb was intended to evoke or assert ideas of wealth or status, this appears to have occurred on a largely independent basis.
 
-```{r tombdimensions, fig.dim = c(7.5, 4), dpi=600, fig.align='center', fig.cap="Scatterplots comparing tomb dimensions (chamber area and *dromos* length) to the estimated total number of burials by tomb. The points are colour-coded as per Figure 11."}
+```{r tombdimensions, fig.dim = c(7.5, 4), dpi=600, fig.align='center', fig.cap="Scatterplots comparing tomb dimensions (chamber area and *dromos* length) to the estimated total number of burials by tomb. The points are colour-coded as per Figure 12."}
 
-tombareas<-ggplot(subset(tombs,tombs$est_burials>1),aes(chamber_area,est_burials,color=group))+geom_point()+
-  theme_bw()+theme(text=element_text(family="serif", size=11))+
-            labs(x="Chamber Area (sq m)", y="Estimated Total Burials")+
-               scale_color_brewer(palette = "Set2",name="Group")+
+tombareas<-ggplot(subset(tombs,tombs$est_burials>1),aes(chamber_area,est_burials,color=cluster))+geom_point()+
+  theme_bw()+theme(text=element_text(family="serif", size=11),
+                   panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                   legend.title = element_blank())+
+            labs(x="Chamber Area (sq. m)", y="Estimated Total Burials")+
+               scale_color_manual(values=cbPalette)+
                 scale_x_continuous(expand=c(0,0),limits=c(0,10))+
                   scale_y_continuous(expand=c(0,0),limits=c(0,50))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+                      theme(plot.margin=unit(c(0.1,0.2,0.1,0.1),"cm"))
   
-dromoslengths<-ggplot(subset(tombs,tombs$est_burials>1),aes(dromos_length,est_burials,color=group))+geom_point()+
-  theme_bw()+theme(text=element_text(family="serif", size=11))+
-            labs(x="Dromos Length (m)", y="Estimated Total Burials")+
-               scale_color_brewer(palette = "Set2",name="Group")+
+dromosareas<-ggplot(subset(tombs,tombs$est_burials>1),aes(dromos_area,est_burials,color=cluster))+geom_point()+
+  theme_bw()+theme(text=element_text(family="serif", size=11),
+                   panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                   legend.title = element_blank())+
+            labs(x="Dromos Area (sq. m)", y="Estimated Total Burials")+
+              scale_color_manual(values=cbPalette)+
                 scale_x_continuous(expand=c(0,0),limits=c(0,10))+
                   scale_y_continuous(expand=c(0,0),limits=c(0,50))+
-                      theme(plot.margin=unit(c(0.1,1,0.1,0.1),"cm"))
+                      theme(plot.margin=unit(c(0.1,0.2,0.1,0.1),"cm"))
   
 
-ggarrange(tombareas,dromoslengths,ncol=2,common.legend = TRUE,legend="bottom")
+ggarrange(tombareas,dromosareas,ncol=2,common.legend = TRUE,legend="bottom")
 
 ```
 
-What we can say is that no clear relationship existed between the dimensions of a tomb and its eventual buried population (see Figure \@ref(fig:tombdimensions)). Many of the very largest tombs are middling when it comes to burial numbers, and vice versa. So whatever the scale of the tombs connoted when built, this proved irrelevant to their later reuse. Several had niches cut into their *dromoi*, or the *stomion* extended, to fit in later burial urns (including T. 292, 283 and 107; Cavanagh 1996: 658) and, sometimes, urns from within the chamber were relocated to make space for new interments (including T. 75 and TFT; ibid.: 658; Brock 1957: 3–4). The impression is of competition for inclusion into the sepulchral group, further confirming that the tombs’ original builders little anticipated their eventual popularity.
+What we can say is that no clear relationship existed between the dimensions of a tomb and its eventual buried population (see Figure \@ref(fig:tombdimensions)). Many of the very largest tombs are middling when it comes to burial numbers, and vice versa. So whatever the scale of the tombs connoted when built, this proved largely irrelevant to their later reuse. Several had niches cut into their *dromoi*, or the *stomion* extended, to fit in later burial urns (including T. 292, 283 and 107; Cavanagh 1996: 658) and, sometimes, urns from within the chamber were relocated to make space for new interments (including T. 75 and TFT; ibid.: 658; Brock 1957: 3–4). The impression is of competition for inclusion into the sepulchral group, further confirming that the tombs’ original builders little anticipated their eventual popularity.
 
 ## 4.4 Imports, Interments, and Indices of Wealth
 
 Dimensions aside, we can investigate the contemporary use of these tombs through comparisons between the scale and composition of their respective assemblages through time. 
 
-```{r tombscompthroughtime, fig.dim=c(7,4),dpi=600,fig.align='center',fig.cap="Counts of vessels dating to the 9th, 8th and 7th centuries respectively, found in tombs built in the 10th or 9th century which yielded upwards of 50 vessels when excavated."}
+```{r tombscompthroughtime, fig.dim=c(7,4),dpi=600,fig.align='center',fig.cap="Counts of vessels dating to the 9th, 8th and 7th centuries respectively, found in tombs built in the 10th or 9th century which yielded upwards of 50 vessels when excavated. The tombs are ordered left to right by total excavated vessels, and the diminishing number of tombs in each plot reflects those falling into disuse in the 8th and 7th centuries."}
 
 
 pots$group<-ifelse(pots$tomb=="P"|pots$tomb=="292"|pots$tomb=="75"|pots$tomb=="107"|pots$tomb=="285"|pots$tomb=="II"|pots$tomb=="218","A",
@@ -693,6 +891,7 @@ pots9th10th$century<-mapvalues(pots9th10th$century, from = c("9th","8th","7th"),
 
 ggplot(pots9th10th,aes(tomb,fill=group))+geom_bar()+
   theme_bw()+theme(legend.position="bottom",text=element_text(family="serif", size=10),
+                   panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                axis.text.x = element_text(angle = 90,hjust=1,vjust=0.4), legend.margin=margin(0,0,0,0),legend.box.margin=margin(-10,-10,10,-10))+
                  guides(fill=guide_legend(title="Group"))+labs(x="Tomb", y="Vessel Count")+
                   scale_fill_brewer(palette = "Set2")+ 
@@ -700,13 +899,13 @@ ggplot(pots9th10th,aes(tomb,fill=group))+geom_bar()+
 
 ```
 
-And in Figure \@ref(fig:tombscompthroughtime), we see that the tombs of Group A, while not paultry in the 9th century, were by no means exceptional in the quantity of burial goods they received. They  kept pace with the other popular tombs of the time, but their major divergence only occurred in the subsequent two centuries. Group B, meanwhile, experienced similar, if not greater, use in the 9th century, and then gradually declined. That is, these tombs seem to have followed a more conventional trajectory viz. Figure \@ref(fig:tombsinusebybuilddate). What might account for this disparity? And if the patterns implied in Figure \@ref(fig:tombscompthroughtime) - relative diversity, giving way to effective bipolarity in depositions - are genuine, how might we further investigate their manifestations across the excavated assemblage?
+And in Figure \@ref(fig:tombscompthroughtime), we see that the tombs of Group A, while not paultry in the 9th century, were by no means exceptional in the quantity of burial goods they received. They  kept pace with the other popular tombs of the time, but their major divergence only occurred in the subsequent two centuries. Group B, meanwhile, experienced similar, if not greater, use in the 9th century, and then gradually declined. That is, these tombs seem to have followed a more conventional trajectory vis-à-vis Figure \@ref(fig:tombsinusebybuilddate). What might account for this disparity? And if the patterns implied in Figure \@ref(fig:tombscompthroughtime) - relative diversity, giving way to effective bipolarity in depositions - are genuine, how might we further investigate their manifestations across the excavated assemblage?
 
 ## 4.5 A Tale of Two Periods
 
 ```{r bigbox, fig.dim=c(7,4),dpi=600, fig.align='center',fig.cap="Boxplot showing variation in aoristic sums of all vessels across both cemeteries through time, colour-coded by ceramic period. Note, the Y axis has been limited to 20 to aid readability, meaning the outliers Tomb G in the EG period, and Tomb P in the late EO-LO period are excluded, with values ranging from 29-34, and 36-44 respectively."}
 
-aorist_tomb_values<-tombs[c(1,158:207)]
+aorist_tomb_values<-tombs[c(1,160:209)]
 aorist_tomb_values[aorist_tomb_values == 0] <- NA
 
 aorist_tomb_values<-data.frame(aorist_tomb_values)
@@ -738,7 +937,7 @@ aorist_melt$variable<-as.numeric(as.character(aorist_melt$variable))
 
 
 
-ggplot(aorist_melt,aes(variable,value,fill=period))+geom_boxplot(aes(group = cut_width(variable, 10)),outlier.size=0.9,lwd=0.3)+theme_bw()+
+ggplot(aorist_melt,aes(variable,value,fill=period))+geom_boxplot(aes(group = cut_width(variable, 10)),outlier.size=0.8,lwd=0.3)+theme_bw()+
       theme(text=element_text(family="serif", size=10))+
             labs(x="Date (Years BC)", y="Aoristic Sums per Tomb")+
                scale_fill_brewer(name="Period",palette = "Set3")+
@@ -752,7 +951,7 @@ Figure \@ref(fig:bigbox) is a boxplot of the total aoristic sums per tomb across
 
 ```{r gini, fig.dim=c(7,4),dpi=600, fig.align='center',fig.cap="Gini coefficient values through time based on the aoristic sums for all vessels across both cemeteries. Background colours correspond to ceramic periods."}
 
-aorist_tomb_values<-tombs[c(1,158:207)]
+aorist_tomb_values<-tombs[c(1,160:209)]
 aorist_tomb_values[aorist_tomb_values == 0] <- NA
 
 aorist_tomb_values<-data.frame(aorist_tomb_values)
@@ -887,7 +1086,7 @@ ggarrange(potcompKNC,potcompFOR,potcomptop7,ncol=3,common.legend =TRUE,legend="b
 spearmanobjectspots<-cor(tombs$total_object,tombs$total_pottery,method="spearman")
 ```
 
-This is reflected further in the changing composition of the mortuary assemblage through time (Figure \@ref(fig:comps)). Across both cemeteries, there appears to have been the steady crystallisation of a basic 'burial kit', comprising a pithos and lid, an oil vessel or two, a jug, and a drinking vessel. The proportion of grave goods comprising 'other' vessels - pyxides, askoi, trays, stands, dinoi, kernoi, kraters and more - declines to become a near insignificant part of the standardised repertoire of the 7th century. The tombs of Group A did not break this mould, and their assemblages seem largely as conventional as any other by this time.
+This is reflected further in the changing composition of the mortuary assemblages through time (Figure \@ref(fig:comps)). Across both cemeteries, there appears to have been the steady crystallisation of a basic 'burial kit', comprising a pithos and lid, an oil vessel or two, a jug, and a drinking vessel. The proportion of grave goods comprising 'other' vessels - pyxides, askoi, trays, stands, dinoi, kernoi, kraters and more - declines to become a near insignificant part of the standardised repertoire of the 7th century. The tombs of Group A did not break this mould, and their assemblages seem largely as conventional as any other by this time.
 
 The main focus of this article has been on ceramics and not other artefacts of metal, stone, glass, and organic materials, due to their less well-developed chronologies, but even the raw distribution of such artefacts may make more sense in the light of the foregoing discussion. There is a relatively strong (Spearman's ρ=`r round(spearmanobjectspots,digits=2)`) correlation between the number of ceramic and non-ceramic finds across the tombs, and, certainly, many of the most seemingly precious objects were recovered from among the tombs with the most burials. 
 
@@ -959,15 +1158,15 @@ Elsewhere on Crete in the 7th century, we see a shift to unmarked, individual bu
 
 These varied lines of evidence, and others, suggest that, with the emergence of the archaic *poleis* on Crete, there was a concomitant restructuring of wider social groups, institutions, and behaviours. It seems not unreasonable to infer an emergent emphasis on the citizen, the state, and ideologies of relative egality, within which communal gatherings, intra-mural ritual, and individual graves replaced ostentatious, kin-centred acts of gathering, dedication, and burial. And at Knossos, we have seen a somewhat diverse set of burial practices give way to a more prolific, yet more restricted, suite of funerary rites, focussed on a small number of long-established tombs, in the context of diminishing collective tomb construction, replacement of imports with locally-made imitations, not to mention the imminent cessation of such burials in both cemeteries.
 
-Whether the increasingly homogenous burials reflected some standard set of accoutrements intentionally shared by the hypothetical *agathoi*, or else nascent, egalitarian strictures over elaborate burial remains difficult to judge. Yet we need not adopt wholesale a model like Morris's "middling" ideology, nor link the diminishing range of burial goods to Archaic Crete's purported austerity. As a more nuanced picture emerges of the island's relationship with the wider Mediterranean, subtler characterisations are possible. It is telling that the peak for imported items came in the 9th century; the Orientalising as a time period feels increasingly misapplied to Crete [@Whitley2004: 434], when, at Knossos at least, it witnessed far lower rates of 'Oriental' imports, and only limited adoption of the figural motifs which characterise the style's appearance elsewhere. 
+Whether the increasingly homogenous rites reflected some standard set of accoutrements intentionally shared by the hypothetical *agathoi*, or else nascent, egalitarian strictures over elaborate burial remains difficult to judge. Yet we need not adopt wholesale a model like Morris's "middling" ideology, nor link the diminishing range of burial goods to Archaic Crete's purported austerity. As a more nuanced picture emerges of the island's relationship with the wider Mediterranean, subtler characterisations are possible. It is telling that the peak for imported items came in the 9th century; the Orientalising as a period label feels increasingly misapplied to Crete [@Whitley2004: 434], when, at Knossos at least, it witnessed a diminution in 'Oriental' imports, and only limited adoption of the figural motifs which characterise the style's appearance elsewhere. 
 
-The decline in imports was, however, counterpointed by a rise in imitations of Near Eastern vessels [@Antoniadis2012: 170], according with our growing awareness of the selective nature of Archaic and Classical Crete's external relations. Erickson [@Erickson2010], similarly, has argued that *symposia* were practised in Crete, something often disputed, but that their practitioners merely favoured simpler vessel forms than the figurally-decorated wares popular on the mainland. Local, selective adoption of, and responses to, wider social and material trends is perhaps becoming the hallmark of Archaic Crete, and finds further endorsement in the EIA cemeteries at Knossos. What seems certain is that this was a period of transition wherein, whatever their exact identity, certain actors invested heavily in a final flurry of burials in chamber tombs, with an emphasis on a traditional, established repertoire of items, rites, and venues for one's passage to the afterlife, before changing social forces effected their abandonment. 
+The decline in imports was, however, counterpointed by a rise in imitations of Near Eastern vessels [@Antoniadis2012: 170], something which accords with our growing awareness of the selective nature of Archaic and Classical Crete's external relations. Erickson [@Erickson2010], similarly, has argued that *symposia* were practised in Crete - something often disputed - but that their practitioners merely favoured simpler vessel forms than the figurally-decorated wares popular on the mainland. Local, selective adoption of, and responses to, wider social and material trends is perhaps becoming the hallmark of Archaic Crete, and finds further endorsement in the EIA cemeteries at Knossos. What seems certain is that this was a period of transition wherein, whatever their exact identity, certain actors invested heavily in a final flurry of burials in chamber tombs, with an emphasis on a traditional, established repertoire of items, rites, and venues for one's passage to the afterlife, before changing social forces effected their abandonment. 
 
 # 6. Conclusion
 
 It is important that the present study was a comparative investigation of both the Fortetsa and Knossos North cemeteries. That both underwent comparable developments during the EIA suggests, not only that they catered to similar sub-sections of the Knossian population, but that some of the socio-economic and political changes inferred were significant and community-wide. Further work should seek to extend these comparisons, both into trends unexplored in the present study, and out to the wider funerary landscape of Knossos. I hope to do just this but, for the time being, the datasets I am making available alongside this article include the other published EIA tombs in the Knossos area, so that others may also explore their possible significance.
 
-There were undeniable limitations to the present study. For one, non-ceramic artefacts were underrepresented due to difficulties with dating, and future work could seek to address this. Issues of gender were sadly little considered, though this was largely due to limitations in the data. There have also been a number of tombs discovered in the last 20 years that fill in the spaces between the Teke plot and the Medical Faculty Site, and ideally these unpublished tombs should be included in further analyses as they, along with the Teke tholos and associated tombs, are probably part of a single contiguous cemetery [@Blackman1999: 113; @Catling1983: 51; @French1991: 68-69]. Finally, a preliminary study was recently undertaken by the author of select boxes marked as 'unpublished' from the KNC deposits kept at the British School at Athens, at Knossos. Despite little mention in the publication, this material was not inconsiderable and so, regretably, future work will be necessary to determine whether it threatens the integrity of these analyses. At present, it is a pinch of salt with which to take the present findings.
+There were undeniable limitations to the present study. For one, non-ceramic artefacts were underrepresented due to difficulties with dating, and future work could seek to address this. Issues of gender were sadly little considered, though this was largely due to limitations in the data. There have also been a number of tombs discovered in the last 20 years that fill in the spaces between the Teke plot and the Medical Faculty Site, and ideally these unpublished tombs should be included in further analyses as they, along with the Teke tholos and associated tombs, are probably part of a single contiguous cemetery [@Blackman1999: 113; @Catling1983: 51; @French1991: 68-69].
 
 These limitations notwithstanding, the foregoing analysis demonstrates the value of applying quantitative approaches to the archaeological record of the period. Though the construction of databases can be time consuming, once made they offer the opportunity to subdivide, compare, and plot the data in numerous ways, facilitating investigation of the material from multiple angles. By making datasets available for use by others, as with the data and code for the present study, one’s conclusions can also be independently tested, and alternative interpretations can be voiced. The databases produced for the above analysis contain a large of amount of unutilised data that could facilitate a range of future investigations, and all are welcome to it. With more such analyses, we could begin to a construct a fuller account of the regional diversity in mortuary, and wider social, practices among the communities of EIA and Archaic Crete.
 
