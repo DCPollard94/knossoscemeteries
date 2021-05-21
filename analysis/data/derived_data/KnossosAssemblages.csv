@@ -1,0 +1,1384 @@
+number,tomb,cemetery,material,shape,category,period,ave_date,century,tomb_century,tomb_period,assemblage
+1,VI,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,10th,PG,31
+2,VI,FOR,Clay,Stirrup jar,Oil vessel,SM-LPG,970,10th,10th,PG,31
+3,VI,FOR,Clay,Krater,Mixing Vessel,PG,890,9th,10th,PG,32
+4,VI,FOR,Clay,Krateriskos,Drinking vessel,EPG,945,10th,10th,PG,32
+5,VI,FOR,Clay,Kalathos,Other,SM-LPG,970,10th,10th,PG,33
+6,VI,FOR,Clay,Kalathos,Other,SM-LPG,970,10th,10th,PG,33
+7,VI,FOR,Clay,Jar,Other,,,,10th,PG,34
+8,VI,FOR,Clay,Krateriskos,Drinking vessel,EPG,945,10th,10th,PG,261
+9,VI,FOR,Clay,Skyphos,Drinking vessel,PG,890,9th,10th,PG,34
+10,VI,FOR,Clay,Skyphos,Drinking vessel,PG,890,9th,10th,PG,34
+11,VI,FOR,Clay,Cup,Drinking vessel,SM-LPG,970,10th,10th,PG,34
+12,VI,FOR,Clay,Cup,Drinking vessel,SM-LPG,970,10th,10th,PG,34
+13,VI,FOR,Clay,Jug,Jug,PG,890,9th,10th,PG,35
+14,VI,FOR,Clay,Bowl,Other,SM-LPG,970,10th,10th,PG,35
+15,VI,FOR,Clay,Kalathos,Other,SM-LPG,970,10th,10th,PG,36
+16,VI,FOR,Clay,Kalathos,Other,SM-LPG,970,10th,10th,PG,36
+17,VI,FOR,Clay,Tray,Other,PG,890,9th,10th,PG,36
+18,VI,FOR,Clay,Stirrup jar,Oil vessel,SM-LPG,970,10th,10th,PG,37
+19,VI,FOR,Clay,Lekythos,Oil vessel,EPG,945,10th,10th,PG,37
+20,VI,FOR,Clay,Jar,Other,EPG,945,10th,10th,PG,37
+21,VI,FOR,Clay,Cup,Drinking vessel,SM-LPG,970,10th,10th,PG,37
+22,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,37
+23,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,37
+24,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,37
+25,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,37
+26,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,37
+27,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,38
+28,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,38
+29,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,38
+30,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,38
+31,VI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,38
+32,Theta,FOR,Clay,Pithos,Pithos,PG,890,9th,10th,PG,95
+33,Theta,FOR,Clay,Stirrup jar,Oil vessel,EPG-LPG,905,10th,10th,PG,95
+34,Theta,FOR,Clay,Oinochoe,Jug,SM-EPG,1010,11th,10th,PG,95
+35,Theta,FOR,Clay,Amphora,Amphora,EPG-LPG,905,10th,10th,PG,96
+36,Theta,FOR,Clay,Krater,Mixing Vessel,PG,890,9th,10th,PG,96
+37,Theta,FOR,Clay,Amphora,Amphora,PG,890,9th,10th,PG,97
+38,Theta,FOR,Clay,Jar,Other,,,,10th,PG,97
+39,Theta,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,97
+40,Theta,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,97
+41,Theta,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,97
+42,Theta,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,97
+43,Theta,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,97
+44,Theta,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,97
+45,Theta,FOR,Clay,Pithos,Pithos,PG,890,9th,10th,PG,98
+46,Theta,FOR,Clay,Krateriskos,Drinking vessel,EPG,945,10th,10th,PG,98
+47,Theta,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,10th,PG,98
+48,Theta,FOR,Clay,Krater,Mixing Vessel,SM-LPG,970,10th,10th,PG,98
+49,XI,FOR,Clay,Amphora,Amphora,EPG-LPG,905,10th,9th,LPG,84
+50,XI,FOR,Clay,Stirrup jar,Oil vessel,LPG,857.5,9th,9th,LPG,84
+51,XI,FOR,Clay,Jug,Jug,PG,890,9th,9th,LPG,84
+52,XI,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,9th,LPG,85
+53,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,85
+54,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,85
+55,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,85
+56,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,85
+57,XI,FOR,Clay,Amphora,Amphora,EPG,945,10th,9th,LPG,87
+58,XI,FOR,Clay,Stirrup jar,Oil vessel,SM-LPG,970,10th,9th,LPG,87
+59,XI,FOR,Clay,Krateriskos,Drinking vessel,EPG,945,10th,9th,LPG,87
+60,XI,FOR,Clay,Amphora,Amphora,EPG-LPG,905,10th,9th,LPG,88
+61,XI,FOR,Clay,Stirrup jar,Oil vessel,SM-LPG,970,10th,9th,LPG,88
+62,XI,FOR,Clay,Krater,Mixing Vessel,PG,890,9th,9th,LPG,263
+63,XI,FOR,Clay,Kalathos,Other,SM-LPG,970,10th,9th,LPG,89
+64,XI,FOR,Clay,Jar,Other,EPG,945,10th,9th,LPG,89
+65,XI,FOR,Clay,Krateriskos,Drinking vessel,,,,9th,LPG,89
+66,XI,FOR,Clay,Krater,Mixing Vessel,EPG,945,10th,9th,LPG,90
+67,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,90
+68,XI,FOR,Clay,Krater,Mixing Vessel,EPG,945,10th,9th,LPG,91
+69,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,91
+70,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,91
+71,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,91
+72,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,91
+73,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,91
+74,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,91
+75,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,91
+76,XI,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,91
+77,XI,FOR,Clay,Krater,Mixing Vessel,EPG,945,10th,9th,LPG,91
+78,XI,FOR,Clay,Stirrup jar,Oil vessel,SM-LPG,970,10th,9th,LPG,91
+79,XI,FOR,Clay,Amphora,Amphora,EPG-LPG,905,10th,9th,LPG,92
+80,XI,FOR,Clay,Stirrup jar,Oil vessel,SM-LPG,970,10th,9th,LPG,92
+81,XI,FOR,Clay,Amphora,Amphora,EPG-LPG,905,10th,9th,LPG,93
+82,XI,FOR,Clay,Jug,Jug,EPG,945,10th,9th,LPG,93
+83,XI,FOR,Clay,Amphora,Amphora,PG,890,9th,9th,LPG,94
+84,XI,FOR,Clay,Skyphos,Drinking vessel,EPG,945,10th,9th,LPG,94
+85,IV,FOR,Clay,Krater,Mixing Vessel,PG-PGB,890,9th,10th,PG,27
+86,IV,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,27
+87,IV,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,27
+88,IV,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,27
+89,IV,FOR,Clay,Oinochoe,Jug,MPG,897.5,9th,10th,PG,27
+90,V,FOR,Clay,Krater,Mixing Vessel,MPG,897.5,9th,10th,PG,28
+91,V,FOR,Clay,Pithos,Pithos,PG-PGB,890,9th,10th,PG,29
+92,V,FOR,Clay,Lid,Lid,PG-EG,880,9th,10th,PG,29
+93,V,FOR,Clay,Amphora,Amphora,EPG-MPG,922.5,10th,10th,PG,30
+94,V,FOR,Clay,Skyphos,Drinking vessel,PG-PGB,890,9th,10th,PG,30
+95,V,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,28
+96,V,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,28
+97,V,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,28
+98,V,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,28
+99,V,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,28
+100,V,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,28
+101,V,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,28
+102,V,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,28
+103,V,FOR,Clay,Krateriskos,Drinking vessel,PG-PGB,890,9th,10th,PG,28
+104,V,FOR,Clay,Jug,Jug,PG-PGB,890,9th,10th,PG,28
+105,III,FOR,Clay,Pithos,Pithos,PG-PGB,890,9th,10th,PG,264
+106,III,FOR,Clay,Pithos,Pithos,PG-PGB,890,9th,10th,PG,265
+107,IX,FOR,Clay,Stirrup jar,Oil vessel,LPG,857.5,9th,10th,PG,61
+108,IX,FOR,Clay,Krater,Mixing Vessel,PG,890,9th,10th,PG,61
+109,L,FOR,Clay,Amphora,Amphora,Cycladic EG,857.5,9th,10th,PG,99
+110,L,FOR,Clay,Askos,Other,LPG,857.5,9th,10th,PG,99
+111,L,FOR,Clay,Skyphos,Drinking vessel,PG,890,9th,10th,PG,99
+112,L,FOR,Clay,Jug,Jug,PG,890,9th,10th,PG,99
+113,L,FOR,Clay,Jug,Jug,PG,890,9th,10th,PG,99
+114,L,FOR,Clay,Oinochoe,Jug,LPG-LG,792.5,8th,10th,PG,99
+115,L,FOR,Clay,Skyphos,Drinking vessel,PG,890,9th,10th,PG,99
+116,L,FOR,Clay,Amphora,Amphora,EPG-LPG,905,10th,10th,PG,100
+117,L,FOR,Clay,Askos,Other,LPG-PGB,842.5,9th,10th,PG,100
+118,L,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,10th,PG,268
+119,L,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,10th,PG,103
+120,L,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,10th,PG,101
+121,L,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,10th,PG,101
+122,L,FOR,Clay,Amphora,Amphora,EPG-LPG,905,10th,10th,PG,102
+123,L,FOR,Clay,Skyphos,Drinking vessel,PG,890,9th,10th,PG,102
+124,L,FOR,Clay,Stirrup jar,Oil vessel,LPG,857.5,9th,10th,PG,102
+125,L,FOR,Clay,Stirrup jar,Oil vessel,LPG,857.5,9th,10th,PG,102
+126,OD,FOR,Clay,Pithos,Pithos,PGB-EG,815,9th,9th,PGB,269
+127,OD,FOR,Clay,Pithos,Pithos,PGB-EG,815,9th,9th,PGB,104
+128,OD,FOR,Clay,Kalathos,Other,SM-LPG,970,10th,9th,PGB,104
+129,OD,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,9th,PGB,105
+130,OD,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,PGB,105
+131,OD,FOR,Clay,Pithos,Pithos,PGB-EG,815,9th,9th,PGB,106
+132,OD,FOR,Clay,Lid,Lid,PGB-EO,755,8th,9th,PGB,106
+133,OD,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,PGB,106
+134,OD,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,PGB,106
+135,OD,FOR,Clay,Skyphos,Drinking vessel,PG,890,9th,9th,PGB,107
+136,OD,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,PGB,107
+137,OD,FOR,Clay,Skyphos,Drinking vessel,PGB,825,9th,9th,PGB,108
+138,OD,FOR,Clay,Skyphos,Drinking vessel,PGB,825,9th,9th,PGB,108
+139,OD,FOR,Clay,Skyphos,Drinking vessel,PGB,825,9th,9th,PGB,108
+140,OD,FOR,Clay,Skyphos,Drinking vessel,PGB,825,9th,9th,PGB,108
+141,OD,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,9th,PGB,108
+142,OD,FOR,Clay,Pyxis,Other,LPG,857.5,9th,9th,PGB,109
+143,OD,FOR,Clay,Tray,Other,PGB,825,9th,9th,PGB,109
+144,OD,FOR,Clay,Oinochoe,Jug,PGB-MG,792.5,8th,9th,PGB,110
+145,OD,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,PGB,110
+146,OD,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,9th,PGB,110
+147,LST,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,10th,PG,111
+148,LST,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,10th,PG,112
+149,LST,FOR,Clay,Oinochoe,Jug,EG-EO,740,8th,10th,PG,112
+150,LST,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,10th,PG,113
+151,LST,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,10th,PG,113
+152,LST,FOR,Clay,Lid,Lid,LG,727.5,8th,10th,PG,113
+153,X,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,62
+154,X,FOR,Clay,Lid,Lid,LG,727.5,8th,9th,PGB,62
+155,X,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,63
+156,X,FOR,Clay,Lid,Lid,LG,727.5,8th,9th,PGB,63
+157,X,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,PGB,63
+158,X,FOR,Clay,Pithos,Pithos,PGB-EG,815,9th,9th,PGB,64
+159,X,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,PGB,64
+160,X,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,PGB,64
+161,X,FOR,Clay,Kalathos,Other,PGB,825,9th,9th,PGB,64
+162,X,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,65
+163,X,FOR,Clay,Lid,Lid,MG,767.5,8th,9th,PGB,65
+164,X,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,9th,PGB,66
+165,X,FOR,Clay,Kalathos,Other,PGB,825,9th,9th,PGB,66
+166,X,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,67
+167,X,FOR,Clay,Lid,Lid,MG,767.5,8th,9th,PGB,67
+168,X,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,68
+169,X,FOR,Clay,Jug,Jug,LG,727.5,8th,9th,PGB,68
+170,X,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,69
+171,X,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,PGB,69
+172,X,FOR,Clay,Krater,Mixing Vessel,PG,890,9th,9th,PGB,70
+173,X,FOR,Clay,Oinochoe,Jug,PGB-MG,792.5,8th,9th,PGB,70
+174,X,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,PGB,70
+175,X,FOR,Clay,Aryballos,Oil vessel,PGB-MG,792.5,8th,9th,PGB,70
+176,X,FOR,Clay,Jug,Jug,PGB,825,9th,9th,PGB,70
+177,X,FOR,Clay,Aryballos,Oil vessel,PGB-MG,792.5,8th,9th,PGB,70
+178,X,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,PGB,70
+179,X,FOR,Clay,Krateriskos,Drinking vessel,LPG,857.5,9th,9th,PGB,70
+180,X,FOR,Clay,Krateriskos,Drinking vessel,LPG,857.5,9th,9th,PGB,70
+181,X,FOR,Clay,Krateriskos,Drinking vessel,LPG,857.5,9th,9th,PGB,70
+182,X,FOR,Clay,Krateriskos,Drinking vessel,LPG,857.5,9th,9th,PGB,70
+183,X,FOR,Clay,Krateriskos,Drinking vessel,LPG,857.5,9th,9th,PGB,70
+184,X,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,71
+185,X,FOR,Clay,Oinochoe,Jug,MG,767.5,8th,9th,PGB,71
+186,X,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,PGB,71
+187,X,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,9th,PGB,72
+188,X,FOR,Clay,Oinochoe,Jug,PGB-MG,792.5,8th,9th,PGB,72
+189,X,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,PGB,72
+190,X,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,73
+191,X,FOR,Clay,Lekythos,Oil vessel,MG,767.5,8th,9th,PGB,73
+192,X,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,74
+193,X,FOR,Clay,Pithos,Pithos,PGB-EG,815,9th,9th,PGB,270
+194,X,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,9th,PGB,78
+195,X,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,9th,PGB,75
+196,X,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,PGB,75
+197,X,FOR,Clay,Pyxis,Other,LPG-MG,810,9th,9th,PGB,75
+198,X,FOR,Clay,Skyphos,Drinking vessel,PGB,825,9th,9th,PGB,75
+199,X,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,9th,PGB,76
+200,X,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,PGB,76
+201,X,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,PGB,76
+202,X,FOR,Clay,Cup,Drinking vessel,PGB,825,9th,9th,PGB,76
+203,X,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,PGB,76
+204,X,FOR,Clay,Krater,Mixing Vessel,PG,890,9th,9th,PGB,83
+205,X,FOR,Clay,Jug,Jug,MG-EO,730,8th,9th,PGB,271
+206,X,FOR,Clay,Other,Other,,,,9th,PGB,272
+207,X,FOR,Clay,Skyphos,Drinking vessel,PGB,825,9th,9th,PGB,75
+208,X,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,77
+209,X,FOR,Clay,Lid,Lid,MG,767.5,8th,9th,PGB,77
+210,X,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,PGB,77
+211,X,FOR,Clay,Oinochoe,Jug,LPG-LG,792.5,8th,9th,PGB,78
+212,X,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,76
+213,X,FOR,Clay,Aryballos,Oil vessel,MG-LG,750,8th,9th,PGB,76
+214,X,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,PGB,79
+215,X,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,PGB,79
+216,X,FOR,Clay,Lid,Lid,MG,767.5,8th,9th,PGB,73
+217,X,FOR,Clay,Pithos,Pithos,PGB-EG,815,9th,9th,PGB,80
+218,X,FOR,Clay,Lid,Lid,PGB-EG,815,9th,9th,PGB,80
+219,X,FOR,Clay,Oinochoe,Jug,PGB,825,9th,9th,PGB,80
+220,X,FOR,Clay,Kalathos,Other,PG-EG,880,9th,9th,PGB,78
+221,X,FOR,Clay,Bowl,Other,,,,9th,PGB,81
+222,X,FOR,Clay,Skyphos,Drinking vessel,PGB-EO,755,8th,9th,PGB,81
+223,X,FOR,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,PGB,73
+224,X,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,PGB,35
+225,X,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,82
+226,X,FOR,Clay,Lid,Lid,EG-MG,777.5,8th,9th,PGB,82
+227,X,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,9th,PGB,82
+228,X,FOR,Clay,Aryballos,Oil vessel,PGB,825,9th,9th,PGB,74
+229,X,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,PGB,83
+230,X,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,PGB,83
+231,VIII,FOR,Clay,Amphora,Amphora,MG-EO,730,8th,10th,EPG,52
+232,VIII,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,10th,EPG,52
+233,VIII,FOR,Clay,Oinochoe,Jug,LG-O,687.5,7th,10th,EPG,52
+234,VIII,FOR,Clay,Unidentified,Other,,,,10th,EPG,52
+235,VIII,FOR,Clay,Pithos,Pithos,LG,727.5,8th,10th,EPG,53
+236,VIII,FOR,Clay,Lid,Lid,LG,727.5,8th,10th,EPG,53
+237,VIII,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,10th,EPG,53
+238,VIII,FOR,Clay,Oinochoe,Jug,LPG-LG,792.5,8th,10th,EPG,53
+239,VIII,FOR,Clay,Skyphos,Drinking vessel,LG-EO,707.5,8th,10th,EPG,53
+240,VIII,FOR,Clay,Oinochoe,Jug,LPG-MG,810,9th,10th,EPG,53
+241,VIII,FOR,Clay,Pithos,Pithos,LG,727.5,8th,10th,EPG,54
+242,VIII,FOR,Clay,Lid,Lid,LG,727.5,8th,10th,EPG,54
+243,VIII,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,10th,EPG,54
+244,VIII,FOR,Clay,Oinochoe,Jug,LG,727.5,8th,10th,EPG,54
+245,VIII,FOR,Clay,Jug,Jug,LG-EO,707.5,8th,10th,EPG,54
+246,VIII,FOR,Clay,Pithos,Pithos,LG,727.5,8th,10th,EPG,55
+247,VIII,FOR,Clay,Lid,Lid,LG,727.5,8th,10th,EPG,55
+248,VIII,FOR,Clay,Oinochoe,Jug,PGB-MG,792.5,8th,10th,EPG,55
+249,VIII,FOR,Clay,Aryballos,Oil vessel,,,,10th,EPG,55
+250,VIII,FOR,Clay,Pithos,Pithos,MG,767.5,8th,10th,EPG,56
+251,VIII,FOR,Clay,Lid,Lid,MG,767.5,8th,10th,EPG,56
+252,VIII,FOR,Clay,Aryballos,Oil vessel,PGB-MG,792.5,8th,10th,EPG,56
+253,VIII,FOR,Clay,Aryballos,Oil vessel,,,,10th,EPG,56
+254,VIII,FOR,Clay,Oinochoe,Jug,,,,10th,EPG,56
+255,VIII,FOR,Clay,Oinochoe,Jug,,,,10th,EPG,56
+256,VIII,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,10th,EPG,56
+257,VIII,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,10th,EPG,56
+258,VIII,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,10th,EPG,56
+259,VIII,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,10th,EPG,56
+260,VIII,FOR,Clay,Pithos,Pithos,MG,767.5,8th,10th,EPG,57
+261,VIII,FOR,Clay,Oinochoe,Jug,MG,767.5,8th,10th,EPG,57
+262,VIII,FOR,Clay,Oinochoe,Jug,MG,767.5,8th,10th,EPG,57
+263,VIII,FOR,Clay,Cup,Drinking vessel,G,760,8th,10th,EPG,57
+264,VIII,FOR,Clay,Oinochoe,Jug,PGB-MG,792.5,8th,10th,EPG,57
+265,VIII,FOR,Clay,Oinochoe,Jug,EG-MG,777.5,8th,10th,EPG,57
+266,VIII,FOR,Clay,Cup,Drinking vessel,G,760,8th,10th,EPG,57
+267,VIII,FOR,Clay,Cup,Drinking vessel,,,,10th,EPG,57
+268,VIII,FOR,Clay,Stirrup jar,Oil vessel,SM-EPG,1010,11th,10th,EPG,58
+269,VIII,FOR,Clay,Oinochoe,Jug,SM-EPG,1010,11th,10th,EPG,58
+270,VIII,FOR,Clay,Jug,Jug,PG,890,9th,10th,EPG,58
+271,VIII,FOR,Clay,Cup,Drinking vessel,PG,890,9th,10th,EPG,58
+272,VIII,FOR,Clay,Jar,Other,LPG,857.5,9th,10th,EPG,59
+273,VIII,FOR,Clay,Jar,Other,SM-EPG,1010,11th,10th,EPG,274
+274,TFT,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,114
+275,TFT,FOR,Clay,Lid,Lid,MG,767.5,8th,9th,PGB,114
+276,TFT,FOR,Clay,Pyxis,Other,LPG-MG,810,9th,9th,PGB,114
+277,TFT,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,9th,PGB,114
+278,TFT,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,9th,PGB,114
+279,TFT,FOR,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,PGB,114
+280,TFT,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,114
+281,TFT,FOR,Clay,Pithos,Pithos,EG,800,8th,9th,PGB,115
+282,TFT,FOR,Clay,Oinochoe,Jug,EG-MG,777.5,8th,9th,PGB,115
+283,TFT,FOR,Clay,Aryballos,Oil vessel,EG-MG,777.5,8th,9th,PGB,115
+284,TFT,FOR,Clay,Aryballos,Oil vessel,EG-MG,777.5,8th,9th,PGB,115
+285,TFT,FOR,Clay,Aryballos,Oil vessel,EG-MG,777.5,8th,9th,PGB,115
+286,TFT,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,PGB,115
+287,TFT,FOR,Clay,Amphora,Amphora,MG-LG,750,8th,9th,PGB,115
+288,TFT,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,115
+289,TFT,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,116
+290,TFT,FOR,Clay,Aryballos,Oil vessel,PGB-MG,792.5,8th,9th,PGB,116
+291,TFT,FOR,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,PGB,116
+292,TFT,FOR,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,PGB,116
+293,TFT,FOR,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,PGB,116
+294,TFT,FOR,Clay,Jug,Jug,MG-EO,730,8th,9th,PGB,116
+295,TFT,FOR,Clay,Krater,Mixing Vessel,MG,767.5,8th,9th,PGB,116
+296,TFT,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,117
+297,TFT,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,117
+298,TFT,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,117
+299,TFT,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,117
+300,TFT,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,117
+301,TFT,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,117
+302,TFT,FOR,Clay,Pithos,Pithos,LG-EO,707.5,8th,9th,PGB,118
+303,TFT,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,PGB,118
+304,TFT,FOR,Clay,Pyxis,Other,LPG-MG,810,9th,9th,PGB,118
+305,TFT,FOR,Clay,Cup,Drinking vessel,o,670,7th,9th,PGB,118
+306,TFT,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,PGB,119
+307,TFT,FOR,Clay,Lid,Lid,EO,690,7th,9th,PGB,119
+308,TFT,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,PGB,119
+309,TFT,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,PGB,119
+310,TFT,FOR,Clay,Bowl,Other,,,,9th,PGB,119
+311,TFT,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,9th,PGB,120
+312,TFT,FOR,Clay,Kalathos,Other,PG-EG,880,9th,9th,PGB,120
+313,TFT,FOR,Clay,Pyxis,Other,LPG-MG,810,9th,9th,PGB,120
+314,TFT,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,121
+315,TFT,FOR,Clay,Lid,Lid,MG,767.5,8th,9th,PGB,121
+316,TFT,FOR,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,PGB,121
+317,TFT,FOR,Clay,Pithos,Pithos,EG,800,8th,9th,PGB,122
+318,TFT,FOR,Clay,Lid,Lid,EG,800,8th,9th,PGB,122
+319,TFT,FOR,Clay,Oinochoe,Jug,PGB-MG,792.5,8th,9th,PGB,122
+320,TFT,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,PGB,122
+321,TFT,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,123
+322,TFT,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,PGB,123
+323,TFT,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,PGB,123
+324,TFT,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,124
+325,TFT,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,PGB,124
+326,TFT,FOR,Clay,Alabastron-aryballos,Oil vessel,EO,690,7th,9th,PGB,124
+327,TFT,FOR,Clay,Pithos,Pithos,EG,800,8th,9th,PGB,125
+328,TFT,FOR,Clay,Oinochoe,Jug,PGB-MG,792.5,8th,9th,PGB,125
+329,TFT,FOR,Clay,Aryballos,Oil vessel,,,,9th,PGB,125
+330,TFT,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,PGB,125
+331,F,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,PGB,126
+332,F,FOR,Clay,Pyxis,Other,LPG-MG,810,9th,9th,PGB,126
+333,F,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,PGB,126
+334,F,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,PGB,126
+335,F,FOR,Clay,Aryballos,Oil vessel,,,,9th,PGB,126
+336,F,FOR,Clay,Jug,Jug,MG-EO,730,8th,9th,PGB,126
+337,F,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,PGB,126
+338,F,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,PGB,126
+339,F,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,PGB,126
+340,F,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,PGB,127
+341,F,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,PGB,127
+342,F,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,128
+343,F,FOR,Clay,Krater,Mixing Vessel,PG-PGB,890,9th,9th,PGB,128
+344,F,FOR,Clay,Oinochoe,Jug,LG-EO,707.5,8th,9th,PGB,128
+345,F,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,128
+346,F,FOR,Clay,Cup,Drinking vessel,EO-LO,670,7th,9th,PGB,128
+347,F,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,129
+348,F,FOR,Clay,Pyxis,Other,LG-EO,707.5,8th,9th,PGB,129
+349,F,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,PGB,129
+350,F,FOR,Clay,Oinochoe,Jug,,,,9th,PGB,129
+351,F,FOR,Clay,Lid,Lid,O,670,7th,9th,PGB,130
+352,F,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,PGB,130
+353,F,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,9th,PGB,277
+354,F,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,131
+355,F,FOR,Clay,Lid,Lid,LG,727.5,8th,9th,PGB,131
+356,F,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,PGB,131
+357,F,FOR,Clay,Lid,Lid,LG,727.5,8th,9th,PGB,131
+358,F,FOR,Clay,Oinochoe,Jug,LG,727.5,8th,9th,PGB,131
+359,F,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,9th,PGB,278
+360,F,FOR,Clay,Pithos,Pithos,EG,800,8th,9th,PGB,132
+361,F,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,PGB,132
+362,F,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,PGB,132
+363,F,FOR,Clay,Lid,Lid,O,670,7th,9th,PGB,132
+364,F,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,132
+365,F,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,PGB,132
+366,F,FOR,Clay,Pithos,Pithos,EG,800,8th,9th,PGB,133
+367,F,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,PGB,133
+368,F,FOR,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,PGB,133
+369,F,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,133
+370,F,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,PGB,133
+371,F,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,133
+372,F,FOR,Clay,Lid,Lid,O,670,7th,9th,PGB,134
+373,F,FOR,Clay,Skyphos,Drinking vessel,LG-EO,707.5,8th,9th,PGB,134
+374,F,FOR,Clay,Skyphos,Drinking vessel,LG-EO,707.5,8th,9th,PGB,134
+375,F,FOR,Clay,Pithos,Pithos,EG,800,8th,9th,PGB,135
+376,F,FOR,Clay,Oinochoe,Jug,EG-MG,777.5,8th,9th,PGB,135
+377,F,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,136
+378,F,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,136
+379,F,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,136
+380,F,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,136
+381,F,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,136
+382,F,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,9th,PGB,137
+383,F,FOR,Clay,Lid,Lid,PG-EO,820,9th,9th,PGB,137
+384,F,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,PGB,137
+385,VII,FOR,Clay,Pithos,Pithos,EO,690,7th,10th,MPG,39
+386,VII,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,10th,MPG,39
+387,VII,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,10th,MPG,39
+388,VII,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,10th,MPG,40
+389,VII,FOR,Clay,Lid,Lid,EO-LO,670,7th,10th,MPG,40
+390,VII,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,10th,MPG,40
+391,VII,FOR,Clay,Oinochoe,Jug,O,670,7th,10th,MPG,40
+392,VII,FOR,Clay,Skyphos,Drinking vessel,EO-LO,670,7th,10th,MPG,40
+393,VII,FOR,Clay,Kotyle,Drinking vessel,EO-LO,670,7th,10th,MPG,40
+394,VII,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,10th,MPG,41
+395,VII,FOR,Clay,Aryballos,Oil vessel,O,670,7th,10th,MPG,41
+396,VII,FOR,Clay,Lid,Lid,,,,10th,MPG,41
+397,VII,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,10th,MPG,42
+398,VII,FOR,Clay,Lid,Lid,EO-LO,670,7th,10th,MPG,42
+399,VII,FOR,Clay,Aryballos,Oil vessel,O,670,7th,10th,MPG,42
+400,VII,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,10th,MPG,42
+401,VII,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,10th,MPG,43
+402,VII,FOR,Clay,Aryballos,Oil vessel,,,,10th,MPG,43
+403,VII,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,10th,MPG,44
+404,VII,FOR,Clay,Lid,Lid,EO-LO,670,7th,10th,MPG,44
+405,VII,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,10th,MPG,44
+406,VII,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,10th,MPG,44
+407,VII,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,10th,MPG,44
+408,VII,FOR,Clay,Pithos,Pithos,LG,727.5,8th,10th,MPG,45
+409,VII,FOR,Clay,Lid,Lid,LG,727.5,8th,10th,MPG,45
+410,VII,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,10th,MPG,45
+411,VII,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,10th,MPG,45
+412,VII,FOR,Clay,Pithos,Pithos,LG,727.5,8th,10th,MPG,46
+413,VII,FOR,Clay,Aryballos,Oil vessel,G,760,8th,10th,MPG,46
+414,VII,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,10th,MPG,46
+415,VII,FOR,Clay,Pithos,Pithos,LG,727.5,8th,10th,MPG,47
+416,VII,FOR,Clay,Lid,Lid,LG,727.5,8th,10th,MPG,47
+417,VII,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,10th,MPG,47
+418,VII,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,10th,MPG,47
+419,VII,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,10th,MPG,47
+420,VII,FOR,Clay,Oinochoe,Jug,LG,727.5,8th,10th,MPG,47
+421,VII,FOR,Clay,Pithos,Pithos,MG,767.5,8th,10th,MPG,48
+422,VII,FOR,Clay,Lid,Lid,MG,767.5,8th,10th,MPG,48
+423,VII,FOR,Clay,Oinochoe,Jug,PGB-MG,792.5,8th,10th,MPG,48
+424,VII,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,10th,MPG,279
+425,VII,FOR,Clay,Pithos,Pithos,MG,767.5,8th,10th,MPG,50
+426,VII,FOR,Clay,Lid,Lid,MG,767.5,8th,10th,MPG,50
+427,VII,FOR,Clay,Aryballos,Oil vessel,MG,767.5,8th,10th,MPG,50
+428,VII,FOR,Clay,Pyxis,Other,LPG-MG,810,9th,10th,MPG,51
+429,VII,FOR,Clay,Larnax,Other,LM,1350,14th,10th,MPG,51
+430,VII,FOR,Clay,Cup,Drinking vessel,G,760,8th,10th,MPG,51
+431,VII,FOR,Clay,Cup,Drinking vessel,G,760,8th,10th,MPG,51
+432,VII,FOR,Clay,Oinochoe,Jug,EO,690,7th,10th,MPG,51
+433,P2,FOR,Clay,Aryballos,Oil vessel,MG,767.5,8th,8th,LG,138
+434,P2,FOR,Clay,Pyxis,Other,G,760,8th,8th,LG,138
+435,P2,FOR,Clay,Pithos,Pithos,EO,690,7th,8th,LG,139
+436,P2,FOR,Clay,Lid,Lid,EO,690,7th,8th,LG,139
+437,P2,FOR,Clay,Skyphos,Drinking vessel,EO-LO,670,7th,8th,LG,139
+438,P2,FOR,Clay,Pithos,Pithos,EO,690,7th,8th,LG,140
+439,P2,FOR,Clay,Aryballos,Oil vessel,O,670,7th,8th,LG,140
+440,P2,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,8th,LG,140
+441,P2,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,8th,LG,141
+442,P2,FOR,Clay,Alabastron-aryballos,Oil vessel,EO,690,7th,8th,LG,141
+443,P2,FOR,Clay,Pithos,Pithos,MG-LG,750,8th,8th,LG,142
+444,P2,FOR,Clay,Lid,Lid,MG-LG,750,8th,8th,LG,142
+445,P2,FOR,Clay,Oinochoe,Jug,LG,727.5,8th,8th,LG,142
+446,P2,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,8th,LG,142
+447,P2,FOR,Clay,Pithos,Pithos,LG,727.5,8th,8th,LG,143
+448,P2,FOR,Clay,Lid,Lid,LG,727.5,8th,8th,LG,143
+449,P2,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,8th,LG,143
+450,P2,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,8th,LG,143
+451,P2,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,8th,LG,143
+452,P2,FOR,Clay,Skyphos,Drinking vessel,LG-EO,707.5,8th,8th,LG,143
+453,P2,FOR,Clay,Pithos,Pithos,EO,690,7th,8th,LG,144
+454,P2,FOR,Clay,Lid,Lid,EO,690,7th,8th,LG,144
+455,P2,FOR,Clay,Oinochoe,Jug,Jones680-665,672.5,7th,8th,LG,144
+456,P2,FOR,Clay,Aryballos,Oil vessel,O,670,7th,8th,LG,144
+457,P2,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,8th,LG,144
+458,P2,FOR,Clay,Lid,Lid,EO-LO,670,7th,8th,LG,144
+459,P2,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,8th,LG,144
+460,P2,FOR,Clay,Aryballos,Oil vessel,O,670,7th,8th,LG,144
+461,P2,FOR,Clay,Pithos,Pithos,EO,690,7th,8th,LG,145
+462,P2,FOR,Clay,Lid,Lid,EO,690,7th,8th,LG,145
+463,P2,FOR,Clay,Cup,Drinking vessel,O,670,7th,8th,LG,145
+464,P2,FOR,Clay,Skyphos,Drinking vessel,EO-LO,670,7th,8th,LG,145
+465,P2,FOR,Clay,Amphora,Amphora,LG,727.5,8th,8th,LG,146
+466,P2,FOR,Clay,Tray,Other,LG-EO,707.5,8th,8th,LG,146
+467,P2,FOR,Clay,Tray,Other,LG-EO,707.5,8th,8th,LG,146
+468,P2,FOR,Clay,Pithos,Pithos,EO,690,7th,8th,LG,147
+469,P2,FOR,Clay,Lid,Lid,EO,690,7th,8th,LG,147
+470,P2,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,8th,LG,147
+471,P2,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,8th,LG,147
+472,P2,FOR,Clay,Pithos,Pithos,EO,690,7th,8th,LG,148
+473,P2,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,8th,LG,148
+474,P2,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,8th,LG,148
+475,P2,FOR,Clay,Aryballos,Oil vessel,O,670,7th,8th,LG,148
+476,P2,FOR,Clay,Pithos,Pithos,LG-EO,707.5,8th,8th,LG,280
+477,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,1
+478,II,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,1
+479,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,1
+480,II,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,1
+481,II,FOR,Clay,Oinochoe,Jug,,,,9th,LPG,1
+482,II,FOR,Clay,Cup,Drinking vessel,,,,9th,LPG,1
+483,II,FOR,Clay,Cup,Drinking vessel,,,,9th,LPG,1
+484,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,2
+485,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,3
+486,II,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,3
+487,II,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,3
+488,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,3
+489,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,4
+490,II,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,4
+491,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,4
+492,II,FOR,Clay,Cup,Drinking vessel,EO-LO,670,7th,9th,LPG,4
+493,II,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,4
+494,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,5
+495,II,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,5
+496,II,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,5
+497,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,5
+498,II,FOR,Clay,Kotyle,Drinking vessel,EO-LO,670,7th,9th,LPG,5
+499,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,6
+500,II,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,6
+501,II,FOR,Clay,Skyphos,Drinking vessel,LO,650,7th,9th,LPG,6
+502,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,7
+503,II,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,7
+504,II,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,7
+505,II,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,7
+506,II,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,7
+507,II,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,7
+508,II,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,7
+509,II,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,7
+510,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,8
+511,II,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,8
+512,II,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,8
+513,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,8
+514,II,FOR,Clay,Kotyle,Drinking vessel,EO-LO,670,7th,9th,LPG,8
+515,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,9
+516,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,9
+517,II,FOR,Clay,Skyphos,Drinking vessel,EO-LO,670,7th,9th,LPG,9
+518,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,10
+519,II,FOR,Clay,Cup,Drinking vessel,EO-LO,670,7th,9th,LPG,10
+520,II,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,10
+521,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,10
+522,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,11
+523,II,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,11
+524,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,11
+525,II,FOR,Clay,Kotyle,Drinking vessel,EO-LO,670,7th,9th,LPG,11
+526,II,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,11
+527,II,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,12
+528,II,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,12
+529,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,12
+530,II,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,12
+531,II,FOR,Clay,Pithos,Pithos,,,,9th,LPG,13
+532,II,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,13
+533,II,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,13
+534,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,13
+535,II,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,13
+536,II,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,13
+537,II,FOR,Clay,Cup,Drinking vessel,O,670,7th,9th,LPG,13
+538,II,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,14
+539,II,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,14
+540,II,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,14
+541,II,FOR,Clay,Alabastron-aryballos,Oil vessel,EO,690,7th,9th,LPG,14
+542,II,FOR,Clay,Alabastron-aryballos,Oil vessel,EO,690,7th,9th,LPG,14
+543,II,FOR,Clay,Alabastron-aryballos,Oil vessel,EO,690,7th,9th,LPG,14
+544,II,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,14
+545,II,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,15
+546,II,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,15
+547,II,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,LPG,15
+548,II,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,15
+549,II,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,LPG,15
+550,II,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,LPG,15
+551,II,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,16
+552,II,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,16
+553,II,FOR,Clay,Pithos,Pithos,O,670,7th,9th,LPG,17
+554,II,FOR,Clay,Oinochoe,Jug,EG-EO,740,8th,9th,LPG,17
+555,II,FOR,Clay,Kotyle,Drinking vessel,EO-LO,670,7th,9th,LPG,17
+556,II,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,17
+557,II,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,18
+558,II,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,18
+559,II,FOR,Clay,Alabastron-aryballos,Oil vessel,EO,690,7th,9th,LPG,18
+560,II,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,18
+561,II,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,9th,LPG,19
+562,II,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,LPG,19
+563,II,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,LPG,19
+564,II,FOR,Clay,Skyphos,Drinking vessel,LG-EO,707.5,8th,9th,LPG,19
+565,II,FOR,Clay,Skyphos,Drinking vessel,LG-EO,707.5,8th,9th,LPG,19
+566,II,FOR,Clay,Aryballos,Oil vessel,PGB-MG,792.5,8th,9th,LPG,19
+567,II,FOR,Clay,Oinochoe,Jug,EG,800,8th,9th,LPG,19
+568,II,FOR,Clay,Oinochoe,Jug,LPG-LG,792.5,8th,9th,LPG,19
+569,II,FOR,Clay,Hydria,Jug,PGB,825,9th,9th,LPG,19
+570,II,FOR,Clay,Cup,Drinking vessel,,,,9th,LPG,19
+571,II,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,LPG,19
+572,II,FOR,Clay,Pithos,Pithos,PG-EO,820,9th,9th,LPG,20
+573,II,FOR,Clay,Kalathos,Other,LPG-PGB,842.5,9th,9th,LPG,20
+574,II,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,9th,LPG,21
+575,II,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,LPG,21
+576,II,FOR,Clay,Kalathos,Other,PGB,825,9th,9th,LPG,21
+577,II,FOR,Clay,Kalathos,Other,LPG-PGB,842.5,9th,9th,LPG,21
+578,II,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,22
+579,II,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,22
+580,II,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,LPG,22
+581,II,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,LPG,22
+582,II,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,22
+583,II,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,22
+584,II,FOR,Clay,Lid,Lid,LG-EO,707.5,8th,9th,LPG,22
+585,II,FOR,Clay,Pithos,Pithos,PG-EG,880,9th,9th,LPG,23
+586,II,FOR,Clay,Pyxis,Other,LPG,857.5,9th,9th,LPG,23
+587,II,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,LPG,23
+588,II,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,LPG,23
+589,II,FOR,Clay,Oinochoe,Jug,LPG-MG,810,9th,9th,LPG,23
+590,II,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,LPG,23
+591,II,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,LPG,23
+592,II,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,LPG,23
+593,II,FOR,Clay,Aryballos,Oil vessel,PGB-MG,792.5,8th,9th,LPG,23
+594,II,FOR,Clay,Aryballos,Oil vessel,PGB-MG,792.5,8th,9th,LPG,23
+595,II,FOR,Clay,Jug,Jug,LPG-PGB,842.5,9th,9th,LPG,23
+596,II,FOR,Clay,Skyphos,Drinking vessel,PG,890,9th,9th,LPG,23
+597,II,FOR,Clay,Cup,Drinking vessel,LPG,857.5,9th,9th,LPG,23
+598,II,FOR,Clay,Cup,Drinking vessel,LPG,857.5,9th,9th,LPG,23
+599,II,FOR,Clay,Skyphos,Drinking vessel,PG,890,9th,9th,LPG,23
+600,II,FOR,Clay,Oinochoe,Jug,LPG-MG,810,9th,9th,LPG,23
+601,II,FOR,Clay,Jug,Jug,PGB,825,9th,9th,LPG,23
+602,II,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,24
+603,II,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,24
+604,II,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,24
+605,II,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,24
+606,II,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,24
+607,II,FOR,Clay,Bottle,Other,EO,690,7th,9th,LPG,24
+608,II,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,24
+609,II,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,24
+610,II,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,LPG,25
+611,II,FOR,Clay,Lid,Lid,,,,9th,LPG,25
+612,II,FOR,Clay,Cup,Drinking vessel,,,,9th,LPG,25
+613,II,FOR,Clay,Cup,Drinking vessel,,,,9th,LPG,26
+614,II,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,LPG,26
+615,II,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,LPG,26
+616,II,FOR,Clay,Oinochoe,Jug,EG-MG,777.5,8th,9th,LPG,26
+617,II,FOR,Clay,Cup,Drinking vessel,LPG,857.5,9th,9th,LPG,26
+618,II,FOR,Clay,Aryballos,Oil vessel,PGB-MG,792.5,8th,9th,LPG,26
+619,P,FOR,Clay,Pithos,Pithos,MG-EO,730,8th,9th,LPG,219
+620,P,FOR,Clay,Oinochoe,Jug,EG-MG,777.5,8th,9th,LPG,219
+621,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,219
+622,P,FOR,Clay,Krater,Mixing Vessel,G,760,8th,9th,LPG,219
+623,P,FOR,Clay,Pithos,Pithos,MG-EO,730,8th,9th,LPG,220
+624,P,FOR,Clay,Oinochoe,Jug,LG-EO,707.5,8th,9th,LPG,220
+625,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,220
+626,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,299
+627,P,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,299
+628,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,299
+629,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,149
+630,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,149
+631,P,FOR,Clay,Tray,Other,LG-O,687.5,7th,9th,LPG,149
+632,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,149
+633,P,FOR,Clay,Pithos,Pithos,O,670,7th,9th,LPG,150
+634,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,150
+635,P,FOR,Clay,Pithos,Pithos,O,670,7th,9th,LPG,151
+636,P,FOR,Clay,Kotyle,Drinking vessel,EO-LO,670,7th,9th,LPG,151
+637,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,152
+638,P,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,152
+639,P,FOR,Clay,Skyphos,Drinking vessel,EO-LO,670,7th,9th,LPG,152
+640,P,FOR,Clay,Skyphos,Drinking vessel,EO-LO,670,7th,9th,LPG,152
+641,P,FOR,Clay,Hydria,Jug,LPG,857.5,9th,9th,LPG,152
+642,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,153
+643,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,153
+644,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,153
+645,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,154
+646,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,154
+647,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,154
+648,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,154
+649,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,154
+650,P,FOR,Clay,Cup,Drinking vessel,EO-LO,670,7th,9th,LPG,154
+651,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,155
+652,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,155
+653,P,FOR,Clay,Alabastron,Oil vessel,LO,650,7th,9th,LPG,155
+654,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,156
+655,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,156
+656,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,156
+657,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,157
+658,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,157
+659,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,157
+660,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,158
+661,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,158
+662,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,158
+663,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,158
+664,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,281
+665,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,159
+666,P,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,LPG,159
+667,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,159
+668,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,160
+669,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,160
+670,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,160
+671,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,161
+672,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,161
+673,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,162
+674,P,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,LPG,162
+675,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,162
+676,P,FOR,Clay,Alabastron,Oil vessel,LO,650,7th,9th,LPG,162
+677,P,FOR,Clay,Aryballos,Oil vessel,,,,9th,LPG,162
+678,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,163
+679,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,163
+680,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,163
+681,P,FOR,Clay,Cup,Drinking vessel,O,670,7th,9th,LPG,163
+682,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,163
+683,P,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,163
+684,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,164
+685,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,164
+686,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,165
+687,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,165
+688,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,165
+689,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,165
+690,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,166
+691,P,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,LPG,166
+692,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,166
+693,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,166
+694,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,167
+695,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,167
+696,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,168
+697,P,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,LPG,168
+698,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,168
+699,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,168
+700,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,169
+701,P,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,LPG,169
+702,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,169
+703,P,FOR,Clay,Skyphos,Drinking vessel,LG-O,687.5,7th,9th,LPG,169
+704,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,170
+705,P,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,LPG,170
+706,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,170
+707,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,170
+708,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,171
+709,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,171
+710,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,171
+711,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,171
+712,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,171
+713,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,172
+714,P,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,LPG,172
+715,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,172
+716,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,172
+717,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,172
+718,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,172
+719,P,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,173
+720,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,172
+721,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,173
+722,P,FOR,Clay,Kotyle,Drinking vessel,EO-LO,670,7th,9th,LPG,173
+723,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,174
+724,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,174
+725,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,174
+726,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,175
+727,P,FOR,Clay,Tray,Other,G,760,8th,9th,LPG,175
+728,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,176
+729,P,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,LPG,176
+730,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,176
+731,P,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,177
+732,P,FOR,Clay,Skyphos,Drinking vessel,EO-LO,670,7th,9th,LPG,177
+733,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,178
+734,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,178
+735,P,FOR,Clay,Alabastron,Oil vessel,LO,650,7th,9th,LPG,178
+736,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,178
+737,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,179
+738,P,FOR,Clay,Lid,Lid,LO,650,7th,9th,LPG,179
+739,P,FOR,Clay,Alabastron,Oil vessel,LO,650,7th,9th,LPG,179
+740,P,FOR,Clay,Oinochoe,Jug,O,670,7th,9th,LPG,180
+741,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,180
+742,P,FOR,Clay,Pithos,Pithos,O,670,7th,9th,LPG,181
+743,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,181
+744,P,FOR,Clay,Aryballos,Oil vessel,LO,650,7th,9th,LPG,181
+745,P,FOR,Clay,Pithos,Pithos,O,670,7th,9th,LPG,182
+746,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,182
+747,P,FOR,Clay,Pithos,Pithos,O,670,7th,9th,LPG,282
+748,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,183
+749,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,183
+750,P,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,183
+751,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,184
+752,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,184
+753,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,184
+754,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,185
+755,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,185
+756,P,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,185
+757,P,FOR,Clay,Lekythos,Oil vessel,EO,690,7th,9th,LPG,185
+758,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,186
+759,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,186
+760,P,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,186
+761,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,187
+762,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,187
+763,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,187
+764,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,187
+765,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,187
+766,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,188
+767,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,188
+768,P,FOR,Clay,Amphora,Amphora,EO,690,7th,9th,LPG,188
+769,P,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,188
+770,P,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,LPG,189
+771,P,FOR,Clay,Lid,Lid,LG,727.5,8th,9th,LPG,189
+772,P,FOR,Clay,Lekythos,Oil vessel,EO,690,7th,9th,LPG,189
+773,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,189
+774,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,190
+775,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,190
+776,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,190
+777,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,190
+778,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,191
+779,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,191
+780,P,FOR,Clay,Kotyle,Drinking vessel,EO-LO,670,7th,9th,LPG,191
+781,P,FOR,Clay,Oinochoe,Jug,LO,650,7th,9th,LPG,192
+782,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,192
+783,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,193
+784,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,193
+785,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,193
+786,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,194
+787,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,194
+788,P,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,LPG,194
+789,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,194
+790,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,194
+791,P,FOR,Clay,Lekythos,Oil vessel,EO,690,7th,9th,LPG,194
+792,P,FOR,Clay,Pithos,Pithos,O,670,7th,9th,LPG,195
+793,P,FOR,Clay,Lid,Lid,O,670,7th,9th,LPG,195
+794,P,FOR,Clay,Skyphos,Drinking vessel,EO-LO,670,7th,9th,LPG,195
+795,P,FOR,Clay,Pithos,Pithos,LO,650,7th,9th,LPG,196
+796,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,196
+797,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,197
+798,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,197
+799,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,197
+800,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,197
+801,P,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,LPG,197
+802,P,FOR,Clay,Skyphos,Drinking vessel,EO-LO,670,7th,9th,LPG,197
+803,P,FOR,Clay,Aryballos,Oil vessel,,,,9th,LPG,197
+804,P,FOR,Clay,Pithos,Pithos,EO-LO,670,7th,9th,LPG,198
+805,P,FOR,Clay,Lid,Lid,EO-LO,670,7th,9th,LPG,198
+806,P,FOR,Clay,Bottle,Other,EO,690,7th,9th,LPG,198
+807,P,FOR,Clay,Bottle,Other,EO,690,7th,9th,LPG,198
+808,P,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,9th,LPG,199
+809,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,199
+810,P,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,LPG,199
+811,P,FOR,Clay,Cup,Drinking vessel,LPG-MG,810,9th,9th,LPG,199
+812,P,FOR,Clay,Cup,Drinking vessel,G,760,8th,9th,LPG,199
+813,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,199
+814,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,199
+815,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,200
+816,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,200
+817,P,FOR,Clay,Aryballos,Oil vessel,EO,690,7th,9th,LPG,200
+818,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,200
+819,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,200
+820,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,200
+821,P,FOR,Clay,Pithos,Pithos,MG,767.5,8th,9th,LPG,201
+822,P,FOR,Clay,Lid,Lid,MG,767.5,8th,9th,LPG,201
+823,P,FOR,Clay,Oinochoe,Jug,LPG-LG,792.5,8th,9th,LPG,201
+824,P,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,9th,LPG,201
+825,P,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,LPG,201
+826,P,FOR,Clay,Pyxis,Other,G,760,8th,9th,LPG,201
+827,P,FOR,Clay,Pyxis,Other,LPG-MG,810,9th,9th,LPG,201
+828,P,FOR,Clay,Aryballos,Oil vessel,,,,9th,LPG,201
+829,P,FOR,Clay,Lekythos,Oil vessel,MG,767.5,8th,9th,LPG,201
+830,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,202
+831,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,202
+832,P,FOR,Clay,Amphora,Amphora,Jones680-665,672.5,7th,9th,LPG,202
+833,P,FOR,Clay,Pyxis,Other,LPG-MG,810,9th,9th,LPG,202
+834,P,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,LPG,203
+835,P,FOR,Clay,Lid,Lid,LG,727.5,8th,9th,LPG,203
+836,P,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,LPG,203
+837,P,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,LPG,203
+838,P,FOR,Clay,Pithos,Pithos,EG,800,8th,9th,LPG,204
+839,P,FOR,Clay,Lid,Lid,EG,800,8th,9th,LPG,204
+840,P,FOR,Clay,Oinochoe,Jug,LG,727.5,8th,9th,LPG,204
+841,P,FOR,Clay,Aryballos,Oil vessel,G,760,8th,9th,LPG,204
+842,P,FOR,Clay,Lekythos,Oil vessel,G,760,8th,9th,LPG,205
+843,P,FOR,Clay,Oinochoe,Jug,LPG-MG,810,9th,9th,LPG,205
+844,P,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,9th,LPG,205
+845,P,FOR,Clay,Lid,Lid,LG,727.5,8th,9th,LPG,205
+846,P,FOR,Clay,Oinochoe,Jug,LG,727.5,8th,9th,LPG,206
+847,P,FOR,Clay,Aryballos,Oil vessel,,,,9th,LPG,206
+848,P,FOR,Clay,Lid,Lid,EG-MG,777.5,8th,9th,LPG,206
+849,P,FOR,Clay,Pithos,Pithos,PGB,825,9th,9th,LPG,283
+850,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,207
+851,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,207
+852,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,207
+853,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,207
+854,P,FOR,Clay,Lid,Lid,,,,9th,LPG,207
+855,P,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,LPG,208
+856,P,FOR,Clay,Lid,Lid,LG,727.5,8th,9th,LPG,208
+857,P,FOR,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,LPG,208
+858,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,208
+859,P,FOR,Clay,Pyxis,Other,LG,727.5,8th,9th,LPG,208
+860,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,208
+861,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,208
+862,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,209
+863,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,209
+864,P,FOR,Clay,Lekythos,Oil vessel,EO,690,7th,9th,LPG,209
+865,P,FOR,Clay,Lekythos,Oil vessel,EO,690,7th,9th,LPG,209
+866,P,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,LPG,210
+867,P,FOR,Clay,Alabastron-aryballos,Oil vessel,LG,727.5,8th,9th,LPG,210
+868,P,FOR,Clay,Jug,Jug,MG-EO,730,8th,9th,LPG,210
+869,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,210
+870,P,FOR,Clay,Pithos,Pithos,LG,727.5,8th,9th,LPG,211
+871,P,FOR,Clay,Lid,Lid,LG,727.5,8th,9th,LPG,211
+872,P,FOR,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,LPG,211
+873,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,211
+874,P,FOR,Clay,Aryballos,Oil vessel,,,,9th,LPG,211
+875,P,FOR,Clay,Krater,Mixing Vessel,LPG,857.5,9th,9th,LPG,212
+876,P,FOR,Clay,Aryballos,Oil vessel,PGB-MG,792.5,8th,9th,LPG,212
+877,P,FOR,Clay,Pyxis,Other,LPG,857.5,9th,9th,LPG,212
+878,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+879,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+880,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+881,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+882,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+883,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+884,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+885,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+886,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+887,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,212
+888,P,FOR,Clay,Stirrup jar,Oil vessel,EPG-LPG,905,10th,9th,LPG,213
+889,P,FOR,Clay,Hydria,Jug,LPG,857.5,9th,9th,LPG,213
+890,P,FOR,Clay,Krater,Mixing Vessel,LPG,857.5,9th,9th,LPG,214
+891,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,214
+892,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,214
+893,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,214
+894,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,214
+895,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,214
+896,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,214
+897,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,214
+898,P,FOR,Clay,Amphora,Amphora,LPG-PGB,842.5,9th,9th,LPG,215
+899,P,FOR,Clay,Jug,Jug,PGB-MG,792.5,8th,9th,LPG,215
+900,P,FOR,Clay,Krateriskos,Drinking vessel,PG,890,9th,9th,LPG,215
+901,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,216
+902,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,216
+903,P,FOR,Clay,Pyxis,Other,EO,690,7th,9th,LPG,216
+904,P,FOR,Clay,Lekythos,Oil vessel,EO,690,7th,9th,LPG,216
+905,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,217
+906,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,217
+907,P,FOR,Clay,Aryballos,Oil vessel,O,670,7th,9th,LPG,217
+908,P,FOR,Clay,Pithos,Pithos,EO,690,7th,9th,LPG,218
+909,P,FOR,Clay,Lid,Lid,EO,690,7th,9th,LPG,218
+910,P,FOR,Clay,Lekythos,Oil vessel,EO,690,7th,9th,LPG,218
+911,P,FOR,Clay,Cup,Drinking vessel,LG-O,687.5,7th,9th,LPG,218
+912,D,NC,Clay,Skyphos,Drinking vessel,PGB,825,9th,9th,LPG,284
+913,O,NC,Clay,Pithos,Pithos,MG,767.5,8th,10th,PG,221
+914,O,NC,Clay,Aryballos,Oil vessel,Corinthian MG,790,8th,10th,PG,221
+915,O,NC,Clay,Pithos,Pithos,EG,800,8th,10th,PG,222
+916,O,NC,Clay,Kalathos,Other,EG,800,8th,10th,PG,222
+917,O,NC,Clay,Pithos,Pithos,EPG-MPG,922.5,10th,10th,PG,223
+918,O,NC,Clay,Jug,Jug,Attic LPG-EG,925,10th,10th,PG,223
+919,O,NC,Clay,Aryballos,Oil vessel,MG,767.5,8th,10th,PG,222
+920,O,NC,Clay,Oinochoe,Jug,PGB-EG,815,9th,10th,PG,223
+921,O,NC,Clay,Lid,Lid,MG,767.5,8th,10th,PG,221
+922,13,NC,Clay,Pithos,Pithos,PGB-EG,815,9th,9th,PGB,300
+923,13,NC,Clay,Hydria,Jug,EG,800,8th,9th,PGB,300
+924,13,NC,Clay,Skyphos,Drinking vessel,EG,800,8th,9th,PGB,300
+925,13,NC,Clay,Aryballos,Oil vessel,LO,650,7th,9th,PGB,285
+926,13,NC,Clay,Pithos,Pithos,LO,650,7th,9th,PGB,285
+927,13,NC,Clay,Oinochoe,Jug,LO,650,7th,9th,PGB,285
+928,13,NC,Clay,Jug,Jug,LO,650,7th,9th,PGB,285
+929,13,NC,Clay,Oinochoe,Jug,Early Protocorinthian,705,8th,9th,PGB,285
+930,19,NC,Clay,Pithos,Pithos,LG,727.5,8th,8th,LG,224
+931,19,NC,Clay,Pyxis,Other,LG-EO,707.5,8th,8th,LG,224
+932,19,NC,Clay,Lekythos,Oil vessel,LG,727.5,8th,8th,LG,224
+933,19,NC,Clay,Lekythos,Oil vessel,LG-EO,707.5,8th,8th,LG,224
+934,19,NC,Clay,Lid,Lid,LG-EO,707.5,8th,8th,LG,224
+935,75,NC,Clay,Pithos,Pithos,LO,650,7th,9th,EG,286
+936,75,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,EG,225
+937,75,NC,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,EG,225
+938,75,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,EG,226
+939,75,NC,Clay,Amphora,Amphora,MG,767.5,8th,9th,EG,226
+940,75,NC,Clay,Lekythos,Oil vessel,MG,767.5,8th,9th,EG,226
+941,75,NC,Clay,Pithos,Pithos,LG,727.5,8th,9th,EG,230
+942,75,NC,Clay,Pithos,Pithos,LG,727.5,8th,9th,EG,229
+943,75,NC,Clay,Kalathos,Other,EG,800,8th,9th,EG,227
+944,75,NC,Clay,Lid,Lid,MG,767.5,8th,9th,EG,228
+945,75,NC,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,EG,228
+946,75,NC,Clay,Lekythos,Oil vessel,EO,690,7th,9th,EG,229
+947,75,NC,Clay,Lid,Lid,MG,767.5,8th,9th,EG,229
+948,75,NC,Clay,Aryballos,Oil vessel,EO,690,7th,9th,EG,230
+949,75,NC,Clay,Aryballos,Oil vessel,EO,690,7th,9th,EG,230
+950,75,NC,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,EG,230
+951,75,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,EG,228
+952,75,NC,Clay,Pithos,Pithos,EG,800,8th,9th,EG,227
+953,75,NC,Clay,Pithos,Pithos,LG-EO,707.5,8th,9th,EG,231
+954,75,NC,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,EG,231
+955,75,NC,Clay,Oinochoe,Jug,EO,690,7th,9th,EG,231
+956,75,NC,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,EG,231
+957,75,NC,Clay,Lid,Lid,O,670,7th,9th,EG,231
+958,104,NC,Clay,Pithos,Pithos,EG,800,8th,9th,PGB,235
+959,104,NC,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,232
+960,104,NC,Clay,Lekythos,Oil vessel,Cypriot BoR I (Jones850-750),800,8th,9th,PGB,232
+961,104,NC,Clay,Amphora,Amphora,EG,800,8th,9th,PGB,233
+962,104,NC,Clay,Skyphos,Drinking vessel,EG-MG,777.5,8th,9th,PGB,233
+963,104,NC,Clay,Skyphos,Drinking vessel,MG-LG,750,8th,9th,PGB,234
+964,104,NC,Clay,Skyphos,Drinking vessel,MG-LG,750,8th,9th,PGB,234
+965,104,NC,Clay,Jug,Jug,PGB,825,9th,9th,PGB,235
+966,104,NC,Clay,Skyphos,Drinking vessel,PGB,825,9th,9th,PGB,235
+967,104,NC,Clay,Lid,Lid,EO,690,7th,9th,PGB,236
+968,104,NC,Clay,Pyxis,Other,EO,690,7th,9th,PGB,236
+969,106,NC,Clay,Cup,Drinking vessel,EG-MG,777.5,8th,9th,EG,237
+970,106,NC,Clay,Jug,Jug,MG-LG,750,8th,9th,EG,237
+971,106,NC,Clay,Cup,Drinking vessel,LG,727.5,8th,9th,EG,238
+972,106,NC,Clay,Cup,Drinking vessel,LG,727.5,8th,9th,EG,238
+973,107,NC,Clay,Pithos,Pithos,O,670,7th,9th,PGB,292
+974,107,NC,Clay,Pithos,Pithos,LO,650,7th,9th,PGB,288
+975,107,NC,Clay,Lid,Lid,O,670,7th,9th,PGB,288
+976,107,NC,Clay,Aryballos,Oil vessel,LO,650,7th,9th,PGB,288
+977,107,NC,Clay,Pithos,Pithos,EO,690,7th,9th,PGB,290
+978,107,NC,Clay,Pithos,Pithos,EO,690,7th,9th,PGB,291
+979,107,NC,Clay,Lid,Lid,LO,650,7th,9th,PGB,291
+980,107,NC,Clay,Lid,Lid,O,670,7th,9th,PGB,291
+981,107,NC,Clay,Aryballos,Oil vessel,EO,690,7th,9th,PGB,291
+982,107,NC,Clay,Aryballos,Oil vessel,EO,690,7th,9th,PGB,291
+983,107,NC,Clay,Aryballos,Oil vessel,EO,690,7th,9th,PGB,291
+984,107,NC,Clay,Aryballos,Oil vessel,EO,690,7th,9th,PGB,291
+985,107,NC,Clay,Lekythos,Oil vessel,EO,690,7th,9th,PGB,291
+986,107,NC,Clay,Pithos,Pithos,EO,690,7th,9th,PGB,289
+987,107,NC,Clay,Pithos,Pithos,LG-EO,707.5,8th,9th,PGB,239
+988,107,NC,Clay,Lid,Lid,LG,727.5,8th,9th,PGB,239
+989,107,NC,Clay,Lekythos,Oil vessel,LG-EO,707.5,8th,9th,PGB,239
+990,107,NC,Clay,Lekythos,Oil vessel,LG-EO,707.5,8th,9th,PGB,239
+991,107,NC,Clay,Lid,Lid,EO,690,7th,9th,PGB,289
+992,107,NC,Clay,Lekythos,Oil vessel,EO,690,7th,9th,PGB,289
+993,107,NC,Clay,Oinochoe,Jug,EO,690,7th,9th,PGB,289
+994,107,NC,Clay,Pyxis,Other,EO,690,7th,9th,PGB,289
+995,107,NC,Clay,Aryballos,Oil vessel,EO,690,7th,9th,PGB,289
+996,107,NC,Clay,Oinochoe,Jug,EO,690,7th,9th,PGB,289
+997,107,NC,Clay,Cup,Drinking vessel,EO,690,7th,9th,PGB,289
+998,107,NC,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,PGB,239
+999,107,NC,Clay,Skyphos,Drinking vessel,MO,650,7th,9th,PGB,240
+1000,107,NC,Clay,Skyphos,Drinking vessel,MO,650,7th,9th,PGB,240
+1001,107,NC,Clay,Pyxis,Other,EO,690,7th,9th,PGB,293
+1002,107,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,287
+1003,107,NC,Clay,Oinochoe,Jug,O,670,7th,9th,PGB,241
+1004,107,NC,Clay,Pithos,Pithos,O,670,7th,9th,PGB,241
+1005,126,NC,Clay,Pithos,Pithos,LG,727.5,8th,8th,O,242
+1006,126,NC,Clay,Lid,Lid,LG-EO,707.5,8th,8th,O,242
+1007,126,NC,Clay,Jug,Jug,LG,727.5,8th,8th,O,242
+1008,129,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,EG,243
+1009,129,NC,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,EG,243
+1010,159,NC,Clay,Pithos,Pithos,EO,690,7th,8th,EO,291
+1011,218,NC,Clay,Pithos,Pithos,LG,727.5,8th,9th,LPG,244
+1012,218,NC,Clay,Jug,Jug,MG-LG,750,8th,9th,LPG,244
+1013,218,NC,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,LPG,244
+1014,218,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,LPG,245
+1015,218,NC,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,LPG,245
+1016,218,NC,Clay,Lekythos,Oil vessel,MG,767.5,8th,9th,LPG,245
+1017,218,NC,Clay,Lid,Lid,MG,767.5,8th,9th,LPG,245
+1018,218,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,LPG,246
+1019,218,NC,Clay,Cup,Drinking vessel,MG,767.5,8th,9th,LPG,246
+1020,218,NC,Clay,Cup,Drinking vessel,MG,767.5,8th,9th,LPG,246
+1021,218,NC,Clay,Lid,Lid,MG,767.5,8th,9th,LPG,246
+1022,218,NC,Clay,Lid,Lid,LG,727.5,8th,9th,LPG,247
+1023,218,NC,Clay,Pithos,Pithos,EG,800,8th,9th,LPG,247
+1024,218,NC,Clay,Aryballos,Oil vessel,MG,767.5,8th,9th,LPG,247
+1025,218,NC,Clay,Pithos,Pithos,LG,727.5,8th,9th,LPG,248
+1026,218,NC,Clay,Jug,Jug,MG-LG,750,8th,9th,LPG,248
+1027,218,NC,Clay,Lid,Lid,LG-EO,707.5,8th,9th,LPG,248
+1028,218,NC,Clay,Aryballos,Oil vessel,LG,727.5,8th,9th,LPG,249
+1029,218,NC,Clay,Pithos,Pithos,LG,727.5,8th,9th,LPG,249
+1030,218,NC,Clay,Lid,Lid,LG,727.5,8th,9th,LPG,249
+1031,218,NC,Clay,Lid,Lid,MG,767.5,8th,9th,LPG,246
+1032,219,NC,Clay,Skyphos,Drinking vessel,EPG,945,10th,10th,EPG,292
+1033,219,NC,Clay,Oinochoe,Jug,LG,727.5,8th,10th,EPG,293
+1034,229,NC,Clay,Pithos,Pithos,LG,727.5,8th,10th,EPG,250
+1035,229,NC,Clay,Lid,Lid,LG,727.5,8th,10th,EPG,251
+1036,229,NC,Clay,Krater,Mixing Vessel,LG-EO,707.5,8th,10th,EPG,250
+1037,229,NC,Clay,Pithos,Pithos,LG-EO,707.5,8th,10th,EPG,251
+1038,229,NC,Clay,Jug,Jug,MG-LG,750,8th,10th,EPG,250
+1039,229,NC,Clay,Skyphos,Drinking vessel,LG-EO,707.5,8th,10th,EPG,250
+1040,229,NC,Clay,Lid,Lid,LG-EO,707.5,8th,10th,EPG,250
+1041,229,NC,Clay,Oinochoe,Jug,LG,727.5,8th,10th,EPG,251
+1042,229,NC,Clay,Lekythos,Oil vessel,EO,690,7th,10th,EPG,251
+1043,229,NC,Clay,Aryballos,Oil vessel,EO,690,7th,10th,EPG,251
+1044,285,NC,Clay,Pithos,Pithos,PGB,825,9th,10th,EPG,256
+1045,285,NC,Clay,Pithos,Pithos,LO,650,7th,10th,EPG,252
+1046,285,NC,Clay,Lid,Lid,LO,650,7th,10th,EPG,252
+1047,285,NC,Clay,Aryballos,Oil vessel,LO,650,7th,10th,EPG,252
+1048,285,NC,Clay,Pithos,Pithos,MO,650,7th,10th,EPG,294
+1049,285,NC,Clay,Lid,Lid,MO,650,7th,10th,EPG,294
+1050,285,NC,Clay,Pithos,Pithos,MG,767.5,8th,10th,EPG,253
+1051,285,NC,Clay,Pithos,Pithos,MO,650,7th,10th,EPG,296
+1052,285,NC,Clay,Lekythos,Oil vessel,Cypriot BoR II,787.5,8th,10th,EPG,253
+1053,285,NC,Clay,Aryballos,Oil vessel,MG,767.5,8th,10th,EPG,253
+1054,285,NC,Clay,Oinochoe,Jug,EG-MG,777.5,8th,10th,EPG,253
+1055,285,NC,Clay,Lekythos,Oil vessel,Cypriot BoR II,787.5,8th,10th,EPG,253
+1056,285,NC,Clay,Aryballos,Oil vessel,MG,767.5,8th,10th,EPG,253
+1057,285,NC,Clay,Lekythos,Oil vessel,Cypriot BoR II,787.5,8th,10th,EPG,253
+1058,285,NC,Clay,Pithos,Pithos,LPG-PGB,842.5,9th,10th,EPG,295
+1059,285,NC,Clay,Pyxis,Other,LPG,857.5,9th,10th,EPG,255
+1060,285,NC,Clay,Lekythos,Oil vessel,Cypriot BoR (Jones late 9th),810,9th,10th,EPG,255
+1061,285,NC,Clay,Krater,Mixing Vessel,East Greek SubPG,875,9th,10th,EPG,256
+1062,285,NC,Clay,Lekythos,Oil vessel,LPG-PGB,842.5,9th,10th,EPG,256
+1063,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1064,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1065,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1066,285,NC,Clay,Jug,Jug,MPG,897.5,9th,10th,EPG,254
+1067,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1068,285,NC,Clay,Oinochoe,Jug,MPG,897.5,9th,10th,EPG,254
+1069,285,NC,Clay,Oinochoe,Jug,MPG,897.5,9th,10th,EPG,254
+1070,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1071,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1072,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1073,285,NC,Clay,Oinochoe,Jug,MPG,897.5,9th,10th,EPG,254
+1074,285,NC,Clay,Oinochoe,Jug,MPG,897.5,9th,10th,EPG,254
+1075,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1076,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1077,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1078,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1079,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1080,285,NC,Clay,Skyphos,Drinking vessel,MPG,897.5,9th,10th,EPG,254
+1081,285,NC,Clay,Jug,Jug,MPG,897.5,9th,10th,EPG,254
+1082,285,NC,Clay,Plate,Other,PG,890,9th,10th,EPG,298
+1083,285,NC,Clay,Askos,Other,LPG,857.5,9th,10th,EPG,297
+1084,285,NC,Clay,Oinochoe,Jug,PGB,825,9th,10th,EPG,255
+1085,285,NC,Clay,Lid,Lid,PGB-EG,815,9th,10th,EPG,255
+1086,285,NC,Clay,Skyphos,Drinking vessel,Attic LPG,950,10th,10th,EPG,256
+1087,285,NC,Clay,Lid,Lid,EPG,945,10th,10th,EPG,256
+1088,286,NC,Clay,Pithos,Pithos,EG,800,8th,9th,EG,257
+1089,286,NC,Clay,Pithos,Pithos,EG,800,8th,9th,EG,258
+1090,286,NC,Clay,Aryballos,Oil vessel,EG,800,8th,9th,EG,257
+1091,286,NC,Clay,Oinochoe,Jug,EG,800,8th,9th,EG,258
+1092,286,NC,Clay,Cup,Drinking vessel,EG,800,8th,9th,EG,258
+1093,306,NC,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,259
+1094,306,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,PGB,260
+1095,306,NC,Clay,Lid,Lid,LG-EO,707.5,8th,9th,PGB,259
+1096,306,NC,Clay,Cup,Drinking vessel,MG,767.5,8th,9th,PGB,260
+1097,306,NC,Clay,Other,Other,MG-LG,750,8th,9th,PGB,259
+1098,306,NC,Clay,Lekythos,Oil vessel,LG,727.5,8th,9th,PGB,259
+1099,306,NC,Clay,Cup,Drinking vessel,MG,767.5,8th,9th,PGB,260
+1100,P,FOR,Clay,Larnax,Other,LM IIIA-B,1290,13th,9th,LPG,299
+1101,VI,FOR,Bronze,Bowl,Vessel,,,,10th,PG,32
+1102,VI,FOR,Gold,Strip,Strip,,,,10th,PG,32
+1103,VI,FOR,Faience,Ring,Jewellery,EPG,,,10th,PG,32
+1104,VI,FOR,Faience,Bead,Jewellery,EPG,,,10th,PG,32
+1105,VI,FOR,Iron,Obelos,Cooking,EPG,,,10th,PG,32
+1106,VI,FOR,Clay,Bead,Jewellery,,,,10th,PG,32
+1107,VI,FOR,Bone,Pin,Adornment,,,,10th,PG,34
+1108,VI,FOR,Clay,Bead,Jewellery,,,,10th,PG,261
+1109,VI,FOR,Clay,Bead,Jewellery,,,,10th,PG,35
+1110,Theta,FOR,Stone,Pendant,Jewellery,,,,10th,PG,97
+1111,Theta,FOR,Stone,Seal,Seal,LM,,,10th,PG,97
+1112,XI,FOR,Bronze,Lebes,Vessel,,,,9th,LPG,84
+1113,XI,FOR,Bronze,Bowl,Vessel,,,,9th,LPG,84
+1114,XI,FOR,Bronze,Lebes,Vessel,,,,9th,LPG,84
+1115,XI,FOR,Iron,Sword,Weapon,,,,9th,LPG,262
+1116,XI,FOR,Iron,Strip,Strip,,,,9th,LPG,262
+1117,XI,FOR,Iron,Spear,Weapon,,,,9th,LPG,262
+1118,XI,FOR,Iron,Pin,Adornment,,,,9th,LPG,262
+1119,XI,FOR,Iron,Pin,Adornment,,,,9th,LPG,262
+1120,XI,FOR,Iron,Pin,Adornment,,,,9th,LPG,262
+1121,XI,FOR,Iron,Pin,Adornment,,,,9th,LPG,262
+1122,XI,FOR,Gold,Leaf,Unidentified,,,,9th,LPG,263
+1123,XI,FOR,Paste,Necklace,Jewellery,EPG,,,9th,LPG,263
+1124,XI,FOR,Stone,Bead,Jewellery,EPG,,,9th,LPG,263
+1125,XI,FOR,Bone,Pin,Adornment,,,,9th,LPG,263
+1126,XI,FOR,Lead,Animal,Model,EPG,,,9th,LPG,90
+1127,XI,FOR,Gold,Ring,Jewellery,,,,9th,LPG,92
+1128,III,FOR,Bronze,Pin,Adornment,,,,10th,PG,264
+1129,III,FOR,Bronze,Pin,Adornment,PG,,,10th,PG,265
+1130,III,FOR,Bronze,Pin,Adornment,PG,,,10th,PG,265
+1131,III,FOR,Bronze,Pin,Adornment,PG,,,10th,PG,266
+1132,III,FOR,Bronze,Pin,Adornment,PG,,,10th,PG,266
+1133,IX,FOR,Bronze,Fibula,Adornment,,,,10th,PG,267
+1134,IX,FOR,Bronze,Fibula,Adornment,,,,10th,PG,267
+1135,IX,FOR,Faience,Figurine,Model,PG,,,10th,PG,267
+1136,L,FOR,Iron,Spear,Weapon,,,,10th,PG,268
+1137,OD,FOR,Gold,Leaf,Unidentified,,,,9th,PGB,269
+1138,OD,FOR,Bronze,Pin,Adornment,,,,9th,PGB,269
+1139,X,FOR,Bronze,Tweezers,Cosmetic,,,,9th,PGB,68
+1140,X,FOR,Iron,Sword,Weapon,,,,9th,PGB,68
+1141,X,FOR,Iron,Spear,Weapon,,,,9th,PGB,68
+1142,X,FOR,Stone,Whetstone,Tool,,,,9th,PGB,73
+1143,X,FOR,Iron,Sword,Weapon,,,,9th,PGB,73
+1144,X,FOR,Iron,Blade,Weapon,,,,9th,PGB,73
+1145,X,FOR,Iron,Spike,Unidentified,,,,9th,PGB,73
+1146,X,FOR,Gold,Leaf,Unidentified,,,,9th,PGB,270
+1147,X,FOR,Bronze,Vase,Vessel,,,,9th,PGB,270
+1148,X,FOR,Iron,Sword,Weapon,,,,9th,PGB,76
+1149,X,FOR,Iron,Blade,Weapon,,,,9th,PGB,271
+1150,X,FOR,Bronze,Vase,Vessel,,,,9th,PGB,272
+1151,X,FOR,Iron,Arrowhead,Weapon,,,,9th,PGB,272
+1152,X,FOR,Gold,Leaf,Unidentified,,,,9th,PGB,82
+1153,X,FOR,Bronze,Dinos,Vessel,,,,9th,PGB,82
+1154,X,FOR,Iron,Arrowhead,Weapon,,,,9th,PGB,82
+1155,X,FOR,Iron,Arrowhead,Weapon,,,,9th,PGB,82
+1156,VIII,FOR,Iron,Nail,Component,,,,10th,EPG,57
+1157,VIII,FOR,Bronze,Fibula,Adornment,,,,10th,EPG,273
+1158,VIII,FOR,Bronze,Ring,Jewellery,,,,10th,EPG,273
+1159,VIII,FOR,Bronze,Ring,Jewellery,,,,10th,EPG,273
+1160,VIII,FOR,Bronze,Pin,Adornment,,,,10th,EPG,59
+1161,VIII,FOR,Bronze,Fibula,Adornment,,,,10th,EPG,274
+1162,VIII,FOR,Bronze,Pin,Adornment,,,,10th,EPG,275
+1163,VIII,FOR,Bronze,Pin,Adornment,,,,10th,EPG,275
+1164,VIII,FOR,Bronze,Fibula,Adornment,,,,10th,EPG,275
+1165,VIII,FOR,Bronze,Fibula,Adornment,,,,10th,EPG,276
+1166,VIII,FOR,Bronze,Pin,Adornment,,,,10th,EPG,276
+1167,VIII,FOR,Bone,Bead,Jewellery,,,,10th,EPG,276
+1168,TFT,FOR,Iron,Blade,Weapon,,,,9th,PGB,115
+1169,TFT,FOR,Iron,Blade,Weapon,,,,9th,PGB,115
+1170,TFT,FOR,Iron,Blade,Weapon,,,,9th,PGB,115
+1171,TFT,FOR,Stone,Lid,Vessel,,,,9th,PGB,115
+1172,TFT,FOR,Faience,Necklace,Jewellery,MG,,,9th,PGB,116
+1173,TFT,FOR,Iron,Pin,Adornment,,,,9th,PGB,116
+1174,TFT,FOR,Bronze,Pin,Adornment,,,,9th,PGB,116
+1175,TFT,FOR,Bronze,Pin,Adornment,,,,9th,PGB,116
+1176,F,FOR,Bronze,Pin,Adornment,,,,9th,PGB,126
+1177,F,FOR,Iron,Knife,Tool,,,,9th,PGB,126
+1178,F,FOR,Iron,Dagger,Weapon,,,,9th,PGB,277
+1179,F,FOR,Bronze,Ring,Jewellery,,,,9th,PGB,278
+1180,F,FOR,Bronze,Ring,Jewellery,,,,9th,PGB,278
+1181,F,FOR,Bronze,Strip,Strip,,,,9th,PGB,278
+1182,F,FOR,Iron,Pin,Adornment,,,,9th,PGB,278
+1183,F,FOR,Iron,Pin,Adornment,,,,9th,PGB,278
+1184,F,FOR,Glass,Bead,Jewellery,,,,9th,PGB,278
+1185,F,FOR,Iron,Spear,Weapon,,,,9th,PGB,132
+1186,F,FOR,Clay,Whorl,Loom,,,,9th,PGB,136
+1187,VII,FOR,Iron,Spear,Weapon,,,,10th,MPG,279
+1188,VII,FOR,Iron,Pin,Adornment,,,,10th,MPG,50
+1189,P2,FOR,Faience,Alabastron,Vessel,EO,,,8th,LG,147
+1190,P2,FOR,Faience,Figurine,Model,EO,,,8th,LG,147
+1191,P2,FOR,Bronze,Animal,Model,,,,8th,LG,280
+1192,II,FOR,Bronze,Dinos,Vessel,,,,9th,LPG,2
+1193,II,FOR,Bronze,Dinos,Vessel,,,,9th,LPG,9
+1194,II,FOR,Gold,Pin,Adornment,,,,9th,LPG,5
+1195,II,FOR,Gold,Pin,Adornment,,,,9th,LPG,5
+1196,II,FOR,Gold,Bead,Jewellery,,,,9th,LPG,5
+1197,II,FOR,Paste,Bead,Jewellery,,,,9th,LPG,8
+1198,II,FOR,Stone,Pendant,Jewellery,,,,9th,LPG,8
+1199,II,FOR,Stone,Seal,Seal,,,,9th,LPG,8
+1200,II,FOR,Stone,Pendant,Jewellery,,,,9th,LPG,8
+1201,II,FOR,Stone,Bead,Jewellery,,,,9th,LPG,8
+1202,II,FOR,Stone,Seal,Seal,,,,9th,LPG,8
+1203,II,FOR,Stone,Pendant,Jewellery,,,,9th,LPG,8
+1204,II,FOR,Faience,Scarab,Scarab,LO,,,9th,LPG,8
+1205,II,FOR,Faience,Scarab,Scarab,LO,,,9th,LPG,8
+1206,II,FOR,Faience,Scarab,Scarab,LO,,,9th,LPG,8
+1207,II,FOR,Silver,Pin,Adornment,,,,9th,LPG,8
+1208,II,FOR,Silver,Pin,Adornment,,,,9th,LPG,8
+1209,II,FOR,Bronze,Figurine,Model,,,,9th,LPG,8
+1210,II,FOR,Bronze,Pin,Adornment,,,,9th,LPG,8
+1211,II,FOR,Stone,Whetstone,Tool,,,,9th,LPG,15
+1212,II,FOR,Iron,Dagger,Weapon,,,,9th,LPG,15
+1213,II,FOR,Iron,Spear,Weapon,,,,9th,LPG,15
+1214,II,FOR,Iron,Arrowhead,Weapon,,,,9th,LPG,15
+1215,II,FOR,Electrum,Pin,Adornment,,,,9th,LPG,18
+1216,II,FOR,Electrum,Pin,Adornment,,,,9th,LPG,18
+1217,II,FOR,Iron,Pin,Adornment,,,,9th,LPG,18
+1218,II,FOR,Iron,Pin,Adornment,,,,9th,LPG,18
+1219,II,FOR,Iron,Pin,Adornment,,,,9th,LPG,18
+1220,II,FOR,Iron,Pin,Adornment,,,,9th,LPG,18
+1221,II,FOR,Iron,Pin,Adornment,,,,9th,LPG,18
+1222,II,FOR,Bronze,Fibula,Adornment,,,,9th,LPG,19
+1223,II,FOR,Iron,Sword,Weapon,,,,9th,LPG,19
+1224,II,FOR,Iron,Spear,Weapon,,,,9th,LPG,19
+1225,II,FOR,Iron,Spear,Weapon,,,,9th,LPG,19
+1226,II,FOR,Iron,Spear,Weapon,,,,9th,LPG,21
+1227,II,FOR,Gold,Ring,Jewellery,,,,9th,LPG,23
+1228,II,FOR,Gold,Ring,Jewellery,,,,9th,LPG,23
+1229,II,FOR,Gold,Ring,Jewellery,,,,9th,LPG,23
+1230,II,FOR,Bronze,Fibula,Adornment,,,,9th,LPG,23
+1231,II,FOR,Bronze,Fibula,Adornment,,,,9th,LPG,23
+1232,II,FOR,Bronze,Fibula,Adornment,,,,9th,LPG,23
+1233,II,FOR,Iron,Spear,Weapon,,,,9th,LPG,23
+1234,II,FOR,Faience,Bead,Jewellery,LPG,,,9th,LPG,26
+1235,II,FOR,Bronze,Fibula,Adornment,,,,9th,LPG,26
+1236,II,FOR,Bronze,Fibula,Adornment,,,,9th,LPG,26
+1237,II,FOR,Stone,Bead,Jewellery,,,,9th,LPG,26
+1238,II,FOR,Glass,Bead,Jewellery,LPG,,,9th,LPG,26
+1239,II,FOR,Stone,Bead,Jewellery,,,,9th,LPG,26
+1240,P,FOR,Gold,Figurine,Model,,,,9th,LPG,219
+1241,P,FOR,Gold,Animal,Model,,,,9th,LPG,219
+1242,P,FOR,Clay,Animal,Model,,,,9th,LPG,219
+1243,P,FOR,Clay,Animal,Model,,,,9th,LPG,219
+1244,P,FOR,Bronze,Fibula,Adornment,O,,,9th,LPG,219
+1245,P,FOR,Iron,Ring,Jewellery,,,,9th,LPG,219
+1246,P,FOR,Faience,Figurine,Model,EO,,,9th,LPG,220
+1247,P,FOR,Stone,,Other,,,,9th,LPG,220
+1248,P,FOR,Bronze,Fibula,Adornment,,,,9th,LPG,220
+1249,P,FOR,Glass,Bead,Jewellery,,,,9th,LPG,220
+1250,P,FOR,Faience,Aryballos,Vessel,LO,,,9th,LPG,281
+1251,P,FOR,Faience,Aryballos,Vessel,LO,,,9th,LPG,281
+1252,P,FOR,Bronze,Bowl,Vessel,,,,9th,LPG,164
+1253,P,FOR,Bronze,Cup,Vessel,,,,9th,LPG,282
+1254,P,FOR,Clay,Bird,Model,,,,9th,LPG,190
+1255,P,FOR,Clay,Bottle,Vessel,,,,9th,LPG,191
+1256,P,FOR,Bronze,Skyphos,Vessel,,,,9th,LPG,193
+1257,P,FOR,Clay,Animal,Model,,,,9th,LPG,200
+1258,P,FOR,Clay,Animal,Vessel,,,,9th,LPG,200
+1259,P,FOR,Glass,Bowl,Vessel,O,,,9th,LPG,202
+1260,P,FOR,Bronze,Girdle,Clothing,,,,9th,LPG,206
+1261,P,FOR,Iron,Adze,Tool,,,,9th,LPG,196
+1262,P,FOR,Iron,Adze,Tool,,,,9th,LPG,196
+1263,P,FOR,Iron,Dagger,Weapon,,,,9th,LPG,196
+1264,P,FOR,Iron,Knife,Tool,,,,9th,LPG,196
+1265,P,FOR,Iron,Knife,Tool,,,,9th,LPG,196
+1266,P,FOR,Iron,Spear,Weapon,,,,9th,LPG,197
+1267,P,FOR,Iron,Spear,Weapon,,,,9th,LPG,197
+1268,P,FOR,Iron,Weapon,Weapon,,,,9th,LPG,197
+1269,P,FOR,Iron,Tweezers,Cosmetic,,,,9th,LPG,197
+1270,P,FOR,Iron,Knife,Tool,,,,9th,LPG,197
+1271,P,FOR,Iron,,Unidentified,,,,9th,LPG,197
+1272,P,FOR,Iron,Saw,Tool,,,,9th,LPG,197
+1273,P,FOR,Iron,Blade,Weapon,,,,9th,LPG,206
+1274,P,FOR,Iron,Spear,Weapon,,,,9th,LPG,206
+1275,P,FOR,Iron,Sword,Weapon,,,,9th,LPG,283
+1276,P,FOR,Iron,Sword,Weapon,,,,9th,LPG,283
+1277,D,NC,Bronze,Strip,Strip,,,,9th,LPG,284
+1278,13,NC,Bronze,Cauldron,Vessel,,,,9th,PGB,285
+1279,75,NC,Glass,Bead,Jewellery,,,,9th,EG,228
+1280,75,NC,Bronze,Pin,Adornment,,,,9th,EG,286
+1281,75,NC,Clay,Aryballos,Oil vessel,LO,650,7th,9th,EG,286
+1282,107,NC,Stone,Pebble,Other,,,,9th,PGB,287
+1283,107,NC,Bronze,Pin,Adornment,,,,9th,PGB,288
+1284,107,NC,Bronze,Pin,Adornment,,,,9th,PGB,289
+1285,107,NC,Bronze,Pin,Adornment,,,,9th,PGB,290
+1286,107,NC,Bronze,Pin,Adornment,,,,9th,PGB,291
+1287,107,NC,Stone,Button,Other,,,,9th,PGB,292
+1288,107,NC,Glass,Bead,Jewellery,EO,,,9th,PGB,293
+1289,107,NC,Bronze,Object,Unidentified,,,,9th,PGB,290
+1290,107,NC,Olive,Pips,Organics,,,,9th,PGB,290
+1291,159,NC,Bronze,Pin,Adornment,,,,8th,EO,291
+1292,218,NC,Bronze,Fibula,Adornment,,,,9th,LPG,245
+1293,219,NC,Faience,Bead,Jewellery,LPG,,,10th,EPG,292
+1294,219,NC,Bronze,Sheet,Sheet,,,,10th,EPG,293
+1295,229,NC,Silver,Pin,Adornment,,,,10th,EPG,251
+1296,229,NC,Bronze,Animal,Model,,,,10th,EPG,251
+1297,229,NC,Faience,Scarab,Scarab,LG-EO,,,10th,EPG,251
+1298,229,NC,Faience,Scarab,Scarab,LG-EO,,,10th,EPG,251
+1299,229,NC,Glass,Bead,Jewellery,EO,,,10th,EPG,251
+1300,229,NC,Amber,Bead,Jewellery,,,,10th,EPG,251
+1301,229,NC,Amber,Bead,Jewellery,,,,10th,EPG,251
+1302,229,NC,Stone,Bead,Jewellery,,,,10th,EPG,251
+1303,285,NC,Bronze,Pin,Adornment,,,,10th,EPG,252
+1304,285,NC,Bronze,Pin,Adornment,,,,10th,EPG,252
+1305,285,NC,Iron,Pin,Adornment,,,,10th,EPG,252
+1306,285,NC,Bronze,Fibula,Adornment,,,,10th,EPG,294
+1307,285,NC,Glass,Bead,Jewellery,LPG,,,10th,EPG,294
+1308,285,NC,Faience,Bead,Jewellery,,,,10th,EPG,256
+1309,285,NC,Bronze,Pin,Adornment,,,,10th,EPG,295
+1310,285,NC,Bronze,Pin,Adornment,,,,10th,EPG,295
+1311,285,NC,Bronze,Pin,Adornment,,,,10th,EPG,296
+1312,285,NC,Bronze,Ornament,Ornament,,,,10th,EPG,296
+1313,285,NC,Bronze,Sheet,Sheet,,,,10th,EPG,296
+1314,285,NC,Faience,Bead,Jewellery,LPG,,,10th,EPG,297
+1315,285,NC,Faience,Bead,Jewellery,LPG,,,10th,EPG,298
+1316,18,NC,Clay,Pithos,Pithos,PGB-EG,815,9th,11th,SM,301
+1317,18,NC,Clay,Cup,Drinking vessel,PGB,825,9th,11th,SM,301
+1318,18,NC,Clay,Jug,Jug,EG-MG,777.5,8th,11th,SM,301
+1319,18,NC,Clay,Basin,Other,EG-MG,777.5,8th,11th,SM,301
+1320,18,NC,Clay,Cup,Drinking vessel,PGB-EG,815,9th,11th,SM,301
+1321,18,NC,Clay,Jug,Jug,EG,800,8th,11th,SM,301
+1322,18,NC,Clay,Cup,Drinking vessel,EG-MG,777.5,8th,11th,SM,301
+1323,18,NC,Amber,Beads,Jewellery,,,,11th,SM,301
+1324,19,NC,Clay,Pithos,Pithos,EO,690,7th,8th,LG,302
+1325,19,NC,Clay,Lekythos,Oil vessel,LG,727.5,8th,8th,LG,302
+1326,19,NC,Clay,Pithos,Pithos,EO,690,7th,8th,LG,303
+1327,19,NC,Clay,Lid,Lid,EO,690,7th,8th,LG,303
+1328,19,NC,Clay,Lid,Lid,EO,690,7th,8th,LG,303
+1329,19,NC,Clay,Whorl,Loom,,,,8th,LG,303
+1330,26,NC,Clay,Pithos,Pithos,O,710,8th,11th,SM,304
+1331,26,NC,Silver,Pin,Adornment,,,,11th,SM,304
+1332,26,NC,Silver,Earring,Jewellery,,,,11th,SM,304
+1333,26,NC,Gold,Cap,Other,,,,11th,SM,304
+1334,26,NC,Stone,Pendant,Jewellery,,,,11th,SM,304
+1335,26,NC,Faience,Rim,Vessel,,,,11th,SM,304
+1336,26,NC,Bronze,Pin,Adornment,,,,11th,SM,304
+1337,26,NC,Bronze,Pin,Adornment,,,,11th,SM,304
+1338,19,NC,Clay,Pithos,Pithos,EO,690,7th,8th,LG,305
+1339,19,NC,Clay,Aryballos,Oil vessel,EO,690,7th,8th,LG,305
+1340,19,NC,Clay,Lid,Lid,LG,727.5,8th,8th,LG,305
+1341,19,NC,Clay,Aryballos,Oil vessel,EO,690,7th,8th,LG,305
+1342,19,NC,Bronze,Mounting,Component,,,,8th,LG,305
+1343,19,NC,Bronze,Mounting,Component,,,,8th,LG,305
+1344,19,NC,Iron,Bracelet,Jewellery,,,,8th,LG,305
+1345,75,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,EG,306
+1346,75,NC,Clay,Lid,Lid,LG,727.5,8th,9th,EG,306
+1347,75,NC,Clay,Aryballos,Oil vessel,MO,650,7th,9th,EG,306
+1348,75,NC,Faience,Bead,Jewellery,,,,9th,EG,306
+1349,75,NC,Clay,Pithos,Pithos,LO,650,7th,9th,EG,307
+1350,75,NC,Clay,Aryballos,Oil vessel,LO,650,7th,9th,EG,307
+1351,75,NC,Clay,Pithos,Pithos,LO,650,7th,9th,EG,308
+1352,75,NC,Clay,Lid,Lid,MO,650,7th,9th,EG,308
+1353,75,NC,Clay,Aryballos,Oil vessel,LO,650,7th,9th,EG,308
+1354,75,NC,Clay,Cup,Drinking vessel,LO,650,7th,9th,EG,308
+1355,75,NC,Clay,Pithos,Pithos,EO,690,7th,9th,EG,309
+1356,75,NC,Clay,Lid,Lid,MO,650,7th,9th,EG,309
+1357,75,NC,Clay,Aryballos,Oil vessel,LO,650,7th,9th,EG,309
+1358,104,NC,Clay,Pithos,Pithos,LG,727.5,8th,9th,PGB,310
+1359,104,NC,Clay,Aryballos,Oil vessel,LG-EO,707.5,8th,9th,PGB,310
+1360,104,NC,Iron,Pin,Adornment,,,,9th,PGB,232
+1361,104,NC,Iron,Pin,Adornment,,,,9th,PGB,232
+1362,107,NC,Clay,Pithos,Pithos,EO,690,7th,9th,PGB,311
+1363,107,NC,Clay,Hydria,Jug,EO,690,7th,9th,PGB,311
+1364,107,NC,Clay,Aryballos,Oil vessel,LO,650,7th,9th,PGB,311
+1365,218,NC,Clay,Pithos,Pithos,MG,767.5,8th,9th,LPG,312
+1366,218,NC,Clay,Pyxis,Other,MG,767.5,8th,9th,LPG,312
+1367,285,NC,Clay,Pithos,Pithos,EPG-MPG,922.5,10th,10th,EPG,313
+1368,285,NC,Clay,Pyxis,Other,LPG,857.5,9th,10th,EPG,313
+1369,285,NC,Clay,Pithos,Pithos,LO,650,7th,10th,EPG,314
+1370,285,NC,Clay,Lid,Lid,MO,650,7th,10th,EPG,314
+1371,285,NC,Clay,Aryballos,Oil vessel,MO,650,7th,10th,EPG,314
+1372,285,NC,Clay,Pithos,Pithos,MO,650,7th,10th,EPG,315
+1373,285,NC,Clay,Lid,Lid,MO,650,7th,10th,EPG,315
+1374,285,NC,Clay,Aryballos,Oil vessel,LO,650,7th,10th,EPG,315
+1375,285,NC,Clay,Pithos,Pithos,LO,650,7th,10th,EPG,316
+1376,285,NC,Clay,Lid,Lid,MO,650,7th,10th,EPG,316
+1377,285,NC,Clay,Aryballos,Oil vessel,LO,650,7th,10th,EPG,316
+1378,285,NC,Clay,Pithos,Pithos,LO,650,7th,10th,EPG,317
+1379,285,NC,Clay,Lid,Lid,MO,650,7th,10th,EPG,317
+1380,285,NC,Clay,Aryballos,Oil vessel,LO,650,7th,10th,EPG,317
+1381,285,NC,Bronze,Tweezers,Cosmetic,,,,10th,EPG,317
+1382,285,NC,Clay,Aryballos,Oil vessel,LO,650,7th,10th,EPG,318
+1383,285,NC,Clay,Pithos,Pithos,LO,650,7th,10th,EPG,318

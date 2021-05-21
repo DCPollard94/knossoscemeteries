@@ -18,11 +18,11 @@ Title <- "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeter
 
 This repository contains the data and code for the paper:
 
-> Pollard, Dominic (2020). _`r Title`_. Name of journal/book, <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2021). _`r Title`_. Name of journal/book, <https://doi.org/xxx/xxx>
 
 The pre-print available is online here:
 
-> Pollard, Dominic (2020). _`r Title`_. Name of journal/book, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2021). _`r Title`_. Name of journal/book, Accessed `r format(Sys.Date(), "%d %b %Y")`. Online at <https://doi.org/xxx/xxx>
 
 ### Repository contents
 
@@ -43,6 +43,9 @@ Or you can install this compendium as an R package from GitHub with:
 # install.packages("devtools")
 devtools::install_github("DCPollard94/knossoscemeteries")
 ```
+
+The compendium is also available from figshare at: https://doi.org/10.6084/m9.figshare.13019588.v1
+
 ### Licenses
 
 **Text and figures :**  [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
