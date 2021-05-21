@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 # Please put your title here to include it in the file below. 
-Title <- "Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos"
+Title <- "All Equal in the Presence of Death? A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos"
 ```
 
 # knossoscemeteries

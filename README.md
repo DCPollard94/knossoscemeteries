@@ -5,11 +5,11 @@ knossoscemeteries
 
 This repository contains the data and code for the paper:
 
-> Pollard, Dominic (2021). *Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Name of journal/book, <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2021). *All Equal in the Presence of Death? A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Name of journal/book, <https://doi.org/xxx/xxx>
 
 The pre-print available is online here:
 
-> Pollard, Dominic (2021). *Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Name of journal/book, Accessed 21 May 2021. Online at <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2021). *All Equal in the Presence of Death? A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Name of journal/book, Accessed 21 May 2021. Online at <https://doi.org/xxx/xxx>
 
 ### Repository contents
 
@@ -19,7 +19,7 @@ All data, text and code to recreate the paper and analysis therein are found in 
 
 Please cite this compendium as:
 
-> Pollard, Dominic (2021). *Compendium of R code and data for Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Accessed 21 May 2021. Online at <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2021). *Compendium of R code and data for All Equal in the Presence of Death? A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Accessed 21 May 2021. Online at <https://doi.org/xxx/xxx>
 
 ### How to download or install
 
