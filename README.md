@@ -5,11 +5,11 @@ knossoscemeteries
 
 This repository contains the data and code for the paper:
 
-> Pollard, Dominic (2020). *Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Name of journal/book, <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2021). *Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Name of journal/book, <https://doi.org/xxx/xxx>
 
 The pre-print available is online here:
 
-> Pollard, Dominic (2020). *Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Name of journal/book, Accessed 13 Oct 2020. Online at <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2021). *Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Name of journal/book, Accessed 21 May 2021. Online at <https://doi.org/xxx/xxx>
 
 ### Repository contents
 
@@ -19,7 +19,7 @@ All data, text and code to recreate the paper and analysis therein are found in 
 
 Please cite this compendium as:
 
-> Pollard, Dominic (2020). *Compendium of R code and data for Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Accessed 13 Oct 2020. Online at <https://doi.org/xxx/xxx>
+> Pollard, Dominic (2021). *Compendium of R code and data for Family Fortunes: A Quantitative Analysis of the Early Iron Age Cemeteries of Knossos*. Accessed 21 May 2021. Online at <https://doi.org/xxx/xxx>
 
 ### How to download or install
 
@@ -31,6 +31,8 @@ Or you can install this compendium as an R package from GitHub with:
 # install.packages("devtools")
 devtools::install_github("DCPollard94/knossoscemeteries")
 ```
+
+The compendium is also available from figshare at: <https://doi.org/10.6084/m9.figshare.13019588.v1>
 
 ### Licenses
 
